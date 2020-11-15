@@ -1,0 +1,5 @@
+#coding=gbk
+
+name='¹þ¹þ'
+
+print(name)
