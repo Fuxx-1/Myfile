@@ -2,13 +2,6 @@
     "version": "0.2.0",
     "configurations": [
         {
-            "type": "java",
-            "name": "CodeLens (Launch) - HelloWorld",
-            "request": "launch",
-            "mainClass": "HelloWorld",
-            "projectName": "Myfile_2e74e420"
-        },
-        {
             "name": "(gdb) Launch",
             "type": "cppdbg",
             "request": "launch",
