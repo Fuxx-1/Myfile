@@ -2,7 +2,14 @@
     "version": "0.2.0",
     "configurations": [
         {
-            "name": "(gdb) Launch",
+            "name":"Python3.7",
+            "type":"python",
+            "request":"launch",
+            "program":"${file}",
+            "console":"externalTerminal"
+        },
+        {
+            "name": "C/C++/C#",
             "type": "cppdbg",
             "request": "launch",
             "targetArchitecture": "x86",
