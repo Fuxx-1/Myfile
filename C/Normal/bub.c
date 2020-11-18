@@ -3,7 +3,12 @@
 
 int main(void)
 {
-    int a[] = {4, 8, 2, -67, 0, 122, 6, 3, 34, 0, 12, 5, 2, 87, 342, 2};
+    int a[10000];
+    for (int i = 0; i + 1; i++)
+    {
+        scanf("%d", &a[i]);
+    }
+    
     int n = sizeof(a) / sizeof(a[0]);
     for (int i = 0; i < n - 1; i++)
     {

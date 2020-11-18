@@ -8,7 +8,8 @@ int main()
     b = b^a;
     a = a^b;
     printf("a为：%d\nb为：%d\n", a, b);
-
+/* a为：7
+b为：5 */
     system("pause");
     return 0;
 }

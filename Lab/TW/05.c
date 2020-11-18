@@ -1,6 +1,6 @@
 #define _SWAP(a, b) \
     {               \
-        int _T = a;  \
+        int _T = a; \
         a = b;      \
         b = _T;     \
     }
