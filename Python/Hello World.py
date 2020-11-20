@@ -1,2 +1,2 @@
-#coding=GBK
+#coding:GBK
 print('Hello World£¡')

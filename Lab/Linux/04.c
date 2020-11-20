@@ -1,5 +1,6 @@
 /* 下面程序会出现什么结果？为什么会出现这样的结果？ */
 #include  <stdio.h>
+#include <stdlib.h>
 
 int main(int argc, char *argv[])
 {
@@ -9,5 +10,7 @@ int main(int argc, char *argv[])
 	*(int *)&f >>= 24;
 	*(int *)&f = *(int *)&f + '?';
 	printf("ch = %c i = %c f = %c\n", ch, i, *(int *)&f);
+
+	system("pause");
 	return 0;
 }
