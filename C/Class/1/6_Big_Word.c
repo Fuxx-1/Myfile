@@ -11,7 +11,7 @@ int main(void)
     printf("ÇëÊäÈë×ÖÄ¸£º\n");
     scanf("%c", &a);
     printf("ÊäÈëµÄ×ÖÄ¸£º\n%c\n", a);
-    if (a > 65)
+    if (a > 92)
     {
         a = a + ('A' - 'a');
     }

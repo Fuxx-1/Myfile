@@ -21,7 +21,7 @@ struct
 {
     char c1; //1
     char c2; //1
-    int i;   //2
+    int i;   //4
 } x3;
 
 int main()

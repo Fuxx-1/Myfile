@@ -1,17 +1,25 @@
-/* åœ¨ä¸‹æ®µç¨‹åºä¸­ï¼Œæˆ‘ä»¬å¯ä»¥é€šè¿‡ç¬¬ä¸€æ­¥æ‰“å°å‡ºaçš„åœ°å€ï¼Œ
-å‡å¦‚åœ¨ä½ çš„æœºå™¨ä¸Šé¢æ‰“å°ç»“æžœæ˜¯0x7ffd737c6db4ï¼›æˆ‘ä»¬
-åœ¨ç¬¬äºŒæ­¥ç”¨scanfå‡½æ•°å°†è¿™ä¸ªåœ°å€å€¼è¾“å…¥å˜é‡cä¸­ï¼›ç¬¬ä¸‰æ­¥ï¼Œ
-éšæœºè¾“å…¥-ä¸ªæ•°å­—ï¼Œè¯·é—®æœ€ç»ˆè¾“å‡ºäº†ä»€ä¹ˆç»“æžœï¼Œä½ çŸ¥é“å…¶ä¸­çš„åŽŸç†å—ï¼Ÿ */
+/* ÔÚÏÂ¶Î³ÌÐòÖÐ£¬ÎÒÃÇ¿ÉÒÔÍ¨¹ýµÚÒ»²½´òÓ¡³öaµÄµØÖ·£¬
+¼ÙÈçÔÚÄãµÄ»úÆ÷ÉÏÃæ´òÓ¡½á¹ûÊÇ0x7ffd737c6db4£»ÎÒÃÇ
+ÔÚµÚ¶þ²½ÓÃscanfº¯Êý½«Õâ¸öµØÖ·ÖµÊäÈë±äÁ¿cÖÐ£»µÚÈý²½£¬
+Ëæ»úÊäÈë-¸öÊý×Ö£¬ÇëÎÊ×îÖÕÊä³öÁËÊ²Ã´½á¹û£¬ÄãÖªµÀÆäÖÐµÄÔ­ÀíÂð£¿ */
 #include <stdio.h>
+#include <stdlib.h>
 
 void func()
 {
 	int a = 2020;
-	unsigned long c;
+	int c;
 	printf("%p\n", &a);
-	printf("æˆ‘å€‘æƒ³è¦ä¿®æ”¹çš„åœ°å€ï¼š");
+	printf("ÎÒ‚ƒÏëÒªÐÞ¸ÄµÄµØÖ·£º");
 	scanf("%lx", &c);
-	printf("è«‹éš¨ä¾¿è¼¸å…¥ä¸€å€‹æ•¸å­—ï¼š");
+	printf("ÕˆëS±ãÝ”ÈëÒ»‚€”µ×Ö£º");
 	scanf("%d", (int *)c);
 	printf("a = %d\n", a);
+}
+int main(void)
+{
+	func();
+	
+	system("pause");
+	return 0;
 }

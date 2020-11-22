@@ -1,4 +1,6 @@
-/* 请解释一下这行代码做了什么？ */
+/* 
+请解释一下这行代码做了什么？
+ */
 #include <stdio.h>
 #include <stdlib.h>
 
