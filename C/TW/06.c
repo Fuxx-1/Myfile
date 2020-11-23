@@ -21,7 +21,6 @@ int main(void)
                 p += 1;
                 t++;
                 *p = t;
-                printf("%p\n", p);
             }
         }
         else if (time % 4 == 2)
@@ -32,7 +31,6 @@ int main(void)
                 p += n;
                 t++;
                 *p = t;
-                printf("%p\n", p);
             }
         }
         else if (time % 4 == 3)
@@ -43,7 +41,6 @@ int main(void)
                 p -= 1;
                 t++;
                 *p = t;
-                printf("%p\n", p);
             }
         }
         else if (time % 4 == 0)
@@ -54,20 +51,18 @@ int main(void)
                 p -= n;
                 t++;
                 *p = t;
-                printf("%p\n", p);
             }
         }
 
-        if ((m % 2 == 1)&& time != 1)
+        if (time % 2 && time != 1)
             q -= 1;
-        printf("%d\n", time);
-        time ++;
+        time++;
     }
     for (int i = 0; i < n; i++)
     {
         for (int j = 0; j < n; j++)
         {
-            printf("%-15d", a[i][j]);
+            printf("%-5d", a[i][j]);
         }
         printf("\n");
     }
