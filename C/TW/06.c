@@ -4,7 +4,6 @@ int main(void)
 {
     int n;
     scanf("%d", &n);
-    n = n + 1;
     int m = n + n - 1;
     int q = n;
     int t = 0;
@@ -49,15 +48,15 @@ int main(void)
                 *p = t;
             }
         }
-        if (m % 2 == 1)
+        if (m % 2)
             q -= 1;
         m -= 1;
     }
-    for (int i = 0; i < n - 1; i++)
+    for (int i = 0; i < n; i++)
     {
-        for (int j = 0; j < n - 1; j++)
+        for (int j = 0; j < n; j++)
         {
-            printf("%5d ", a[i][j]);
+            printf("%-5d", a[i][j]);
         }
         printf("\n");
     }
