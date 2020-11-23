@@ -19,7 +19,7 @@ int main(void)
             {
                 *p = t;
                 p += 1;
-                t += 1;
+                t++;
                 *p = t;
                 printf("%p\n", p);
             }
@@ -30,7 +30,7 @@ int main(void)
             {
                 *p = t;
                 p += n;
-                t += 1;
+                t++;
                 *p = t;
                 printf("%p\n", p);
             }
@@ -41,7 +41,7 @@ int main(void)
             {
                 *p = t;
                 p -= 1;
-                t += 1;
+                t++;
                 *p = t;
                 printf("%p\n", p);
             }
@@ -52,7 +52,7 @@ int main(void)
             {
                 *p = t;
                 p -= n;
-                t += 1;
+                t++;
                 *p = t;
                 printf("%p\n", p);
             }
@@ -60,13 +60,14 @@ int main(void)
 
         if ((m % 2 == 1)&& time != 1)
             q -= 1;
-        time += 1;
+        printf("%d\n", time);
+        time ++;
     }
     for (int i = 0; i < n; i++)
     {
         for (int j = 0; j < n; j++)
         {
-            printf("%-10d", a[i][j]);
+            printf("%-15d", a[i][j]);
         }
         printf("\n");
     }
