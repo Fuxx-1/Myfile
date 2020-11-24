@@ -12,17 +12,14 @@ int main(void)
     int q = 1;
     for (int i = 0; i < n - 1; i++)
     {
-        if (a[0] - a[1] != 1)
+        if (a[1] - a[0] != 1)
         {
             printf("false\n");
             return 0;
         }
-        
         int w = a[i + 1] - a[i];
         if (w <= (q + 2) && w >= (q - 2))
-        {
             q = w;
-        }
         else
         {
             printf("false\n");

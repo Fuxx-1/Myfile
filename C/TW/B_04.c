@@ -1,35 +1,73 @@
 #include <stdio.h>
-#include <stdlib.h>
-int com(int *a,int *t)
+/*打表部分
+int sg[10009];
+bool vis[10000];
+void init()
 {
-    for (int i = 0; i < t; i++)
+    memset(sg, 0, sizeof(sg));
+    for (int = 1;
+         i <= 201;
+         i++)
     {
-        if (a[i] > 3)
+        memset(vis, 0, sizeof(vis));
+        for (int j = 0; j < i; j++)
         {
-            a[i] /= 3;
-            reutrn 1;
+            vis[sg[j]] = 1;
+        }
+        for (int j = 1; j < i; j++)
+        {
+            for (int k = 1;
+                 k < i;
+                 k++)
+            {
+                int y = i - j - k;
+                if (y > 0)
+                    vis[sg[j] ^ sg[k] ^ sg[y]] = 1;
+            }
+        }
+        for (int j = 0;; j++)
+        {
+            if (!vis[j])
+            {
+                sg[i] = j;
+                break;
+            }
         }
     }
-    
+*/
+
+int sg(int a)
+{
+    if (a % 8 == 0)
+    {
+        return a - 1;
+    }
+    if ((a + 1) % 8 == 0)
+    {
+        return a + 1;
+    }
+    return a;
 }
-int main(void)
+int main()
 {
-    int n;
-    scanf("%d", &n);
-    for (int i = 0; i < n; i++)
+    int T;
+    scanf("%d", &T);
+    while (T--)
     {
-        int t = 0;
-        scanf("%d",&t);
-        int a[t];
-        for (int i = 0; i < t; i++)
+        int n;
+        scanf("%d", &n);
+        int ans = 0;
+        while (n--)
         {
-            scanf("%d", &a[i]);
+            int t;
+            scanf("%d", &t);
+            ans ^= sg(t);
+            if (!ans)
+            {
+                printf("Second player wins. \n");
+            }
+            else
+                printf("First player wins.\n");
         }
-        
     }
-    
-
-
-    system("pause");
-    return 0;
 }

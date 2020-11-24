@@ -62,7 +62,7 @@ int main(void)
     {
         for (int j = 0; j < n; j++)
         {
-            printf("%-5d", a[i][j]);
+            printf("%5d", a[i][j]);
         }
         printf("\n");
     }
