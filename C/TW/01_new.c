@@ -15,7 +15,7 @@ int main(void)
     }
     for (int i = 0; i < m; i++)
     {
-        double times;
+        double times = 0.0;
         double time = 0.0;
         double hp = 100.0;
         double rage = 0.0;
@@ -52,7 +52,7 @@ int main(void)
                 printf("年轻人不讲武德，年轻人赢了\n");
                 break;
             }
-            else if (hp <= 0 && rage <= 60)
+            else if (hp <= 0 && rage < 60)
             {
                 printf("马老没有输，马老赢了\n");
                 break;
