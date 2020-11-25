@@ -64,7 +64,7 @@ int main()
             ans ^= sg(t);
             if (!ans)
             {
-                printf("Second player wins. \n");
+                printf("Second player wins.\n");
             }
             else
                 printf("First player wins.\n");
