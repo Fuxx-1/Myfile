@@ -40,6 +40,5 @@ int main()
    c |=  2;
    printf("Line 11 - |= 运算符实例，c 的值 = %d\n", c );
 
-    system("pause");
     return 0;
 }
