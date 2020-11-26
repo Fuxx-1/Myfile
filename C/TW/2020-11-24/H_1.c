@@ -18,11 +18,13 @@ int main(void)
             {
                 a[0] += a[i];
             }
-            printf("%d\n", a[0]);
+            if (j != num - 1)
+                printf("%d\n\n", a[0]);
+            else
+                printf("%d\n", a[0]);
         }
         else
             break;
-        printf("\n");
     }
     return 0;
 }
