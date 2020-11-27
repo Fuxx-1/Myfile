@@ -1,5 +1,4 @@
 #include <stdio.h>
-#include <stdlib.h>
 
 int main()
 {
@@ -7,6 +6,5 @@ int main()
     scanf("%d%d", &a, &b);
     printf("%d", a + b);
     
-    system("pause");
     return 0;
 }

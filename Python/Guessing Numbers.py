@@ -1,5 +1,3 @@
-#coding:GBK
-
 temp = input("猜猜我想的是几：")
 
 guess = int(temp)

@@ -1,5 +1,5 @@
 #include <stdio.h>
-int a[21][21];
+int a[100][100];
 int main(void)
 {
     int n = 0, count = 1;
