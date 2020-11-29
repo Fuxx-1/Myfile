@@ -10,7 +10,7 @@ int main(void)
     }
     for (int i = 0; i < n; i++)
     {
-        if (a[i][0] / a[i][1] == 1 && a[i][0] % a[i][1] == 1)
+        if (a[i][0] % (a[i][1] + 1) == 0)
         {
             printf("second\n");
         }

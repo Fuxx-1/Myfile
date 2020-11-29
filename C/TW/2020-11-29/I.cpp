@@ -2,35 +2,36 @@
 #include <algorithm>
 int main(void)
 {
-    int m, sum;
-    scanf("%d", &m);
-    int a[50][500];
-    int n[50];
-    int k[50];
-    int b[500];
-    for (int i = 0; i < m; i++)
-    {
-        scanf("%d%d", &n[i], &k[i]);
-        for (int j = 0; j < n[i]; j++)
-        {
-            scanf("%d", &a[i][j]);
-        }
-    }
-    for (int i = 0; i < m; i++)
+    long long t, n, k, sum;
+    scanf("%lld", &t);
+    long long a[200000];
+    long long b[1000];
+    for (int i = 0; i < t; i++)
     {
         sum = 0;
-        for (int j = 0; j < n[i]; j++)
+        scanf("%lld%lld", &n, &k);
+        for (int j = 0; j < n; j++)
         {
-            b[j] = a[i][j];
+            scanf("%lld", &a[j]);
         }
-        int d = n[i];
-        std::sort(b, b + d);
-        for (int j = 0; j <= k[i]; j++)
+        std::sort(a, a + n);
+        sum = a[n - 1];
+        for (int j = 0; j < k; j++)
         {
-            int d = n[i] - 1 - j;
-            sum += b[d];
+            sum += a[n - j - 2];
         }
-        printf("%d\n", sum);
+        if (!k)
+        {
+            b[i] = sum - a[0];
+        }
+        else
+        {
+            b[i] = sum;
+        }
+    }
+    for (int i = 0; i < t; i++)
+    {
+        printf("%lld\n", b[i]);
     }
     return 0;
 }

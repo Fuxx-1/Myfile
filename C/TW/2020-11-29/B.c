@@ -1,20 +1,17 @@
 #include <stdio.h>
 int pend(int a)
 {
-    for (int i = a - 2; 1; i -= 2)
+    for (int i = 2; i * i <= a; i++)
     {
         if (!(a % i))
         {
-            if (i != 1)
+            if (i != a)
             {
                 return 0;
             }
-            else
-            {
-                return 1;
-            }
         }
     }
+    return 1;
 }
 int main(void)
 {
@@ -32,17 +29,11 @@ int main(void)
     for (int i = 0; i < count; i++)
     {
         b = 3, ans = 0;
-        for (int j = 0; 1; j++)
+        for (int j = 3; j < a[i] / 2; j++)
         {
-            c = a[i] - b;
-            if (pend(c) && pend(b) && b != c)
+            if (pend(j) && pend(a[i] - j) && b != c)
             {
                 ans++;
-            }
-            b += 2;
-            if (a[i] / 2 < b)
-            {
-                break;
             }
         }
         printf("%d\n", ans);
