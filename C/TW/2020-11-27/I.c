@@ -1,11 +1,11 @@
 #include <stdio.h>
 int main(void)
 {
-    int m, b, x, t;
-    long int a[10000];
+    long long int m, b, x, t;
+    long long int a[10000];
     for (int i = 0;; i++)
     {
-        scanf("%d", &a[i]);
+        scanf("%lld", &a[i]);
         if (!a[i])
             break;
     }
@@ -31,7 +31,7 @@ int main(void)
             }
             a[i] = b;
         }
-        printf("%d\n", b);
+        printf("%lld\n", b);
     }
     return 0;
 }
