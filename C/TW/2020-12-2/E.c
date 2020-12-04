@@ -94,7 +94,7 @@ int main(void)
     {
         for (int j = 0; j < dic; j++)
         {
-            if (str[i][0] >= str[j][0] && str[i][1] < str[j][1])
+            if (str[i][0] == str[j][0] && str[i][1] < str[j][1])
             {
                 for (int k = 0; k < 7; k++)
                 {
@@ -110,7 +110,7 @@ int main(void)
     {
         for (int j = 0; j < dic; j++)
         {
-            if (str[i][0] >= str[j][0] && str[i][1] >= str[j][1] && str[i][2] < str[j][2])
+            if (str[i][0] == str[j][0] && str[i][1] == str[j][1] && str[i][2] < str[j][2])
             {
                 for (int k = 0; k < 7; k++)
                 {
@@ -126,7 +126,7 @@ int main(void)
     {
         for (int j = 0; j < dic; j++)
         {
-            if (str[i][0] >= str[j][0] && str[i][1] >= str[j][1] && str[i][2] >= str[j][2] && str[i][3] < str[j][3])
+            if (str[i][0] == str[j][0] && str[i][1] == str[j][1] && str[i][2] == str[j][2] && str[i][3] < str[j][3])
             {
                 for (int k = 0; k < 7; k++)
                 {
@@ -142,7 +142,7 @@ int main(void)
     {
         for (int j = 0; j < dic; j++)
         {
-            if (str[i][0] >= str[j][0] && str[i][1] >= str[j][1] && str[i][2] >= str[j][2] && str[i][3] >= str[j][3] && str[i][4] < str[j][4])
+            if (str[i][0] == str[j][0] && str[i][1] == str[j][1] && str[i][2] == str[j][2] && str[i][3] == str[j][3] && str[i][4] < str[j][4])
             {
                 for (int k = 0; k < 7; k++)
                 {
