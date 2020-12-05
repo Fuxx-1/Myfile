@@ -11,11 +11,11 @@ int main(void)
     int j = 0, m = 0;
     for (int i = 0; i < n / 2 + n % 2; i++)
     {
-        if (j != 1 && a[i] < k)
+        if (j != 1 && a[i] <= k)
             count++;
         else
             j = 1;
-        if (m != 1 && i != n - i - 1 && a[n - i - 1] < k)
+        if (m != 1 && i != n - i - 1 && a[n - i - 1] <= k)
             count++;
         else
             m = 1;

@@ -1,2 +1,1 @@
-#coding:GBK
-print('Hello World£¡')
+print('Hello World!')
