@@ -14,7 +14,7 @@ int main()
     for (i = 0, j = m - 1; i < m; i++, j--)
     {
         b[i] = numberM[j] - '0';
-    }
+    
     int c[3000];
     for (i = 0; i < 3000; i++)
     {

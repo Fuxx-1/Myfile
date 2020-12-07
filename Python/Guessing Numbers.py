@@ -1,4 +1,4 @@
-temp = input("猜猜我想的是几：")
+temp = input("猜猜我想的是几：\n")
 
 guess = int(temp)
 
