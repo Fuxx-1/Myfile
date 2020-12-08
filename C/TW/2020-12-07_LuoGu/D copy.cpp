@@ -16,13 +16,14 @@ int main(void)
     }
     int mid;
     int *temp;
-    std::sort(a, a + 1000000);
     for (int i = 0; i < m; i++)
     {
-        temp = std::lower_bound(a, a + 1000000, b[i]);
+        temp = std::lower_bound(a, a + n, b[i]);
         mid = temp - &a[0];
-        if (*temp == b[i])
-            printf("%d ", mid + 1 - 1000000 + n);
+        if (std::binary_search(a, a + n, b[i]))
+            printf("%d ", mid + 1);
+        else if (a[0] == 0 && b[i] == 0)
+            printf("1");
         else
             printf("-1 ");
     }
