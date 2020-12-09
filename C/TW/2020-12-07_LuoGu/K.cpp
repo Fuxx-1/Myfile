@@ -1,11 +1,11 @@
 #include <stdio.h>
 #include <algorithm>
+int x[5000], y[3000];
+int dp[5000][4500];
 int main(void)
 {
     int n, s, a, b;
     scanf("%d%d%d%d", &n, &s, &a, &b);
-    int x[300], y[150];
-    int dp[300][150];
     int count = 0;
     for (int i = 1; i <= n; i++)
     {

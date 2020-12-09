@@ -1,7 +1,7 @@
 #include <stdio.h>
 int main(void)
 {
-    char str[13];
+    char str[14];
     scanf("%s", str);
     int val = 0;
     val += (str[0] - '0') * 1;

@@ -1,6 +1,6 @@
 #include <stdio.h>
 #include <algorithm>
-int a[1001][1001];
+int a[1200][1200];
 int b;
 int sum;
 int main(void)
