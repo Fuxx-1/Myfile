@@ -3,7 +3,7 @@ int main(void)
 {
     int n, t;
     scanf("%d%d", &t, &n);
-    int a[100][2];
+    int a[10000][2];
     for (int i = 0; i < n; i++)
     {
         scanf("%d%d", &a[i][0], &a[i][1]);
@@ -25,7 +25,7 @@ int main(void)
             }
         }
     }
-    double sum1, sum2;
+    double sum1 = 0, sum2 = 0;
     for (int i = 0; i < n; i++)
     {
         if (t - sum1 > a[i][0])
