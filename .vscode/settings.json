@@ -1,2 +1,29 @@
 {
-}
+    "terminal.integrated.shell.windows": "C:\\\\Windows\\\\System32\\\\cmd.exe",
+    "files.autoSave": "afterDelay",
+    // "editor.fontSize": 14,
+    "explorer.confirmDelete": false,
+    "window.zoomLevel": 0,
+    "editor.formatOnSave": true,
+    "vetur.format.defaultFormatter.html": "js-beautify-html",
+    "workbench.statusBar.visible": true,
+    "workbench.activityBar.visible": true,
+    "window.menuBarVisibility": "default",
+    "workbench.sideBar.location": "left",
+    "cmake.configureOnOpen": true,
+    "explorer.confirmDragAndDrop": false,
+    "java.jdt.ls.vmargs": "-noverify -Xmx1G -XX:+UseG1GC -XX:+UseStringDeduplication -javaagent:\"C:\\Users\\wmy\\.vscode\\extensions\\gabrielbb.vscode-lombok-0.9.7/server/lombok.jar\" -Xbootclasspath/a:\"C:\\Users\\wmy\\.vscode\\extensions\\gabrielbb.vscode-lombok-0.9.7/server/lombok.jar\"",
+    "java.configuration.maven.userSettings": "E:/apache-maven-3.6.0/conf/settings.xml",
+    "java.home": "C:/Program Files/Java/jdk1.8.0_201",
+    "maven.executable.path": "E:/apache-maven-3.6.0/bin/mvn",
+    "maven.terminal.customEnv": [
+      {
+        "environmentVariable": "JAVA_HOME",
+        "value": "C:/Program Files/Java/jdk1.8.0_201"
+      }
+    ],
+    "editor.suggestSelection": "first",
+    "vsintellicode.modify.editor.suggestSelection": "automaticallyOverrodeDefaultValue"
+  }
+  
+  

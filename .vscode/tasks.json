@@ -1,9 +1,8 @@
 {
-// 有关 tasks.json 格式的文档，请参见
+    // 有关 tasks.json 格式的文档，请参见
     // https://go.microsoft.com/fwlink/?LinkId=733558
     "version": "2.0.0",
-    "tasks": [
-        {
+    "tasks": [{
             "type": "shell",
             "label": "gcc.exe build active file",
             "command": "gcc",
@@ -21,6 +20,15 @@
                 "$gcc"
             ],
             "group": "build"
+        },
+        {
+            "type": "shell",
+            "label": "clear exes", // 清空工作区内所有的exe文件
+            "command": "rm ${workspaceRoot}n/exes/*.exe",
+            "problemMatcher": [
+                "$gcc"
+            ]
         }
-    ]
+    }
+]
 }
