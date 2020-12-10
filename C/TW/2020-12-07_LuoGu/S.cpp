@@ -22,7 +22,7 @@ int main(void)
         {
             if (a[i] >= b[j] && a[i] <= b[j + 1])
             {
-                val += a[i] - b[j] > b[j + 1] - a[i] ? b[j + 1] - a[i] : a[i] - b[j];
+                val += (a[i] - b[j] > b[j + 1] - a[i] ? (b[j + 1] - a[i]) : (a[i] - b[j]));
                 break;
             }
             else if (a[i] < b[j])
@@ -30,16 +30,17 @@ int main(void)
                 val += b[j] - a[i];
                 break;
             }
-            else if (j - m)
+            else if (j - m - 1)
             {
                 j++;
-                break;
             }
             else
             {
                 val += a[i] - b[j];
+                break;
             }
         }
+        printf("%d %d\n", a[i], b[j]);
         i++;
     }
     printf("%d", val);
