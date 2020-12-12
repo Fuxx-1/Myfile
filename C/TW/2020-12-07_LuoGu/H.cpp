@@ -1,6 +1,6 @@
 #include <stdio.h>
 #include <algorithm>
-long long int b[5003];
+long long int b[10000];
 int main(void)
 {
     int n;
@@ -13,11 +13,9 @@ int main(void)
         b[a[i]]++;
     }
     std::sort(a, a + n);
-    int j;
     for (int i = 0; i < n; i++)
     {
-        j = i + 1;
-        for (; j < n; j++)
+        for (int j = i + 1; j < n; j++)
         {
             if (b[a[i] + a[j]] >= 2 && i != j)
             {
