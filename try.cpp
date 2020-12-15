@@ -1,13 +1,18 @@
 #include <stdio.h>
+#include <algorithm>
 int main(void)
 {
-    int a[30];
-    int n = 1;
-    for (int i = 0; i < 30; i++)
+    int t;
+    scanf("%d", &t);
+    int a[10000];
+    for (size_t i = 0; i < t; i++)
     {
-        a[i] = n;
-        n *= 2;
-        printf("%d, ", a[i]);
+        scanf("%d", &a[i]);
     }
+    for (int i = 0; i < count; i++)
+    {
+        /* code */
+    }
+    
     return 0;
 }
