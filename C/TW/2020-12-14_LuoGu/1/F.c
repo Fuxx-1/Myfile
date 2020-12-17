@@ -1,23 +1,25 @@
 #include <stdio.h>
+
+int odd[100000005];
+
 int main(void)
 {
-    int flag, n, a = 2, count = 0;
+    int n, count = 0;
     scanf("%d", &n);
-    while (a <= n)
+    odd[1] = 1;
+    for (int i = 2; i < n; i++)
     {
-        flag = 0;
-        for (int i = 2; i * i <= a; i++)
+        if (!odd[i])
         {
-            if (!(a % i))
+            for (int j = i * 2; j <= n; j += i)
             {
-                flag = 0;
-                break;
+                odd[j] = 1;
             }
-            flag = 1;
         }
-        if (flag || a == 2 || a == 3)
+        else
+        {
             count++;
-        a++;
+        }
     }
     printf("%d", count);
     return 0;

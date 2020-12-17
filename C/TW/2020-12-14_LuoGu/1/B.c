@@ -2,7 +2,7 @@
 int main(void)
 {
     unsigned long long int x, y, sum = 0;
-    scanf("%d%d", &x, &y);
+    scanf("%lld%lld", &x, &y);
     for (int i = x; i <= y; i++)
     {
         for (int j = 1; j <= i; j++)
@@ -13,6 +13,6 @@ int main(void)
             }
         }
     }
-    printf("%d", sum);
+    printf("%lld", sum);
     return 0;
 }

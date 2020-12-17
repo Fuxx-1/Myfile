@@ -16,7 +16,9 @@ int main(void)
             flag = 1;
         }
         if (flag || a == 2 || a == 3)
-            printf("%d\n", a);
+            printf(", %d", a);
+        else
+            printf(", 0");
         a++;
     }
     return 0;
