@@ -23,7 +23,7 @@ int main(void)
     {
         min = 0;
     }
-    else if(!(m - n))
+    else if (!(m - n))
     {
         for (int j = 0; j < m; j++)
         {
