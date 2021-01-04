@@ -36,3 +36,9 @@ void quick_sort(int arr[], int len)
 {
     quick_sort_recursive(arr, 0, len - 1);
 }
+int main(void)
+{
+    int arr[5] = {5, 4, 3, 2, 1};
+    quick_sort(arr, 5);
+    return 0;
+}
