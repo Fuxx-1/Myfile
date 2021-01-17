@@ -1,5 +1,3 @@
-package Myfile.Java;
-
 public class Test {
     public static void main(String[] args) {
         for (float y = (float) 1.5; y > -1.5; y -= 0.1) {

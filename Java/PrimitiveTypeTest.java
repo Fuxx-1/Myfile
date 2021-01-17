@@ -1,5 +1,3 @@
-package Myfile.Java;
-
 public class PrimitiveTypeTest {
     public static void main(String[] args) {  
         // byte  

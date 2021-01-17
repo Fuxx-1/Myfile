@@ -14,6 +14,5 @@ int main(void)
         scanf("%d%d", &a, &b);
         printf("%d\n", a + b);
     }
-    system("pause");
     return 0;
 }
