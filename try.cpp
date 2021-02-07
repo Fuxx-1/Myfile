@@ -1,25 +1,15 @@
-#include <iostream>
-#include <algorithm>
-
-using namespace std;
-
-bool compare(int a, int b)
+#include <stdio.h>
+int sum(int x, int y);
+int main(void)
 {
-    return a > b;
+	int a, b, c;
+	scanf("%d %d", &a, &b);
+	c = sum(a, b);
+	printf("%d\n", c);
+	return 0;
+}
+int sum(int x, int y)
+{
+	return (x + y);
 }
 
-int main()
-{
-    int n;
-    int a[10010];
-    cin >> n;
-    
-    for (int i = 0; i < n; i++)
-    {
-        cin >> a[i];
-    }
-    
-    sort(a, a + n, compare);
-    cout << a[0] << endl;
-    return 0;
-}

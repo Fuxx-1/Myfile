@@ -12,7 +12,7 @@ int main(void)
             for (int i = 0; i < n; ++i)
             {
                 scanf("%d", &a[i]);
-                if (i > 1)
+                if (i >= 1)
                 {
                     a[0] += a[i];
                 }
