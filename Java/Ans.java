@@ -8,6 +8,7 @@ class Thoughtworks {
         this.name = name;
         this.major = major;
     }
+
     //构造
     public void setname(String name) {
         this.name = name;
@@ -16,6 +17,7 @@ class Thoughtworks {
     public void setmajor(String major) {
         this.major = major;
     }
+
     //set
     public String getname() {
         return name;
@@ -24,6 +26,7 @@ class Thoughtworks {
     public String getmajor() {
         return major;
     }
+
     //get
     public void show() {
         System.out.println("我是" + name + ",我学的方向是" + major);
@@ -38,6 +41,7 @@ class Front_end extends Thoughtworks {
     public Front_end(String name, String major) {
         super(name, major);
     }
+
     //构造
     public void study() {
         System.out.println("我爱学CSS");
@@ -52,6 +56,7 @@ class Backstage extends Thoughtworks {
     public Backstage(String name, String major) {
         super(name, major);
     }
+
     //构造
     public void study() {
         System.out.println("我爱学Java");
