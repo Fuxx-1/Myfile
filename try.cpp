@@ -1,36 +1,23 @@
-#include <cstdio>
-#include <cstring>
-#include <algorithm>
-using namespace std;
-
-typedef long long ll;
-
-ll n, ans;
-
-void dfs(ll wei, ll tot)
-{ //wei表示当前的tot总共有多少位。
-	if (ans != -1)
-		return;
-	if (wei > 19)
-		return;
-	if (tot % n == 0)
-	{
-		ans = tot;
-		return;
-	}
-	dfs(wei + 1, tot * 10);
-	dfs(wei + 1, tot * 10 + 1);
-}
-
-int main()
+#include <stdio.h>
+int main(void)
 {
+	double a, b;
+	int x;
 
-	while (~scanf("%lld", &n) && n)
+	scanf("%lf%lf", &a, &b);
+
+	x = (int)(((a - b) / b * 100) + 0.5);
+	if (x < 10)
 	{
-
-		ans = -1;
-		dfs(1, 1);
-		printf("%lld\n", ans);
+		printf("OK\n");
+	}
+	else if (x >= 10 && x < 50)
+	{
+		printf("Exceed %d%%. Ticket 200", x);
+	}
+	else
+	{
+		printf("Exceed %d%%. License Revoked", x);
 	}
 
 	return 0;
