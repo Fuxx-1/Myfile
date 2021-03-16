@@ -1,5 +1,5 @@
 public class User {
-    String name;
+    private String name;
     private int balance;
 
     public User(String name, int balance) {
