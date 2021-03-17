@@ -8,8 +8,10 @@ int main(void)
     printf("*****按任意键开始同步*****\n");
     system("pause > nul");
     system("cd  %~dp0");
-
-    system("call git push origin main");
+    system("call git add --all");
+    system("call git commit -m \"%date:~3,4%-%date:~8,2%-%date:~11,2%\"");
+    printf("*****更改已提交，等待推送*****\n");
+    int a = printf(system("call git push origin main"));
     printf("*****命令执行结束，按任意键退出*****\n");
     system("pause > nul");
     return 0;
