@@ -12,9 +12,12 @@ int main(void)
     system("call git commit -m \"%date:~3,4%-%date:~8,2%-%date:~11,2%\"");
     printf("*****更改已提交，等待推送*****\n");
     int a = 100;
+    FILE *fp = NULL;
+    fp = fopen("./RunningLogForGitHub.txt", "a");
+    fprintf(fp, "This is testing for fprintf...\n");
     while (a < 300)
     {
-        a = printf("system(\"call git push origin main\")");
+        a = fprintf(fp, system("call git push origin main"));
     }
     printf("*****命令执行结束，按任意键退出*****\n");
     system("pause > nul");
