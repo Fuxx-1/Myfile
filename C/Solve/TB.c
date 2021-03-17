@@ -17,7 +17,7 @@ int main(void)
     fprintf(fp, "This is testing for fprintf...\n");
     while (a < 300)
     {
-        a = fprintf(fp, system("call git push origin main"));
+        a = fprintf(fp, "system(\"call git push origin main\")");
     }
     printf("*****命令执行结束，按任意键退出*****\n");
     system("pause > nul");
