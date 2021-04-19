@@ -1,9 +1,14 @@
 #include <stdio.h>
-int main(void) {
-    char s[] = "mydoghasabook";
-    char key = 'o';
-    int i = 0, j = 0;
-    for (; !(s[i] - key) || (s[j++] = s[i]); i++) {}
-    puts(s);
+typedef struct Sutdent
+{
+    int num;
+    int source;
+    char name[20];
+    struct Student *next;
+} STU;
+
+int main(int argc, char const *argv[])
+{
+    printf("%d", sizeof(STU->num));
     return 0;
 }
