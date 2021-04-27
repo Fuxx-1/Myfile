@@ -75,10 +75,6 @@ class LinkedListby2Way<T> {
         }
     }
 
-    public void SortList() {
-        
-    }
-
     private class Node {
         T item;
         Node next, pre;
