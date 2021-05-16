@@ -1,0 +1,301 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ArtifactsWorkspaceSettings">
+    <artifacts-to-build>
+      <artifact name="Java_Web:war exploded" />
+    </artifacts-to-build>
+  </component>
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="14ba65be-106f-493f-8f2d-d8084b160a7e" name="默认变更列表" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/Java.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/artifacts/Java_Web_war.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/artifacts/Java_Web_war_exploded.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/jarRepositories.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Java.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__javax_javaee_web_api_8_0_1.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_apiguardian_apiguardian_api_1_1_0.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_junit_jupiter_junit_jupiter_api_5_7_0.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_junit_jupiter_junit_jupiter_engine_5_7_0.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_junit_platform_junit_platform_commons_1_7_0.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_junit_platform_junit_platform_engine_1_7_0.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_opentest4j_opentest4j_1_2_0.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/JavaFile/File/File.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/JavaFile/JavaFile.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Java_Web/Java_Web.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Java_Web/pom.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Java_Web/src/main/java/com/example/Java_Web/HelloApplication.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Java_Web/src/main/java/com/example/Java_Web/HelloResource.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Java_Web/src/main/java/com/example/Java_Web/HelloServlet.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Java_Web/src/main/resources/META-INF/beans.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Java_Web/src/main/resources/META-INF/persistence.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Java_Web/src/main/webapp/WEB-INF/web.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Java_Web/src/main/webapp/index.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/artifacts/Java_jar.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/uiDesigner.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/File/2021-03-14-Test/A.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/File/2021-03-14-Test/C.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/File/2021-03-14-Test/NumberAddOne.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/File/2021-03-14-Test/VariableDemo.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/File/2021-04-01/Test.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/File/DataSort&amp;SaveInfo/FileUtil.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/File/DataSort&amp;SaveInfo/InputUtil.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/File/DataSort&amp;SaveInfo/Main.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/File/DataSort&amp;SaveInfo/Menu.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/File/DataSort&amp;SaveInfo/Service.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/File/DataSort&amp;SaveInfo/Student.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/File/DataSort/InputUtil.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/File/DataSort/Main.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/File/DataSort/Service.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/File/DataSort/Student.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/File/GetString&amp;SaveDir/InputUtil.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/File/GetString&amp;SaveDir/Main.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/File/GetString&amp;SaveDir/Service.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/File/HandOutRedEnvelopes/GroupLeader.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/File/HandOutRedEnvelopes/Main.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/File/HandOutRedEnvelopes/Member.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/File/HandOutRedEnvelopes/User.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/File/LuoGu 21-02-01/A.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/File/LuoGu 21-02-01/B.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/File/LuoGu 21-02-01/C.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/File/LuoGu 21-02-01/D.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/File/LuoGu 21-02-01/E.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/File/LuoGu 21-02-01/F.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/File/LuoGu 21-02-01/G.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/File/LuoGu 21-02-01/H.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/File/LuoGu 21-02-01/I.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/File/LuoGu 21-02-01/J.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/File/LuoGu 21-02-01/K.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/File/LuoGu 21-02-01/L.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/File/LuoGu 21-02-01/M.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/File/LuoGu 21-02-01/N.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/File/LuoGu 21-02-01/O.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/File/LuoGu 21-02-01/P.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/File/LuoGu 21-02-01/Q.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/File/MaxOfNumbers/InputUtil.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/File/MaxOfNumbers/Main.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/File/MaxOfNumbers/Service.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/File/OddEvenStatistics/InputUtil.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/File/OddEvenStatistics/Main.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/File/OddEvenStatistics/Service.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/File/ReverseOfString/InputUtil.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/File/ReverseOfString/Main.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/File/ReverseOfString/Menu.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/File/ReverseOfString/Server.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/File/Stack、Queue、List/Leetcode_Queue&amp;Stack/Island.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/File/Stack、Queue、List/OneWayLinkedList.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/File/Stack、Queue、List/Queue.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/File/Stack、Queue、List/Stack.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/File/Stack、Queue、List/TwoWayLinkedList.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/File/UserLogin/InputUtil.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/File/UserLogin/Main.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/File/UserLogin/Service.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/File/UserLogin/Test.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/File/VotingElection/InputUtil.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/File/VotingElection/Main.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/File/VotingElection/Menu.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/File/VotingElection/Service.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/File/VotingElection/Student.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Java.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Test/Ans.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Test/HelloWorld.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Test/IntputDemo.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Test/JavaDemo.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Test/Num.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Test/PrimitiveTypeTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Test/Test.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Test/Test2.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Test/ThreadDemo.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/Java_jar/Java.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../try.c" beforeDir="false" afterPath="$PROJECT_DIR$/../try.c" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
+  </component>
+  <component name="LogFilters">
+    <option name="FILTER_ERRORS" value="false" />
+    <option name="FILTER_WARNINGS" value="false" />
+    <option name="FILTER_INFO" value="true" />
+    <option name="FILTER_DEBUG" value="true" />
+    <option name="CUSTOM_FILTER" />
+  </component>
+  <component name="ProjectId" id="1sKuOnKoa2PEdAVU60YFx4vy2UA" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectViewState">
+    <option name="autoscrollToSource" value="true" />
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="aspect.path.notification.shown" value="true" />
+    <property name="full.screen.before.presentation.mode" value="false" />
+    <property name="node.js.detected.package.eslint" value="true" />
+    <property name="node.js.detected.package.tslint" value="true" />
+    <property name="node.js.path.for.package.eslint" value="project" />
+    <property name="node.js.path.for.package.tslint" value="project" />
+    <property name="node.js.selected.package.eslint" value="(autodetect)" />
+    <property name="node.js.selected.package.tslint" value="(autodetect)" />
+    <property name="project.structure.last.edited" value="Facet" />
+    <property name="project.structure.proportion" value="0.15" />
+    <property name="project.structure.side.proportion" value="0.2" />
+  </component>
+  <component name="RestClientSettings">
+    <option name="REQUEST_HISTORY">
+      <list>
+        <RestClientRequest>
+          <option name="httpMethod" value="GET" />
+          <option name="urlBase" value="http://localhost/hello-world" />
+          <option name="urlPath" value="" />
+          <option name="textToSend" value="" />
+          <option name="filesToSend" value="" />
+        </RestClientRequest>
+      </list>
+    </option>
+  </component>
+  <component name="RunManager" selected="应用程序.Test">
+    <configuration name="Test" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="Test" />
+      <module name="File" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="generated-requests 中的所有内容" type="HttpClient.HttpRequestRunConfigurationType" factoryName="HTTP Request" temporary="true" path="$APPLICATION_CONFIG_DIR$/scratches/generated-requests.http">
+      <method v="2" />
+    </configuration>
+    <configuration name="Java_web" type="#com.intellij.j2ee.web.tomcat.TomcatRunConfigurationFactory" factoryName="Local" APPLICATION_SERVER_NAME="Tomcat 8.5.65" ALTERNATIVE_JRE_ENABLED="false">
+      <option name="UPDATE_CLASSES_ON_FRAME_DEACTIVATION" value="true" />
+      <deployment>
+        <artifact name="Java_Web:war exploded">
+          <settings>
+            <option name="CONTEXT_PATH" value="/Java_Web_war_exploded" />
+          </settings>
+        </artifact>
+      </deployment>
+      <server-settings>
+        <option name="BASE_DIRECTORY_NAME" value="eb230d08-166f-4b0a-a0fe-a61f5d5fc6d5" />
+      </server-settings>
+      <predefined_log_file enabled="true" id="Tomcat" />
+      <predefined_log_file enabled="true" id="Tomcat Catalina" />
+      <predefined_log_file id="Tomcat Manager" />
+      <predefined_log_file id="Tomcat Host Manager" />
+      <predefined_log_file id="Tomcat Localhost Access" />
+      <RunnerSettings RunnerId="Debug">
+        <option name="DEBUG_PORT" value="10021" />
+      </RunnerSettings>
+      <ConfigurationWrapper VM_VAR="JAVA_OPTS" RunnerId="Cover">
+        <option name="USE_ENV_VARIABLES" value="true" />
+        <STARTUP>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </STARTUP>
+        <SHUTDOWN>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </SHUTDOWN>
+      </ConfigurationWrapper>
+      <ConfigurationWrapper VM_VAR="JAVA_OPTS" RunnerId="Debug">
+        <option name="USE_ENV_VARIABLES" value="true" />
+        <STARTUP>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </STARTUP>
+        <SHUTDOWN>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </SHUTDOWN>
+      </ConfigurationWrapper>
+      <ConfigurationWrapper VM_VAR="JAVA_OPTS" RunnerId="Profile">
+        <option name="USE_ENV_VARIABLES" value="true" />
+        <STARTUP>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </STARTUP>
+        <SHUTDOWN>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </SHUTDOWN>
+      </ConfigurationWrapper>
+      <ConfigurationWrapper VM_VAR="JAVA_OPTS" RunnerId="Run">
+        <option name="USE_ENV_VARIABLES" value="true" />
+        <STARTUP>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </STARTUP>
+        <SHUTDOWN>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </SHUTDOWN>
+      </ConfigurationWrapper>
+      <method v="2">
+        <option name="Make" enabled="true" />
+        <option name="BuildArtifacts" enabled="true">
+          <artifact name="Java_Web:war exploded" />
+        </option>
+      </method>
+    </configuration>
+    <list>
+      <item itemvalue="HTTP 请求.generated-requests 中的所有内容" />
+      <item itemvalue="Tomcat Server.Java_web" />
+      <item itemvalue="应用程序.Test" />
+    </list>
+    <recent_temporary>
+      <list>
+        <item itemvalue="应用程序.Test" />
+        <item itemvalue="HTTP 请求.generated-requests 中的所有内容" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="默认任务">
+      <changelist id="14ba65be-106f-493f-8f2d-d8084b160a7e" name="默认变更列表" comment="" />
+      <created>1620633576664</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1620633576664</updated>
+      <workItem from="1620633581711" duration="1352000" />
+      <workItem from="1620645342950" duration="7254000" />
+      <workItem from="1620654465128" duration="170000" />
+      <workItem from="1620731122090" duration="31000" />
+      <workItem from="1620731169736" duration="5012000" />
+      <workItem from="1620808772896" duration="1046000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+</project>
