@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VueTest</title>
+    <script src="https://cdn.bootcdn.net/ajax/libs/jquery/3.6.0/jquery.js"></script>
+    <script src="https://cdn.bootcdn.net/ajax/libs/vue/2.1.7/vue.min.js"></script>
+    <script src="https://cdn.bootcdn.net/ajax/libs/axios/0.21.1/axios.min.js"></script>
+    <script src="./VueTest.js"></script>
+</head>
+
+<body>
+    <div id="message">
+        <input type="button" value="切换" @click="changeState1">
+        <div v-html="message" v-show="isShow"></div>
+        <div v-html="message" v-if="isShow"></div>
+        <img :src="active" v-show="isShow" alt="background-image" height="100px"><br>
+    </div><br>
+    <div id="message2">
+        <div v-text="message2"></div>
+        <input type="text" v-model="nums">
+        <input type="button" value="输出" @click="changeState2">
+        <ul>
+            <li v-for="item in nums">
+                {{ item }}
+            </li>
+        </ul>
+    </div>
+</body>
+
+</html>

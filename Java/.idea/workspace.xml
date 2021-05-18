@@ -2,127 +2,318 @@
 <project version="4">
   <component name="ArtifactsWorkspaceSettings">
     <artifacts-to-build>
-      <artifact name="Java_Web:war exploded" />
+      <artifact name="JavaWebDemo:war exploded" />
     </artifacts-to-build>
   </component>
   <component name="AutoImportSettings">
-    <option name="autoReloadType" value="SELECTIVE" />
+    <option name="autoReloadType" value="ALL" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="14ba65be-106f-493f-8f2d-d8084b160a7e" name="默认变更列表" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/Java.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/artifacts/Java_Web_war.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/artifacts/Java_Web_war_exploded.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/jarRepositories.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Java.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__javax_javaee_web_api_8_0_1.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_apiguardian_apiguardian_api_1_1_0.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_junit_jupiter_junit_jupiter_api_5_7_0.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_junit_jupiter_junit_jupiter_engine_5_7_0.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_junit_platform_junit_platform_commons_1_7_0.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_junit_platform_junit_platform_engine_1_7_0.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_opentest4j_opentest4j_1_2_0.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/JavaFile/File/File.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/JavaFile/JavaFile.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Java_Web/Java_Web.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Java_Web/pom.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Java_Web/src/main/java/com/example/Java_Web/HelloApplication.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Java_Web/src/main/java/com/example/Java_Web/HelloResource.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Java_Web/src/main/java/com/example/Java_Web/HelloServlet.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Java_Web/src/main/resources/META-INF/beans.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Java_Web/src/main/resources/META-INF/persistence.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Java_Web/src/main/webapp/WEB-INF/web.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Java_Web/src/main/webapp/index.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/artifacts/Java_jar.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" beforeDir="false" />
+    <list default="true" id="146c6b5b-5dc8-4b04-835a-c1ccd6709278" name="默认变更列表" comment="默认变更列表">
+      <change afterPath="$PROJECT_DIR$/.idea/gradle.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries-with-intellij-classes.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/JavaWebDemo/src/main/webapp/WEB-INF/web.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../JavaFile/.idea/Java.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../JavaFile/JavaFile/JavaFile.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../C/Class/Day1/01.c" beforeDir="false" afterPath="$PROJECT_DIR$/../C/Class/Day1/01.c" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../C/List/Control.c" beforeDir="false" afterPath="$PROJECT_DIR$/../C/List/Control.c" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../C/List/Control2.c" beforeDir="false" afterPath="$PROJECT_DIR$/../C/List/Control2.c" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../C/List/List.c" beforeDir="false" afterPath="$PROJECT_DIR$/../C/List/List.c" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../C/List/List_Over.c" beforeDir="false" afterPath="$PROJECT_DIR$/../C/List/List_Over.c" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../C/Project/Git_1.c" beforeDir="false" afterPath="$PROJECT_DIR$/../C/Project/Git_1.c" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../C/Project/Git_2.c" beforeDir="false" afterPath="$PROJECT_DIR$/../C/Project/Git_2.c" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../C/Training/2020-Week1/A.c" beforeDir="false" afterPath="$PROJECT_DIR$/../C/Training/2020-Week1/A.c" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../C/Training/2020-Week1/D.c" beforeDir="false" afterPath="$PROJECT_DIR$/../C/Training/2020-Week1/D.c" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../C/Training/2020-Week1/F.c" beforeDir="false" afterPath="$PROJECT_DIR$/../C/Training/2020-Week1/F.c" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../C/Training/2020-Week1/H.c" beforeDir="false" afterPath="$PROJECT_DIR$/../C/Training/2020-Week1/H.c" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../C/Training/2020-Week1/I.c" beforeDir="false" afterPath="$PROJECT_DIR$/../C/Training/2020-Week1/I.c" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../C/Training/2020-Week1/M.c" beforeDir="false" afterPath="$PROJECT_DIR$/../C/Training/2020-Week1/M.c" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../C/Training/2020-Week1/O.c" beforeDir="false" afterPath="$PROJECT_DIR$/../C/Training/2020-Week1/O.c" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../C/Training/2020-Week1/P.c" beforeDir="false" afterPath="$PROJECT_DIR$/../C/Training/2020-Week1/P.c" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../C/Training/2020-Week1/Q.c" beforeDir="false" afterPath="$PROJECT_DIR$/../C/Training/2020-Week1/Q.c" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../C/Tree/Tree.c" beforeDir="false" afterPath="$PROJECT_DIR$/../C/Tree/Tree.c" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../C/Tree/Tree_Del.c" beforeDir="false" afterPath="$PROJECT_DIR$/../C/Tree/Tree_Del.c" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Html/2021-03-03.html" beforeDir="false" afterPath="$PROJECT_DIR$/../Html/2021-03-03.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Html/Q.html" beforeDir="false" afterPath="$PROJECT_DIR$/../Html/Q.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Html/Test copy.html" beforeDir="false" afterPath="$PROJECT_DIR$/../Html/Test copy.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Html/Test.html" beforeDir="false" afterPath="$PROJECT_DIR$/../Html/Test.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Html/Web/Commit/Commit.css" beforeDir="false" afterPath="$PROJECT_DIR$/../Html/Web/Commit/Commit.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Html/Web/Commit/Commit.html" beforeDir="false" afterPath="$PROJECT_DIR$/../Html/Web/Commit/Commit.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Html/Web/FileSelect_1/FileSelect.css" beforeDir="false" afterPath="$PROJECT_DIR$/../Html/Web/FileSelect_1/FileSelect.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Html/Web/FileSelect_1/FileSelect.js" beforeDir="false" afterPath="$PROJECT_DIR$/../Html/Web/FileSelect_1/FileSelect.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Html/Web/FileSelect_1/FileSelect_1.html" beforeDir="false" afterPath="$PROJECT_DIR$/../Html/Web/FileSelect_1/FileSelect_1.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Html/Web/FileSelect_2/FileSelect.css" beforeDir="false" afterPath="$PROJECT_DIR$/../Html/Web/FileSelect_2/FileSelect.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Html/Web/FileSelect_2/FileSelect.js" beforeDir="false" afterPath="$PROJECT_DIR$/../Html/Web/FileSelect_2/FileSelect.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Html/Web/FileSelect_2/FileSelect_2.html" beforeDir="false" afterPath="$PROJECT_DIR$/../Html/Web/FileSelect_2/FileSelect_2.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Html/Web/JQuary/JQuaryTest.css" beforeDir="false" afterPath="$PROJECT_DIR$/../Html/Web/JQuary/JQuaryTest.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Html/Web/JQuary/JQuaryTest.html" beforeDir="false" afterPath="$PROJECT_DIR$/../Html/Web/JQuary/JQuaryTest.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Html/Web/JQuary/JQuaryTest.js" beforeDir="false" afterPath="$PROJECT_DIR$/../Html/Web/JQuary/JQuaryTest.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Html/Web/Pet_Android/Pet_Andriod.html" beforeDir="false" afterPath="$PROJECT_DIR$/../Html/Web/Pet_Android/Pet_Andriod.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../IdeaLearningProject/.idea/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/../IdeaLearningProject/.idea/.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../IdeaLearningProject/.idea/IdeaLearningProject.iml" beforeDir="false" afterPath="$PROJECT_DIR$/../IdeaLearningProject/.idea/IdeaLearningProject.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../IdeaLearningProject/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../IdeaLearningProject/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../IdeaLearningProject/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../IdeaLearningProject/.idea/modules.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../IdeaLearningProject/.idea/qaplug_profiles.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../IdeaLearningProject/.idea/qaplug_profiles.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../IdeaLearningProject/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../IdeaLearningProject/.idea/vcs.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../IdeaLearningProject/IdeaLearningProject.iml" beforeDir="false" afterPath="$PROJECT_DIR$/../IdeaLearningProject/IdeaLearningProject.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../IdeaLearningProject/feature-trainer-version.txt" beforeDir="false" afterPath="$PROJECT_DIR$/../IdeaLearningProject/feature-trainer-version.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/Java.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/Java.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/artifacts/Java_Web_war.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/artifacts/Java_Web_war_exploded.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/httpRequests/2021-05-10T202659.500.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/httpRequests/http-client.cookies" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/httpRequests/http-requests-log.http" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/jarRepositories.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/jarRepositories.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Java.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__javax_javaee_web_api_8_0_1.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_apiguardian_apiguardian_api_1_1_0.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_junit_jupiter_junit_jupiter_api_5_7_0.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_junit_jupiter_junit_jupiter_engine_5_7_0.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_junit_platform_junit_platform_commons_1_7_0.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_junit_platform_junit_platform_engine_1_7_0.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_opentest4j_opentest4j_1_2_0.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/uiDesigner.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/File/2021-03-14-Test/A.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/File/2021-03-14-Test/C.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/File/2021-03-14-Test/NumberAddOne.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/File/2021-03-14-Test/VariableDemo.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/File/2021-04-01/Test.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/File/DataSort&amp;SaveInfo/FileUtil.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/File/DataSort&amp;SaveInfo/InputUtil.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/File/DataSort&amp;SaveInfo/Main.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/File/DataSort&amp;SaveInfo/Menu.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/File/DataSort&amp;SaveInfo/Service.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/File/DataSort&amp;SaveInfo/Student.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/File/DataSort/InputUtil.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/File/DataSort/Main.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/File/DataSort/Service.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/File/DataSort/Student.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/File/GetString&amp;SaveDir/InputUtil.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/File/GetString&amp;SaveDir/Main.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/File/GetString&amp;SaveDir/Service.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/File/HandOutRedEnvelopes/GroupLeader.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/File/HandOutRedEnvelopes/Main.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/File/HandOutRedEnvelopes/Member.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/File/HandOutRedEnvelopes/User.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/File/LuoGu 21-02-01/A.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/File/LuoGu 21-02-01/B.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/File/LuoGu 21-02-01/C.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/File/LuoGu 21-02-01/D.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/File/LuoGu 21-02-01/E.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/File/LuoGu 21-02-01/F.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/File/LuoGu 21-02-01/G.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/File/LuoGu 21-02-01/H.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/File/LuoGu 21-02-01/I.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/File/LuoGu 21-02-01/J.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/File/LuoGu 21-02-01/K.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/File/LuoGu 21-02-01/L.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/File/LuoGu 21-02-01/M.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/File/LuoGu 21-02-01/N.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/File/LuoGu 21-02-01/O.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/File/LuoGu 21-02-01/P.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/File/LuoGu 21-02-01/Q.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/File/MaxOfNumbers/InputUtil.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/File/MaxOfNumbers/Main.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/File/MaxOfNumbers/Service.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/File/OddEvenStatistics/InputUtil.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/File/OddEvenStatistics/Main.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/File/OddEvenStatistics/Service.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/File/ReverseOfString/InputUtil.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/File/ReverseOfString/Main.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/File/ReverseOfString/Menu.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/File/ReverseOfString/Server.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/File/Stack、Queue、List/Leetcode_Queue&amp;Stack/Island.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/File/Stack、Queue、List/OneWayLinkedList.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/File/Stack、Queue、List/Queue.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/File/Stack、Queue、List/Stack.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/File/Stack、Queue、List/TwoWayLinkedList.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/File/UserLogin/InputUtil.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/File/UserLogin/Main.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/File/UserLogin/Service.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/File/UserLogin/Test.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/File/VotingElection/InputUtil.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/File/VotingElection/Main.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/File/VotingElection/Menu.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/File/VotingElection/Service.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/File/VotingElection/Student.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Java.iml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Test/Ans.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Test/HelloWorld.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Test/IntputDemo.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Test/JavaDemo.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Test/Num.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Test/PrimitiveTypeTest.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Test/Test.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Test/Test2.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Test/ThreadDemo.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/Java_jar/Java.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/qaplug_profiles.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/qaplug_profiles.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/JavaFile/.idea/$PROJECT_FILE$" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/JavaFile/.idea/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/JavaFile/.idea/artifacts/Java_jar.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/JavaFile/.idea/inspectionProfiles/Project_Default.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/JavaFile/.idea/misc.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/JavaFile/.idea/modules.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/JavaFile/.idea/qaplug_profiles.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/JavaFile/.idea/uiDesigner.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/JavaFile/.idea/vcs.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/JavaFile/File/2021-03-14-Test/A.java" beforeDir="false" afterPath="$PROJECT_DIR$/JavaFile/File/2021-03-14-Test/A.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/JavaFile/File/2021-03-14-Test/C.java" beforeDir="false" afterPath="$PROJECT_DIR$/JavaFile/File/2021-03-14-Test/C.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/JavaFile/File/2021-03-14-Test/NumberAddOne.java" beforeDir="false" afterPath="$PROJECT_DIR$/JavaFile/File/2021-03-14-Test/NumberAddOne.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/JavaFile/File/2021-03-14-Test/VariableDemo.java" beforeDir="false" afterPath="$PROJECT_DIR$/JavaFile/File/2021-03-14-Test/VariableDemo.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/JavaFile/File/2021-04-01/Test.java" beforeDir="false" afterPath="$PROJECT_DIR$/JavaFile/File/2021-04-01/Test.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/JavaFile/File/2021-04-29/QueueTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/JavaFile/File/2021-04-29/QueueTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/JavaFile/File/2021-04-29/StackTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/JavaFile/File/2021-04-29/StackTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/JavaFile/File/DataSort&amp;SaveInfo/FileUtil.java" beforeDir="false" afterPath="$PROJECT_DIR$/JavaFile/File/DataSort&amp;SaveInfo/FileUtil.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/JavaFile/File/DataSort&amp;SaveInfo/InputUtil.java" beforeDir="false" afterPath="$PROJECT_DIR$/JavaFile/File/DataSort&amp;SaveInfo/InputUtil.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/JavaFile/File/DataSort&amp;SaveInfo/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/JavaFile/File/DataSort&amp;SaveInfo/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/JavaFile/File/DataSort&amp;SaveInfo/Menu.java" beforeDir="false" afterPath="$PROJECT_DIR$/JavaFile/File/DataSort&amp;SaveInfo/Menu.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/JavaFile/File/DataSort&amp;SaveInfo/Service.java" beforeDir="false" afterPath="$PROJECT_DIR$/JavaFile/File/DataSort&amp;SaveInfo/Service.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/JavaFile/File/DataSort&amp;SaveInfo/Student.java" beforeDir="false" afterPath="$PROJECT_DIR$/JavaFile/File/DataSort&amp;SaveInfo/Student.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/JavaFile/File/DataSort/InputUtil.java" beforeDir="false" afterPath="$PROJECT_DIR$/JavaFile/File/DataSort/InputUtil.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/JavaFile/File/DataSort/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/JavaFile/File/DataSort/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/JavaFile/File/DataSort/Service.java" beforeDir="false" afterPath="$PROJECT_DIR$/JavaFile/File/DataSort/Service.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/JavaFile/File/DataSort/Student.java" beforeDir="false" afterPath="$PROJECT_DIR$/JavaFile/File/DataSort/Student.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/JavaFile/File/File.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/JavaFile/File/GetString&amp;SaveDir/InputUtil.java" beforeDir="false" afterPath="$PROJECT_DIR$/JavaFile/File/GetString&amp;SaveDir/InputUtil.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/JavaFile/File/GetString&amp;SaveDir/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/JavaFile/File/GetString&amp;SaveDir/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/JavaFile/File/GetString&amp;SaveDir/Service.java" beforeDir="false" afterPath="$PROJECT_DIR$/JavaFile/File/GetString&amp;SaveDir/Service.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/JavaFile/File/HandOutRedEnvelopes/GroupLeader.java" beforeDir="false" afterPath="$PROJECT_DIR$/JavaFile/File/HandOutRedEnvelopes/GroupLeader.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/JavaFile/File/HandOutRedEnvelopes/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/JavaFile/File/HandOutRedEnvelopes/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/JavaFile/File/HandOutRedEnvelopes/Member.java" beforeDir="false" afterPath="$PROJECT_DIR$/JavaFile/File/HandOutRedEnvelopes/Member.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/JavaFile/File/HandOutRedEnvelopes/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/JavaFile/File/HandOutRedEnvelopes/User.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/JavaFile/File/LuoGu 21-02-01/A.java" beforeDir="false" afterPath="$PROJECT_DIR$/JavaFile/File/LuoGu 21-02-01/A.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/JavaFile/File/LuoGu 21-02-01/B.java" beforeDir="false" afterPath="$PROJECT_DIR$/JavaFile/File/LuoGu 21-02-01/B.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/JavaFile/File/LuoGu 21-02-01/C.java" beforeDir="false" afterPath="$PROJECT_DIR$/JavaFile/File/LuoGu 21-02-01/C.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/JavaFile/File/LuoGu 21-02-01/D.java" beforeDir="false" afterPath="$PROJECT_DIR$/JavaFile/File/LuoGu 21-02-01/D.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/JavaFile/File/LuoGu 21-02-01/E.java" beforeDir="false" afterPath="$PROJECT_DIR$/JavaFile/File/LuoGu 21-02-01/E.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/JavaFile/File/LuoGu 21-02-01/F.java" beforeDir="false" afterPath="$PROJECT_DIR$/JavaFile/File/LuoGu 21-02-01/F.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/JavaFile/File/LuoGu 21-02-01/G.java" beforeDir="false" afterPath="$PROJECT_DIR$/JavaFile/File/LuoGu 21-02-01/G.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/JavaFile/File/LuoGu 21-02-01/H.java" beforeDir="false" afterPath="$PROJECT_DIR$/JavaFile/File/LuoGu 21-02-01/H.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/JavaFile/File/LuoGu 21-02-01/I.java" beforeDir="false" afterPath="$PROJECT_DIR$/JavaFile/File/LuoGu 21-02-01/I.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/JavaFile/File/LuoGu 21-02-01/J.java" beforeDir="false" afterPath="$PROJECT_DIR$/JavaFile/File/LuoGu 21-02-01/J.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/JavaFile/File/LuoGu 21-02-01/K.java" beforeDir="false" afterPath="$PROJECT_DIR$/JavaFile/File/LuoGu 21-02-01/K.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/JavaFile/File/LuoGu 21-02-01/L.java" beforeDir="false" afterPath="$PROJECT_DIR$/JavaFile/File/LuoGu 21-02-01/L.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/JavaFile/File/LuoGu 21-02-01/M.java" beforeDir="false" afterPath="$PROJECT_DIR$/JavaFile/File/LuoGu 21-02-01/M.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/JavaFile/File/LuoGu 21-02-01/N.java" beforeDir="false" afterPath="$PROJECT_DIR$/JavaFile/File/LuoGu 21-02-01/N.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/JavaFile/File/LuoGu 21-02-01/O.java" beforeDir="false" afterPath="$PROJECT_DIR$/JavaFile/File/LuoGu 21-02-01/O.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/JavaFile/File/LuoGu 21-02-01/P.java" beforeDir="false" afterPath="$PROJECT_DIR$/JavaFile/File/LuoGu 21-02-01/P.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/JavaFile/File/LuoGu 21-02-01/Q.java" beforeDir="false" afterPath="$PROJECT_DIR$/JavaFile/File/LuoGu 21-02-01/Q.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/JavaFile/File/MaxOfNumbers/InputUtil.java" beforeDir="false" afterPath="$PROJECT_DIR$/JavaFile/File/MaxOfNumbers/InputUtil.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/JavaFile/File/MaxOfNumbers/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/JavaFile/File/MaxOfNumbers/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/JavaFile/File/MaxOfNumbers/Service.java" beforeDir="false" afterPath="$PROJECT_DIR$/JavaFile/File/MaxOfNumbers/Service.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/JavaFile/File/OddEvenStatistics/InputUtil.java" beforeDir="false" afterPath="$PROJECT_DIR$/JavaFile/File/OddEvenStatistics/InputUtil.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/JavaFile/File/OddEvenStatistics/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/JavaFile/File/OddEvenStatistics/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/JavaFile/File/OddEvenStatistics/Service.java" beforeDir="false" afterPath="$PROJECT_DIR$/JavaFile/File/OddEvenStatistics/Service.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/JavaFile/File/ReverseOfString/InputUtil.java" beforeDir="false" afterPath="$PROJECT_DIR$/JavaFile/File/ReverseOfString/InputUtil.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/JavaFile/File/ReverseOfString/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/JavaFile/File/ReverseOfString/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/JavaFile/File/ReverseOfString/Menu.java" beforeDir="false" afterPath="$PROJECT_DIR$/JavaFile/File/ReverseOfString/Menu.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/JavaFile/File/ReverseOfString/Server.java" beforeDir="false" afterPath="$PROJECT_DIR$/JavaFile/File/ReverseOfString/Server.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/JavaFile/File/Stack、Queue、List/Leetcode_Queue&amp;Stack/DailyTemperature.java" beforeDir="false" afterPath="$PROJECT_DIR$/JavaFile/File/Stack、Queue、List/Leetcode_Queue&amp;Stack/DailyTemperature.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/JavaFile/File/Stack、Queue、List/Leetcode_Queue&amp;Stack/Island.java" beforeDir="false" afterPath="$PROJECT_DIR$/JavaFile/File/Stack、Queue、List/Leetcode_Queue&amp;Stack/Island.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/JavaFile/File/Stack、Queue、List/Leetcode_Queue&amp;Stack/PerfectSquareNumber.java" beforeDir="false" afterPath="$PROJECT_DIR$/JavaFile/File/Stack、Queue、List/Leetcode_Queue&amp;Stack/PerfectSquareNumber.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/JavaFile/File/Stack、Queue、List/Leetcode_Queue&amp;Stack/ReversePolishNotation.java" beforeDir="false" afterPath="$PROJECT_DIR$/JavaFile/File/Stack、Queue、List/Leetcode_Queue&amp;Stack/ReversePolishNotation.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/JavaFile/File/Stack、Queue、List/OneWayLinkedList.java" beforeDir="false" afterPath="$PROJECT_DIR$/JavaFile/File/Stack、Queue、List/OneWayLinkedList.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/JavaFile/File/Stack、Queue、List/Queue.java" beforeDir="false" afterPath="$PROJECT_DIR$/JavaFile/File/Stack、Queue、List/Queue.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/JavaFile/File/Stack、Queue、List/Stack.java" beforeDir="false" afterPath="$PROJECT_DIR$/JavaFile/File/Stack、Queue、List/Stack.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/JavaFile/File/Stack、Queue、List/TwoWayLinkedList.java" beforeDir="false" afterPath="$PROJECT_DIR$/JavaFile/File/Stack、Queue、List/TwoWayLinkedList.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/JavaFile/File/UserLogin/InputUtil.java" beforeDir="false" afterPath="$PROJECT_DIR$/JavaFile/File/UserLogin/InputUtil.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/JavaFile/File/UserLogin/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/JavaFile/File/UserLogin/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/JavaFile/File/UserLogin/Service.java" beforeDir="false" afterPath="$PROJECT_DIR$/JavaFile/File/UserLogin/Service.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/JavaFile/File/UserLogin/Test.java" beforeDir="false" afterPath="$PROJECT_DIR$/JavaFile/File/UserLogin/Test.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/JavaFile/File/VotingElection/InputUtil.java" beforeDir="false" afterPath="$PROJECT_DIR$/JavaFile/File/VotingElection/InputUtil.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/JavaFile/File/VotingElection/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/JavaFile/File/VotingElection/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/JavaFile/File/VotingElection/Menu.java" beforeDir="false" afterPath="$PROJECT_DIR$/JavaFile/File/VotingElection/Menu.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/JavaFile/File/VotingElection/Service.java" beforeDir="false" afterPath="$PROJECT_DIR$/JavaFile/File/VotingElection/Service.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/JavaFile/File/VotingElection/Student.java" beforeDir="false" afterPath="$PROJECT_DIR$/JavaFile/File/VotingElection/Student.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/JavaFile/JavaFile.iml" beforeDir="false" afterPath="$PROJECT_DIR$/JavaFile/JavaFile.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/JavaFile/Test/Ans.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/JavaFile/Test/HelloWorld.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/JavaFile/Test/IntputDemo.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/JavaFile/Test/JavaDemo.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/JavaFile/Test/Num.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/JavaFile/Test/PrimitiveTypeTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/JavaFile/Test/Test.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/JavaFile/Test/Test2.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/JavaFile/Test/ThreadDemo.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/JavaFile/out/artifacts/Java_jar/Java.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Java_Web/Java_Web.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Java_Web/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/JavaWebDemo/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Java_Web/src/main/java/com/example/Java_Web/HelloApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/JavaWebDemo/src/main/java/com/example/JavaWebDemo/HelloApplication.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Java_Web/src/main/java/com/example/Java_Web/HelloResource.java" beforeDir="false" afterPath="$PROJECT_DIR$/JavaWebDemo/src/main/java/com/example/JavaWebDemo/HelloResource.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Java_Web/src/main/java/com/example/Java_Web/HelloServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/JavaWebDemo/src/main/java/com/example/JavaWebDemo/HelloServlet.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Java_Web/src/main/resources/META-INF/beans.xml" beforeDir="false" afterPath="$PROJECT_DIR$/JavaWebDemo/src/main/resources/META-INF/beans.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Java_Web/src/main/resources/META-INF/persistence.xml" beforeDir="false" afterPath="$PROJECT_DIR$/JavaWebDemo/src/main/resources/META-INF/persistence.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Java_Web/src/main/webapp/WEB-INF/web.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Java_Web/src/main/webapp/index.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/JavaWebDemo/src/main/webapp/index.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Java_Web/target/Java_Web-1.0-SNAPSHOT/META-INF/MANIFEST.MF" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Java_Web/target/Java_Web-1.0-SNAPSHOT/WEB-INF/classes/META-INF/beans.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Java_Web/target/Java_Web-1.0-SNAPSHOT/WEB-INF/classes/META-INF/persistence.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Java_Web/target/Java_Web-1.0-SNAPSHOT/WEB-INF/web.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Java_Web/target/Java_Web-1.0-SNAPSHOT/index.jsp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Java_Web/target/classes/META-INF/beans.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Java_Web/target/classes/META-INF/persistence.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../LeetCode/1.两数之和.c" beforeDir="false" afterPath="$PROJECT_DIR$/../LeetCode/1.两数之和.c" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../LeetCode/13.罗马数字转整数.c" beforeDir="false" afterPath="$PROJECT_DIR$/../LeetCode/13.罗马数字转整数.c" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../LeetCode/14.最长公共前缀.c" beforeDir="false" afterPath="$PROJECT_DIR$/../LeetCode/14.最长公共前缀.c" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../LeetCode/2.两数相加.c" beforeDir="false" afterPath="$PROJECT_DIR$/../LeetCode/2.两数相加.c" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../LeetCode/38.外观数列.c" beforeDir="false" afterPath="$PROJECT_DIR$/../LeetCode/38.外观数列.c" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../LeetCode/4.寻找两个正序数组的中位数.c" beforeDir="false" afterPath="$PROJECT_DIR$/../LeetCode/4.寻找两个正序数组的中位数.c" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../LeetCode/66.加一.c" beforeDir="false" afterPath="$PROJECT_DIR$/../LeetCode/66.加一.c" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../LeetCode/7.整数反转.java" beforeDir="false" afterPath="$PROJECT_DIR$/../LeetCode/7.整数反转.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../LeetCode/896.单调数列.java" beforeDir="false" afterPath="$PROJECT_DIR$/../LeetCode/896.单调数列.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../LeetCode/9.回文数.c" beforeDir="false" afterPath="$PROJECT_DIR$/../LeetCode/9.回文数.c" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../LeetCode/9.回文数.java" beforeDir="false" afterPath="$PROJECT_DIR$/../LeetCode/9.回文数.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Linux_C/Test/Tree_Del.c" beforeDir="false" afterPath="$PROJECT_DIR$/../Linux_C/Test/Tree_Del.c" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Other/Lab/ACAT/01.c" beforeDir="false" afterPath="$PROJECT_DIR$/../Other/Lab/ACAT/01.c" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Other/Lab/ACAT/02.c" beforeDir="false" afterPath="$PROJECT_DIR$/../Other/Lab/ACAT/02.c" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Other/Lab/ACAT/03.c" beforeDir="false" afterPath="$PROJECT_DIR$/../Other/Lab/ACAT/03.c" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Other/Lab/ACAT/04.c" beforeDir="false" afterPath="$PROJECT_DIR$/../Other/Lab/ACAT/04.c" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Other/Lab/ACAT/05.c" beforeDir="false" afterPath="$PROJECT_DIR$/../Other/Lab/ACAT/05.c" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Other/Lab/ACAT/06 copy.c" beforeDir="false" afterPath="$PROJECT_DIR$/../Other/Lab/ACAT/06 copy.c" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Other/Lab/ACAT/06.c" beforeDir="false" afterPath="$PROJECT_DIR$/../Other/Lab/ACAT/06.c" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Other/Lab/ACAT/07.c" beforeDir="false" afterPath="$PROJECT_DIR$/../Other/Lab/ACAT/07.c" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Other/Lab/ACAT/09.c" beforeDir="false" afterPath="$PROJECT_DIR$/../Other/Lab/ACAT/09.c" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Other/Lab/ACAT/10.c" beforeDir="false" afterPath="$PROJECT_DIR$/../Other/Lab/ACAT/10.c" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Other/Lab/ACAT/11.c" beforeDir="false" afterPath="$PROJECT_DIR$/../Other/Lab/ACAT/11.c" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Other/Lab/ACAT/sort.c" beforeDir="false" afterPath="$PROJECT_DIR$/../Other/Lab/ACAT/sort.c" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Other/Lab/D/003.c" beforeDir="false" afterPath="$PROJECT_DIR$/../Other/Lab/D/003.c" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Other/Lab/D/005.c" beforeDir="false" afterPath="$PROJECT_DIR$/../Other/Lab/D/005.c" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Other/Lab/D/01.c" beforeDir="false" afterPath="$PROJECT_DIR$/../Other/Lab/D/01.c" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Other/Lab/D/01Pro.c" beforeDir="false" afterPath="$PROJECT_DIR$/../Other/Lab/D/01Pro.c" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Other/Lab/D/02.c" beforeDir="false" afterPath="$PROJECT_DIR$/../Other/Lab/D/02.c" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Other/Lab/D/03.c" beforeDir="false" afterPath="$PROJECT_DIR$/../Other/Lab/D/03.c" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Other/Lab/D/04.c" beforeDir="false" afterPath="$PROJECT_DIR$/../Other/Lab/D/04.c" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Other/Lab/D/05.c" beforeDir="false" afterPath="$PROJECT_DIR$/../Other/Lab/D/05.c" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Other/Lab/D/05_1.c" beforeDir="false" afterPath="$PROJECT_DIR$/../Other/Lab/D/05_1.c" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Other/Lab/D/05_2.c" beforeDir="false" afterPath="$PROJECT_DIR$/../Other/Lab/D/05_2.c" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Other/Lab/D/06.c" beforeDir="false" afterPath="$PROJECT_DIR$/../Other/Lab/D/06.c" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Other/Lab/Lab.iml" beforeDir="false" afterPath="$PROJECT_DIR$/../Other/Lab/Lab.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Other/Lab/Linux/10.c" beforeDir="false" afterPath="$PROJECT_DIR$/../Other/Lab/Linux/10.c" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Other/Lab/Linux/13.c" beforeDir="false" afterPath="$PROJECT_DIR$/../Other/Lab/Linux/13.c" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Other/Lab/Linux/static.c" beforeDir="false" afterPath="$PROJECT_DIR$/../Other/Lab/Linux/static.c" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Other/Lab/Make_Space/02.c" beforeDir="false" afterPath="$PROJECT_DIR$/../Other/Lab/Make_Space/02.c" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Other/Lab/Make_Space/03.c" beforeDir="false" afterPath="$PROJECT_DIR$/../Other/Lab/Make_Space/03.c" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Other/Lab/Make_Space/04.c" beforeDir="false" afterPath="$PROJECT_DIR$/../Other/Lab/Make_Space/04.c" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Other/Lab/Make_Space/05.c" beforeDir="false" afterPath="$PROJECT_DIR$/../Other/Lab/Make_Space/05.c" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Other/Lab/Make_Space/06.c" beforeDir="false" afterPath="$PROJECT_DIR$/../Other/Lab/Make_Space/06.c" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Other/Lab/Make_Space/07.c" beforeDir="false" afterPath="$PROJECT_DIR$/../Other/Lab/Make_Space/07.c" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Other/Lab/Make_Space/08_.c" beforeDir="false" afterPath="$PROJECT_DIR$/../Other/Lab/Make_Space/08_.c" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Other/Lab/Make_Space/09__.c" beforeDir="false" afterPath="$PROJECT_DIR$/../Other/Lab/Make_Space/09__.c" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Other/Lab/Make_Space/10__.c" beforeDir="false" afterPath="$PROJECT_DIR$/../Other/Lab/Make_Space/10__.c" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Other/Lab/Make_Space/11__.c" beforeDir="false" afterPath="$PROJECT_DIR$/../Other/Lab/Make_Space/11__.c" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Other/Lab/Make_Space/12.c" beforeDir="false" afterPath="$PROJECT_DIR$/../Other/Lab/Make_Space/12.c" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Other/Lab/STA_Software/01.c" beforeDir="false" afterPath="$PROJECT_DIR$/../Other/Lab/STA_Software/01.c" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Other/Lab/STA_Software/02.c" beforeDir="false" afterPath="$PROJECT_DIR$/../Other/Lab/STA_Software/02.c" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Other/Lab/STA_Software/03.c" beforeDir="false" afterPath="$PROJECT_DIR$/../Other/Lab/STA_Software/03.c" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Other/Lab/STA_Software/06.c" beforeDir="false" afterPath="$PROJECT_DIR$/../Other/Lab/STA_Software/06.c" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Other/Lab/STA_Software/07.c" beforeDir="false" afterPath="$PROJECT_DIR$/../Other/Lab/STA_Software/07.c" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Other/Lab/STA_Software/09.c" beforeDir="false" afterPath="$PROJECT_DIR$/../Other/Lab/STA_Software/09.c" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Other/Lab/TW/01_1.c" beforeDir="false" afterPath="$PROJECT_DIR$/../Other/Lab/TW/01_1.c" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Other/Lab/TW/01_2.c" beforeDir="false" afterPath="$PROJECT_DIR$/../Other/Lab/TW/01_2.c" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Other/Lab/TW/02.c" beforeDir="false" afterPath="$PROJECT_DIR$/../Other/Lab/TW/02.c" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Other/Lab/TW/03.c" beforeDir="false" afterPath="$PROJECT_DIR$/../Other/Lab/TW/03.c" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Other/Lab/TW/04.c" beforeDir="false" afterPath="$PROJECT_DIR$/../Other/Lab/TW/04.c" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Other/Lab/TW/05.c" beforeDir="false" afterPath="$PROJECT_DIR$/../Other/Lab/TW/05.c" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Other/Lab/TW/06.c" beforeDir="false" afterPath="$PROJECT_DIR$/../Other/Lab/TW/06.c" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Other/Lab/TW/07.c" beforeDir="false" afterPath="$PROJECT_DIR$/../Other/Lab/TW/07.c" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Other/Lab/TW/08_1.c" beforeDir="false" afterPath="$PROJECT_DIR$/../Other/Lab/TW/08_1.c" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Other/Lab/TW/08_2.c" beforeDir="false" afterPath="$PROJECT_DIR$/../Other/Lab/TW/08_2.c" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Other/Lab/XiYouNet/Brain_Hole/02.c" beforeDir="false" afterPath="$PROJECT_DIR$/../Other/Lab/XiYouNet/Brain_Hole/02.c" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Other/Lab/XiYouNet/C/005.c" beforeDir="false" afterPath="$PROJECT_DIR$/../Other/Lab/XiYouNet/C/005.c" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Other/Lab/XiYouNet/C/007.c" beforeDir="false" afterPath="$PROJECT_DIR$/../Other/Lab/XiYouNet/C/007.c" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Other/Lab/XiYouNet/C/02.c" beforeDir="false" afterPath="$PROJECT_DIR$/../Other/Lab/XiYouNet/C/02.c" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Other/Lab/XiYouNet/C/03.c" beforeDir="false" afterPath="$PROJECT_DIR$/../Other/Lab/XiYouNet/C/03.c" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Other/Lab/XiYouNet/C/04.c" beforeDir="false" afterPath="$PROJECT_DIR$/../Other/Lab/XiYouNet/C/04.c" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Other/Lab/XiYouNet/C/05.c" beforeDir="false" afterPath="$PROJECT_DIR$/../Other/Lab/XiYouNet/C/05.c" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Other/Lab/XiYouNet/C/06.c" beforeDir="false" afterPath="$PROJECT_DIR$/../Other/Lab/XiYouNet/C/06.c" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Other/Lab/XiYouNet/C/07.c" beforeDir="false" afterPath="$PROJECT_DIR$/../Other/Lab/XiYouNet/C/07.c" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Other/Lab/XiYouNet/C/08.c" beforeDir="false" afterPath="$PROJECT_DIR$/../Other/Lab/XiYouNet/C/08.c" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Other/Lab/XiYouNet/C/back number.c" beforeDir="false" afterPath="$PROJECT_DIR$/../Other/Lab/XiYouNet/C/back number.c" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Other/Lab/XiYouNet/C/number.c" beforeDir="false" afterPath="$PROJECT_DIR$/../Other/Lab/XiYouNet/C/number.c" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Other/Lab/XiYouNet/Computer/Answer" beforeDir="false" afterPath="$PROJECT_DIR$/../Other/Lab/XiYouNet/Computer/Answer" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Other/Lab/XiYouNet/Java/Test.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Other/Lab/XiYouNet/Java/Test.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Other/MD/My Blog/2020-11-24.md" beforeDir="false" afterPath="$PROJECT_DIR$/../Other/MD/My Blog/2020-11-24.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Other/MD/My Blog/2020-11-29.md" beforeDir="false" afterPath="$PROJECT_DIR$/../Other/MD/My Blog/2020-11-29.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Python/Output.py" beforeDir="false" afterPath="$PROJECT_DIR$/../Python/Output.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Python/fhandle.py" beforeDir="false" afterPath="$PROJECT_DIR$/../Python/fhandle.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../try.c" beforeDir="false" afterPath="$PROJECT_DIR$/../try.c" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../try.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/../try.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../try2.c" beforeDir="false" afterPath="$PROJECT_DIR$/../try2.c" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../代码上传至Github.bat" beforeDir="false" afterPath="$PROJECT_DIR$/../代码上传至Github.bat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../推送.bat" beforeDir="false" afterPath="$PROJECT_DIR$/../推送.bat" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
+  <component name="CodeInsightWorkspaceSettings">
+    <option name="optimizeImportsOnTheFly" value="true" />
+  </component>
+  <component name="ExternalProjectsData">
+    <projectState path="$PROJECT_DIR$/WebDemo">
+      <ProjectState />
+    </projectState>
+    <projectState path="$PROJECT_DIR$/demo">
+      <ProjectState />
+    </projectState>
+  </component>
+  <component name="ExternalProjectsManager">
+    <system id="GRADLE">
+      <state>
+        <projects_view>
+          <tree_state>
+            <expand />
+            <select />
+          </tree_state>
+        </projects_view>
+      </state>
+    </system>
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="AnnotationType" />
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
+  </component>
+  <component name="HighlightingSettingsPerFile">
+    <setting file="jar://$USER_HOME$/.jdks/corretto-1.8.0_292/src.zip!/java/util/ConcurrentModificationException.java" root0="FORCE_HIGHLIGHTING" />
   </component>
   <component name="LogFilters">
     <option name="FILTER_ERRORS" value="false" />
@@ -131,7 +322,7 @@
     <option name="FILTER_DEBUG" value="true" />
     <option name="CUSTOM_FILTER" />
   </component>
-  <component name="ProjectId" id="1sKuOnKoa2PEdAVU60YFx4vy2UA" />
+  <component name="ProjectId" id="1scjLFmcySwyee08BEZ002dE3Lt" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">
     <option name="autoscrollToSource" value="true" />
@@ -139,57 +330,71 @@
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
+    <property name="Downloaded.Files.Path.Enabled" value="false" />
+    <property name="Repository.Attach.Annotations" value="false" />
+    <property name="Repository.Attach.JavaDocs" value="false" />
+    <property name="Repository.Attach.Sources" value="false" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="full.screen.before.presentation.mode" value="false" />
+    <property name="com.intellij.openapi.externalSystem.service.settings.ExternalSystemGroupConfigurable" value="ALL" />
+    <property name="jdk.selected.JAVA_MODULE" value="1.8" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
-    <property name="node.js.path.for.package.eslint" value="project" />
-    <property name="node.js.path.for.package.tslint" value="project" />
     <property name="node.js.selected.package.eslint" value="(autodetect)" />
     <property name="node.js.selected.package.tslint" value="(autodetect)" />
-    <property name="project.structure.last.edited" value="Facet" />
+    <property name="project.structure.last.edited" value="项目" />
     <property name="project.structure.proportion" value="0.15" />
-    <property name="project.structure.side.proportion" value="0.2" />
+    <property name="project.structure.side.proportion" value="0.15707965" />
+    <property name="settings.editor.selected.configurable" value="preferences.keymap" />
   </component>
-  <component name="RestClientSettings">
-    <option name="REQUEST_HISTORY">
-      <list>
-        <RestClientRequest>
-          <option name="httpMethod" value="GET" />
-          <option name="urlBase" value="http://localhost/hello-world" />
-          <option name="urlPath" value="" />
-          <option name="textToSend" value="" />
-          <option name="filesToSend" value="" />
-        </RestClientRequest>
-      </list>
-    </option>
+  <component name="ReaderModeSettings">
+    <option name="enabled" value="false" />
   </component>
-  <component name="RunManager" selected="应用程序.Test">
-    <configuration name="Test" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="Test" />
-      <module name="File" />
+  <component name="RecentsManager">
+    <key name="CreateClassDialog.RecentsKey">
+      <recent name="com.example.JavaWebDemo" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="D:\Programing\Myfile\Java" />
+    </key>
+  </component>
+  <component name="RunManager" selected="Tomcat 服务器.JavaWebDemo">
+    <configuration name="A" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="A" />
+      <module name="JavaFile" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="generated-requests 中的所有内容" type="HttpClient.HttpRequestRunConfigurationType" factoryName="HTTP Request" temporary="true" path="$APPLICATION_CONFIG_DIR$/scratches/generated-requests.http">
-      <method v="2" />
+    <configuration name="Arraylist" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="Arraylist" />
+      <module name="JavaFile" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
     </configuration>
-    <configuration name="Java_web" type="#com.intellij.j2ee.web.tomcat.TomcatRunConfigurationFactory" factoryName="Local" APPLICATION_SERVER_NAME="Tomcat 8.5.65" ALTERNATIVE_JRE_ENABLED="false">
-      <option name="UPDATE_CLASSES_ON_FRAME_DEACTIVATION" value="true" />
+    <configuration name="QueueTest" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="QueueTest" />
+      <module name="JavaFile" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="JavaWebDemo" type="#com.intellij.j2ee.web.tomcat.TomcatRunConfigurationFactory" factoryName="Local" APPLICATION_SERVER_NAME="Tomcat 8.5.651" ALTERNATIVE_JRE_ENABLED="false">
+      <option name="UPDATING_POLICY" value="redeploy-artifacts" />
       <deployment>
-        <artifact name="Java_Web:war exploded">
+        <artifact name="JavaWebDemo:war exploded">
           <settings>
-            <option name="CONTEXT_PATH" value="/Java_Web_war_exploded" />
+            <option name="CONTEXT_PATH" value="/JavaWebDemo_war_exploded" />
           </settings>
         </artifact>
       </deployment>
       <server-settings>
-        <option name="BASE_DIRECTORY_NAME" value="eb230d08-166f-4b0a-a0fe-a61f5d5fc6d5" />
+        <option name="BASE_DIRECTORY_NAME" value="4886a007-271c-44ca-838e-1c25fe72782a" />
       </server-settings>
       <predefined_log_file enabled="true" id="Tomcat" />
       <predefined_log_file enabled="true" id="Tomcat Catalina" />
@@ -197,7 +402,7 @@
       <predefined_log_file id="Tomcat Host Manager" />
       <predefined_log_file id="Tomcat Localhost Access" />
       <RunnerSettings RunnerId="Debug">
-        <option name="DEBUG_PORT" value="10021" />
+        <option name="DEBUG_PORT" value="36091" />
       </RunnerSettings>
       <ConfigurationWrapper VM_VAR="JAVA_OPTS" RunnerId="Cover">
         <option name="USE_ENV_VARIABLES" value="true" />
@@ -262,40 +467,63 @@
       <method v="2">
         <option name="Make" enabled="true" />
         <option name="BuildArtifacts" enabled="true">
-          <artifact name="Java_Web:war exploded" />
+          <artifact name="JavaWebDemo:war exploded" />
         </option>
       </method>
     </configuration>
     <list>
-      <item itemvalue="HTTP 请求.generated-requests 中的所有内容" />
-      <item itemvalue="Tomcat Server.Java_web" />
-      <item itemvalue="应用程序.Test" />
+      <item itemvalue="Tomcat 服务器.JavaWebDemo" />
+      <item itemvalue="应用程序.A" />
+      <item itemvalue="应用程序.Arraylist" />
+      <item itemvalue="应用程序.QueueTest" />
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="应用程序.Test" />
-        <item itemvalue="HTTP 请求.generated-requests 中的所有内容" />
+        <item itemvalue="应用程序.Arraylist" />
       </list>
     </recent_temporary>
   </component>
-  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="应用程序级" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="默认任务">
-      <changelist id="14ba65be-106f-493f-8f2d-d8084b160a7e" name="默认变更列表" comment="" />
-      <created>1620633576664</created>
+      <changelist id="146c6b5b-5dc8-4b04-835a-c1ccd6709278" name="默认变更列表" comment="" />
+      <created>1621178717391</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
-      <updated>1620633576664</updated>
-      <workItem from="1620633581711" duration="1352000" />
-      <workItem from="1620645342950" duration="7254000" />
-      <workItem from="1620654465128" duration="170000" />
-      <workItem from="1620731122090" duration="31000" />
-      <workItem from="1620731169736" duration="5012000" />
-      <workItem from="1620808772896" duration="1046000" />
+      <updated>1621178717391</updated>
+      <workItem from="1621178721680" duration="15000" />
+      <workItem from="1621178783981" duration="159000" />
+      <workItem from="1621179008744" duration="334000" />
+      <workItem from="1621179383667" duration="3082000" />
+      <workItem from="1621228949469" duration="4000" />
+      <workItem from="1621252881068" duration="47000" />
+      <workItem from="1621252957721" duration="65000" />
+      <workItem from="1621261429588" duration="240000" />
+      <workItem from="1621261687656" duration="172000" />
+      <workItem from="1621261885818" duration="262000" />
+      <workItem from="1621262187802" duration="1782000" />
+      <workItem from="1621265207194" duration="774000" />
+      <workItem from="1621302069012" duration="1012000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+    <option name="oldMeFiltersMigrated" value="true" />
+  </component>
+  <component name="XSLT-Support.FileAssociations.UIState">
+    <expand />
+    <select />
   </component>
 </project>
