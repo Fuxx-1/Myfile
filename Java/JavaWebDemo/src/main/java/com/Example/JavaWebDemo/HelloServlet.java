@@ -1,7 +1,6 @@
-package com.example.JavaWebDemo;
+package com.easxample.JavaWebDemo;
 
-import com.alibaba.fastjson.JSONObject;
-
+import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
@@ -17,11 +16,11 @@ public class HelloServlet extends HttpServlet {
         message = "Hello World!";
     }
 
-    public void doGet(HttpServletRequest request, HttpServletResponse response) throws IOException {
-        response.setContentType("text/html");
-        JSONObject returnObj = new JSONObject();
+    @Override
+    protected void service(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+        resp.setContentType("text/html");
         // Hello
-        PrintWriter out = response.getWriter();
+        PrintWriter out = resp.getWriter();
         out.println("<html><body>");
         out.println("<h1>" + message + "</h1>");
         out.println("</body></html>");
