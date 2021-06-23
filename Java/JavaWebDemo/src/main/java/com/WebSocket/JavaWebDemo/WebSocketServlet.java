@@ -5,8 +5,6 @@ import javax.websocket.OnOpen;
 import javax.websocket.Session;
 import javax.websocket.server.ServerEndpoint;
 import java.io.IOException;
-import java.util.HashSet;
-import java.util.Set;
 
 /**
  * @create: 2021-05-30 17:53
@@ -16,7 +14,7 @@ public class WebSocketServlet {
     //Upgrade WebSocket
     //Status Code: 101
     //握手
-    private static Set<chat> WebSocketSet = new HashSet<chat>();
+//    private static Set<chat> WebSocketSet = new HashSet<chat>();
 
     @OnMessage
     public void onMessage(String message, Session session) throws IOException {

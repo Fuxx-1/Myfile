@@ -1,7 +1,6 @@
 package com.Login.JavaWebDemo;
 
 import com.alibaba.fastjson.JSONObject;
-
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -18,7 +17,7 @@ public class LoginServlet extends HttpServlet {
     public static final String USER = "Demo";
     public static final String PassWd = "200224";
     private static final String JDBC_DRIVER = "com.mysql.jdbc.Driver";
-    private static final String DB_URL = "jdbc:mysql://149.28.252.200:3306/datatest";
+    private static final String DB_URL = "jdbc:mysql://149.28.227.81:3306/datatest";
     Connection con = null;
     Statement stmt = null;
 

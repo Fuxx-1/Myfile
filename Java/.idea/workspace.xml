@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ArtifactsWorkspaceSettings">
     <artifacts-to-build>
-      <artifact name="JavaWebDemo:war" />
+      <artifact name="JavaWebDemo:war exploded" />
     </artifacts-to-build>
   </component>
   <component name="AutoImportSettings">
@@ -10,33 +10,13 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="146c6b5b-5dc8-4b04-835a-c1ccd6709278" name="默认变更列表" comment="默认变更列表">
-      <change afterPath="$PROJECT_DIR$/.idea/sqldialects.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/JavaFile/File/Test1/Test.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/JavaWebDemo/src/main/java/com/Example/JavaWebDemo/CookieServlet.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/JavaWebDemo/src/main/java/com/Example/JavaWebDemo/SessionServlet.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/JavaWebDemo/src/main/java/com/Example/JavaWebDemo/TimeServlet.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/JavaWebDemo/src/main/java/com/Login/JavaWebDemo/LoginServlet.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/JavaWebDemo/src/main/java/com/WebSocket/JavaWebDemo/LoginServlet.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/JavaWebDemo/src/main/java/com/WebSocket/JavaWebDemo/WS_Message.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/JavaWebDemo/src/main/java/com/WebSocket/JavaWebDemo/WS_MessageUtils.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/JavaWebDemo/src/main/java/com/WebSocket/JavaWebDemo/WS_Result.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/JavaWebDemo/src/main/java/com/WebSocket/JavaWebDemo/WS_ResultMessage.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/JavaWebDemo/src/main/java/com/WebSocket/JavaWebDemo/WebSocketServlet.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/codeStyles/codeStyleConfig.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/JavaWebDemo/src/main/webapp/JSPDemo.jsp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/JavaFile/JavaFile.iml" beforeDir="false" afterPath="$PROJECT_DIR$/JavaFile/JavaFile.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/JavaWebDemo/${project.build.directory}/classes/META-INF/beans.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/JavaWebDemo/${project.build.directory}/classes/META-INF/persistence.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/JavaWebDemo/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/JavaWebDemo/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/JavaWebDemo/src/main/java/com/example/JavaWebDemo/HelloApplication.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/JavaWebDemo/src/main/java/com/example/JavaWebDemo/HelloResource.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/JavaWebDemo/src/main/java/com/example/JavaWebDemo/HelloServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/JavaWebDemo/src/main/java/com/Example/JavaWebDemo/HelloServlet.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/JavaWebDemo/target/${project.artifactId}-${project.version}/WEB-INF/classes/META-INF/beans.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/JavaWebDemo/target/${project.artifactId}-${project.version}/WEB-INF/classes/META-INF/persistence.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/JavaWebDemo/target/${project.artifactId}-${project.version}/WEB-INF/web.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/JavaWebDemo/target/${project.artifactId}-${project.version}/index.jsp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/JavaWebDemo/target/JavaWebDemo-1.0-SNAPSHOT/META-INF/MANIFEST.MF" beforeDir="false" afterPath="$PROJECT_DIR$/JavaWebDemo/target/JavaWebDemo-1.0-SNAPSHOT/META-INF/MANIFEST.MF" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../try.c" beforeDir="false" afterPath="$PROJECT_DIR$/../try.c" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/JavaWebDemo/src/main/java/com/Login/JavaWebDemo/LoginServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/JavaWebDemo/src/main/java/com/Login/JavaWebDemo/LoginServlet.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/JavaWebDemo/src/main/java/com/WebSocket/JavaWebDemo/WebSocketServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/JavaWebDemo/src/main/java/com/WebSocket/JavaWebDemo/WebSocketServlet.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/JavaWebDemo/target/JavaWebDemo.war" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -70,6 +50,7 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="AnnotationType" />
+        <option value="Jsp File" />
         <option value="Class" />
       </list>
     </option>
@@ -120,7 +101,7 @@
     <property name="project.structure.last.edited" value="模块" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.15707965" />
-    <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
+    <property name="settings.editor.selected.configurable" value="preferences.sourceCode.HTML文件" />
   </component>
   <component name="ReaderModeSettings">
     <option name="enabled" value="false" />
@@ -139,9 +120,9 @@
       <recent name="com.WebSocket.JavaWebDemo" />
     </key>
   </component>
-  <component name="RunManager" selected="Tomcat 服务器.JavaWebDemo">
-    <configuration name="HelloWorld" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="HelloWorld" />
+  <component name="RunManager" selected="应用程序.CollectionTest">
+    <configuration name="CollectionTest" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="CollectionTest" />
       <module name="JavaFile" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -171,19 +152,6 @@
     <configuration name="Thread_Thread" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="Thread_Thread" />
       <module name="JavaFile" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration default="true" type="ArquillianTestNG" factoryName="" nameIsGenerated="true">
-      <option name="arquillianRunConfiguration">
-        <value>
-          <option name="containerStateName" value="" />
-        </value>
-      </option>
-      <option name="TEST_OBJECT" value="CLASS" />
-      <properties />
-      <listeners />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -278,19 +246,19 @@
     </configuration>
     <list>
       <item itemvalue="Tomcat 服务器.JavaWebDemo" />
-      <item itemvalue="应用程序.HelloWorld" />
       <item itemvalue="应用程序.MySQL" />
       <item itemvalue="应用程序.Test" />
       <item itemvalue="应用程序.ThreadTest" />
       <item itemvalue="应用程序.Thread_Thread" />
+      <item itemvalue="应用程序.CollectionTest" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="应用程序.CollectionTest" />
         <item itemvalue="应用程序.MySQL" />
         <item itemvalue="应用程序.Thread_Thread" />
         <item itemvalue="应用程序.ThreadTest" />
         <item itemvalue="应用程序.Test" />
-        <item itemvalue="应用程序.HelloWorld" />
       </list>
     </recent_temporary>
   </component>
@@ -339,6 +307,23 @@
       <workItem from="1622116249971" duration="1208000" />
       <workItem from="1622368047132" duration="3531000" />
       <workItem from="1622371713484" duration="1308000" />
+      <workItem from="1622373369742" duration="1059000" />
+      <workItem from="1622546724263" duration="2380000" />
+      <workItem from="1622550897817" duration="2028000" />
+      <workItem from="1622971586728" duration="129000" />
+      <workItem from="1622971746969" duration="1595000" />
+      <workItem from="1622980892022" duration="11000" />
+      <workItem from="1622983887518" duration="597000" />
+      <workItem from="1622984664171" duration="434000" />
+      <workItem from="1623047933682" duration="2043000" />
+      <workItem from="1623050252633" duration="1935000" />
+      <workItem from="1623405859701" duration="10000" />
+      <workItem from="1623666193157" duration="4255000" />
+      <workItem from="1623945292930" duration="22000" />
+      <workItem from="1623945354726" duration="65000" />
+      <workItem from="1624000936995" duration="5935000" />
+      <workItem from="1624008237460" duration="97000" />
+      <workItem from="1624172074079" duration="5000" />
     </task>
     <servers />
   </component>
