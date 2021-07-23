@@ -9,6 +9,7 @@ typedef struct Sutdent
 
 int main(int argc, char const *argv[])
 {
-    printf("%d", sizeof(STU->num));
+    int a;
+    printf("%d", scanf("%d", &a));
     return 0;
 }

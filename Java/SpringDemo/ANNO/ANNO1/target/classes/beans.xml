@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+        https://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <bean id="cat" class="com.demo.pojo.Cat"/>
+    <bean id="dog" class="com.demo.pojo.Dog"/>
+    <bean id="person" class="com.demo.pojo.Person" autowire="byName">
+<!--    <bean class="com.demo.pojo.Cat"/>-->
+<!--    <bean class="com.demo.pojo.Dog"/>-->
+<!--    <bean id="person" class="com.demo.pojo.Person" autowire="byType">-->
+        <property name="name" value="Fuxx-1"/>
+<!--        <property name="cat" ref="cat"/>-->
+<!--        <property name="dog" ref="dog"/>-->
+    </bean>
+
+</beans>
+

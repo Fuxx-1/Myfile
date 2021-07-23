@@ -11,7 +11,16 @@
       <list>
         <option value="$PROJECT_DIR$/JavaFile/JavaWebDemo/pom.xml" />
         <option value="$PROJECT_DIR$/JavaWebDemo/pom.xml" />
+        <option value="$PROJECT_DIR$/MybatisDemo/pom.xml" />
+        <option value="$PROJECT_DIR$/SpringDemo/pom.xml" />
       </list>
+    </option>
+    <option name="ignoredFiles">
+      <set>
+        <option value="$PROJECT_DIR$/SpringDemo/AS&amp;@/@/pom.xml" />
+        <option value="$PROJECT_DIR$/SpringDemo/AS&amp;AT/pom.xml" />
+        <option value="$PROJECT_DIR$/SpringDemo/ASandAT/pom.xml" />
+      </set>
     </option>
   </component>
   <component name="ProjectRootManager" version="2" languageLevel="JDK_1_8" default="true" project-jdk-name="1.8" project-jdk-type="JavaSDK" />

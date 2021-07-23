@@ -6,10 +6,22 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
-        <module name="JavaWebDemo" />
+        <module name="FirstSpringProgram" />
+        <module name="IOCTest" />
+        <module name="DITest" />
+        <module name="FirstMybatisProgram" />
+        <module name="IOCSignUp" />
+        <module name="ANNO1" />
+        <module name="ANNO2" />
+        <module name="CP" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
+      <module name="@" target="1.8" />
+      <module name="AS" target="1.8" />
+      <module name="AS&amp;AT" target="1.8" />
+      <module name="ASandAT" target="1.8" />
+      <module name="AT" target="1.8" />
       <module name="demo" target="1.8" />
       <module name="WebDemo" target="1.8" />
     </bytecodeTargetLevel>
