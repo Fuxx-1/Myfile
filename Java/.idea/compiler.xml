@@ -2,6 +2,7 @@
 <project version="4">
   <component name="CompilerConfiguration">
     <annotationProcessing>
+      <profile default="true" name="Default" enabled="true" />
       <profile name="Maven default annotation processors profile" enabled="true">
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
@@ -9,11 +10,21 @@
         <module name="FirstSpringProgram" />
         <module name="IOCTest" />
         <module name="DITest" />
-        <module name="FirstMybatisProgram" />
+        <module name="AOPTest" />
         <module name="IOCSignUp" />
+        <module name="Controller" />
+        <module name="CP" />
+        <module name="BookControllerSystemBasedBySSMFarem" />
+        <module name="proxy" />
+        <module name="SpringMVCDemo1" />
+        <module name="Anno" />
+        <module name="ProxyTest" />
+        <module name="Transaction" />
+        <module name="FirstMybatisProgram" />
         <module name="ANNO1" />
         <module name="ANNO2" />
-        <module name="CP" />
+        <module name="Mybatis" />
+        <module name="ServletTest" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>

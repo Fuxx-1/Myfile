@@ -11,7 +11,10 @@
       <user-name>root</user-name>
       <schema-mapping>
         <introspection-scope>
-          <node kind="schema" negative="1" />
+          <node kind="schema">
+            <name qname="demo" />
+            <name qname="mybatis" />
+          </node>
         </introspection-scope>
       </schema-mapping>
     </data-source>

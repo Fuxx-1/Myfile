@@ -12,6 +12,9 @@
         <module>IOC</module>
         <module>DI</module>
         <module>ANNO</module>
+        <module>AOP</module>
+        <module>Mybatis</module>
+        <module>Transaction</module>
     </modules>
 
     <properties>
@@ -32,5 +35,13 @@
             <version>4.12</version>
             <scope>test</scope>
         </dependency>
+        <!-- https://mvnrepository.com/artifact/org.aspectj/aspectjweaver -->
+        <dependency>
+            <groupId>org.aspectj</groupId>
+            <artifactId>aspectjweaver</artifactId>
+            <version>1.9.7</version>
+        </dependency>
+
+
     </dependencies>
 </project>

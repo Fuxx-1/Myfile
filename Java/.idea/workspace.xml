@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ArtifactsWorkspaceSettings">
     <artifacts-to-build>
-      <artifact name="JavaWebDemo:war exploded" />
+      <artifact name="BookControllerSystemBasedBySSMFarem:war exploded" />
     </artifacts-to-build>
   </component>
   <component name="AutoImportSettings">
@@ -10,8 +10,30 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="146c6b5b-5dc8-4b04-835a-c1ccd6709278" name="默认变更列表" comment="默认变更列表">
-      <change afterPath="$PROJECT_DIR$/SpringDemo/ANNO/ANNO2/src/main/resources/beans.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/artifacts/Anno_war_exploded.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/artifacts/BookControllerSystemBasedBySSMFarem_war_exploded.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/artifacts/Controller_war_exploded.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/artifacts/ServletTest_war_exploded.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/artifacts/SpringMVCDemo1_war_exploded.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/SpringDemo/AOP/proxy/pom.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/SpringDemo/Mybatis/src/test/java/com/demo1/mapper/UserMapperTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/SpringDemo/Transaction/src/main/resources/applicationContext.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/SpringDemo/Transaction/src/main/resources/mybatis-config.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/SpringDemo/Transaction/src/main/resources/spring-mapper.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/SpringMVC/Anno/Anno.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/SpringMVC/BookControllerSystemBasedBySSMFarem/BookControllerSystemBasedBySSMFarem.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/SpringMVC/Controller/Controller.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/SpringMVC/Controller/src/main/resources/springmvc-servlet.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/SpringMVC/SpringMVCDemo1/SpringMVCDemo1.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/Java.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/Java.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources.local.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.local.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/60b28afa-aa1a-4ad1-be47-5756d85f7a1b.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/60b28afa-aa1a-4ad1-be47-5756d85f7a1b.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/JavaWebDemo/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/JavaWebDemo/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SpringDemo/IOC/FirstSpringProgram/target/classes/beans.xml" beforeDir="false" afterPath="$PROJECT_DIR$/SpringDemo/IOC/FirstSpringProgram/target/classes/beans.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SpringDemo/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/SpringDemo/pom.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -45,11 +67,12 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="AnnotationType" />
-        <option value="Jsp File" />
         <option value="FxmlFile" />
+        <option value="JUnit3 Test Class" />
+        <option value="Jspx File" />
         <option value="Interface" />
         <option value="Class" />
-        <option value="JUnit3 Test Class" />
+        <option value="Jsp File" />
       </list>
     </option>
   </component>
@@ -99,16 +122,17 @@
     <property name="com.intellij.openapi.externalSystem.service.settings.ExternalSystemGroupConfigurable" value="ALL" />
     <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary" value="JUnit3" />
     <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit3" value="junit.framework.TestCase" />
+    <property name="extract.method.default.visibility" value="private" />
     <property name="jdk.selected.JAVA_MODULE" value="1.8" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/SpringDemo/IOC/src/main/resources" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/SpringMVC/Controller/src/main/resources" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.selected.package.eslint" value="(autodetect)" />
     <property name="node.js.selected.package.tslint" value="(autodetect)" />
-    <property name="project.structure.last.edited" value="模块" />
+    <property name="project.structure.last.edited" value="工件" />
     <property name="project.structure.proportion" value="0.15" />
-    <property name="project.structure.side.proportion" value="0.40191388" />
-    <property name="settings.editor.selected.configurable" value="fileTemplates" />
+    <property name="project.structure.side.proportion" value="0.35597825" />
+    <property name="settings.editor.selected.configurable" value="spring" />
   </component>
   <component name="ReaderModeSettings">
     <option name="enabled" value="false" />
@@ -118,14 +142,18 @@
       <recent name="com.example.JavaWebDemo" />
     </key>
     <key name="CopyFile.RECENT_KEYS">
-      <recent name="D:\Programing\Myfile\Java\SpringDemo\IOC\src\main\resources" />
+      <recent name="D:\Programing\Myfile\Java\SpringMVC\Controller\src\main\resources" />
+      <recent name="D:\Programing\Myfile\Java\SpringMVC\ServletTest\src\main\resources" />
+      <recent name="D:\Programing\Myfile\Java\SpringMVC\Controller\web\WEB-INF" />
+      <recent name="D:\Programing\Myfile\Java\SpringDemo\Transaction\src\main\java\com\demo\mapper" />
+      <recent name="D:\Programing\Myfile\Java\SpringDemo\Transaction\src\main\resources" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="D:\Programing\Myfile\Java\SpringMVC\BookControllerSystemBasedBySSMFarem\web\WEB-INF\jsp" />
+      <recent name="D:\Programing\Myfile\Java\SpringMVC\Controller\web\WEB-INF" />
+      <recent name="D:\Programing\Myfile\Java\SpringMVC\Servlet\web\WEB-INF" />
+      <recent name="D:\Programing\Myfile\Java" />
       <recent name="D:\Programing\Myfile\Java\SpringDemo\ANNO" />
-      <recent name="D:\Programing\Myfile\Java\SpringDemo\DI" />
-      <recent name="D:\Programing\Myfile\Java\SpringDemo\IOC2" />
-      <recent name="D:\Programing\Myfile\Java\SpringDemo\IOC\src\main\java" />
-      <recent name="D:\Programing\Myfile\Java\SpringDemo\IOC\src\main\com" />
     </key>
     <key name="CreateTestDialog.Recents.Supers">
       <recent name="junit.framework.TestCase" />
@@ -134,13 +162,17 @@
       <recent name="com.Example.JavaWebDemo" />
     </key>
     <key name="CreateTestDialog.RecentsKey">
+      <recent name="com.demo1.mapper" />
+      <recent name="com.demo.demo01" />
       <recent name="com.demo.pojo" />
     </key>
     <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="com.demo.pojo" />
+      <recent name="" />
       <recent name="com.WebSocket.JavaWebDemo" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.UserTest.Test">
+  <component name="RunManager" selected="Tomcat 服务器.Tomcat 8.5.65">
     <configuration default="true" type="ArquillianTestNG" factoryName="" nameIsGenerated="true">
       <option name="arquillianRunConfiguration">
         <value>
@@ -154,26 +186,8 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="MyTest (1)" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="ANNO1" />
-      <option name="PACKAGE_NAME" value="" />
-      <option name="MAIN_CLASS_NAME" value="MyTest" />
-      <option name="TEST_OBJECT" value="class" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="MyTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="CP" />
-      <option name="PACKAGE_NAME" value="" />
-      <option name="MAIN_CLASS_NAME" value="MyTest" />
-      <option name="TEST_OBJECT" value="class" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
     <configuration name="MyTest.Test" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="ANNO1" />
+      <module name="Transaction" />
       <option name="PACKAGE_NAME" value="" />
       <option name="MAIN_CLASS_NAME" value="MyTest" />
       <option name="METHOD_NAME" value="Test" />
@@ -182,44 +196,69 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="MyTest.TestForC" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="CP" />
+    <configuration name="MyTest.TestForAddUser" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="Transaction" />
       <option name="PACKAGE_NAME" value="" />
       <option name="MAIN_CLASS_NAME" value="MyTest" />
-      <option name="METHOD_NAME" value="TestForC" />
+      <option name="METHOD_NAME" value="TestForAddUser" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="UserTest.Test" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="ANNO2" />
+    <configuration name="MyTest.TestForSelectUser" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="Transaction" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="MAIN_CLASS_NAME" value="MyTest" />
+      <option name="METHOD_NAME" value="TestForSelectUser" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="UserMapperTest.SelectUser" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="Mybatis" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="com.demo.pojo.*" />
+          <option name="PATTERN" value="com.demo1.mapper.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="PACKAGE_NAME" value="com.demo.pojo" />
-      <option name="MAIN_CLASS_NAME" value="com.demo.pojo.UserTest" />
-      <option name="METHOD_NAME" value="Test" />
+      <option name="PACKAGE_NAME" value="com.demo1.mapper" />
+      <option name="MAIN_CLASS_NAME" value="com.demo1.mapper.UserMapperTest" />
+      <option name="METHOD_NAME" value="SelectUser" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="JavaWebDemo" type="#com.intellij.j2ee.web.tomcat.TomcatRunConfigurationFactory" factoryName="Local" APPLICATION_SERVER_NAME="Tomcat 8.5.651" ALTERNATIVE_JRE_ENABLED="false">
-      <option name="OPEN_IN_BROWSER_URL" value="http://localhost:8080/JavaWebDemo/" />
-      <option name="UPDATING_POLICY" value="redeploy-artifacts" />
+    <configuration name="UserMapperTest.SelectUserTest2" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="Mybatis" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.demo1.mapper.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.demo1.mapper" />
+      <option name="MAIN_CLASS_NAME" value="com.demo1.mapper.UserMapperTest" />
+      <option name="METHOD_NAME" value="SelectUserTest2" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="Tomcat 8.5.65" type="#com.intellij.j2ee.web.tomcat.TomcatRunConfigurationFactory" factoryName="Local" APPLICATION_SERVER_NAME="Tomcat 8.5.65" ALTERNATIVE_JRE_ENABLED="false" nameIsGenerated="true">
+      <option name="UPDATING_POLICY" value="restart-server" />
       <deployment>
-        <artifact name="JavaWebDemo:war exploded">
+        <artifact name="BookControllerSystemBasedBySSMFarem:war exploded">
           <settings>
-            <option name="CONTEXT_PATH" value="/JavaWebDemo" />
+            <option name="CONTEXT_PATH" value="/" />
           </settings>
         </artifact>
       </deployment>
       <server-settings>
-        <option name="BASE_DIRECTORY_NAME" value="4886a007-271c-44ca-838e-1c25fe72782a" />
+        <option name="BASE_DIRECTORY_NAME" value="04781aae-6a1d-4393-b33c-45ef7bbb57d1" />
       </server-settings>
       <predefined_log_file enabled="true" id="Tomcat" />
       <predefined_log_file enabled="true" id="Tomcat Catalina" />
@@ -227,7 +266,7 @@
       <predefined_log_file id="Tomcat Host Manager" />
       <predefined_log_file id="Tomcat Localhost Access" />
       <RunnerSettings RunnerId="Debug">
-        <option name="DEBUG_PORT" value="36091" />
+        <option name="DEBUG_PORT" value="1345" />
       </RunnerSettings>
       <ConfigurationWrapper VM_VAR="JAVA_OPTS" RunnerId="Cover">
         <option name="USE_ENV_VARIABLES" value="true" />
@@ -292,25 +331,25 @@
       <method v="2">
         <option name="Make" enabled="true" />
         <option name="BuildArtifacts" enabled="true">
-          <artifact name="JavaWebDemo:war exploded" />
+          <artifact name="BookControllerSystemBasedBySSMFarem:war exploded" />
         </option>
       </method>
     </configuration>
     <list>
-      <item itemvalue="Tomcat 服务器.JavaWebDemo" />
-      <item itemvalue="JUnit.MyTest" />
-      <item itemvalue="JUnit.MyTest.TestForC" />
+      <item itemvalue="JUnit.UserMapperTest.SelectUser" />
+      <item itemvalue="JUnit.UserMapperTest.SelectUserTest2" />
       <item itemvalue="JUnit.MyTest.Test" />
-      <item itemvalue="JUnit.MyTest (1)" />
-      <item itemvalue="JUnit.UserTest.Test" />
+      <item itemvalue="JUnit.MyTest.TestForSelectUser" />
+      <item itemvalue="JUnit.MyTest.TestForAddUser" />
+      <item itemvalue="Tomcat 服务器.Tomcat 8.5.65" />
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="JUnit.UserTest.Test" />
-        <item itemvalue="JUnit.MyTest (1)" />
+        <item itemvalue="JUnit.MyTest.TestForSelectUser" />
+        <item itemvalue="JUnit.MyTest.TestForAddUser" />
         <item itemvalue="JUnit.MyTest.Test" />
-        <item itemvalue="JUnit.MyTest.TestForC" />
-        <item itemvalue="JUnit.MyTest" />
+        <item itemvalue="JUnit.UserMapperTest.SelectUserTest2" />
+        <item itemvalue="JUnit.UserMapperTest.SelectUser" />
       </list>
     </recent_temporary>
   </component>
@@ -386,6 +425,20 @@
       <workItem from="1627002378559" duration="1214000" />
       <workItem from="1627004524385" duration="233000" />
       <workItem from="1627005259775" duration="23531000" />
+      <workItem from="1627088727674" duration="860000" />
+      <workItem from="1627089944650" duration="17635000" />
+      <workItem from="1627222583310" duration="3136000" />
+      <workItem from="1627261462774" duration="11044000" />
+      <workItem from="1627278158243" duration="2008000" />
+      <workItem from="1627280388870" duration="976000" />
+      <workItem from="1627281461400" duration="625000" />
+      <workItem from="1627282199064" duration="4284000" />
+      <workItem from="1627286679356" duration="27859000" />
+      <workItem from="1627434258694" duration="525000" />
+      <workItem from="1627434870278" duration="8967000" />
+      <workItem from="1627462492374" duration="3163000" />
+      <workItem from="1627607480592" duration="28925000" />
+      <workItem from="1627695071955" duration="3833000" />
     </task>
     <servers />
   </component>
@@ -410,6 +463,10 @@
         <breakpoint enabled="true" type="java-exception">
           <properties class="java.lang.ClassNotFoundException" package="java.lang" />
           <option name="timeStamp" value="1" />
+        </breakpoint>
+        <breakpoint enabled="true" type="java-exception">
+          <properties class="java.lang.NullPointerException" package="java.lang" />
+          <option name="timeStamp" value="7" />
         </breakpoint>
       </breakpoints>
     </breakpoint-manager>

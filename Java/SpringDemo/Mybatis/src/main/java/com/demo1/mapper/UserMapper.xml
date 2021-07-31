@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<!--namespace->绑定一个对用的Mapper接口-->
+<mapper namespace="com.demo1.mapper.UserMapper">
+    <select id="selectUser" resultType="com.demo1.pojo.User">
+        select * from mybatis.user;
+    </select>
+</mapper>

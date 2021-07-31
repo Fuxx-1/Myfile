@@ -13,10 +13,13 @@
         <option value="$PROJECT_DIR$/JavaWebDemo/pom.xml" />
         <option value="$PROJECT_DIR$/MybatisDemo/pom.xml" />
         <option value="$PROJECT_DIR$/SpringDemo/pom.xml" />
+        <option value="$PROJECT_DIR$/SpringDemo/SpringMVC/pom.xml" />
+        <option value="$PROJECT_DIR$/SpringMVC/pom.xml" />
       </list>
     </option>
     <option name="ignoredFiles">
       <set>
+        <option value="$PROJECT_DIR$/SpringDemo/AOPTest/pom.xml" />
         <option value="$PROJECT_DIR$/SpringDemo/AS&amp;@/@/pom.xml" />
         <option value="$PROJECT_DIR$/SpringDemo/AS&amp;AT/pom.xml" />
         <option value="$PROJECT_DIR$/SpringDemo/ASandAT/pom.xml" />
