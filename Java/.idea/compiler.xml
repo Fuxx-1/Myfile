@@ -19,11 +19,13 @@
         <module name="SpringMVCDemo1" />
         <module name="Anno" />
         <module name="ProxyTest" />
+        <module name="TestForJWXT" />
         <module name="Transaction" />
         <module name="FirstMybatisProgram" />
         <module name="ANNO1" />
         <module name="ANNO2" />
         <module name="Mybatis" />
+        <module name="AJAX" />
         <module name="ServletTest" />
       </profile>
     </annotationProcessing>

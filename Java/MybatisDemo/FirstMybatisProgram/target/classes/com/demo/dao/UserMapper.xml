@@ -2,9 +2,9 @@
 <!DOCTYPE mapper
         PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<!--namespace->绑定一个对用的Mapper接口-->
+<!--namespace->缁戝畾涓?涓鐢ㄧ殑Mapper鎺ュ彛-->
 <mapper namespace="com.demo.dao.UserMapper">
-    <!--select查询语句-->
+    <!--select鏌ヨ璇彞-->
     <select id="getUserList" resultType="com.demo.pojo.User">
         SELECT *
         FROM mybatis.user;

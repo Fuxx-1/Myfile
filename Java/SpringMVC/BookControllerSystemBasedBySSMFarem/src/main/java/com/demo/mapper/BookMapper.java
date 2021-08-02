@@ -36,8 +36,8 @@ public interface BookMapper {
     @Select("select * from demo.books order by bookID;")
     List<Books> queryAllBook();
 
-    //查询全部的书，分页
+    //查询全部的书，分页api
     @Select("select * from demo.books order by bookID limit #{start}, #{limit};")
-    List<Books> queryAllBookLimited(@Param("start")int start, @Param("limit")int limit);
+    List<Books> queryAllBookLimited(@Param("start") int start, @Param("limit") int limit);
 
 }

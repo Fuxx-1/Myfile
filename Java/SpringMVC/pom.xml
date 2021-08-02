@@ -14,6 +14,7 @@
         <module>Anno</module>
         <module>Controller</module>
         <module>BookControllerSystemBasedBySSMFarem</module>
+        <module>AJAX</module>
     </modules>
 
     <properties>

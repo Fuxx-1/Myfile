@@ -1,8 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="AnalysisUIOptions">
+    <option name="GROUP_BY_SEVERITY" value="true" />
+  </component>
   <component name="ArtifactsWorkspaceSettings">
     <artifacts-to-build>
-      <artifact name="BookControllerSystemBasedBySSMFarem:war exploded" />
+      <artifact name="AJAX:war exploded" />
     </artifacts-to-build>
   </component>
   <component name="AutoImportSettings">
@@ -10,30 +13,24 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="146c6b5b-5dc8-4b04-835a-c1ccd6709278" name="默认变更列表" comment="默认变更列表">
-      <change afterPath="$PROJECT_DIR$/.idea/artifacts/Anno_war_exploded.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/artifacts/BookControllerSystemBasedBySSMFarem_war_exploded.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/artifacts/Controller_war_exploded.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/artifacts/ServletTest_war_exploded.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/artifacts/SpringMVCDemo1_war_exploded.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/SpringDemo/AOP/proxy/pom.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/SpringDemo/Mybatis/src/test/java/com/demo1/mapper/UserMapperTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/SpringDemo/Transaction/src/main/resources/applicationContext.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/SpringDemo/Transaction/src/main/resources/mybatis-config.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/SpringDemo/Transaction/src/main/resources/spring-mapper.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/SpringMVC/Anno/Anno.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/SpringMVC/BookControllerSystemBasedBySSMFarem/BookControllerSystemBasedBySSMFarem.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/SpringMVC/Controller/Controller.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/SpringMVC/Controller/src/main/resources/springmvc-servlet.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/SpringMVC/SpringMVCDemo1/SpringMVCDemo1.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/Java.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/Java.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/artifacts/AJAX_war_exploded.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/SpringMVC/AJAX/AJAX.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../BASE64/教务系统/Codeing.js" beforeDir="false" afterPath="$PROJECT_DIR$/../BASE64/教务系统/Codeing.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/dataSources.local.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.local.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/dataSources/60b28afa-aa1a-4ad1-be47-5756d85f7a1b.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/60b28afa-aa1a-4ad1-be47-5756d85f7a1b.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/JavaWebDemo/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/JavaWebDemo/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SpringDemo/IOC/FirstSpringProgram/target/classes/beans.xml" beforeDir="false" afterPath="$PROJECT_DIR$/SpringDemo/IOC/FirstSpringProgram/target/classes/beans.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SpringDemo/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/SpringDemo/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/JavaFile/JavaFile.iml" beforeDir="false" afterPath="$PROJECT_DIR$/JavaFile/JavaFile.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MybatisDemo/FirstMybatisProgram/target/classes/com/demo/dao/UserMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/MybatisDemo/FirstMybatisProgram/target/classes/com/demo/dao/UserMapper.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MybatisDemo/FirstMybatisProgram/target/classes/mybatis-config.xml" beforeDir="false" afterPath="$PROJECT_DIR$/MybatisDemo/FirstMybatisProgram/target/classes/mybatis-config.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SpringDemo/Mybatis/target/classes/com/demo1/mapper/UserMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/SpringDemo/Mybatis/target/classes/com/demo1/mapper/UserMapper.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SpringDemo/Transaction/target/classes/com/demo/mapper/UserMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/SpringDemo/Transaction/target/classes/com/demo/mapper/UserMapper.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SpringMVC/BookControllerSystemBasedBySSMFarem/src/main/java/com/demo/mapper/BookMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/SpringMVC/BookControllerSystemBasedBySSMFarem/src/main/java/com/demo/mapper/BookMapper.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SpringMVC/BookControllerSystemBasedBySSMFarem/src/main/java/com/demo/websocket/Websocket.java" beforeDir="false" afterPath="$PROJECT_DIR$/SpringMVC/BookControllerSystemBasedBySSMFarem/src/main/java/com/demo/websocket/Websocket.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SpringMVC/SpringMVCDemo1/target/classes/springmvc-servlet.xml" beforeDir="false" afterPath="$PROJECT_DIR$/SpringMVC/SpringMVCDemo1/target/classes/springmvc-servlet.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SpringMVC/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/SpringMVC/pom.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -71,8 +68,9 @@
         <option value="JUnit3 Test Class" />
         <option value="Jspx File" />
         <option value="Interface" />
-        <option value="Class" />
         <option value="Jsp File" />
+        <option value="HTML File" />
+        <option value="Class" />
       </list>
     </option>
   </component>
@@ -101,6 +99,9 @@
       </MavenGeneralSettings>
     </option>
   </component>
+  <component name="ProblemsViewState">
+    <option name="selectedIndex" value="2" />
+  </component>
   <component name="ProjectId" id="1scjLFmcySwyee08BEZ002dE3Lt" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">
@@ -110,7 +111,9 @@
   </component>
   <component name="PropertiesComponent">
     <property name="DatabaseDriversLRU" value="mysql" />
+    <property name="DefaultHtmlFileTemplate" value="HTML File" />
     <property name="Downloaded.Files.Path.Enabled" value="false" />
+    <property name="NEW_TOOLWINDOW_STRIPE_DEFAULTS" value="true" />
     <property name="Repository.Attach.Annotations" value="false" />
     <property name="Repository.Attach.JavaDocs" value="false" />
     <property name="Repository.Attach.Sources" value="false" />
@@ -129,10 +132,10 @@
     <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.selected.package.eslint" value="(autodetect)" />
     <property name="node.js.selected.package.tslint" value="(autodetect)" />
-    <property name="project.structure.last.edited" value="工件" />
+    <property name="project.structure.last.edited" value="模块" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.35597825" />
-    <property name="settings.editor.selected.configurable" value="spring" />
+    <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
   </component>
   <component name="ReaderModeSettings">
     <option name="enabled" value="false" />
@@ -159,6 +162,7 @@
       <recent name="junit.framework.TestCase" />
     </key>
     <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
+      <recent name="" />
       <recent name="com.Example.JavaWebDemo" />
     </key>
     <key name="CreateTestDialog.RecentsKey">
@@ -172,7 +176,14 @@
       <recent name="com.WebSocket.JavaWebDemo" />
     </key>
   </component>
-  <component name="RunManager" selected="Tomcat 服务器.Tomcat 8.5.65">
+  <component name="RunManager" selected="应用程序.JWXTService">
+    <configuration name="JWXTService" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="JWXTService" />
+      <module name="TestForJWXT" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="MyTest.Test" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="Transaction" />
       <option name="PACKAGE_NAME" value="" />
@@ -203,22 +214,6 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="UserMapperTest.SelectUser" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="Mybatis" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="com.demo1.mapper.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="com.demo1.mapper" />
-      <option name="MAIN_CLASS_NAME" value="com.demo1.mapper.UserMapperTest" />
-      <option name="METHOD_NAME" value="SelectUser" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
     <configuration name="UserMapperTest.SelectUserTest2" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="Mybatis" />
       <extension name="coverage">
@@ -238,7 +233,7 @@
     <configuration name="Tomcat 8.5.65" type="#com.intellij.j2ee.web.tomcat.TomcatRunConfigurationFactory" factoryName="Local" APPLICATION_SERVER_NAME="Tomcat 8.5.65" ALTERNATIVE_JRE_ENABLED="false" nameIsGenerated="true">
       <option name="UPDATING_POLICY" value="restart-server" />
       <deployment>
-        <artifact name="BookControllerSystemBasedBySSMFarem:war exploded">
+        <artifact name="AJAX:war exploded">
           <settings>
             <option name="CONTEXT_PATH" value="/" />
           </settings>
@@ -318,25 +313,25 @@
       <method v="2">
         <option name="Make" enabled="true" />
         <option name="BuildArtifacts" enabled="true">
-          <artifact name="BookControllerSystemBasedBySSMFarem:war exploded" />
+          <artifact name="AJAX:war exploded" />
         </option>
       </method>
     </configuration>
     <list>
-      <item itemvalue="JUnit.UserMapperTest.SelectUser" />
       <item itemvalue="JUnit.UserMapperTest.SelectUserTest2" />
       <item itemvalue="JUnit.MyTest.Test" />
       <item itemvalue="JUnit.MyTest.TestForSelectUser" />
       <item itemvalue="JUnit.MyTest.TestForAddUser" />
       <item itemvalue="Tomcat 服务器.Tomcat 8.5.65" />
+      <item itemvalue="应用程序.JWXTService" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="应用程序.JWXTService" />
         <item itemvalue="JUnit.MyTest.TestForSelectUser" />
         <item itemvalue="JUnit.MyTest.TestForAddUser" />
         <item itemvalue="JUnit.MyTest.Test" />
         <item itemvalue="JUnit.UserMapperTest.SelectUserTest2" />
-        <item itemvalue="JUnit.UserMapperTest.SelectUser" />
       </list>
     </recent_temporary>
   </component>
@@ -426,6 +421,15 @@
       <workItem from="1627462492374" duration="3163000" />
       <workItem from="1627607480592" duration="28925000" />
       <workItem from="1627695071955" duration="4694000" />
+      <workItem from="1627867194697" duration="719000" />
+      <workItem from="1627867968678" duration="591000" />
+      <workItem from="1627868720966" duration="1345000" />
+      <workItem from="1627870698464" duration="12658000" />
+      <workItem from="1627912252286" duration="147000" />
+      <workItem from="1627912431594" duration="239000" />
+      <workItem from="1627913419760" duration="6000" />
+      <workItem from="1627913482880" duration="100000" />
+      <workItem from="1627913707161" duration="215000" />
     </task>
     <servers />
   </component>
@@ -443,6 +447,9 @@
       </map>
     </option>
     <option name="oldMeFiltersMigrated" value="true" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <option name="SHOW_DIRTY_RECURSIVELY" value="true" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

@@ -80,7 +80,7 @@ public class Websocket {
     @OnMessage
     public void onMessage(String message, Session session) {
         System.out.println("收到来自用户id为：" + this.userId + "的消息：" + message);
-        if (session == null) logger.debug("session null");
+        if (session == null) logger.debug("session is null");
         Iterator<Long> it = userSocket.keySet().iterator();
         for (Map.Entry<Long, Set<Websocket>> entry : userSocket.entrySet()) {
             long id = entry.getKey();

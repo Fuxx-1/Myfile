@@ -120,7 +120,6 @@ jQuery(function ($) {
             var enPassword = hex2b64(rsaKey.encrypt($("#mm").val()));
             $("#mm").val(enPassword);
             $("#hidMm").val(enPassword); //页面上放了一个隐藏的password类型输入框，name也是mm，防止密码自动填充，在提交的时候把内容设置成跟输入的密码一致
-
         }
         //		var isSuccess = false;
         //		$.ajax({
