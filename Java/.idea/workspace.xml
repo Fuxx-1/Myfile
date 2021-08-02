@@ -173,19 +173,6 @@
     </key>
   </component>
   <component name="RunManager" selected="Tomcat 服务器.Tomcat 8.5.65">
-    <configuration default="true" type="ArquillianTestNG" factoryName="" nameIsGenerated="true">
-      <option name="arquillianRunConfiguration">
-        <value>
-          <option name="containerStateName" value="" />
-        </value>
-      </option>
-      <option name="TEST_OBJECT" value="CLASS" />
-      <properties />
-      <listeners />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
     <configuration name="MyTest.Test" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="Transaction" />
       <option name="PACKAGE_NAME" value="" />
@@ -438,7 +425,7 @@
       <workItem from="1627434870278" duration="8967000" />
       <workItem from="1627462492374" duration="3163000" />
       <workItem from="1627607480592" duration="28925000" />
-      <workItem from="1627695071955" duration="3833000" />
+      <workItem from="1627695071955" duration="4694000" />
     </task>
     <servers />
   </component>
