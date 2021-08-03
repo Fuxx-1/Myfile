@@ -23,7 +23,7 @@
                 var websocket;
                 if ('WebSocket' in window) {
                     console.log("此浏览器支持websocket");
-                    websocket = new WebSocket("ws://192.168.199.233:8080/websocketDemo/${id}");
+                    websocket = new WebSocket("ws://192.168.1.107:8080/websocketDemo/${id}");
                 } else if ('MozWebSocket' in window) {
                     alert("此浏览器只支持MozWebSocket");
                 } else {
