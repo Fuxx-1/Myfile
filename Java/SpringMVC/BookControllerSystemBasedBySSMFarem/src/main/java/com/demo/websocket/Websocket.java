@@ -36,7 +36,7 @@ public class Websocket {
      * @Description: websocekt连接建立时的操作
      */
     @OnOpen
-    public void onOpen(@PathParam("userId") Long userId, Session session) throws IOException {
+    public void onOpen(@PathParam("userId") Long userId, Session session) {
         this.session = session;
         this.userId = userId;
         onlineCount++;

@@ -1,12 +1,8 @@
 
-‚
-java:S1130'"lRemove the declaration of thrown exception 'java.io.IOException', as it cannot be thrown from method's body.(ú¹½ž
 Q
 java:S2696*"6Make the enclosing method "static" or remove this set.(ÚÔ«¼ýÿÿÿÿ
-S	java:S106+"9Replace this use of System.out or System.err by a logger.(‘üÕ‡üÿÿÿÿ
 L
 java:S1854T"6Remove this useless assignment to local variable "it".(“£Ã§
-N	java:S106R"9Replace this use of System.out or System.err by a logger.(ÊýÂˆ
 =
 java:S1481T"'Remove this unused "it" local variable.(“£Ã§
 S

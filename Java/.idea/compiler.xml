@@ -17,7 +17,6 @@
         <module name="BookControllerSystemBasedBySSMFarem" />
         <module name="proxy" />
         <module name="SpringMVCDemo1" />
-        <module name="Anno" />
         <module name="ProxyTest" />
         <module name="TestForJWXT" />
         <module name="Transaction" />
@@ -31,6 +30,7 @@
     </annotationProcessing>
     <bytecodeTargetLevel>
       <module name="@" target="1.8" />
+      <module name="Anno" target="1.8" />
       <module name="AS" target="1.8" />
       <module name="AS&amp;AT" target="1.8" />
       <module name="ASandAT" target="1.8" />
