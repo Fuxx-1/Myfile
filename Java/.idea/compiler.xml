@@ -17,8 +17,8 @@
         <module name="BookControllerSystemBasedBySSMFarem" />
         <module name="proxy" />
         <module name="SpringMVCDemo1" />
-        <module name="ProxyTest" />
         <module name="TestForJWXT" />
+        <module name="ProxyTest" />
         <module name="Transaction" />
         <module name="FirstMybatisProgram" />
         <module name="ANNO1" />

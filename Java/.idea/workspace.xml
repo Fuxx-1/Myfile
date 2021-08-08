@@ -5,7 +5,7 @@
   </component>
   <component name="ArtifactsWorkspaceSettings">
     <artifacts-to-build>
-      <artifact name="BookControllerSystemBasedBySSMFarem:war exploded" />
+      <artifact name="BookControllerSystemBasedBySSMFarem:war" />
     </artifacts-to-build>
   </component>
   <component name="AutoImportSettings">
@@ -13,26 +13,44 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="146c6b5b-5dc8-4b04-835a-c1ccd6709278" name="默认变更列表" comment="默认变更列表">
-      <change beforePath="$PROJECT_DIR$/.idea/Java.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/Java.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/artifacts/BookControllerSystemBasedBySSMFarem_war.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/artifacts/BookControllerSystemBasedBySSMFarem_war_exploded.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/artifacts/BookControllerSystemBasedBySSMFarem_war_exploded.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/60b28afa-aa1a-4ad1-be47-5756d85f7a1b.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/60b28afa-aa1a-4ad1-be47-5756d85f7a1b.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/dataSources/60b28afa-aa1a-4ad1-be47-5756d85f7a1b/entities/entities.dat" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/60b28afa-aa1a-4ad1-be47-5756d85f7a1b/entities/entities.dat" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/dataSources/60b28afa-aa1a-4ad1-be47-5756d85f7a1b/entities/entities.dat.values" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/60b28afa-aa1a-4ad1-be47-5756d85f7a1b/entities/entities.dat.values" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/dataSources/60b28afa-aa1a-4ad1-be47-5756d85f7a1b/entities/entities.dat.values.at" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/60b28afa-aa1a-4ad1-be47-5756d85f7a1b/entities/entities.dat.values.at" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/dataSources/60b28afa-aa1a-4ad1-be47-5756d85f7a1b/entities/entities.dat.values.s" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/60b28afa-aa1a-4ad1-be47-5756d85f7a1b/entities/entities.dat.values.s" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/dataSources/60b28afa-aa1a-4ad1-be47-5756d85f7a1b/entities/entities.dat_i" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/60b28afa-aa1a-4ad1-be47-5756d85f7a1b/entities/entities.dat_i" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/e/5/e5cb37495338c9cd0ccab5e73a24a7cd5fb6a1cc" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/60b28afa-aa1a-4ad1-be47-5756d85f7a1b/storage_v2/_src_/schema/sys.zb4BAA.zip" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/60b28afa-aa1a-4ad1-be47-5756d85f7a1b/storage_v2/_src_/schema/sys.zb4BAA.zip" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/jarRepositories.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/jarRepositories.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/1/9/19f65fef782170108f98675db8741145183fc94e" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/1/9/19f65fef782170108f98675db8741145183fc94e" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/3/2/32abc6971ab2eb1358a5fd1f6ff0d3054ac7d602" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/5/3/53cc623845f71e3b681940407e71c415e76a3b6f" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/6/c/6c11b79a90efe73d6baff4ef64a3e20da36fae6c" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/a/0/a0653485642aa08ff93ac97b0125447492fda46e" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/d/3/d3c6208ae935f5d5ebbb13dd8d8cfc75dd808a7f" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/e/4/e441e6d8187797974fae40d82896585dd176f362" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/e/5/e5cb37495338c9cd0ccab5e73a24a7cd5fb6a1cc" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/e/5/e5cb37495338c9cd0ccab5e73a24a7cd5fb6a1cc" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/index.pb" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/index.pb" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SpringDemo/Transaction/target/classes/com/demo/mapper/UserMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/SpringDemo/Transaction/target/classes/com/demo/mapper/UserMapper.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SpringMVC/AJAX/AJAX.iml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/SpringMVC/Anno/Anno.iml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/SpringMVC/BookControllerSystemBasedBySSMFarem/BookControllerSystemBasedBySSMFarem.iml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/SpringMVC/BookControllerSystemBasedBySSMFarem/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/SpringMVC/BookControllerSystemBasedBySSMFarem/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SpringMVC/BookControllerSystemBasedBySSMFarem/src/main/java/com/demo/controller/WebSocketController.java" beforeDir="false" afterPath="$PROJECT_DIR$/SpringMVC/BookControllerSystemBasedBySSMFarem/src/main/java/com/demo/controller/WebSocketController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SpringMVC/BookControllerSystemBasedBySSMFarem/src/main/java/com/demo/service/WSService.java" beforeDir="false" afterPath="$PROJECT_DIR$/SpringMVC/BookControllerSystemBasedBySSMFarem/src/main/java/com/demo/service/WSService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/SpringMVC/BookControllerSystemBasedBySSMFarem/src/main/java/com/demo/websocket/Websocket.java" beforeDir="false" afterPath="$PROJECT_DIR$/SpringMVC/BookControllerSystemBasedBySSMFarem/src/main/java/com/demo/websocket/Websocket.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SpringMVC/Controller/Controller.iml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/SpringMVC/SpringMVCDemo1/SpringMVCDemo1.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/SpringMVC/BookControllerSystemBasedBySSMFarem/src/main/resources/database.properties" beforeDir="false" afterPath="$PROJECT_DIR$/SpringMVC/BookControllerSystemBasedBySSMFarem/src/main/resources/database.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SpringMVC/BookControllerSystemBasedBySSMFarem/target/classes/database.properties" beforeDir="false" afterPath="$PROJECT_DIR$/SpringMVC/BookControllerSystemBasedBySSMFarem/target/classes/database.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SpringMVC/BookControllerSystemBasedBySSMFarem/web/WEB-INF/jsp/addbook.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/SpringMVC/BookControllerSystemBasedBySSMFarem/web/WEB-INF/jsp/addbook.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SpringMVC/BookControllerSystemBasedBySSMFarem/web/WEB-INF/jsp/allbook.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/SpringMVC/BookControllerSystemBasedBySSMFarem/web/WEB-INF/jsp/allbook.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SpringMVC/BookControllerSystemBasedBySSMFarem/web/WEB-INF/jsp/deletebook.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/SpringMVC/BookControllerSystemBasedBySSMFarem/web/WEB-INF/jsp/deletebook.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SpringMVC/BookControllerSystemBasedBySSMFarem/web/WEB-INF/jsp/querybook.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/SpringMVC/BookControllerSystemBasedBySSMFarem/web/WEB-INF/jsp/querybook.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SpringMVC/BookControllerSystemBasedBySSMFarem/web/WEB-INF/jsp/updatebook.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/SpringMVC/BookControllerSystemBasedBySSMFarem/web/WEB-INF/jsp/updatebook.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/BookControllerSystemBasedBySSMFarem_war_exploded/WEB-INF/classes/database.properties" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/BookControllerSystemBasedBySSMFarem_war_exploded/WEB-INF/classes/database.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/BookControllerSystemBasedBySSMFarem_war_exploded/WEB-INF/jsp/addbook.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/BookControllerSystemBasedBySSMFarem_war_exploded/WEB-INF/jsp/addbook.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/BookControllerSystemBasedBySSMFarem_war_exploded/WEB-INF/jsp/allbook.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/BookControllerSystemBasedBySSMFarem_war_exploded/WEB-INF/jsp/allbook.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/BookControllerSystemBasedBySSMFarem_war_exploded/WEB-INF/jsp/deletebook.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/BookControllerSystemBasedBySSMFarem_war_exploded/WEB-INF/jsp/deletebook.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/BookControllerSystemBasedBySSMFarem_war_exploded/WEB-INF/jsp/message.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/BookControllerSystemBasedBySSMFarem_war_exploded/WEB-INF/jsp/message.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/BookControllerSystemBasedBySSMFarem_war_exploded/WEB-INF/jsp/querybook.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/BookControllerSystemBasedBySSMFarem_war_exploded/WEB-INF/jsp/querybook.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/BookControllerSystemBasedBySSMFarem_war_exploded/WEB-INF/jsp/updatebook.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/BookControllerSystemBasedBySSMFarem_war_exploded/WEB-INF/jsp/updatebook.jsp" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -87,12 +105,6 @@
       <filtered-out-file-type name="COMMIT_BY_MESSAGE" />
     </file-type-list>
   </component>
-  <component name="HighlightingSettingsPerFile">
-    <setting file="file://$PROJECT_DIR$/SpringMVC/BookControllerSystemBasedBySSMFarem/src/main/java/com/demo/controller/WebSocketController.java" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/SpringMVC/BookControllerSystemBasedBySSMFarem/web/WEB-INF/jsp/message.jsp" root0="FORCE_HIGHLIGHTING" root1="FORCE_HIGHLIGHTING" root2="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/SpringMVC/BookControllerSystemBasedBySSMFarem/web/WEB-INF/jsp/addbook.jsp" root0="FORCE_HIGHLIGHTING" root1="FORCE_HIGHLIGHTING" root2="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/SpringMVC/BookControllerSystemBasedBySSMFarem/src/main/java/com/demo/controller/BookController.java" root0="FORCE_HIGHLIGHTING" />
-  </component>
   <component name="LogFilters">
     <option name="FILTER_ERRORS" value="false" />
     <option name="FILTER_WARNINGS" value="false" />
@@ -143,7 +155,7 @@
     <property name="project.structure.last.edited" value="工件" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.35597825" />
-    <property name="settings.editor.selected.configurable" value="MavenSettings" />
+    <property name="settings.editor.selected.configurable" value="background.image.plus" />
   </component>
   <component name="ReaderModeSettings">
     <option name="enabled" value="false" />
@@ -246,7 +258,7 @@
       <deployment>
         <artifact name="BookControllerSystemBasedBySSMFarem:war exploded">
           <settings>
-            <option name="CONTEXT_PATH" value="/" />
+            <option name="CONTEXT_PATH" value="/BookControllerSystemBasedBySSMFarem" />
           </settings>
         </artifact>
       </deployment>
@@ -445,6 +457,11 @@
       <workItem from="1627978974597" duration="1250000" />
       <workItem from="1627980281859" duration="1333000" />
       <workItem from="1627982358221" duration="1479000" />
+      <workItem from="1628152783911" duration="2102000" />
+      <workItem from="1628164857989" duration="333000" />
+      <workItem from="1628165233443" duration="140000" />
+      <workItem from="1628165486021" duration="7022000" />
+      <workItem from="1628250815115" duration="686000" />
     </task>
     <servers />
   </component>

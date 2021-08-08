@@ -12,8 +12,8 @@
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>查询书籍</title>
-        <script src="../../layui/layui.js"></script>
-        <link rel="stylesheet" href="../../layui/css/layui.css">
+        <script src="../layui/layui.js"></script>
+        <link rel="stylesheet" href="../layui/css/layui.css">
         <script>
             function cannotvisit() {
                 layer.msg("请通过全部书籍的操作栏进入该界面");
@@ -26,7 +26,7 @@
                             elem: '#test',
                             toolbar: 'true',
                             page: 'true',
-                            url: isid ? '/book/query/' + data : '/book/queryname?name=' + data,
+                            url: isid ? './query/' + data : './queryname?name=' + data,
                             cellMinWidth: 80, //全局定义常规单元格的最小宽度，layui 2.2.1 新增
                             cols: [
                                 [{
@@ -93,7 +93,7 @@
 
     <body style="background-color: rgba(242, 242, 242, 0.8);">
         <ul class="layui-nav" lay-filter="">
-            <li class="layui-nav-item"><a href="../../">首页</a></li>
+            <li class="layui-nav-item"><a href="../">首页</a></li>
             <li class="layui-nav-item"><a href="./allbook">全部书籍</a></li>
             <li class="layui-nav-item layui-this"><a href="">查询书籍</a></li>
             <li class="layui-nav-item"><a href="./addbook">增加书籍</a></li>

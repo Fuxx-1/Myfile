@@ -1,8 +1,6 @@
 package com.demo.controller;
 
 import com.demo.service.WSService;
-import com.sun.org.slf4j.internal.Logger;
-import com.sun.org.slf4j.internal.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -27,8 +25,6 @@ public class WebSocketController {
     @ResponseBody
     public String TestWS(@RequestParam(value = "userId", required = true) Long userId,
                          @RequestParam(value = "message", required = true) String message) {
-        Logger logger = LoggerFactory.getLogger(WebSocketController.class);
-        logger.debug("收到发送请求，向用户{}的消息：{}", userId, message);
         if (wsService.sendToAllTerminal(userId, message)) {
             return "发送成功";
         } else {
