@@ -5,7 +5,15 @@
   </component>
   <component name="ArtifactsWorkspaceSettings">
     <artifacts-to-build>
+      <artifact name="AJAX:war exploded" />
+      <artifact name="Anno:war exploded" />
       <artifact name="BookControllerSystemBasedBySSMFarem:war" />
+      <artifact name="BookControllerSystemBasedBySSMFarem:war exploded" />
+      <artifact name="Controller:war exploded" />
+      <artifact name="JavaWebDemo:war" />
+      <artifact name="JavaWebDemo:war exploded" />
+      <artifact name="ServletTest:war exploded" />
+      <artifact name="SpringMVCDemo1:war exploded" />
     </artifacts-to-build>
   </component>
   <component name="AutoImportSettings">
@@ -13,44 +21,364 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="146c6b5b-5dc8-4b04-835a-c1ccd6709278" name="默认变更列表" comment="默认变更列表">
-      <change afterPath="$PROJECT_DIR$/.idea/artifacts/BookControllerSystemBasedBySSMFarem_war.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/artifacts/BookControllerSystemBasedBySSMFarem_war_exploded.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/artifacts/BookControllerSystemBasedBySSMFarem_war_exploded.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/60b28afa-aa1a-4ad1-be47-5756d85f7a1b/entities/entities.dat" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/60b28afa-aa1a-4ad1-be47-5756d85f7a1b/entities/entities.dat" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/60b28afa-aa1a-4ad1-be47-5756d85f7a1b/entities/entities.dat.values" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/60b28afa-aa1a-4ad1-be47-5756d85f7a1b/entities/entities.dat.values" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/60b28afa-aa1a-4ad1-be47-5756d85f7a1b/entities/entities.dat.values.at" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/60b28afa-aa1a-4ad1-be47-5756d85f7a1b/entities/entities.dat.values.at" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/60b28afa-aa1a-4ad1-be47-5756d85f7a1b/entities/entities.dat.values.s" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/60b28afa-aa1a-4ad1-be47-5756d85f7a1b/entities/entities.dat.values.s" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/60b28afa-aa1a-4ad1-be47-5756d85f7a1b/entities/entities.dat_i" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/60b28afa-aa1a-4ad1-be47-5756d85f7a1b/entities/entities.dat_i" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/60b28afa-aa1a-4ad1-be47-5756d85f7a1b/storage_v2/_src_/schema/sys.zb4BAA.zip" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/60b28afa-aa1a-4ad1-be47-5756d85f7a1b/storage_v2/_src_/schema/sys.zb4BAA.zip" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/jarRepositories.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/jarRepositories.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/1/9/19f65fef782170108f98675db8741145183fc94e" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/1/9/19f65fef782170108f98675db8741145183fc94e" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/JavaFile/File/XUPTjwxt/Test.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/JavaFile/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../.vscode/settings.json" beforeDir="false" afterPath="$PROJECT_DIR$/../.vscode/settings.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../C/Normal/CTF.c" beforeDir="false" afterPath="$PROJECT_DIR$/../C/Normal/CTF.c" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/$PROJECT_FILE$" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/Java.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/artifacts/AJAX_war_exploded.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/artifacts/Anno_war_exploded.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/artifacts/BookControllerSystemBasedBySSMFarem_war.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/artifacts/BookControllerSystemBasedBySSMFarem_war_exploded.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/artifacts/Controller_war_exploded.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/artifacts/ServletTest_war_exploded.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/artifacts/SpringMVCDemo1_war_exploded.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/codeStyles/codeStyleConfig.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources.local.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/60b28afa-aa1a-4ad1-be47-5756d85f7a1b.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/60b28afa-aa1a-4ad1-be47-5756d85f7a1b/entities/entities.dat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/60b28afa-aa1a-4ad1-be47-5756d85f7a1b/entities/entities.dat.values" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/60b28afa-aa1a-4ad1-be47-5756d85f7a1b/entities/entities.dat.values.at" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/60b28afa-aa1a-4ad1-be47-5756d85f7a1b/entities/entities.dat.values.s" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/60b28afa-aa1a-4ad1-be47-5756d85f7a1b/entities/entities.dat_i" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/60b28afa-aa1a-4ad1-be47-5756d85f7a1b/storage_v2/_src_/schema/information_schema.FNRwLQ.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/60b28afa-aa1a-4ad1-be47-5756d85f7a1b/storage_v2/_src_/schema/information_schema.FNRwLQ.zip" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/60b28afa-aa1a-4ad1-be47-5756d85f7a1b/storage_v2/_src_/schema/mysql.osA4Bg.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/60b28afa-aa1a-4ad1-be47-5756d85f7a1b/storage_v2/_src_/schema/performance_schema.kIw0nw.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/60b28afa-aa1a-4ad1-be47-5756d85f7a1b/storage_v2/_src_/schema/sakila.oXLGyQ.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/60b28afa-aa1a-4ad1-be47-5756d85f7a1b/storage_v2/_src_/schema/sakila.oXLGyQ.zip" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/60b28afa-aa1a-4ad1-be47-5756d85f7a1b/storage_v2/_src_/schema/sys.zb4BAA.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/60b28afa-aa1a-4ad1-be47-5756d85f7a1b/storage_v2/_src_/schema/sys.zb4BAA.zip" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/gradle.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/jarRepositories.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries-with-intellij-classes.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/1/4/142b6d7de3b06ec3c1b003548ba4948d44f94e5b" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/1/9/19f65fef782170108f98675db8741145183fc94e" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/3/2/32abc6971ab2eb1358a5fd1f6ff0d3054ac7d602" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/3/5/355ef9fa8b2e487f96a998b3b9d6ac7a9bbaa073" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/4/4/44de220ad66579a2c3c7d5d4a36a1d58204589dc" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/5/3/53cc623845f71e3b681940407e71c415e76a3b6f" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/6/c/6c11b79a90efe73d6baff4ef64a3e20da36fae6c" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/a/0/a0653485642aa08ff93ac97b0125447492fda46e" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/6/3/639430361686168f78660ab7c35cc2a622356f54" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/7/9/797cb6ac207128862893f1999280afc5411d1e4a" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/8/5/85a47a06b41c13c5a0a1b1ba576c3b6308e6b537" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/a/8/a846fd939065d8f6e3cbc9c330b721ce4dace3d9" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/a/e/ae3d1a44a5ff527c04de2062afe6c4cfd30418b5" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/b/0/b077bf1ac33cd23b354824e09b6ca305e5ceb2ba" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/b/6/b6fcc85cd7634e547aff8d5886db2fc50c58dffc" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/b/f/bf8ad93d2754e01ad5db492821041a1107c04bca" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/c/0/c0b3d148471b7f07db68b1419ea2a561d274555e" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/d/3/d3c6208ae935f5d5ebbb13dd8d8cfc75dd808a7f" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/e/4/e441e6d8187797974fae40d82896585dd176f362" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/e/5/e5cb37495338c9cd0ccab5e73a24a7cd5fb6a1cc" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/e/5/e5cb37495338c9cd0ccab5e73a24a7cd5fb6a1cc" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/e/2/e2a48b51251c2aad77764912018825335472b0f4" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/e/5/e5cb37495338c9cd0ccab5e73a24a7cd5fb6a1cc" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/f/d/fd23e3ba7c31622fc34020e1242ab61c3efc61c5" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/index.pb" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/index.pb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sqldialects.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/uiDesigner.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SpringMVC/BookControllerSystemBasedBySSMFarem/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/SpringMVC/BookControllerSystemBasedBySSMFarem/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SpringMVC/BookControllerSystemBasedBySSMFarem/src/main/java/com/demo/controller/WebSocketController.java" beforeDir="false" afterPath="$PROJECT_DIR$/SpringMVC/BookControllerSystemBasedBySSMFarem/src/main/java/com/demo/controller/WebSocketController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SpringMVC/BookControllerSystemBasedBySSMFarem/src/main/java/com/demo/service/WSService.java" beforeDir="false" afterPath="$PROJECT_DIR$/SpringMVC/BookControllerSystemBasedBySSMFarem/src/main/java/com/demo/service/WSService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SpringMVC/BookControllerSystemBasedBySSMFarem/src/main/java/com/demo/websocket/Websocket.java" beforeDir="false" afterPath="$PROJECT_DIR$/SpringMVC/BookControllerSystemBasedBySSMFarem/src/main/java/com/demo/websocket/Websocket.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SpringMVC/BookControllerSystemBasedBySSMFarem/src/main/resources/database.properties" beforeDir="false" afterPath="$PROJECT_DIR$/SpringMVC/BookControllerSystemBasedBySSMFarem/src/main/resources/database.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SpringMVC/BookControllerSystemBasedBySSMFarem/target/classes/database.properties" beforeDir="false" afterPath="$PROJECT_DIR$/SpringMVC/BookControllerSystemBasedBySSMFarem/target/classes/database.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SpringMVC/BookControllerSystemBasedBySSMFarem/web/WEB-INF/jsp/addbook.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/SpringMVC/BookControllerSystemBasedBySSMFarem/web/WEB-INF/jsp/addbook.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SpringMVC/BookControllerSystemBasedBySSMFarem/web/WEB-INF/jsp/allbook.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/SpringMVC/BookControllerSystemBasedBySSMFarem/web/WEB-INF/jsp/allbook.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SpringMVC/BookControllerSystemBasedBySSMFarem/web/WEB-INF/jsp/deletebook.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/SpringMVC/BookControllerSystemBasedBySSMFarem/web/WEB-INF/jsp/deletebook.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SpringMVC/BookControllerSystemBasedBySSMFarem/web/WEB-INF/jsp/querybook.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/SpringMVC/BookControllerSystemBasedBySSMFarem/web/WEB-INF/jsp/querybook.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SpringMVC/BookControllerSystemBasedBySSMFarem/web/WEB-INF/jsp/updatebook.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/SpringMVC/BookControllerSystemBasedBySSMFarem/web/WEB-INF/jsp/updatebook.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/BookControllerSystemBasedBySSMFarem_war_exploded/WEB-INF/classes/database.properties" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/BookControllerSystemBasedBySSMFarem_war_exploded/WEB-INF/classes/database.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/BookControllerSystemBasedBySSMFarem_war_exploded/WEB-INF/jsp/addbook.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/BookControllerSystemBasedBySSMFarem_war_exploded/WEB-INF/jsp/addbook.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/BookControllerSystemBasedBySSMFarem_war_exploded/WEB-INF/jsp/allbook.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/BookControllerSystemBasedBySSMFarem_war_exploded/WEB-INF/jsp/allbook.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/BookControllerSystemBasedBySSMFarem_war_exploded/WEB-INF/jsp/deletebook.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/BookControllerSystemBasedBySSMFarem_war_exploded/WEB-INF/jsp/deletebook.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/BookControllerSystemBasedBySSMFarem_war_exploded/WEB-INF/jsp/message.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/BookControllerSystemBasedBySSMFarem_war_exploded/WEB-INF/jsp/message.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/BookControllerSystemBasedBySSMFarem_war_exploded/WEB-INF/jsp/querybook.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/BookControllerSystemBasedBySSMFarem_war_exploded/WEB-INF/jsp/querybook.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/BookControllerSystemBasedBySSMFarem_war_exploded/WEB-INF/jsp/updatebook.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/BookControllerSystemBasedBySSMFarem_war_exploded/WEB-INF/jsp/updatebook.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/JavaFile/JavaFile.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/JavaWebDemo/JavaWebDemo.iml" beforeDir="false" afterPath="$PROJECT_DIR$/JavaWebDemo/JavaWebDemo.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/JavaWebDemo/src/main/webapp/JSPDemo.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/JavaWebDemo/web/JSPDemo.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/JavaWebDemo/src/main/webapp/WEB-INF/web.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/JavaWebDemo/src/main/webapp/index.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/JavaWebDemo/web/index.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/JavaWebDemo/target/classes/META-INF/beans.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/JavaWebDemo/target/classes/META-INF/persistence.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/MybatisDemo/FirstMybatisProgram/target/classes/com/demo/dao/UserMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/MybatisDemo/FirstMybatisProgram/target/classes/com/demo/dao/UserMapper.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SpringDemo/ANNO/ANNO1/src/main/resources/beans.xml" beforeDir="false" afterPath="$PROJECT_DIR$/SpringDemo/ANNO/ANNO1/src/main/resources/beans.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SpringDemo/ANNO/ANNO1/src/main/resources/beans2.xml" beforeDir="false" afterPath="$PROJECT_DIR$/SpringDemo/ANNO/ANNO1/src/main/resources/beans2.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SpringDemo/ANNO/ANNO1/target/classes/beans.xml" beforeDir="false" afterPath="$PROJECT_DIR$/SpringDemo/ANNO/ANNO1/target/classes/beans.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SpringDemo/ANNO/ANNO1/target/classes/beans2.xml" beforeDir="false" afterPath="$PROJECT_DIR$/SpringDemo/ANNO/ANNO1/target/classes/beans2.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SpringDemo/Mybatis/target/classes/applicationContext.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/SpringDemo/Mybatis/target/classes/com/demo1/mapper/UserMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/SpringDemo/Mybatis/target/classes/com/demo1/mapper/UserMapper.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SpringDemo/Mybatis/target/classes/mybatis-config.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/SpringDemo/Mybatis/target/classes/spring-mapper.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/SpringDemo/Transaction/target/classes/applicationContext.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/SpringDemo/Transaction/target/classes/com/demo/mapper/UserMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/SpringDemo/Transaction/target/classes/com/demo/mapper/UserMapper.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SpringDemo/Transaction/target/classes/mybatis-config.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/SpringDemo/Transaction/target/classes/spring-mapper.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/SpringMVC/BookControllerSystemBasedBySSMFarem/BookControllerSystemBasedBySSMFarem.ipr" beforeDir="false" afterPath="$PROJECT_DIR$/SpringMVC/BookControllerSystemBasedBySSMFarem/BookControllerSystemBasedBySSMFarem.ipr" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SpringMVC/BookControllerSystemBasedBySSMFarem/BookControllerSystemBasedBySSMFarem.iws" beforeDir="false" afterPath="$PROJECT_DIR$/SpringMVC/BookControllerSystemBasedBySSMFarem/BookControllerSystemBasedBySSMFarem.iws" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/AJAX_war_exploded/META-INF/MANIFEST.MF" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/AJAX_war_exploded/WEB-INF/classes/applicationcontext.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/AJAX_war_exploded/WEB-INF/lib/hamcrest-core-1.3.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/AJAX_war_exploded/WEB-INF/lib/jsp-api-2.2.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/AJAX_war_exploded/WEB-INF/lib/jstl-1.2.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/AJAX_war_exploded/WEB-INF/lib/junit-4.12.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/AJAX_war_exploded/WEB-INF/lib/servlet-api-2.5.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/AJAX_war_exploded/WEB-INF/lib/spring-aop-5.1.9.RELEASE.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/AJAX_war_exploded/WEB-INF/lib/spring-beans-5.1.9.RELEASE.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/AJAX_war_exploded/WEB-INF/lib/spring-context-5.1.9.RELEASE.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/AJAX_war_exploded/WEB-INF/lib/spring-core-5.1.9.RELEASE.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/AJAX_war_exploded/WEB-INF/lib/spring-expression-5.1.9.RELEASE.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/AJAX_war_exploded/WEB-INF/lib/spring-jcl-5.1.9.RELEASE.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/AJAX_war_exploded/WEB-INF/lib/spring-web-5.1.9.RELEASE.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/AJAX_war_exploded/WEB-INF/lib/spring-webmvc-5.1.9.RELEASE.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/AJAX_war_exploded/WEB-INF/web.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/AJAX_war_exploded/index.jsp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/Anno_war_exploded/META-INF/MANIFEST.MF" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/Anno_war_exploded/WEB-INF/classes/springmvc-servlet.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/Anno_war_exploded/WEB-INF/jsp/hello.jsp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/Anno_war_exploded/WEB-INF/lib/hamcrest-core-1.3.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/Anno_war_exploded/WEB-INF/lib/jsp-api-2.2.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/Anno_war_exploded/WEB-INF/lib/jstl-1.2.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/Anno_war_exploded/WEB-INF/lib/junit-4.12.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/Anno_war_exploded/WEB-INF/lib/servlet-api-2.5.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/Anno_war_exploded/WEB-INF/lib/spring-aop-5.1.9.RELEASE.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/Anno_war_exploded/WEB-INF/lib/spring-beans-5.1.9.RELEASE.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/Anno_war_exploded/WEB-INF/lib/spring-context-5.1.9.RELEASE.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/Anno_war_exploded/WEB-INF/lib/spring-core-5.1.9.RELEASE.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/Anno_war_exploded/WEB-INF/lib/spring-expression-5.1.9.RELEASE.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/Anno_war_exploded/WEB-INF/lib/spring-jcl-5.1.9.RELEASE.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/Anno_war_exploded/WEB-INF/lib/spring-web-5.1.9.RELEASE.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/Anno_war_exploded/WEB-INF/lib/spring-webmvc-5.1.9.RELEASE.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/Anno_war_exploded/WEB-INF/web.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/Anno_war_exploded/index.jsp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/BookControllerSystemBasedBySSMFarem_war/BookControllerSystemBasedBySSMFarem.war" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/BookControllerSystemBasedBySSMFarem_war_exploded/META-INF/MANIFEST.MF" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/BookControllerSystemBasedBySSMFarem_war_exploded/WEB-INF/classes/applicationContext.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/BookControllerSystemBasedBySSMFarem_war_exploded/WEB-INF/classes/com/demo/mapper/BookMapper.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/BookControllerSystemBasedBySSMFarem_war_exploded/WEB-INF/classes/database.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/BookControllerSystemBasedBySSMFarem_war_exploded/WEB-INF/classes/mybatis-config.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/BookControllerSystemBasedBySSMFarem_war_exploded/WEB-INF/classes/spring-mapper.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/BookControllerSystemBasedBySSMFarem_war_exploded/WEB-INF/classes/spring-mvc.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/BookControllerSystemBasedBySSMFarem_war_exploded/WEB-INF/classes/spring-service.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/BookControllerSystemBasedBySSMFarem_war_exploded/WEB-INF/jsp/addbook.jsp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/BookControllerSystemBasedBySSMFarem_war_exploded/WEB-INF/jsp/allbook.jsp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/BookControllerSystemBasedBySSMFarem_war_exploded/WEB-INF/jsp/deletebook.jsp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/BookControllerSystemBasedBySSMFarem_war_exploded/WEB-INF/jsp/message.jsp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/BookControllerSystemBasedBySSMFarem_war_exploded/WEB-INF/jsp/querybook.jsp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/BookControllerSystemBasedBySSMFarem_war_exploded/WEB-INF/jsp/updatebook.jsp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/BookControllerSystemBasedBySSMFarem_war_exploded/WEB-INF/lib/activation-1.1.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/BookControllerSystemBasedBySSMFarem_war_exploded/WEB-INF/lib/aspectjweaver-1.8.13.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/BookControllerSystemBasedBySSMFarem_war_exploded/WEB-INF/lib/aspectjweaver-1.9.7.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/BookControllerSystemBasedBySSMFarem_war_exploded/WEB-INF/lib/c3p0-0.9.5.2.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/BookControllerSystemBasedBySSMFarem_war_exploded/WEB-INF/lib/c3p0-0.9.5.5.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/BookControllerSystemBasedBySSMFarem_war_exploded/WEB-INF/lib/cdi-api-2.0.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/BookControllerSystemBasedBySSMFarem_war_exploded/WEB-INF/lib/fastjson-1.2.47.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/BookControllerSystemBasedBySSMFarem_war_exploded/WEB-INF/lib/fastjson-1.2.76.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/BookControllerSystemBasedBySSMFarem_war_exploded/WEB-INF/lib/hamcrest-core-1.3.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/BookControllerSystemBasedBySSMFarem_war_exploded/WEB-INF/lib/javaee-api-8.0.1.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/BookControllerSystemBasedBySSMFarem_war_exploded/WEB-INF/lib/javaee-web-api-8.0.1.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/BookControllerSystemBasedBySSMFarem_war_exploded/WEB-INF/lib/javax.el-api-3.0.0.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/BookControllerSystemBasedBySSMFarem_war_exploded/WEB-INF/lib/javax.inject-1.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/BookControllerSystemBasedBySSMFarem_war_exploded/WEB-INF/lib/javax.interceptor-api-1.2.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/BookControllerSystemBasedBySSMFarem_war_exploded/WEB-INF/lib/javax.json-1.1.4.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/BookControllerSystemBasedBySSMFarem_war_exploded/WEB-INF/lib/javax.json-api-1.1.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/BookControllerSystemBasedBySSMFarem_war_exploded/WEB-INF/lib/javax.json.bind-api-1.0.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/BookControllerSystemBasedBySSMFarem_war_exploded/WEB-INF/lib/javax.mail-1.6.2.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/BookControllerSystemBasedBySSMFarem_war_exploded/WEB-INF/lib/jsp-api-2.2.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/BookControllerSystemBasedBySSMFarem_war_exploded/WEB-INF/lib/jstl-1.2.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/BookControllerSystemBasedBySSMFarem_war_exploded/WEB-INF/lib/junit-4.12.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/BookControllerSystemBasedBySSMFarem_war_exploded/WEB-INF/lib/junit-4.13.2.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/BookControllerSystemBasedBySSMFarem_war_exploded/WEB-INF/lib/log4j-1.2.17.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/BookControllerSystemBasedBySSMFarem_war_exploded/WEB-INF/lib/lombok-1.18.20.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/BookControllerSystemBasedBySSMFarem_war_exploded/WEB-INF/lib/mchange-commons-java-0.2.11.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/BookControllerSystemBasedBySSMFarem_war_exploded/WEB-INF/lib/mchange-commons-java-0.2.19.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/BookControllerSystemBasedBySSMFarem_war_exploded/WEB-INF/lib/mybatis-3.5.2.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/BookControllerSystemBasedBySSMFarem_war_exploded/WEB-INF/lib/mybatis-3.5.7.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/BookControllerSystemBasedBySSMFarem_war_exploded/WEB-INF/lib/mybatis-spring-2.0.2.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/BookControllerSystemBasedBySSMFarem_war_exploded/WEB-INF/lib/mybatis-spring-2.0.6.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/BookControllerSystemBasedBySSMFarem_war_exploded/WEB-INF/lib/mysql-connector-java-5.1.47.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/BookControllerSystemBasedBySSMFarem_war_exploded/WEB-INF/lib/servlet-api-2.5.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/BookControllerSystemBasedBySSMFarem_war_exploded/WEB-INF/lib/slf4j-api-1.7.22.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/BookControllerSystemBasedBySSMFarem_war_exploded/WEB-INF/lib/slf4j-log4j12-1.7.22.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/BookControllerSystemBasedBySSMFarem_war_exploded/WEB-INF/lib/slf4j-simple-1.7.22.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/BookControllerSystemBasedBySSMFarem_war_exploded/WEB-INF/lib/spring-aop-5.1.9.RELEASE.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/BookControllerSystemBasedBySSMFarem_war_exploded/WEB-INF/lib/spring-aop-5.3.9.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/BookControllerSystemBasedBySSMFarem_war_exploded/WEB-INF/lib/spring-beans-5.1.9.RELEASE.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/BookControllerSystemBasedBySSMFarem_war_exploded/WEB-INF/lib/spring-beans-5.3.9.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/BookControllerSystemBasedBySSMFarem_war_exploded/WEB-INF/lib/spring-context-5.1.9.RELEASE.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/BookControllerSystemBasedBySSMFarem_war_exploded/WEB-INF/lib/spring-context-5.3.9.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/BookControllerSystemBasedBySSMFarem_war_exploded/WEB-INF/lib/spring-core-5.1.9.RELEASE.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/BookControllerSystemBasedBySSMFarem_war_exploded/WEB-INF/lib/spring-core-5.3.9.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/BookControllerSystemBasedBySSMFarem_war_exploded/WEB-INF/lib/spring-expression-5.1.9.RELEASE.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/BookControllerSystemBasedBySSMFarem_war_exploded/WEB-INF/lib/spring-expression-5.3.9.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/BookControllerSystemBasedBySSMFarem_war_exploded/WEB-INF/lib/spring-jcl-5.1.9.RELEASE.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/BookControllerSystemBasedBySSMFarem_war_exploded/WEB-INF/lib/spring-jcl-5.3.9.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/BookControllerSystemBasedBySSMFarem_war_exploded/WEB-INF/lib/spring-jdbc-5.3.9.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/BookControllerSystemBasedBySSMFarem_war_exploded/WEB-INF/lib/spring-tx-5.3.9.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/BookControllerSystemBasedBySSMFarem_war_exploded/WEB-INF/lib/spring-web-5.1.9.RELEASE.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/BookControllerSystemBasedBySSMFarem_war_exploded/WEB-INF/lib/spring-web-5.3.9.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/BookControllerSystemBasedBySSMFarem_war_exploded/WEB-INF/lib/spring-webmvc-5.1.9.RELEASE.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/BookControllerSystemBasedBySSMFarem_war_exploded/WEB-INF/lib/spring-webmvc-5.3.9.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/BookControllerSystemBasedBySSMFarem_war_exploded/WEB-INF/lib/spring-websocket-5.3.9.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/BookControllerSystemBasedBySSMFarem_war_exploded/WEB-INF/lib/yasson-1.0.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/BookControllerSystemBasedBySSMFarem_war_exploded/WEB-INF/web.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/BookControllerSystemBasedBySSMFarem_war_exploded/index.jsp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/BookControllerSystemBasedBySSMFarem_war_exploded/layui/css/layui.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/BookControllerSystemBasedBySSMFarem_war_exploded/layui/css/modules/code.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/BookControllerSystemBasedBySSMFarem_war_exploded/layui/css/modules/laydate/default/laydate.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/BookControllerSystemBasedBySSMFarem_war_exploded/layui/css/modules/layer/default/icon-ext.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/BookControllerSystemBasedBySSMFarem_war_exploded/layui/css/modules/layer/default/icon.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/BookControllerSystemBasedBySSMFarem_war_exploded/layui/css/modules/layer/default/layer.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/BookControllerSystemBasedBySSMFarem_war_exploded/layui/css/modules/layer/default/loading-0.gif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/BookControllerSystemBasedBySSMFarem_war_exploded/layui/css/modules/layer/default/loading-1.gif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/BookControllerSystemBasedBySSMFarem_war_exploded/layui/css/modules/layer/default/loading-2.gif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/BookControllerSystemBasedBySSMFarem_war_exploded/layui/font/iconfont.eot" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/BookControllerSystemBasedBySSMFarem_war_exploded/layui/font/iconfont.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/BookControllerSystemBasedBySSMFarem_war_exploded/layui/font/iconfont.ttf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/BookControllerSystemBasedBySSMFarem_war_exploded/layui/font/iconfont.woff" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/BookControllerSystemBasedBySSMFarem_war_exploded/layui/font/iconfont.woff2" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/BookControllerSystemBasedBySSMFarem_war_exploded/layui/layui.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/Controller_war_exploded/META-INF/MANIFEST.MF" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/Controller_war_exploded/WEB-INF/classes/springmvc-servlet.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/Controller_war_exploded/WEB-INF/jsp/test.jsp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/Controller_war_exploded/WEB-INF/lib/hamcrest-core-1.3.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/Controller_war_exploded/WEB-INF/lib/jsp-api-2.2.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/Controller_war_exploded/WEB-INF/lib/jstl-1.2.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/Controller_war_exploded/WEB-INF/lib/junit-4.12.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/Controller_war_exploded/WEB-INF/lib/servlet-api-2.5.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/Controller_war_exploded/WEB-INF/lib/spring-aop-5.1.9.RELEASE.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/Controller_war_exploded/WEB-INF/lib/spring-beans-5.1.9.RELEASE.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/Controller_war_exploded/WEB-INF/lib/spring-context-5.1.9.RELEASE.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/Controller_war_exploded/WEB-INF/lib/spring-core-5.1.9.RELEASE.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/Controller_war_exploded/WEB-INF/lib/spring-expression-5.1.9.RELEASE.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/Controller_war_exploded/WEB-INF/lib/spring-jcl-5.1.9.RELEASE.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/Controller_war_exploded/WEB-INF/lib/spring-web-5.1.9.RELEASE.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/Controller_war_exploded/WEB-INF/lib/spring-webmvc-5.1.9.RELEASE.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/Controller_war_exploded/WEB-INF/web.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/Controller_war_exploded/form.jsp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/Controller_war_exploded/index.jsp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/ServletTest_war_exploded/META-INF/MANIFEST.MF" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/ServletTest_war_exploded/WEB-INF/JSP/Test.jsp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/ServletTest_war_exploded/WEB-INF/lib/hamcrest-core-1.3.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/ServletTest_war_exploded/WEB-INF/lib/jstl-1.2.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/ServletTest_war_exploded/WEB-INF/lib/junit-4.12.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/ServletTest_war_exploded/WEB-INF/lib/spring-aop-5.1.9.RELEASE.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/ServletTest_war_exploded/WEB-INF/lib/spring-beans-5.1.9.RELEASE.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/ServletTest_war_exploded/WEB-INF/lib/spring-context-5.1.9.RELEASE.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/ServletTest_war_exploded/WEB-INF/lib/spring-core-5.1.9.RELEASE.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/ServletTest_war_exploded/WEB-INF/lib/spring-expression-5.1.9.RELEASE.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/ServletTest_war_exploded/WEB-INF/lib/spring-jcl-5.1.9.RELEASE.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/ServletTest_war_exploded/WEB-INF/lib/spring-web-5.1.9.RELEASE.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/ServletTest_war_exploded/WEB-INF/lib/spring-webmvc-5.1.9.RELEASE.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/ServletTest_war_exploded/WEB-INF/web.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/ServletTest_war_exploded/form.jsp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/ServletTest_war_exploded/index.jsp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/SpringMVCDemo1_war_exploded/META-INF/MANIFEST.MF" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/SpringMVCDemo1_war_exploded/WEB-INF/classes/springmvc-servlet.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/SpringMVCDemo1_war_exploded/WEB-INF/jsp/hello.jsp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/SpringMVCDemo1_war_exploded/WEB-INF/lib/hamcrest-core-1.3.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/SpringMVCDemo1_war_exploded/WEB-INF/lib/jsp-api-2.2.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/SpringMVCDemo1_war_exploded/WEB-INF/lib/jstl-1.2.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/SpringMVCDemo1_war_exploded/WEB-INF/lib/junit-4.12.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/SpringMVCDemo1_war_exploded/WEB-INF/lib/servlet-api-2.5.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/SpringMVCDemo1_war_exploded/WEB-INF/lib/spring-aop-5.1.9.RELEASE.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/SpringMVCDemo1_war_exploded/WEB-INF/lib/spring-beans-5.1.9.RELEASE.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/SpringMVCDemo1_war_exploded/WEB-INF/lib/spring-context-5.1.9.RELEASE.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/SpringMVCDemo1_war_exploded/WEB-INF/lib/spring-core-5.1.9.RELEASE.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/SpringMVCDemo1_war_exploded/WEB-INF/lib/spring-expression-5.1.9.RELEASE.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/SpringMVCDemo1_war_exploded/WEB-INF/lib/spring-jcl-5.1.9.RELEASE.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/SpringMVCDemo1_war_exploded/WEB-INF/lib/spring-web-5.1.9.RELEASE.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/SpringMVCDemo1_war_exploded/WEB-INF/lib/spring-webmvc-5.1.9.RELEASE.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/SpringMVCDemo1_war_exploded/WEB-INF/web.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/SpringMVCDemo1_war_exploded/index.jsp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../JavaFile/.idea/$PROJECT_FILE$" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../JavaFile/.idea/Java.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../JavaFile/.idea/compiler.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../JavaFile/.idea/httpRequests/2021-05-10T202659.500.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../JavaFile/.idea/httpRequests/http-client.cookies" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../JavaFile/.idea/httpRequests/http-requests-log.http" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../JavaFile/.idea/jarRepositories.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../JavaFile/.idea/misc.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../JavaFile/.idea/modules.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../JavaFile/.idea/qaplug_profiles.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../JavaFile/.idea/vcs.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../JavaFile/.idea/workspace.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../JavaFile/JavaFile/.idea/$PROJECT_FILE$" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../JavaFile/JavaFile/.idea/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../JavaFile/JavaFile/.idea/artifacts/Java_jar.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../JavaFile/JavaFile/.idea/inspectionProfiles/Project_Default.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../JavaFile/JavaFile/.idea/misc.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../JavaFile/JavaFile/.idea/modules.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../JavaFile/JavaFile/.idea/qaplug_profiles.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../JavaFile/JavaFile/.idea/uiDesigner.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../JavaFile/JavaFile/.idea/vcs.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../JavaFile/JavaFile/File/2021-03-14-Test/A.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../JavaFile/JavaFile/File/2021-03-14-Test/C.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../JavaFile/JavaFile/File/2021-03-14-Test/NumberAddOne.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../JavaFile/JavaFile/File/2021-03-14-Test/VariableDemo.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../JavaFile/JavaFile/File/2021-04-01/Test.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../JavaFile/JavaFile/File/2021-04-29/QueueTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../JavaFile/JavaFile/File/2021-04-29/StackTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../JavaFile/JavaFile/File/DataSort&amp;SaveInfo/FileUtil.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../JavaFile/JavaFile/File/DataSort&amp;SaveInfo/InputUtil.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../JavaFile/JavaFile/File/DataSort&amp;SaveInfo/Main.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../JavaFile/JavaFile/File/DataSort&amp;SaveInfo/Menu.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../JavaFile/JavaFile/File/DataSort&amp;SaveInfo/Service.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../JavaFile/JavaFile/File/DataSort&amp;SaveInfo/Student.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../JavaFile/JavaFile/File/DataSort/InputUtil.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../JavaFile/JavaFile/File/DataSort/Main.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../JavaFile/JavaFile/File/DataSort/Service.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../JavaFile/JavaFile/File/DataSort/Student.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../JavaFile/JavaFile/File/GetString&amp;SaveDir/InputUtil.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../JavaFile/JavaFile/File/GetString&amp;SaveDir/Main.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../JavaFile/JavaFile/File/GetString&amp;SaveDir/Service.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../JavaFile/JavaFile/File/HandOutRedEnvelopes/GroupLeader.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../JavaFile/JavaFile/File/HandOutRedEnvelopes/Main.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../JavaFile/JavaFile/File/HandOutRedEnvelopes/Member.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../JavaFile/JavaFile/File/HandOutRedEnvelopes/User.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../JavaFile/JavaFile/File/LuoGu 21-02-01/A.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../JavaFile/JavaFile/File/LuoGu 21-02-01/B.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../JavaFile/JavaFile/File/LuoGu 21-02-01/C.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../JavaFile/JavaFile/File/LuoGu 21-02-01/D.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../JavaFile/JavaFile/File/LuoGu 21-02-01/E.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../JavaFile/JavaFile/File/LuoGu 21-02-01/F.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../JavaFile/JavaFile/File/LuoGu 21-02-01/G.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../JavaFile/JavaFile/File/LuoGu 21-02-01/H.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../JavaFile/JavaFile/File/LuoGu 21-02-01/I.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../JavaFile/JavaFile/File/LuoGu 21-02-01/J.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../JavaFile/JavaFile/File/LuoGu 21-02-01/K.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../JavaFile/JavaFile/File/LuoGu 21-02-01/L.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../JavaFile/JavaFile/File/LuoGu 21-02-01/M.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../JavaFile/JavaFile/File/LuoGu 21-02-01/N.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../JavaFile/JavaFile/File/LuoGu 21-02-01/O.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../JavaFile/JavaFile/File/LuoGu 21-02-01/P.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../JavaFile/JavaFile/File/LuoGu 21-02-01/Q.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../JavaFile/JavaFile/File/MaxOfNumbers/InputUtil.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../JavaFile/JavaFile/File/MaxOfNumbers/Main.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../JavaFile/JavaFile/File/MaxOfNumbers/Service.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../JavaFile/JavaFile/File/OddEvenStatistics/InputUtil.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../JavaFile/JavaFile/File/OddEvenStatistics/Main.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../JavaFile/JavaFile/File/OddEvenStatistics/Service.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../JavaFile/JavaFile/File/ReverseOfString/InputUtil.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../JavaFile/JavaFile/File/ReverseOfString/Main.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../JavaFile/JavaFile/File/ReverseOfString/Menu.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../JavaFile/JavaFile/File/ReverseOfString/Server.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../JavaFile/JavaFile/File/Stack、Queue、List/Leetcode_Queue&amp;Stack/DailyTemperature.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../JavaFile/JavaFile/File/Stack、Queue、List/Leetcode_Queue&amp;Stack/Island.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../JavaFile/JavaFile/File/Stack、Queue、List/Leetcode_Queue&amp;Stack/PerfectSquareNumber.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../JavaFile/JavaFile/File/Stack、Queue、List/Leetcode_Queue&amp;Stack/ReversePolishNotation.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../JavaFile/JavaFile/File/Stack、Queue、List/OneWayLinkedList.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../JavaFile/JavaFile/File/Stack、Queue、List/Queue.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../JavaFile/JavaFile/File/Stack、Queue、List/Stack.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../JavaFile/JavaFile/File/Stack、Queue、List/TwoWayLinkedList.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../JavaFile/JavaFile/File/UserLogin/InputUtil.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../JavaFile/JavaFile/File/UserLogin/Main.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../JavaFile/JavaFile/File/UserLogin/Service.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../JavaFile/JavaFile/File/UserLogin/Test.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../JavaFile/JavaFile/File/VotingElection/InputUtil.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../JavaFile/JavaFile/File/VotingElection/Main.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../JavaFile/JavaFile/File/VotingElection/Menu.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../JavaFile/JavaFile/File/VotingElection/Service.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../JavaFile/JavaFile/File/VotingElection/Student.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../JavaFile/JavaFile/JavaFile.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../JavaFile/JavaFile/Test/Ans.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../JavaFile/JavaFile/Test/HelloWorld.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../JavaFile/JavaFile/Test/IntputDemo.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../JavaFile/JavaFile/Test/JavaDemo.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../JavaFile/JavaFile/Test/Num.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../JavaFile/JavaFile/Test/PrimitiveTypeTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../JavaFile/JavaFile/Test/Test.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../JavaFile/JavaFile/Test/Test2.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../JavaFile/JavaFile/Test/ThreadDemo.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../JavaFile/JavaFile/out/artifacts/Java_jar/Java.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../try.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/../try.cpp" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -90,6 +418,7 @@
         <option value="Interface" />
         <option value="Jsp File" />
         <option value="HTML File" />
+        <option value="JavaScript File" />
         <option value="Class" />
       </list>
     </option>
@@ -104,6 +433,12 @@
       <filtered-out-file-type name="TAG" />
       <filtered-out-file-type name="COMMIT_BY_MESSAGE" />
     </file-type-list>
+  </component>
+  <component name="HighlightingSettingsPerFile">
+    <setting file="file://$PROJECT_DIR$/ChatRoomBySpringBoot/src/test/java/com/demo/ChatRoomBySpringBootApplicationTests.java" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/ChatRoomBySpringBoot/src/main/resources/application.yaml" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/ChatRoomBySpringBoot/src/main/java/com/demo/ChatRoomBySpringBootApplication.java" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/ChatRoomBySpringBoot/pom.xml" root0="FORCE_HIGHLIGHTING" />
   </component>
   <component name="LogFilters">
     <option name="FILTER_ERRORS" value="false" />
@@ -137,6 +472,10 @@
     <property name="Repository.Attach.Annotations" value="false" />
     <property name="Repository.Attach.JavaDocs" value="false" />
     <property name="Repository.Attach.Sources" value="false" />
+    <property name="RequestMappingsPanelOrder0" value="0" />
+    <property name="RequestMappingsPanelOrder1" value="1" />
+    <property name="RequestMappingsPanelWidth0" value="75" />
+    <property name="RequestMappingsPanelWidth1" value="75" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
@@ -147,15 +486,15 @@
     <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit3" value="junit.framework.TestCase" />
     <property name="extract.method.default.visibility" value="private" />
     <property name="jdk.selected.JAVA_MODULE" value="1.8" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/SpringMVC/BookControllerSystemBasedBySSMFarem" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/JavaWebDemo" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.selected.package.eslint" value="(autodetect)" />
     <property name="node.js.selected.package.tslint" value="(autodetect)" />
-    <property name="project.structure.last.edited" value="工件" />
+    <property name="project.structure.last.edited" value="模块" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.35597825" />
-    <property name="settings.editor.selected.configurable" value="background.image.plus" />
+    <property name="settings.editor.selected.configurable" value="editor.preferences.import" />
   </component>
   <component name="ReaderModeSettings">
     <option name="enabled" value="false" />
@@ -172,11 +511,11 @@
       <recent name="D:\Programing\Myfile\Java\SpringDemo\Transaction\src\main\resources" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="D:\Programing\Myfile\Java\ChatRoomBySpringBoot" />
+      <recent name="D:\Programing\Myfile\Java\JavaWebDemo\web" />
       <recent name="D:\Programing\Myfile\Java\SpringMVC\BookControllerSystemBasedBySSMFarem\web\WEB-INF\jsp" />
       <recent name="D:\Programing\Myfile\Java\SpringMVC\Controller\web\WEB-INF" />
       <recent name="D:\Programing\Myfile\Java\SpringMVC\Servlet\web\WEB-INF" />
-      <recent name="D:\Programing\Myfile\Java" />
-      <recent name="D:\Programing\Myfile\Java\SpringDemo\ANNO" />
     </key>
     <key name="CreateTestDialog.Recents.Supers">
       <recent name="junit.framework.TestCase" />
@@ -196,17 +535,42 @@
       <recent name="com.WebSocket.JavaWebDemo" />
     </key>
   </component>
-  <component name="RunManager" selected="Tomcat 服务器.Tomcat 8.5.65">
-    <configuration name="JWXTService" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="JWXTService" />
-      <module name="TestForJWXT" />
+  <component name="RunManager" selected="Spring Boot.ChatRoomBySpringBootApplication">
+    <configuration name="Test" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="Test" />
+      <module name="JavaFile" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="Test" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="Test" />
-      <module name="JavaFile" />
+    <configuration name="ChatRoomBySpringBootApplicationTests.Test2" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="ChatRoomBySpringBoot" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.demo.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.demo" />
+      <option name="MAIN_CLASS_NAME" value="com.demo.ChatRoomBySpringBootApplicationTests" />
+      <option name="METHOD_NAME" value="Test2" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="ChatRoomBySpringBootApplicationTests.contextLoads" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="ChatRoomBySpringBoot" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.demo.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.demo" />
+      <option name="MAIN_CLASS_NAME" value="com.demo.ChatRoomBySpringBootApplicationTests" />
+      <option name="METHOD_NAME" value="contextLoads" />
+      <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -216,22 +580,6 @@
       <option name="PACKAGE_NAME" value="" />
       <option name="MAIN_CLASS_NAME" value="MyTest" />
       <option name="METHOD_NAME" value="Test" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="test.test" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="BookControllerSystemBasedBySSMFarem" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="java.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="java" />
-      <option name="MAIN_CLASS_NAME" value="java.test" />
-      <option name="METHOD_NAME" value="test" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -253,12 +601,27 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="ChatRoomBySpringBootApplication (1)" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
+      <module name="ChatRoomBySpringBoot" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.demo.ChatRoomBySpringBootApplication" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="ChatRoomBySpringBootApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
+      <module name="ChatRoomBySpringBoot" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.chat.start.ChatRoomBySpringBootApplication" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="Tomcat 8.5.65" type="#com.intellij.j2ee.web.tomcat.TomcatRunConfigurationFactory" factoryName="Local" APPLICATION_SERVER_NAME="Tomcat 8.5.65" ALTERNATIVE_JRE_ENABLED="false" nameIsGenerated="true">
+      <option name="OPEN_IN_BROWSER_URL" value="http://localhost:8080/JavaWebDemo_war_exploded/" />
       <option name="UPDATING_POLICY" value="restart-server" />
       <deployment>
-        <artifact name="BookControllerSystemBasedBySSMFarem:war exploded">
+        <artifact name="JavaWebDemo:war exploded">
           <settings>
-            <option name="CONTEXT_PATH" value="/BookControllerSystemBasedBySSMFarem" />
+            <option name="CONTEXT_PATH" value="/JavaWebDemo_war_exploded" />
           </settings>
         </artifact>
       </deployment>
@@ -336,25 +699,27 @@
       <method v="2">
         <option name="Make" enabled="true" />
         <option name="BuildArtifacts" enabled="true">
-          <artifact name="BookControllerSystemBasedBySSMFarem:war exploded" />
+          <artifact name="JavaWebDemo:war exploded" />
         </option>
       </method>
     </configuration>
     <list>
       <item itemvalue="JUnit.MyTest.Test" />
-      <item itemvalue="JUnit.test.test" />
       <item itemvalue="JUnit.test.test1" />
+      <item itemvalue="JUnit.ChatRoomBySpringBootApplicationTests.contextLoads" />
+      <item itemvalue="JUnit.ChatRoomBySpringBootApplicationTests.Test2" />
+      <item itemvalue="Spring Boot.ChatRoomBySpringBootApplication" />
+      <item itemvalue="Spring Boot.ChatRoomBySpringBootApplication (1)" />
       <item itemvalue="Tomcat 服务器.Tomcat 8.5.65" />
-      <item itemvalue="应用程序.JWXTService" />
       <item itemvalue="应用程序.Test" />
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="JUnit.test.test1" />
+        <item itemvalue="JUnit.ChatRoomBySpringBootApplicationTests.Test2" />
+        <item itemvalue="JUnit.ChatRoomBySpringBootApplicationTests.contextLoads" />
         <item itemvalue="应用程序.Test" />
+        <item itemvalue="JUnit.test.test1" />
         <item itemvalue="JUnit.MyTest.Test" />
-        <item itemvalue="JUnit.test.test" />
-        <item itemvalue="应用程序.JWXTService" />
       </list>
     </recent_temporary>
   </component>
@@ -462,6 +827,36 @@
       <workItem from="1628165233443" duration="140000" />
       <workItem from="1628165486021" duration="7022000" />
       <workItem from="1628250815115" duration="686000" />
+      <workItem from="1630162482412" duration="16000" />
+      <workItem from="1630224910483" duration="115000" />
+      <workItem from="1630225227080" duration="277000" />
+      <workItem from="1630317008444" duration="1616000" />
+      <workItem from="1630595480570" duration="206000" />
+      <workItem from="1630768814218" duration="1168000" />
+      <workItem from="1631022233883" duration="590000" />
+      <workItem from="1631164471901" duration="19000" />
+      <workItem from="1631185031749" duration="6819000" />
+      <workItem from="1631192025100" duration="6261000" />
+      <workItem from="1631411550759" duration="27000" />
+      <workItem from="1631411703487" duration="8000" />
+      <workItem from="1631411950804" duration="1000" />
+      <workItem from="1631412097906" duration="1000" />
+      <workItem from="1631412170273" duration="16000" />
+      <workItem from="1631412258916" duration="36000" />
+      <workItem from="1631412534364" duration="2971000" />
+      <workItem from="1631631206176" duration="3918000" />
+      <workItem from="1631635405365" duration="1209000" />
+      <workItem from="1631662317649" duration="3789000" />
+      <workItem from="1631798573397" duration="803000" />
+      <workItem from="1632232571413" duration="14931000" />
+      <workItem from="1632357866268" duration="873000" />
+      <workItem from="1632362398630" duration="3007000" />
+      <workItem from="1632395159236" duration="507000" />
+      <workItem from="1632395754592" duration="459000" />
+      <workItem from="1632396292144" duration="95000" />
+      <workItem from="1632396462099" duration="250000" />
+      <workItem from="1632397834317" duration="17000" />
+      <workItem from="1632405734790" duration="56000" />
     </task>
     <servers />
   </component>
@@ -494,6 +889,11 @@
           <properties class="java.lang.NullPointerException" package="java.lang" />
           <option name="timeStamp" value="7" />
         </breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/JavaFile/File/jwxt/Test.java</url>
+          <line>6</line>
+          <option name="timeStamp" value="8" />
+        </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
   </component>

@@ -1,0 +1,9 @@
+com\demo\pojo\logInInfo.class
+com\demo\pojo\Group.class
+com\demo\mapper\logInInfoMapper.class
+com\demo\service\logininfoserviceImpl.class
+com\demo\service\logininfoservice.class
+com\demo\pojo\Friend.class
+com\demo\controller\loginController.class
+com\demo\ChatRoomBySpringBootApplication.class
+com\demo\pojo\MoreInfo.class

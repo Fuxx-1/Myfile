@@ -11,6 +11,6 @@
 
         <bean id="cat" class="com.demo.pojo.Cat"/>
         <bean id="dog" class="com.demo.pojo.Dog"/>
-        <bean id="person" class="com.demo.pojo.Person"/>
+        <bean id="person" class="com.demo.pojo.loginInfo"/>
 
 </beans>

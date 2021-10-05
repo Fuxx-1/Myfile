@@ -6,10 +6,10 @@
 
     <bean id="cat" class="com.demo.pojo.Cat"/>
     <bean id="dog" class="com.demo.pojo.Dog"/>
-    <bean id="person" class="com.demo.pojo.Person" autowire="byName">
+    <bean id="person" class="com.demo.pojo.loginInfo" autowire="byName">
 <!--    <bean class="com.demo.pojo.Cat"/>-->
 <!--    <bean class="com.demo.pojo.Dog"/>-->
-<!--    <bean id="person" class="com.demo.pojo.Person" autowire="byType">-->
+<!--    <bean id="person" class="com.demo.pojo.loginInfo" autowire="byType">-->
         <property name="name" value="Fuxx-1"/>
 <!--        <property name="cat" ref="cat"/>-->
 <!--        <property name="dog" ref="dog"/>-->
