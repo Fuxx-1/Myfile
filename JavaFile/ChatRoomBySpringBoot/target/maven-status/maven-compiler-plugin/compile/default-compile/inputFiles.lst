@@ -9,12 +9,14 @@ D:\Programing\Myfile\JavaFile\ChatRoomBySpringBoot\src\main\java\com\demo\contro
 D:\Programing\Myfile\JavaFile\ChatRoomBySpringBoot\src\main\java\com\demo\pojo\Group.java
 D:\Programing\Myfile\JavaFile\ChatRoomBySpringBoot\src\main\java\com\demo\mapper\MoreInfoMapper.java
 D:\Programing\Myfile\JavaFile\ChatRoomBySpringBoot\src\main\java\com\demo\service\logininfoservice.java
+D:\Programing\Myfile\JavaFile\ChatRoomBySpringBoot\src\main\java\com\demo\conf\SpringSessionConfiguration.java
 D:\Programing\Myfile\JavaFile\ChatRoomBySpringBoot\src\main\java\com\demo\service\friendServiceImpl.java
 D:\Programing\Myfile\JavaFile\ChatRoomBySpringBoot\src\main\java\com\demo\controller\friendController.java
 D:\Programing\Myfile\JavaFile\ChatRoomBySpringBoot\src\main\java\com\demo\controller\WebSocketController.java
 D:\Programing\Myfile\JavaFile\ChatRoomBySpringBoot\src\main\java\com\demo\mapper\FriendMapper.java
 D:\Programing\Myfile\JavaFile\ChatRoomBySpringBoot\src\main\java\com\demo\controller\loginController.java
 D:\Programing\Myfile\JavaFile\ChatRoomBySpringBoot\src\main\java\com\demo\controller\moreInfoController.java
+D:\Programing\Myfile\JavaFile\ChatRoomBySpringBoot\src\main\java\com\demo\conf\CorsFilter.java
 D:\Programing\Myfile\JavaFile\ChatRoomBySpringBoot\src\main\java\com\demo\service\friendService.java
 D:\Programing\Myfile\JavaFile\ChatRoomBySpringBoot\src\main\java\com\demo\service\groupService.java
 D:\Programing\Myfile\JavaFile\ChatRoomBySpringBoot\src\main\java\com\demo\pojo\Friend.java

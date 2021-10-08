@@ -35,6 +35,7 @@ public class logininfoserviceImpl implements logininfoservice {
             resp.put("code", 0);
             session.setAttribute("id", logininfo.getId());
         } else {
+
             resp.put("code", -2);
             resp.put("msg", "密码错误");
         }
