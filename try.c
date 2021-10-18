@@ -112,3 +112,43 @@
 //     PostOrderTraverse(tree.root);
 //     return 0;
 // }
+
+#include <stdio.h>
+
+int main(int argc, char const* argv[])
+{
+    /* 定义 */
+    int M, N; //行、列数
+    /* 输入 */
+    scanf("%d%d", &M, &N);
+    int Num[M][N];
+    /* 行列比较时的缓存变量 */
+    int RowMax[N];
+    int ColMin[M];
+    for (int i = 0; i < M; i++) {
+        for (int j = 0; j < N; j++) {
+            scanf("%d", &Num[i][j]);
+            if (Num[i][j] < ColMin[i] || j == 0) {
+                ColMin[i] = Num[i][j];
+            }
+            if (Num[i][j] > RowMax[j] || i == 0) {
+                RowMax[j] = Num[i][j];
+            }
+        }
+    }
+    /* 判定及输出 */
+    int flag = 0;
+    for (int i = 0; i < M; i++) {
+        for (int j = 0; j < N; j++) {
+            if (Num[i][j] == ColMin[i] && Num[i][j] == RowMax[j]) {
+                printf("(%d,%d,%d)", i + 1, j + 1, Num[i][j]);
+                flag = 1;
+            }
+        }
+    }
+    if (!flag) {
+        printf("NONE");
+    }
+
+    return 0;
+}

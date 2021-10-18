@@ -104,8 +104,10 @@
 
 #include <stdio.h>
 
-int main(int argc, char const* argv[])
+int main(int argc, char const *argv[])
 {
-    printf("%d", printf("Nice to see ACAT 201\b"));
+    int a = 1;
+    a = --a;
+    printf("%d", a);
     return 0;
 }

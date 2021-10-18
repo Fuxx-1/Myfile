@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://unpkg.com/vue@next"></script>
+    <script src="https://unpkg.com/element-plus/dist/index.full.js"></script>
+    <link rel="stylesheet" href="./main.css">
+    <script src="./main.js"></script>
+</head>
+
+<body>
+    <div id="app">
+        <div class="common-layout">
+            <el-header type="primary">
+                信息设置
+                <el-button @click="reload" size="small" icon="el-icon-refresh" circle
+                    style="position: absolute; top: 20px; right: 23px;">
+                </el-button>
+            </el-header>
+            <el-container>
+                <el-aside width="200px">
+                    <el-scrollbar height="100%">
+                        <el-menu default-active="3" class="el-menu-vertical-demo" :collapse="false" @open="handleOpen"
+                            close="handleClose">
+                            <el-sub-menu index="1">
+                                <template #title>
+                                    <i class="el-icon-user"></i>
+                                    <span>我的好友</span>
+                                </template>
+                                <el-menu-item index="1-1">item one</el-menu-item>
+                                <el-menu-item index="1-2">item two</el-menu-item>
+                            </el-sub-menu>
+                            <el-menu-item index="2">
+                                <i class="el-icon-connection"></i>
+                                <template #title>我的群聊</template>
+                            </el-menu-item>
+                            <el-menu-item index="3">
+                                <i class="el-icon-setting"></i>
+                                <template #title>信息设置</template>
+                            </el-menu-item>
+                        </el-menu>
+                    </el-scrollbar>
+                </el-aside>
+                <el-main>Main</el-main>
+                <!-- <el-footer>Footer</el-footer> -->
+            </el-container>
+            <el-footer>
+                Copyright © 2021 聊天室 newimg.ltd
+            </el-footer>
+        </div>
+    </div>
+
+</body>
+
+</html>

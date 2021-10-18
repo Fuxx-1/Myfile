@@ -1,5 +1,6 @@
 {
     "python.formatting.provider": "autopep8",
-    "C_Cpp.errorSquiggles": "Disabled"
+    "C_Cpp.errorSquiggles": "Disabled",
+    "liveServer.settings.port": 5501
 }
   
