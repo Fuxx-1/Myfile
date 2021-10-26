@@ -16,7 +16,7 @@
             "externalConsole": false,
             "internalConsoleOptions": "neverOpen",
             "MIMode": "gdb",
-            "miDebuggerPath": "D:\\mingw64\\bin\\gdb.exe",
+            "miDebuggerPath": "C:\\MySoftware\\Environment\\C\\MinGW64_C\\bin\\gdb.exe",
             "setupCommands": [{
                 "description": "为 gdb 启用整齐打印",
                 "text": "-enable-pretty-printing",
