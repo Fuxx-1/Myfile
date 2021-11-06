@@ -1,6 +1,14 @@
 {
     "python.formatting.provider": "autopep8",
     "C_Cpp.errorSquiggles": "Disabled",
-    "liveServer.settings.port": 5501
+    "liveServer.settings.port": 5501,
+    "files.associations": {
+        "vector": "cpp",
+        "type_traits": "cpp",
+        "cmath": "cpp",
+        "limits": "cpp",
+        "new": "cpp",
+        "utility": "cpp"
+    }
 }
   

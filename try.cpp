@@ -135,13 +135,60 @@
 // }
 
 #include <stdio.h>
+#include <string.h>
+
+typedef struct Huff {
+    char val;
+    int weight;
+    struct Huff* Father;
+    struct Huff* left;
+    struct Huff* right;
+} Node;
+
+int Translate(int a, char b);
+Node* Huff(int a, char b);
+
 int main()
 {
-    int answer = 0;
-    for (int i = 100; i <= 10000; i++) {
-        if (!(i % 2)) {
-            answer += i;
+    char a;
+    int Str[55] = { 0 }, temp;
+    a = getchar();
+    // 输入报文内容
+    while (a != '#') {
+        temp = Translate(-1, a);
+        if (temp + 1) {
+            Str[temp]++;
+        }
+        a = getchar();
+    }
+    for (int i = 0; i < 55; i++) {
+        printf("%c: %d\n", Translate(i, NULL), Str[i]);
+    }
+}
+
+int Translate(int a, char b)
+{ // 字符数字转换函数
+    if (b) {
+        if (b >= 'A' && b <= 'Z') {
+            return b - 'A' + 26;
+        }
+        if (b >= 'a' && b <= 'z') {
+            return b - 'a';
+        }
+        if (b == ' ' || b == '.') {
+            return b == ' ' ? 52 : 53;
         }
     }
-    printf("%d", answer);
+    if (a + 1) {
+        if (a < 26 && a >= 0) {
+            return 'a' + a;
+        }
+        if (a < 52 && a > 25) {
+            return 'A' + a - 26;
+        }
+        if (a == 52 || a == 53) {
+            return a == 52 ? ' ' : '.';
+        }
+    }
+    return -1;
 }
