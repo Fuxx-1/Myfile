@@ -8,7 +8,11 @@
         "cmath": "cpp",
         "limits": "cpp",
         "new": "cpp",
-        "utility": "cpp"
+        "utility": "cpp",
+        "random": "cpp",
+        "array": "cpp",
+        "string": "cpp",
+        "string_view": "cpp"
     }
 }
   

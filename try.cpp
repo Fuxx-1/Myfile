@@ -135,6 +135,7 @@
 // }
 
 #include <stdio.h>
+#include <stdlib.h>
 #include <string.h>
 
 typedef struct Huff {
@@ -146,12 +147,25 @@ typedef struct Huff {
 } Node;
 
 int Translate(int a, char b);
-Node* Huff(int a, char b);
+Node* HuffTree(Node** temp);
+Node* CreateFatherNode(Node* Left, Node* Right);
+void Search(Node* root, char val, int* a, int length);
+void PrintTree(Node* bt, int h)
+{
+    if (bt == NULL)
+        return;
+    PrintTree(bt->left, h + 1);
+    for (int i = 0; i < h; i++)
+        printf("  ");
+    printf("%c\n", bt->val ? bt->val : '空');
+    PrintTree(bt->right, h + 1);
+}
 
 int main()
 {
-    char a;
-    int Str[55] = { 0 }, temp;
+    Node* Temp[54] = { NULL };
+    char a, Str1[201];
+    int Str[55] = { 0 }, temp, temp1 = 0;
     a = getchar();
     // 输入报文内容
     while (a != '#') {
@@ -159,36 +173,147 @@ int main()
         if (temp + 1) {
             Str[temp]++;
         }
+        Str1[temp1++] = a;
         a = getchar();
     }
-    for (int i = 0; i < 55; i++) {
-        printf("%c: %d\n", Translate(i, NULL), Str[i]);
+    for (int i = 0; i < 54; i++) {
+        Temp[i] = (Node*)malloc(sizeof(Node));
+        Temp[i]->val = Translate(i, NULL);
+        Temp[i]->weight = Str[i];
+        Temp[i]->Father = NULL;
+        Temp[i]->left = NULL;
+        Temp[i]->right = NULL;
     }
+    for (int i = 0; i < 54 - 1; i++) {
+        for (int j = 0; j < 54 - i - 1; j++) {
+            if (Temp[j]->weight < Temp[j + 1]->weight) {
+                Node* Nodetemp = Temp[j];
+                Temp[j] = Temp[j + 1];
+                Temp[j + 1] = Nodetemp;
+            } else if (Temp[j]->weight == Temp[j + 1]->weight && Temp[j]->val < Temp[j + 1]->val) {
+                Node* Nodetemp = Temp[j];
+                Temp[j] = Temp[j + 1];
+                Temp[j + 1] = Nodetemp;
+            }
+        }
+    }
+    // for (int i = 0; i < 54; i++) {
+    //     if (Temp[i]->weight != 0) {
+    //         printf("%c: %d\n", Temp[i]->val, Temp[i]->weight);
+    //     }
+    // }
+    Node* root = HuffTree(Temp);
+    // PrintTree(root, 0);
+    //编码
+    int length = strlen(Str1);
+    int lengthtemp = 0;
+    while (lengthtemp < length) {
+        // printf("%c:", Str1[lengthtemp]);
+        Search(root, Str1[lengthtemp], Str, 0);
+        // printf("\n");
+        lengthtemp++;
+    }
+    printf("\n");
+    Node* NodeTemp = root;
+    a = getchar();
+    while (scanf("%c", &a) != EOF) {
+        if (a == '1') {
+            NodeTemp = NodeTemp->left;
+        } else {
+            NodeTemp = NodeTemp->right;
+        }
+        if (NodeTemp->val) {
+            printf("%c", NodeTemp->val);
+            NodeTemp = root;
+        }
+    }
+   
 }
 
 int Translate(int a, char b)
 { // 字符数字转换函数
     if (b) {
         if (b >= 'A' && b <= 'Z') {
-            return b - 'A' + 26;
+            return b - 'A' + 2;
         }
         if (b >= 'a' && b <= 'z') {
-            return b - 'a';
+            return b - 'a' + 28;
         }
         if (b == ' ' || b == '.') {
-            return b == ' ' ? 52 : 53;
+            return b == ' ' ? 0 : 1;
         }
     }
     if (a + 1) {
-        if (a < 26 && a >= 0) {
-            return 'a' + a;
+        if (a < 28 && a >= 2) {
+            return 'A' + a - 2;
         }
-        if (a < 52 && a > 25) {
-            return 'A' + a - 26;
+        if (a < 54 && a > 27) {
+            return 'a' + a - 28;
         }
-        if (a == 52 || a == 53) {
-            return a == 52 ? ' ' : '.';
+        if (a == 0 || a == 1) {
+            return a == 0 ? ' ' : '.';
         }
     }
     return -1;
+}
+
+Node* HuffTree(Node* temp[])
+{ // 创建哈夫曼树并返回根节点
+    int flag = 0;
+    while (temp[flag + 1]->weight != 0) {
+        flag++;
+    }
+    while (flag) {
+        // 生成父节点
+        Node* Father = CreateFatherNode(temp[flag--], temp[flag--]);
+        if (!(flag + 1)) {
+            return Father;
+        }
+        // 将父节点插入结构体链表
+        for (int i = ++flag; i >= 1; i--) {
+            temp[i] = temp[i - 1];
+            if (Father->weight < temp[i - 1]->weight) {
+                temp[i] = Father;
+                break;
+            } else if (i == 1 && Father->weight >= temp[i - 1]->weight) {
+                temp[i - 1] = Father;
+            }
+        }
+        // for (int i = 0; i < 54; i++) {
+        //     if (temp[i]->weight != 0) {
+        //         printf("%d ", temp[i]->weight);
+        //     }
+        // }
+        // printf("\n");
+    }
+}
+Node* CreateFatherNode(Node* Left, Node* Right)
+{
+    Node* Father = (Node*)malloc(sizeof(Node));
+    Father->weight = Left->weight + Right->weight;
+    Father->val = NULL;
+    Father->Father = NULL;
+    Father->left = Left;
+    Father->right = Right;
+    Left->Father = Father;
+    Right->Father = Father;
+    return Father;
+}
+void Search(Node* root, char val, int* a, int length)
+{
+    if (root) {
+        if (root->val && root->val == val) {
+            for (int i = 0; i < length; i++) {
+                printf("%d", a[i]);
+            }
+            return;
+        } else {
+            a[length] = 1;
+            Search(root->left, val, a, length + 1);
+            a[length] = 0;
+            Search(root->right, val, a, length + 1);
+        }
+    } else {
+        return;
+    }
 }
