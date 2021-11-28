@@ -1,0 +1,8 @@
+
+E
+java:S1905)"*Remove this unnecessary cast to "Integer".(º¯«‡üÿÿÿÿ
+C	java:S108*")Either remove or fill this block of code.(Æ¸Û‚øÿÿÿÿ
+k	java:S117U"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(„±”Ùÿÿÿÿÿ
+e	java:S117V"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(›¡ó
+k	java:S117W"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(³‡è¦þÿÿÿÿ
+g	java:S101"MRename this class name to match the regular expression '^[A-Z][a-zA-Z0-9]*$'.(îó‰™øÿÿÿÿ

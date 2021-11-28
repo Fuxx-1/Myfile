@@ -1,0 +1,73 @@
+@import url("https://unpkg.com/element-plus/dist/index.css");
+@import "./color.css";
+
+.common-layout{
+    width: 100vw;
+    height: 100vh;
+}
+
+body {
+    overflow: hidden;
+    height: 100vh;
+    background: -moz-radial-gradient(0% 100%, ellipse cover, rgba(104, 128, 138, .4) 10%, rgba(138, 114, 76, 0) 40%), -moz-linear-gradient(top, rgba(57, 173, 219, .25) 0%, rgba(42, 60, 87, .4) 100%), -moz-linear-gradient(-45deg, #670d10 0%, #092756 100%);
+    background: -webkit-radial-gradient(0% 100%, ellipse cover, rgba(104, 128, 138, .4) 10%, rgba(138, 114, 76, 0) 40%), -webkit-linear-gradient(top, rgba(57, 173, 219, .25) 0%, rgba(42, 60, 87, .4) 100%), -webkit-linear-gradient(-45deg, #670d10 0%, #092756 100%);
+    background: -o-radial-gradient(0% 100%, ellipse cover, rgba(104, 128, 138, .4) 10%, rgba(138, 114, 76, 0) 40%), -o-linear-gradient(top, rgba(57, 173, 219, .25) 0%, rgba(42, 60, 87, .4) 100%), -o-linear-gradient(-45deg, #670d10 0%, #092756 100%);
+    background: -ms-radial-gradient(0% 100%, ellipse cover, rgba(104, 128, 138, .4) 10%, rgba(138, 114, 76, 0) 40%), -ms-linear-gradient(top, rgba(57, 173, 219, .25) 0%, rgba(42, 60, 87, .4) 100%), -ms-linear-gradient(-45deg, #670d10 0%, #092756 100%);
+    background: -webkit-radial-gradient(0% 100%, ellipse cover, rgba(104, 128, 138, .4) 10%, rgba(138, 114, 76, 0) 40%), linear-gradient(to bottom, rgba(57, 173, 219, .25) 0%, rgba(42, 60, 87, .4) 100%), linear-gradient(135deg, #670d10 0%, #092756 100%);
+}
+
+.el-header {
+    background-color: var(--header-bg-color);
+    /* backdrop-filter: blur(7.5px);  */
+    /* color: var(--el-text-color-primary); */
+    text-align: center;
+    font-size: 25px;
+    height: 7vh;
+    line-height: 7vh;
+    border-radius: 7px 7px 0 0;
+    font-weight: bold;
+    color: #FFF;
+}
+
+.el-footer {
+    background-color: var(--footer-bg-color);
+    color: white;
+    text-align: center;
+    font-size: 10px;
+    height: 4vh;
+    line-height: 4vh;
+    border-radius: 0 0 7px 7px;
+}
+
+.el-aside {
+    height: 85vh;
+    color: var(--el-text-color-primary);
+    text-align: center;
+    background-color: var(--transparent-bg-color);
+}
+
+.el-menu {
+    background-color: var(--aside-bg-color);
+}
+
+.el-main {
+    height: 85vh;
+    background-color: var(--main-bg-color);
+    color: var(--el-text-color-primary);
+    text-align: center;
+    line-height: 70vh;
+    font-size: 100px;
+}
+
+.el-scrollbar {
+    border: 1px;
+}
+
+.common-layout {
+    margin: auto;
+}
+
+.el-menu-vertical-demo:not(.el-menu--collapse) {
+    width: 100%;
+    min-height: 85vh;
+}

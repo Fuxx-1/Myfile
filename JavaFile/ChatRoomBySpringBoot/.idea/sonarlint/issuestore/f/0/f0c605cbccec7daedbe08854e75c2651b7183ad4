@@ -1,12 +1,0 @@
-
-S
-java:S2696"6Make the enclosing method "static" or remove this set.(Í¼ñÆ8Íü¿Ã/
-`
-java:S3252"EUse static access with "com.alibaba.fastjson.JSON" for "parseObject".(ÈØœøÿÿÿÿÿ
-C	java:S108(")Either remove or fill this block of code.(Æ¸Û‚øÿÿÿÿ
-C	java:S1083")Either remove or fill this block of code.(Æ¸Û‚øÿÿÿÿ
-j
-java:S1192"HDefine a constant instead of duplicating this literal "groupId" 3 times.(•šµùÿÿÿÿ8©ãÔÃ/
-š
-java:S1319"ƒThe type of the "clients" object should be an interface such as "ConcurrentMap" rather than the implementation "ConcurrentHashMap".(—³ª
-f	java:S117#"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(€¡ğ½

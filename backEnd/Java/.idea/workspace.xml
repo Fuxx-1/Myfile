@@ -1,0 +1,595 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AnalysisUIOptions">
+    <option name="GROUP_BY_SEVERITY" value="true" />
+  </component>
+  <component name="ArtifactsWorkspaceSettings">
+    <artifacts-to-build>
+      <artifact name="AJAX:war exploded" />
+      <artifact name="Anno:war exploded" />
+      <artifact name="BookControllerSystemBasedBySSMFarem:war" />
+      <artifact name="BookControllerSystemBasedBySSMFarem:war exploded" />
+      <artifact name="Controller:war exploded" />
+      <artifact name="JavaWebDemo:war" />
+      <artifact name="JavaWebDemo:war exploded" />
+      <artifact name="ServletTest:war exploded" />
+      <artifact name="SpringMVCDemo1:war exploded" />
+    </artifacts-to-build>
+  </component>
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="ALL" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="146c6b5b-5dc8-4b04-835a-c1ccd6709278" name="默认变更列表" comment="默认变更列表">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SpringMVC/BookControllerSystemBasedBySSMFarem/BookControllerSystemBasedBySSMFarem.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/SpringMVC/BookControllerSystemBasedBySSMFarem/BookControllerSystemBasedBySSMFarem.ipr" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/SpringMVC/BookControllerSystemBasedBySSMFarem/BookControllerSystemBasedBySSMFarem.iws" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/SpringMVC/BookControllerSystemBasedBySSMFarem/pom.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/SpringMVC/BookControllerSystemBasedBySSMFarem/src/main/java/com/demo/controller/BookController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/SpringMVC/BookControllerSystemBasedBySSMFarem/src/main/java/com/demo/controller/WebSocketController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/SpringMVC/BookControllerSystemBasedBySSMFarem/src/main/java/com/demo/mapper/BookMapper.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/SpringMVC/BookControllerSystemBasedBySSMFarem/src/main/java/com/demo/mapper/BookMapper.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/SpringMVC/BookControllerSystemBasedBySSMFarem/src/main/java/com/demo/mapper/BookMapperImpl.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/SpringMVC/BookControllerSystemBasedBySSMFarem/src/main/java/com/demo/pojo/Books.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/SpringMVC/BookControllerSystemBasedBySSMFarem/src/main/java/com/demo/service/BookService.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/SpringMVC/BookControllerSystemBasedBySSMFarem/src/main/java/com/demo/service/BookServiceImpl.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/SpringMVC/BookControllerSystemBasedBySSMFarem/src/main/java/com/demo/service/WSService.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/SpringMVC/BookControllerSystemBasedBySSMFarem/src/main/java/com/demo/websocket/Websocket.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/SpringMVC/BookControllerSystemBasedBySSMFarem/src/main/resources/applicationContext.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/SpringMVC/BookControllerSystemBasedBySSMFarem/src/main/resources/database.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/SpringMVC/BookControllerSystemBasedBySSMFarem/src/main/resources/mybatis-config.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/SpringMVC/BookControllerSystemBasedBySSMFarem/src/main/resources/spring-mapper.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/SpringMVC/BookControllerSystemBasedBySSMFarem/src/main/resources/spring-mvc.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/SpringMVC/BookControllerSystemBasedBySSMFarem/src/main/resources/spring-service.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/SpringMVC/BookControllerSystemBasedBySSMFarem/src/test/java/test.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/SpringMVC/BookControllerSystemBasedBySSMFarem/target/classes/applicationContext.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/SpringMVC/BookControllerSystemBasedBySSMFarem/target/classes/com/demo/mapper/BookMapper.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/SpringMVC/BookControllerSystemBasedBySSMFarem/target/classes/database.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/SpringMVC/BookControllerSystemBasedBySSMFarem/target/classes/mybatis-config.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/SpringMVC/BookControllerSystemBasedBySSMFarem/target/classes/spring-mapper.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/SpringMVC/BookControllerSystemBasedBySSMFarem/target/classes/spring-mvc.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/SpringMVC/BookControllerSystemBasedBySSMFarem/target/classes/spring-service.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/SpringMVC/BookControllerSystemBasedBySSMFarem/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/SpringMVC/BookControllerSystemBasedBySSMFarem/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/SpringMVC/BookControllerSystemBasedBySSMFarem/web/WEB-INF/jsp/addbook.jsp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/SpringMVC/BookControllerSystemBasedBySSMFarem/web/WEB-INF/jsp/allbook.jsp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/SpringMVC/BookControllerSystemBasedBySSMFarem/web/WEB-INF/jsp/deletebook.jsp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/SpringMVC/BookControllerSystemBasedBySSMFarem/web/WEB-INF/jsp/message.jsp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/SpringMVC/BookControllerSystemBasedBySSMFarem/web/WEB-INF/jsp/querybook.jsp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/SpringMVC/BookControllerSystemBasedBySSMFarem/web/WEB-INF/jsp/updatebook.jsp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/SpringMVC/BookControllerSystemBasedBySSMFarem/web/WEB-INF/web.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/SpringMVC/BookControllerSystemBasedBySSMFarem/web/index.jsp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/SpringMVC/BookControllerSystemBasedBySSMFarem/web/layui/css/layui.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/SpringMVC/BookControllerSystemBasedBySSMFarem/web/layui/css/modules/code.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/SpringMVC/BookControllerSystemBasedBySSMFarem/web/layui/css/modules/laydate/default/laydate.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/SpringMVC/BookControllerSystemBasedBySSMFarem/web/layui/css/modules/layer/default/icon-ext.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/SpringMVC/BookControllerSystemBasedBySSMFarem/web/layui/css/modules/layer/default/icon.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/SpringMVC/BookControllerSystemBasedBySSMFarem/web/layui/css/modules/layer/default/layer.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/SpringMVC/BookControllerSystemBasedBySSMFarem/web/layui/css/modules/layer/default/loading-0.gif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/SpringMVC/BookControllerSystemBasedBySSMFarem/web/layui/css/modules/layer/default/loading-1.gif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/SpringMVC/BookControllerSystemBasedBySSMFarem/web/layui/css/modules/layer/default/loading-2.gif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/SpringMVC/BookControllerSystemBasedBySSMFarem/web/layui/font/iconfont.eot" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/SpringMVC/BookControllerSystemBasedBySSMFarem/web/layui/font/iconfont.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/SpringMVC/BookControllerSystemBasedBySSMFarem/web/layui/font/iconfont.ttf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/SpringMVC/BookControllerSystemBasedBySSMFarem/web/layui/font/iconfont.woff" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/SpringMVC/BookControllerSystemBasedBySSMFarem/web/layui/font/iconfont.woff2" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/SpringMVC/BookControllerSystemBasedBySSMFarem/web/layui/layui.js" beforeDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="CodeInsightWorkspaceSettings">
+    <option name="optimizeImportsOnTheFly" value="true" />
+  </component>
+  <component name="ExternalProjectsData">
+    <projectState path="$PROJECT_DIR$/WebDemo">
+      <ProjectState />
+    </projectState>
+    <projectState path="$PROJECT_DIR$/demo">
+      <ProjectState />
+    </projectState>
+  </component>
+  <component name="ExternalProjectsManager">
+    <system id="GRADLE">
+      <state>
+        <projects_view>
+          <tree_state>
+            <expand />
+            <select />
+          </tree_state>
+        </projects_view>
+      </state>
+    </system>
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="AnnotationType" />
+        <option value="FxmlFile" />
+        <option value="JUnit3 Test Class" />
+        <option value="Jspx File" />
+        <option value="Interface" />
+        <option value="Jsp File" />
+        <option value="HTML File" />
+        <option value="JavaScript File" />
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
+  </component>
+  <component name="GitSEFilterConfiguration">
+    <file-type-list>
+      <filtered-out-file-type name="LOCAL_BRANCH" />
+      <filtered-out-file-type name="REMOTE_BRANCH" />
+      <filtered-out-file-type name="TAG" />
+      <filtered-out-file-type name="COMMIT_BY_MESSAGE" />
+    </file-type-list>
+  </component>
+  <component name="LogFilters">
+    <option name="FILTER_ERRORS" value="false" />
+    <option name="FILTER_WARNINGS" value="false" />
+    <option name="FILTER_INFO" value="true" />
+    <option name="FILTER_DEBUG" value="true" />
+    <option name="CUSTOM_FILTER" />
+  </component>
+  <component name="MavenImportPreferences">
+    <option name="generalSettings">
+      <MavenGeneralSettings>
+        <option name="mavenHome" value="C:/MySoftware/apache-maven/apache-maven-3.8.1" />
+      </MavenGeneralSettings>
+    </option>
+  </component>
+  <component name="ProblemsViewState">
+    <option name="selectedIndex" value="2" />
+  </component>
+  <component name="ProjectId" id="1scjLFmcySwyee08BEZ002dE3Lt" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectViewState">
+    <option name="autoscrollToSource" value="true" />
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="DatabaseDriversLRU" value="mysql" />
+    <property name="DefaultHtmlFileTemplate" value="HTML File" />
+    <property name="Downloaded.Files.Path.Enabled" value="false" />
+    <property name="NEW_TOOLWINDOW_STRIPE_DEFAULTS" value="true" />
+    <property name="Repository.Attach.Annotations" value="false" />
+    <property name="Repository.Attach.JavaDocs" value="false" />
+    <property name="Repository.Attach.Sources" value="false" />
+    <property name="RequestMappingsPanelOrder0" value="0" />
+    <property name="RequestMappingsPanelOrder1" value="1" />
+    <property name="RequestMappingsPanelWidth0" value="75" />
+    <property name="RequestMappingsPanelWidth1" value="75" />
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="aspect.path.notification.shown" value="true" />
+    <property name="com.intellij.openapi.externalSystem.service.settings.ExternalSystemGroupConfigurable" value="ALL" />
+    <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary" value="JUnit3" />
+    <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit3" value="junit.framework.TestCase" />
+    <property name="extract.method.default.visibility" value="private" />
+    <property name="jdk.selected.JAVA_MODULE" value="1.8" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../JavaFile/BookControllerSystemBasedBySSMFarem" />
+    <property name="node.js.detected.package.eslint" value="true" />
+    <property name="node.js.detected.package.tslint" value="true" />
+    <property name="node.js.selected.package.eslint" value="(autodetect)" />
+    <property name="node.js.selected.package.tslint" value="(autodetect)" />
+    <property name="project.structure.last.edited" value="模块" />
+    <property name="project.structure.proportion" value="0.15" />
+    <property name="project.structure.side.proportion" value="0.35597825" />
+    <property name="settings.editor.selected.configurable" value="editor.preferences.import" />
+  </component>
+  <component name="ReaderModeSettings">
+    <option name="enabled" value="false" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CreateClassDialog.RecentsKey">
+      <recent name="com.example.JavaWebDemo" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\Programing\Myfile\Java\SpringMVC\Controller\src\main\resources" />
+      <recent name="D:\Programing\Myfile\Java\SpringMVC\ServletTest\src\main\resources" />
+      <recent name="D:\Programing\Myfile\Java\SpringMVC\Controller\web\WEB-INF" />
+      <recent name="D:\Programing\Myfile\Java\SpringDemo\Transaction\src\main\java\com\demo\mapper" />
+      <recent name="D:\Programing\Myfile\Java\SpringDemo\Transaction\src\main\resources" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="D:\Programing\Myfile\Java\ChatRoomBySpringBoot" />
+      <recent name="D:\Programing\Myfile\Java\JavaWebDemo\web" />
+      <recent name="D:\Programing\Myfile\Java\SpringMVC\BookControllerSystemBasedBySSMFarem\web\WEB-INF\jsp" />
+      <recent name="D:\Programing\Myfile\Java\SpringMVC\Controller\web\WEB-INF" />
+      <recent name="D:\Programing\Myfile\Java\SpringMVC\Servlet\web\WEB-INF" />
+    </key>
+    <key name="CreateTestDialog.Recents.Supers">
+      <recent name="junit.framework.TestCase" />
+    </key>
+    <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
+      <recent name="" />
+      <recent name="com.Example.JavaWebDemo" />
+    </key>
+    <key name="CreateTestDialog.RecentsKey">
+      <recent name="com.demo1.mapper" />
+      <recent name="com.demo.demo01" />
+      <recent name="com.demo.pojo" />
+    </key>
+    <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="com.demo.pojo" />
+      <recent name="" />
+      <recent name="com.WebSocket.JavaWebDemo" />
+    </key>
+  </component>
+  <component name="RunManager" selected="Spring Boot.ChatRoomBySpringBootApplication">
+    <configuration name="Test" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="Test" />
+      <module name="JavaFile" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="ChatRoomBySpringBootApplicationTests.Test2" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="ChatRoomBySpringBoot" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.demo.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.demo" />
+      <option name="MAIN_CLASS_NAME" value="com.demo.ChatRoomBySpringBootApplicationTests" />
+      <option name="METHOD_NAME" value="Test2" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="ChatRoomBySpringBootApplicationTests.contextLoads" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="ChatRoomBySpringBoot" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.demo.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.demo" />
+      <option name="MAIN_CLASS_NAME" value="com.demo.ChatRoomBySpringBootApplicationTests" />
+      <option name="METHOD_NAME" value="contextLoads" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="MyTest.Test" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="Transaction" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="MAIN_CLASS_NAME" value="MyTest" />
+      <option name="METHOD_NAME" value="Test" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="test.test1" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="BookControllerSystemBasedBySSMFarem" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="java.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="java" />
+      <option name="MAIN_CLASS_NAME" value="java.test" />
+      <option name="METHOD_NAME" value="test1" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="ChatRoomBySpringBootApplication (1)" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
+      <module name="ChatRoomBySpringBoot" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.demo.ChatRoomBySpringBootApplication" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="ChatRoomBySpringBootApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
+      <module name="ChatRoomBySpringBoot" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.chat.start.ChatRoomBySpringBootApplication" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="Tomcat 8.5.65" type="#com.intellij.j2ee.web.tomcat.TomcatRunConfigurationFactory" factoryName="Local" APPLICATION_SERVER_NAME="Tomcat 8.5.65" ALTERNATIVE_JRE_ENABLED="false" nameIsGenerated="true">
+      <option name="OPEN_IN_BROWSER_URL" value="http://localhost:8080/JavaWebDemo_war_exploded/" />
+      <option name="UPDATING_POLICY" value="restart-server" />
+      <deployment>
+        <artifact name="JavaWebDemo:war exploded">
+          <settings>
+            <option name="CONTEXT_PATH" value="/JavaWebDemo_war_exploded" />
+          </settings>
+        </artifact>
+      </deployment>
+      <server-settings>
+        <option name="BASE_DIRECTORY_NAME" value="04781aae-6a1d-4393-b33c-45ef7bbb57d1" />
+      </server-settings>
+      <predefined_log_file enabled="true" id="Tomcat" />
+      <predefined_log_file enabled="true" id="Tomcat Catalina" />
+      <predefined_log_file id="Tomcat Manager" />
+      <predefined_log_file id="Tomcat Host Manager" />
+      <predefined_log_file id="Tomcat Localhost Access" />
+      <RunnerSettings RunnerId="Debug">
+        <option name="DEBUG_PORT" value="1345" />
+      </RunnerSettings>
+      <ConfigurationWrapper VM_VAR="JAVA_OPTS" RunnerId="Cover">
+        <option name="USE_ENV_VARIABLES" value="true" />
+        <STARTUP>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </STARTUP>
+        <SHUTDOWN>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </SHUTDOWN>
+      </ConfigurationWrapper>
+      <ConfigurationWrapper VM_VAR="JAVA_OPTS" RunnerId="Debug">
+        <option name="USE_ENV_VARIABLES" value="true" />
+        <STARTUP>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </STARTUP>
+        <SHUTDOWN>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </SHUTDOWN>
+      </ConfigurationWrapper>
+      <ConfigurationWrapper VM_VAR="JAVA_OPTS" RunnerId="Profile">
+        <option name="USE_ENV_VARIABLES" value="true" />
+        <STARTUP>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </STARTUP>
+        <SHUTDOWN>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </SHUTDOWN>
+      </ConfigurationWrapper>
+      <ConfigurationWrapper VM_VAR="JAVA_OPTS" RunnerId="Run">
+        <option name="USE_ENV_VARIABLES" value="true" />
+        <STARTUP>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </STARTUP>
+        <SHUTDOWN>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </SHUTDOWN>
+      </ConfigurationWrapper>
+      <method v="2">
+        <option name="Make" enabled="true" />
+        <option name="BuildArtifacts" enabled="true">
+          <artifact name="JavaWebDemo:war exploded" />
+        </option>
+      </method>
+    </configuration>
+    <list>
+      <item itemvalue="JUnit.MyTest.Test" />
+      <item itemvalue="JUnit.test.test1" />
+      <item itemvalue="JUnit.ChatRoomBySpringBootApplicationTests.contextLoads" />
+      <item itemvalue="JUnit.ChatRoomBySpringBootApplicationTests.Test2" />
+      <item itemvalue="Spring Boot.ChatRoomBySpringBootApplication" />
+      <item itemvalue="Spring Boot.ChatRoomBySpringBootApplication (1)" />
+      <item itemvalue="Tomcat 服务器.Tomcat 8.5.65" />
+      <item itemvalue="应用程序.Test" />
+    </list>
+    <recent_temporary>
+      <list>
+        <item itemvalue="JUnit.ChatRoomBySpringBootApplicationTests.Test2" />
+        <item itemvalue="JUnit.ChatRoomBySpringBootApplicationTests.contextLoads" />
+        <item itemvalue="应用程序.Test" />
+        <item itemvalue="JUnit.test.test1" />
+        <item itemvalue="JUnit.MyTest.Test" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="应用程序级" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="默认任务">
+      <changelist id="146c6b5b-5dc8-4b04-835a-c1ccd6709278" name="默认变更列表" comment="" />
+      <created>1621178717391</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1621178717391</updated>
+      <workItem from="1621178721680" duration="15000" />
+      <workItem from="1621178783981" duration="159000" />
+      <workItem from="1621179008744" duration="334000" />
+      <workItem from="1621179383667" duration="3082000" />
+      <workItem from="1621228949469" duration="4000" />
+      <workItem from="1621252881068" duration="47000" />
+      <workItem from="1621252957721" duration="65000" />
+      <workItem from="1621261429588" duration="240000" />
+      <workItem from="1621261687656" duration="172000" />
+      <workItem from="1621261885818" duration="262000" />
+      <workItem from="1621262187802" duration="1782000" />
+      <workItem from="1621265207194" duration="774000" />
+      <workItem from="1621302069012" duration="1012000" />
+      <workItem from="1621345339457" duration="475000" />
+      <workItem from="1621346300121" duration="543000" />
+      <workItem from="1621409358539" duration="281000" />
+      <workItem from="1621409977597" duration="619000" />
+      <workItem from="1621497282858" duration="3778000" />
+      <workItem from="1621501853769" duration="2651000" />
+      <workItem from="1621504559077" duration="11158000" />
+      <workItem from="1621569425669" duration="869000" />
+      <workItem from="1621671050432" duration="5610000" />
+      <workItem from="1621759067642" duration="3530000" />
+      <workItem from="1621764723877" duration="3559000" />
+      <workItem from="1621772123364" duration="203000" />
+      <workItem from="1621772365486" duration="59000" />
+      <workItem from="1621772453381" duration="8639000" />
+      <workItem from="1621820480084" duration="82000" />
+      <workItem from="1621829430265" duration="9252000" />
+      <workItem from="1621858468810" duration="293000" />
+      <workItem from="1621942199977" duration="1032000" />
+      <workItem from="1622019893589" duration="588000" />
+      <workItem from="1622027086034" duration="288000" />
+      <workItem from="1622027404741" duration="5594000" />
+      <workItem from="1622116249971" duration="1208000" />
+      <workItem from="1622368047132" duration="3531000" />
+      <workItem from="1622371713484" duration="1308000" />
+      <workItem from="1622373369742" duration="1059000" />
+      <workItem from="1622546724263" duration="2380000" />
+      <workItem from="1622550897817" duration="2028000" />
+      <workItem from="1622971586728" duration="129000" />
+      <workItem from="1622971746969" duration="1595000" />
+      <workItem from="1622980892022" duration="11000" />
+      <workItem from="1622983887518" duration="597000" />
+      <workItem from="1622984664171" duration="434000" />
+      <workItem from="1623047933682" duration="2043000" />
+      <workItem from="1623050252633" duration="1935000" />
+      <workItem from="1623405859701" duration="10000" />
+      <workItem from="1623666193157" duration="4255000" />
+      <workItem from="1623945292930" duration="22000" />
+      <workItem from="1623945354726" duration="65000" />
+      <workItem from="1624000936995" duration="5935000" />
+      <workItem from="1624008237460" duration="97000" />
+      <workItem from="1624172074079" duration="5000" />
+      <workItem from="1626427917747" duration="255000" />
+      <workItem from="1626453147893" duration="441000" />
+      <workItem from="1626801821108" duration="187000" />
+      <workItem from="1626802208004" duration="631000" />
+      <workItem from="1626918080038" duration="352000" />
+      <workItem from="1626918466567" duration="10544000" />
+      <workItem from="1626940536265" duration="6605000" />
+      <workItem from="1627002378559" duration="1214000" />
+      <workItem from="1627004524385" duration="233000" />
+      <workItem from="1627005259775" duration="23531000" />
+      <workItem from="1627088727674" duration="860000" />
+      <workItem from="1627089944650" duration="17635000" />
+      <workItem from="1627222583310" duration="3136000" />
+      <workItem from="1627261462774" duration="11044000" />
+      <workItem from="1627278158243" duration="2008000" />
+      <workItem from="1627280388870" duration="976000" />
+      <workItem from="1627281461400" duration="625000" />
+      <workItem from="1627282199064" duration="4284000" />
+      <workItem from="1627286679356" duration="27859000" />
+      <workItem from="1627434258694" duration="525000" />
+      <workItem from="1627434870278" duration="8967000" />
+      <workItem from="1627462492374" duration="3163000" />
+      <workItem from="1627607480592" duration="28925000" />
+      <workItem from="1627695071955" duration="4694000" />
+      <workItem from="1627867194697" duration="719000" />
+      <workItem from="1627867968678" duration="591000" />
+      <workItem from="1627868720966" duration="1345000" />
+      <workItem from="1627870698464" duration="12658000" />
+      <workItem from="1627912252286" duration="147000" />
+      <workItem from="1627912431594" duration="239000" />
+      <workItem from="1627913419760" duration="6000" />
+      <workItem from="1627913482880" duration="100000" />
+      <workItem from="1627913707161" duration="215000" />
+      <workItem from="1627956146011" duration="5633000" />
+      <workItem from="1627978974597" duration="1250000" />
+      <workItem from="1627980281859" duration="1333000" />
+      <workItem from="1627982358221" duration="1479000" />
+      <workItem from="1628152783911" duration="2102000" />
+      <workItem from="1628164857989" duration="333000" />
+      <workItem from="1628165233443" duration="140000" />
+      <workItem from="1628165486021" duration="7022000" />
+      <workItem from="1628250815115" duration="686000" />
+      <workItem from="1630162482412" duration="16000" />
+      <workItem from="1630224910483" duration="115000" />
+      <workItem from="1630225227080" duration="277000" />
+      <workItem from="1630317008444" duration="1616000" />
+      <workItem from="1630595480570" duration="206000" />
+      <workItem from="1630768814218" duration="1168000" />
+      <workItem from="1631022233883" duration="590000" />
+      <workItem from="1631164471901" duration="19000" />
+      <workItem from="1631185031749" duration="6819000" />
+      <workItem from="1631192025100" duration="6261000" />
+      <workItem from="1631411550759" duration="27000" />
+      <workItem from="1631411703487" duration="8000" />
+      <workItem from="1631411950804" duration="1000" />
+      <workItem from="1631412097906" duration="1000" />
+      <workItem from="1631412170273" duration="16000" />
+      <workItem from="1631412258916" duration="36000" />
+      <workItem from="1631412534364" duration="2971000" />
+      <workItem from="1631631206176" duration="3918000" />
+      <workItem from="1631635405365" duration="1209000" />
+      <workItem from="1631662317649" duration="3789000" />
+      <workItem from="1631798573397" duration="803000" />
+      <workItem from="1632232571413" duration="14931000" />
+      <workItem from="1632357866268" duration="873000" />
+      <workItem from="1632362398630" duration="3007000" />
+      <workItem from="1632395159236" duration="507000" />
+      <workItem from="1632395754592" duration="459000" />
+      <workItem from="1632396292144" duration="95000" />
+      <workItem from="1632396462099" duration="250000" />
+      <workItem from="1632397834317" duration="17000" />
+      <workItem from="1632405734790" duration="56000" />
+      <workItem from="1635334034221" duration="820000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+    <option name="oldMeFiltersMigrated" value="true" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <option name="SHOW_DIRTY_RECURSIVELY" value="true" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <breakpoint enabled="true" type="java-exception">
+          <properties class="java.lang.ClassNotFoundException" package="java.lang" />
+          <option name="timeStamp" value="1" />
+        </breakpoint>
+        <breakpoint enabled="true" type="java-exception">
+          <properties class="java.lang.NullPointerException" package="java.lang" />
+          <option name="timeStamp" value="7" />
+        </breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/JavaFile/File/jwxt/Test.java</url>
+          <line>6</line>
+          <option name="timeStamp" value="8" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
+  </component>
+  <component name="XSLT-Support.FileAssociations.UIState">
+    <expand />
+    <select />
+  </component>
+</project>
