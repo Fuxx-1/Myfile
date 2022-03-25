@@ -5,7 +5,9 @@ import org.apache.ibatis.annotations.Delete;
 import org.apache.ibatis.annotations.Insert;
 import org.apache.ibatis.annotations.Select;
 import org.apache.ibatis.annotations.Update;
+import org.springframework.stereotype.Repository;
 
+@Repository
 /**
  * @program: PetHospitalInformationManage
  * @description:
@@ -18,14 +20,11 @@ public interface HospitalPhysicianMapper {
     boolean addHospitalPhysician(HospitalPhysician hospitalPhysician);
 
     @Delete("")
-    boolean delHospitalPhysician(int id);
+    boolean delHospitalPhysician(String certificateNumber);
 
     @Update("")
     boolean updateHospitalPhysician(HospitalPhysician hospitalPhysician);
 
     @Select("")
-    HospitalPhysician queryHospitalPhysicianByName(HospitalPhysician hospitalPhysician);
-
-    @Select("")
-    HospitalPhysician queryHospitalPhysicianByHospitalId(int id);
+    HospitalPhysician queryHospitalPhysicianByCertificateNumber(String certificateNumber);
 }

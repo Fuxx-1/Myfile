@@ -1,0 +1,10 @@
+#配置文件传输
+spring:
+  servlet:
+    multipart:
+      enabled: true
+      #单个文件的大小
+      max-file-size: 20MB
+      #总数据的大小
+      max-request-size: 20MB
+

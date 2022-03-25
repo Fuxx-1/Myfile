@@ -9,8 +9,7 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 public class HospitalCommodity {
     private int id; //店面唯一值
-    private int commodityId; //auto_increment值，商品唯一值
-    private String commodityName; //商品名
+    private String commodityName; //商品名，唯一值
     private String unit; //单位
     private float price; //单价
     private String purchasePlace; //进货地

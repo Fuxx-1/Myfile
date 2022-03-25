@@ -2,6 +2,9 @@ package com.pets.mapper;
 
 import com.pets.pojo.PetHospitalInf;
 import org.apache.ibatis.annotations.*;
+import org.springframework.stereotype.Repository;
+
+import java.util.List;
 
 /**
  * @program: PetHospitalInformationManage
@@ -9,7 +12,7 @@ import org.apache.ibatis.annotations.*;
  * @author: Fuxx-1
  * @create: 2022-03-25 09:25
  **/
-@Mapper
+@Repository
 public interface PetHospitalInfMapper {
     /**
      *
@@ -17,7 +20,8 @@ public interface PetHospitalInfMapper {
      * @return
      */
     @Insert("")
-    boolean addPetHospitalInf(PetHospitalInf petHospitalInf);
+    @Options(useGeneratedKeys = true,keyProperty = "recordId")
+    int addPetHospitalInf(PetHospitalInf petHospitalInf);
 
     /**
      *
@@ -42,7 +46,7 @@ public interface PetHospitalInfMapper {
      * @return
      */
     @Select("")
-    PetHospitalInf queryPetHospitalInf(int start, int limit);
+    List<PetHospitalInf> queryPetHospitalInfByLimit(int start, int limit);
 
     /**
      *
@@ -50,5 +54,5 @@ public interface PetHospitalInfMapper {
      * @return
      */
     @Select("")
-    PetHospitalInf queryPetHospitalInf(String name);
+    PetHospitalInf queryPetHospitalInfByName(String name);
 }

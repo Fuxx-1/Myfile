@@ -5,7 +5,11 @@ import org.apache.ibatis.annotations.Delete;
 import org.apache.ibatis.annotations.Insert;
 import org.apache.ibatis.annotations.Select;
 import org.apache.ibatis.annotations.Update;
+import org.springframework.stereotype.Repository;
 
+import java.util.List;
+
+@Repository
 /**
  * @program: PetHospitalInformationManage
  * @description:
@@ -17,8 +21,8 @@ public interface HospitalPicMapper {
     boolean addHospitalPic(HospitalPic hospitalPic);
 
     @Delete("")
-    boolean delHospitalPic(int id);
+    boolean delHospitalPicByPicId(int picId);
 
     @Select("")
-    HospitalPic queryHospitalPicByHospitalId(int id);
+    List<HospitalPic> queryHospitalPicByHospitalId(int id);
 }

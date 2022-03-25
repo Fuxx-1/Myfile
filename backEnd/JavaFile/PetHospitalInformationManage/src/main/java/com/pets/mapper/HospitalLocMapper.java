@@ -2,6 +2,7 @@ package com.pets.mapper;
 
 import com.pets.pojo.HospitalLoc;
 import org.apache.ibatis.annotations.*;
+import org.springframework.stereotype.Repository;
 
 /**
  * @program: PetHospitalInformationManage
@@ -9,7 +10,7 @@ import org.apache.ibatis.annotations.*;
  * @author: Fuxx-1
  * @create: 2022-03-25 09:45
  **/
-@Mapper
+@Repository
 public interface HospitalLocMapper {
 
     @Insert("")
