@@ -1,0 +1,17 @@
+class Solution {
+    public String truncateSentence(String s, int k) {
+		String[] str = s.split(" ");
+		StringBuilder temp = new StringBuilder("");
+		for (int i = 0; i < k; i++) {
+			temp.append(str[i] + " ");
+		}
+		return temp.toString();
+    }
+}
+
+//total_testcases:72
+//total_correct:0
+//input_formatted:"Hello how are you Contestant"
+4
+//expected_output:"Hello how are you"
+//code_output:"Hello how are you "

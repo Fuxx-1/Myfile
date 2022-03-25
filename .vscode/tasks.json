@@ -14,21 +14,21 @@
                 "-std=c11"
             ],
             "options": {
-                "cwd": "D:\\mingw64\\bin"
+                "cwd": "C:\\MySoftware\\Environment\\C\\MinGW64_C\\bin"
+                // "cwd": "D:\\mingw64\\bin"
             },
             "problemMatcher": [
                 "$gcc"
             ],
             "group": "build"
         },
-        {
-            "type": "shell",
-            "label": "clear exes", // 清空工作区内所有的exe文件
-            "command": "rm ${workspaceRoot}n/exes/*.exe",
-            "problemMatcher": [
-                "$gcc"
-            ]
-        }
-    }
-]
+        // {
+        //     "type": "shell",
+        //     "label": "clear exes", // 清空工作区内所有的exe文件
+        //     "command": "rm ${workspaceRoot}n/exes/*.exe",
+        //     "problemMatcher": [
+        //         "$gcc"
+        //     ]
+        // }
+    ]
 }

@@ -5,7 +5,7 @@ import java.util.concurrent.ConcurrentHashMap;
 
 public class AboutThread {
     public static void main(String[] args) {
-        concurrent
+//        concurrent
         new Thread().start();
         // CPU密集型、IO密集型
         System.out.println("CPU核数：" + Runtime.getRuntime().availableProcessors());
