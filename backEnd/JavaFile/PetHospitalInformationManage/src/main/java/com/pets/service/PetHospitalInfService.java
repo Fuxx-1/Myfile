@@ -1,14 +1,8 @@
 package com.pets.service;
 
 import com.alibaba.fastjson.JSONObject;
-import com.pets.pojo.PetHospitalInf;
-import org.apache.ibatis.annotations.Delete;
-import org.apache.ibatis.annotations.Insert;
-import org.apache.ibatis.annotations.Select;
-import org.apache.ibatis.annotations.Update;
-import org.springframework.stereotype.Service;
+import com.pets.model.dto.PetHospitalInf;
 
-@Service
 /**
  * @program: PetHospitalInformationManage
  * @description:
@@ -23,7 +17,9 @@ public interface PetHospitalInfService {
 
     JSONObject updatePetHospitalInf(PetHospitalInf petHospitalInf, String token);
 
-    JSONObject queryPetHospitalInf(int limit, int page);
+    JSONObject queryPetHospitalInf(int limit, int page, String field, boolean isDesc, String SimilarName);
 
     JSONObject queryPetHospitalInf(String name);
+
+    JSONObject queryPetHospitalInfById(int id);
 }

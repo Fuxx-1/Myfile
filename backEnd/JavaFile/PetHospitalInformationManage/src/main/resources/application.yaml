@@ -7,4 +7,12 @@ spring:
       max-file-size: 20MB
       #总数据的大小
       max-request-size: 20MB
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://${MYSQL_ADDRESS:localhost:3306}/PETHOSPITALINFMATION?serverTimezone=Asia/Shanghai&useUnicode=true&characterEncoding=utf-8&allowMultiQueries=true
+    username: ${MYSQL_USERNAME:root}
+    password: ${MYSQL_PASSWORD:12345}
+  main:
+    allow-bean-definition-overriding: true
+
 

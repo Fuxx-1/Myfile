@@ -1,11 +1,15 @@
 package com.pets.controller;
 
 import com.alibaba.fastjson.JSONObject;
-import com.pets.pojo.HospitalPhysician;
+import com.pets.model.dto.HospitalPhysician;
+import com.pets.model.vo.HospitalPhysicianVo;
 import com.pets.service.HospitalPhysicianService;
-import lombok.AllArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.CrossOrigin;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.ResponseBody;
 
 /**
  * @program: PetHospitalInformationManage
@@ -14,25 +18,36 @@ import org.springframework.stereotype.Controller;
  * @create: 2022-03-25 19:21
  **/
 @Controller
+@RequestMapping("/Physician")
+@ResponseBody
+@CrossOrigin
 public class HospitalPhysicianController {
 
     @Autowired
     HospitalPhysicianService hospitalPhysicianService;
 
-
-    public String addHospitalPhysician(HospitalPhysician hospitalPhysician, String token){
-        return hospitalPhysicianService.addHospitalPhysician(hospitalPhysician, token).toJSONString();
+    @RequestMapping("/add")
+    public String addHospitalPhysician(@RequestBody HospitalPhysicianVo hospitalPhysicianVo){
+        return hospitalPhysicianService.addHospitalPhysician(hospitalPhysicianVo.getHospitalPhysician(), hospitalPhysicianVo.getToken()).toJSONString();
     }
 
-    public String delHospitalPhysician(String certificateNumber, String token){
-        return hospitalPhysicianService.delHospitalPhysician(certificateNumber, token).toJSONString();
+    @RequestMapping("/delete")
+    public String delHospitalPhysician(@RequestBody HospitalPhysicianVo hospitalPhysicianVo){
+        return hospitalPhysicianService.delHospitalPhysician(hospitalPhysicianVo.getHospitalPhysician().getCertificateNumber(), hospitalPhysicianVo.getToken()).toJSONString();
     }
 
-    public String updateHospitalPhysician(HospitalPhysician hospitalPhysician, String token){
-        return hospitalPhysicianService.updateHospitalPhysician(hospitalPhysician, token).toJSONString();
+    @RequestMapping("/update")
+    public String updateHospitalPhysician(@RequestBody HospitalPhysicianVo hospitalPhysicianVo){
+        return hospitalPhysicianService.updateHospitalPhysician(hospitalPhysicianVo.getHospitalPhysician(), hospitalPhysicianVo.getToken()).toJSONString();
     }
 
-    public String  queryHospitalPhysicianByName(String certificateNumber){
-        return hospitalPhysicianService.queryHospitalPhysicianByName(certificateNumber).toJSONString();
+    @RequestMapping("/queryByNumber")
+    public String  queryHospitalPhysicianByNumber(String certificateNumber){
+        return hospitalPhysicianService.queryHospitalPhysicianByNumber(certificateNumber).toJSONString();
+    }
+
+    @RequestMapping("/queryByName")
+    public String  queryHospitalPhysicianByName(String Name){
+        return hospitalPhysicianService.queryHospitalPhysicianByName(Name).toJSONString();
     }
 }

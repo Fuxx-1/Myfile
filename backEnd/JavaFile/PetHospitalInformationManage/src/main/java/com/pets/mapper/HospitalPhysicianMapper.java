@@ -1,13 +1,9 @@
 package com.pets.mapper;
 
-import com.pets.pojo.HospitalPhysician;
-import org.apache.ibatis.annotations.Delete;
-import org.apache.ibatis.annotations.Insert;
-import org.apache.ibatis.annotations.Select;
-import org.apache.ibatis.annotations.Update;
-import org.springframework.stereotype.Repository;
+import com.pets.model.dto.HospitalPhysician;
+import org.apache.ibatis.annotations.*;
 
-@Repository
+@Mapper
 /**
  * @program: PetHospitalInformationManage
  * @description:
@@ -16,15 +12,25 @@ import org.springframework.stereotype.Repository;
  **/
 public interface HospitalPhysicianMapper {
 
-    @Insert("")
+    @Insert("INSERT INTO PETHOSPITALINFMATION.HospitalPhysician" +
+            "(certificateNumber, idCardNumber, physicianName, ismale, tel, specialty, title, education, graduationSchool, remarks, reservedValue) VALUES" +
+            "(#{certificateNumber}, #{idCardNumber}, #{physicianName}, #{ismale}, #{tel}, #{specialty}, #{title}, #{education}, #{graduationSchool}, #{remarks}, #{reservedValue})")
     boolean addHospitalPhysician(HospitalPhysician hospitalPhysician);
 
-    @Delete("")
+    @Delete("DELETE FROM PETHOSPITALINFMATION.HospitalPhysician " +
+            "where certificateNumber = #{certificateNumber}")
     boolean delHospitalPhysician(String certificateNumber);
 
-    @Update("")
+    @Update("UPDATE PETHOSPITALINFMATION.HospitalPhysician SET " +
+            "idCardNumber = #{idCardNumber}, physicianName = #{physicianName}, ismale = #{ismale}, tel = #{tel}, specialty = #{specialty}, " +
+            "title = #{title}, education = #{education}, graduationSchool = #{graduationSchool}, remarks = #{remarks}, " +
+            "reservedValue = #{reservedValue} " +
+            "where certificateNumber = #{certificateNumber}")
     boolean updateHospitalPhysician(HospitalPhysician hospitalPhysician);
 
-    @Select("")
+    @Select("SELECT certificateNumber, idCardNumber, physicianName, ismale, tel, specialty, title, education, graduationSchool, remarks, reservedValue FROM PETHOSPITALINFMATION.HospitalPhysician where certificateNumber = #{certificateNumber}")
     HospitalPhysician queryHospitalPhysicianByCertificateNumber(String certificateNumber);
+
+    @Select("SELECT certificateNumber, idCardNumber, physicianName, ismale, tel, specialty, title, education, graduationSchool, remarks, reservedValue FROM PETHOSPITALINFMATION.HospitalPhysician where physicianName = #{Name}")
+    HospitalPhysician queryHospitalPhysicianByName(String Name);
 }

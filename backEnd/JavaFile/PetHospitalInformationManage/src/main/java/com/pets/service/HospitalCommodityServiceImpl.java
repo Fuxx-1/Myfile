@@ -2,8 +2,12 @@ package com.pets.service;
 
 import com.alibaba.fastjson.JSONObject;
 import com.pets.mapper.HospitalCommodityMapper;
-import com.pets.pojo.HospitalCommodity;
+import com.pets.model.dto.HospitalCommodity;
+import org.apache.ibatis.jdbc.Null;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+import java.util.Optional;
 
 /**
  * @program: PetHospitalInformationManage
@@ -11,6 +15,7 @@ import org.springframework.beans.factory.annotation.Autowired;
  * @author: Fuxx-1
  * @create: 2022-03-25 10:28
  **/
+@Service
 public class HospitalCommodityServiceImpl implements HospitalCommodityService {
 
     @Autowired
@@ -26,15 +31,15 @@ public class HospitalCommodityServiceImpl implements HospitalCommodityService {
             resp.put("msg", "未登录或登录过期");
             return resp;
         }
-        //判断重复
-        if (hospitalCommodityMapper.queryHospitalCommodityByName(hospitalCommodity.getId(), hospitalCommodity.getCommodityName()) != null) {
-            resp.put("code", -2);
-            resp.put("msg", "商品名重复");
-            return resp;
-        }
         try {
+            //判断重复
+            if (hospitalCommodityMapper.queryHospitalCommodityByName(hospitalCommodity.getId(), hospitalCommodity.getCommodityName()) != null) {
+                resp.put("code", -2);
+                resp.put("msg", "商品名重复");
+                return resp;
+            }
             hospitalCommodityMapper.addHospitalCommodity(hospitalCommodity);
-            resp.put("data", "添加成功");
+            resp.put("data", hospitalCommodity.getCommodityId());
             resp.put("code", 0);
         } catch (Exception e) {
             resp.put("code", -1);
@@ -44,7 +49,7 @@ public class HospitalCommodityServiceImpl implements HospitalCommodityService {
     }
 
     @Override
-    public JSONObject delHospitalCommodity(int hospitalId, String Name, String token) {
+    public JSONObject delHospitalCommodity(int commodityId, String token) {
         //返回体
         JSONObject resp = new JSONObject();
         //判断权限
@@ -54,7 +59,13 @@ public class HospitalCommodityServiceImpl implements HospitalCommodityService {
             return resp;
         }
         try {
-            hospitalCommodityMapper.delHospitalCommodity(hospitalId, Name);
+            //判断存在
+            if (hospitalCommodityMapper.queryHospitalCommodityByCommodityId(commodityId) == null) {
+                resp.put("code", -2);
+                resp.put("msg", "商品不存在");
+                return resp;
+            }
+            hospitalCommodityMapper.delHospitalCommodity(commodityId);
             resp.put("data", "删除成功");
             resp.put("code", 0);
         } catch (Exception e) {
@@ -74,6 +85,46 @@ public class HospitalCommodityServiceImpl implements HospitalCommodityService {
             resp.put("msg", "未登录或登录过期");
             return resp;
         }
+        //查询并补全null值参数
+        HospitalCommodity hospitalCommodityOrigin;
+        try {
+            //获取原值
+            hospitalCommodityOrigin = hospitalCommodityMapper.queryHospitalCommodityByCommodityId(hospitalCommodity.getCommodityId());
+            if (hospitalCommodity.equals(hospitalCommodityOrigin)) {
+                resp.put("code", -1);
+                resp.put("msg", "无需更新");
+                return resp;
+            }
+        } catch (Exception e) {
+            resp.put("code", -1);
+            resp.put("msg", "更新失败");
+            return resp;
+        }
+        if (hospitalCommodityOrigin == null) {
+            resp.put("code", -2);
+            resp.put("msg", "该商品不存在");
+            return resp;
+        } else {
+            //null值补全（补以原值）
+            if (hospitalCommodity.getCommodityName() == null || hospitalCommodity.getCommodityName().length() == 0) {
+                hospitalCommodity.setCommodityName(hospitalCommodityOrigin.getCommodityName());
+            }
+            if (hospitalCommodity.getUnit() == null || hospitalCommodity.getUnit().length() == 0) {
+                hospitalCommodity.setUnit(hospitalCommodityOrigin.getUnit());
+            }
+            if (hospitalCommodity.getPrice() == -1) {
+                hospitalCommodity.setPrice(hospitalCommodityOrigin.getPrice());
+            }
+            if (hospitalCommodity.getPurchasePlace() == null || hospitalCommodity.getPurchasePlace().length() == 0) {
+                hospitalCommodity.setPurchasePlace(hospitalCommodityOrigin.getPurchasePlace());
+            }
+            if (hospitalCommodity.getRemarks() == null || hospitalCommodity.getRemarks().length() == 0) {
+                hospitalCommodity.setRemarks(hospitalCommodityOrigin.getRemarks());
+            }
+            if (hospitalCommodity.getReservedValue() == null || hospitalCommodity.getReservedValue().length() == 0) {
+                hospitalCommodity.setReservedValue(hospitalCommodityOrigin.getReservedValue());
+            }
+        }
         try {
             hospitalCommodityMapper.updateHospitalCommodity(hospitalCommodity);
             resp.put("data", "更新成功");
@@ -81,6 +132,7 @@ public class HospitalCommodityServiceImpl implements HospitalCommodityService {
         } catch (Exception e) {
             resp.put("code", -1);
             resp.put("msg", "更新失败");
+            return resp;
         }
         return resp;
     }

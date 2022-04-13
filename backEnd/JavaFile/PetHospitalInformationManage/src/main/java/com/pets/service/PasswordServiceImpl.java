@@ -4,6 +4,7 @@ import com.alibaba.fastjson.JSONObject;
 import com.pets.mapper.passwordMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import com.main.util.JWTUtil;
+import org.springframework.stereotype.Service;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -14,6 +15,7 @@ import java.util.Map;
  * @author: Fuxx-1
  * @create: 2022-03-25 11:20
  **/
+@Service
 public class PasswordServiceImpl implements PasswordService {
 
     @Autowired
@@ -36,7 +38,7 @@ public class PasswordServiceImpl implements PasswordService {
     }
 
     @Override
-    public JSONObject verifyadmin(String token) {
+    public JSONObject verifyToken(String token) {
         //返回体
         JSONObject resp = new JSONObject();
         if (JWTUtil.verifyToken(token) == 0) {

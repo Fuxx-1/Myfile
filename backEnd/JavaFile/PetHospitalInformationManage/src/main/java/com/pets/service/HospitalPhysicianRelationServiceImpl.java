@@ -3,6 +3,7 @@ package com.pets.service;
 import com.alibaba.fastjson.JSONObject;
 import com.pets.mapper.HospitalPhysicianRelationMapper;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
 /**
  * @program: PetHospitalInformationManage
@@ -10,6 +11,7 @@ import org.springframework.beans.factory.annotation.Autowired;
  * @author: Fuxx-1
  * @create: 2022-03-25 16:59
  **/
+@Service
 public class HospitalPhysicianRelationServiceImpl implements HospitalPhysicianRelationService{
 
     @Autowired
@@ -25,13 +27,13 @@ public class HospitalPhysicianRelationServiceImpl implements HospitalPhysicianRe
             resp.put("msg", "未登录或登录过期");
             return resp;
         }
-        //判断重复
-        if (hospitalPhysicianRelationMapper.queryHospitalPhysicianRelation(hospitalId, certificateNumber) != null) {
-            resp.put("code", -2);
-            resp.put("msg", "商品名重复");
-            return resp;
-        }
         try {
+            //判断重复
+            if (hospitalPhysicianRelationMapper.queryHospitalPhysicianRelation(hospitalId, certificateNumber) != null) {
+                resp.put("code", -2);
+                resp.put("msg", "关系重复");
+                return resp;
+            }
             hospitalPhysicianRelationMapper.addHospitalPhysicianRelation(hospitalId, certificateNumber);
             resp.put("data", "添加成功");
             resp.put("code", 0);
@@ -53,6 +55,12 @@ public class HospitalPhysicianRelationServiceImpl implements HospitalPhysicianRe
             return resp;
         }
         try {
+            //判断存在
+            if (hospitalPhysicianRelationMapper.queryHospitalPhysicianRelation(hospitalId, certificateNumber) == null) {
+                resp.put("code", -2);
+                resp.put("msg", "关系不存在");
+                return resp;
+            }
             hospitalPhysicianRelationMapper.delHospitalPhysicianRelation(hospitalId, certificateNumber);
             resp.put("data", "删除成功");
             resp.put("code", 0);

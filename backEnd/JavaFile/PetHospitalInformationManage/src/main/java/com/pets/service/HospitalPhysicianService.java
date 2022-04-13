@@ -1,14 +1,8 @@
 package com.pets.service;
 
 import com.alibaba.fastjson.JSONObject;
-import com.pets.pojo.HospitalPhysician;
-import org.apache.ibatis.annotations.Delete;
-import org.apache.ibatis.annotations.Insert;
-import org.apache.ibatis.annotations.Select;
-import org.apache.ibatis.annotations.Update;
-import org.springframework.stereotype.Service;
+import com.pets.model.dto.HospitalPhysician;
 
-@Service
 /**
  * @program: PetHospitalInformationManage
  * @description:
@@ -23,5 +17,7 @@ public interface HospitalPhysicianService {
 
     JSONObject updateHospitalPhysician(HospitalPhysician hospitalPhysician, String token);
 
-    JSONObject  queryHospitalPhysicianByName(String certificateNumber);
+    JSONObject  queryHospitalPhysicianByNumber(String certificateNumber);
+
+    JSONObject  queryHospitalPhysicianByName(String Name);
 }

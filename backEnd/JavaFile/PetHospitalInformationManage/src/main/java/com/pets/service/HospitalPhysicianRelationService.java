@@ -11,7 +11,6 @@ import org.springframework.stereotype.Service;
  * @author: Fuxx-1
  * @create: 2022-03-25 16:59
  **/
-@Service
 public interface HospitalPhysicianRelationService {
 
     JSONObject addHospitalPhysicianRelation(int hospitalId, String certificateNumber, String token);

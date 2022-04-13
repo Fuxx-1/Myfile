@@ -1,14 +1,9 @@
 package com.pets.service;
 
 import com.alibaba.fastjson.JSONObject;
-import com.pets.pojo.HospitalCommodity;
-import org.apache.ibatis.annotations.Delete;
-import org.apache.ibatis.annotations.Insert;
-import org.apache.ibatis.annotations.Select;
-import org.apache.ibatis.annotations.Update;
-import org.springframework.stereotype.Service;
+import com.pets.model.dto.HospitalCommodity;
 
-@Service
+
 /**
  * @program: PetHospitalInformationManage
  * @description:
@@ -18,7 +13,7 @@ import org.springframework.stereotype.Service;
 public interface HospitalCommodityService {
     JSONObject addHospitalCommodity(HospitalCommodity hospitalCommodity, String token);
 
-    JSONObject delHospitalCommodity(int hospitalId, String Name, String token);
+    JSONObject delHospitalCommodity(int commodityId, String token);
 
     JSONObject updateHospitalCommodity(HospitalCommodity hospitalCommodity, String token);
 

@@ -2,8 +2,9 @@ package com.pets.service;
 
 import com.alibaba.fastjson.JSONObject;
 import com.pets.mapper.HospitalPicMapper;
-import com.pets.pojo.HospitalPic;
+import com.pets.model.dto.HospitalPic;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
 /**
  * @program: PetHospitalInformationManage
@@ -11,6 +12,7 @@ import org.springframework.beans.factory.annotation.Autowired;
  * @author: Fuxx-1
  * @create: 2022-03-25 10:29
  **/
+@Service
 public class HospitalPicServiceImpl implements HospitalPicService {
 
     @Autowired
@@ -29,7 +31,7 @@ public class HospitalPicServiceImpl implements HospitalPicService {
         try {
             hospitalPicMapper.addHospitalPic(hospitalPic);
             resp.put("code", 0);
-            resp.put("data", "成功添加");
+            resp.put("data", hospitalPic.getPicid());
         } catch (Exception e) {
             resp.put("code", -1);
             resp.put("msg", "添加失败");
@@ -38,7 +40,7 @@ public class HospitalPicServiceImpl implements HospitalPicService {
     }
 
     @Override
-    public JSONObject delHospitalPic(int picId, int type, String token) {
+    public JSONObject delHospitalPic(int picId, String token) {
         //返回体
         JSONObject resp = new JSONObject();
         //判断权限
@@ -48,6 +50,12 @@ public class HospitalPicServiceImpl implements HospitalPicService {
             return resp;
         }
         try {
+            //判断存在
+            if (hospitalPicMapper.queryHospitalPicByPicId(picId) == null) {
+                resp.put("code", -2);
+                resp.put("msg", "图片不存在");
+                return resp;
+            }
             hospitalPicMapper.delHospitalPicByPicId(picId);
             resp.put("data", "删除成功");
             resp.put("code", 0);
@@ -67,7 +75,69 @@ public class HospitalPicServiceImpl implements HospitalPicService {
             resp.put("code", 0);
         } catch (Exception e) {
             resp.put("code", -1);
-            resp.put("msg", "添加失败");
+            resp.put("msg", "查询失败");
+        }
+        return resp;
+    }
+
+    @Override
+    public JSONObject queryHospitalPicByPicId(int picId) {
+        //返回体
+        JSONObject resp = new JSONObject();
+        try {
+            HospitalPic pic = hospitalPicMapper.queryHospitalPicByPicId(picId);
+            if (pic == null) {
+                resp.put("code", -1);
+                resp.put("msg", "图片不存在");
+                return resp;
+            }
+            resp.put("data", pic);
+            resp.put("code", 0);
+        } catch (Exception e) {
+            resp.put("code", -1);
+            resp.put("msg", "查询失败");
+        }
+        return resp;
+    }
+
+    @Override
+    public JSONObject queryHospitalPicByHospitalByCertificateNumber(String certificateNumber) {
+        //返回体
+        JSONObject resp = new JSONObject();
+        try {
+            resp.put("data", hospitalPicMapper.queryHospitalPicByHospitalCertificateNumber(certificateNumber));
+            resp.put("code", 0);
+        } catch (Exception e) {
+            resp.put("code", -1);
+            resp.put("msg", "查询失败");
+        }
+        return resp;
+    }
+
+    @Override
+    public JSONObject queryHospitalPicByHospitalBySituationId(int SituationId) {
+        //返回体
+        JSONObject resp = new JSONObject();
+        try {
+            resp.put("data", hospitalPicMapper.queryHospitalPicBySituationId(SituationId));
+            resp.put("code", 0);
+        } catch (Exception e) {
+            resp.put("code", -1);
+            resp.put("msg", "查询失败");
+        }
+        return resp;
+    }
+
+    @Override
+    public JSONObject queryHospitalPicByHospitalByCommodityId(int CommodityId) {
+        //返回体
+        JSONObject resp = new JSONObject();
+        try {
+            resp.put("data", hospitalPicMapper.queryHospitalPicByCommodityid(CommodityId));
+            resp.put("code", 0);
+        } catch (Exception e) {
+            resp.put("code", -1);
+            resp.put("msg", "查询失败");
         }
         return resp;
     }

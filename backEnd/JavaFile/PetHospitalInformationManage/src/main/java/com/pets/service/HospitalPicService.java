@@ -1,10 +1,8 @@
 package com.pets.service;
 
 import com.alibaba.fastjson.JSONObject;
-import com.pets.pojo.HospitalPic;
-import org.springframework.stereotype.Service;
+import com.pets.model.dto.HospitalPic;
 
-@Service
 /**
  * @program: PetHospitalInformationManage
  * @description:
@@ -15,7 +13,15 @@ public interface HospitalPicService {
 
     JSONObject addHospitalPic(HospitalPic hospitalPic, String token);
 
-    JSONObject delHospitalPic(int picId, int type, String token);
+    JSONObject delHospitalPic(int picId, String token);
 
     JSONObject queryHospitalPicByHospitalId(int id);
+
+    JSONObject queryHospitalPicByPicId(int id);
+
+    JSONObject queryHospitalPicByHospitalByCertificateNumber(String certificateNumber);
+
+    JSONObject queryHospitalPicByHospitalBySituationId(int SituationId);
+
+    JSONObject queryHospitalPicByHospitalByCommodityId(int CommodityId);
 }

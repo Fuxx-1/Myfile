@@ -16,12 +16,11 @@ public class JWTUtil {
     /**
      * key（按照签名算法的字节长度设置key）
      */
-    private final static String SECRET_KEY = "7tyegruegrui7y4t38erigbdvfhzhiwe378";
+    private final static String SECRET_KEY = System.getenv("JWTKey") == null ? "7tyegruegrui7y4t38erigbdvfhzhiwe378" : System.getenv("JWTKey");
     /**
      * 过期时间（毫秒单位）
      */
-    private final static long TOKEN_EXPIRE_MILLIS = 1000 * 60 * 60 * 24;
-
+    private final static long TOKEN_EXPIRE_MILLIS = 1000 * 60 * 60 * 12;
     /**
      * 创建token
      * @param claimMap
@@ -31,8 +30,10 @@ public class JWTUtil {
         long currentTimeMillis = System.currentTimeMillis();
         return Jwts.builder()
                 .setId(UUID.randomUUID().toString())
-                .setIssuedAt(new Date(currentTimeMillis))    // 设置签发时间
-                .setExpiration(new Date(currentTimeMillis + TOKEN_EXPIRE_MILLIS))   // 设置过期时间
+                // 设置签发时间
+                .setIssuedAt(new Date(currentTimeMillis))
+                // 设置过期时间
+                .setExpiration(new Date(currentTimeMillis + TOKEN_EXPIRE_MILLIS))
                 .addClaims(claimMap)
                 .signWith(generateKey())
                 .compact();
@@ -71,8 +72,10 @@ public class JWTUtil {
      * @return
      */
     public static Map<String, Object> parseToken(String token) {
-        return Jwts.parser()  // 得到DefaultJwtParser
-                .setSigningKey(generateKey()) // 设置签名密钥
+        // 得到DefaultJwtParser
+        return Jwts.parser()
+                // 设置签名密钥
+                .setSigningKey(generateKey())
                 .parseClaimsJws(token)
                 .getBody();
     }

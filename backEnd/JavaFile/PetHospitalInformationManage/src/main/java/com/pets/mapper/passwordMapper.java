@@ -1,5 +1,6 @@
 package com.pets.mapper;
 
+import org.apache.ibatis.annotations.Mapper;
 import org.apache.ibatis.annotations.Select;
 import org.springframework.stereotype.Repository;
 
@@ -9,8 +10,8 @@ import org.springframework.stereotype.Repository;
  * @author: Fuxx-1
  * @create: 2022-03-25 11:12
  **/
-@Repository
+@Mapper
 public interface passwordMapper {
-    @Select("")
+    @Select("SELECT PASSWORD FROM PETHOSPITALINFMATION.PASSWORD")
     String querypassword();
 }
