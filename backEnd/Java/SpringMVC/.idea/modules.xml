@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/AJAX/AJAX.iml" filepath="$PROJECT_DIR$/AJAX/AJAX.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Anno/Anno.iml" filepath="$PROJECT_DIR$/Anno/Anno.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Controller/Controller.iml" filepath="$PROJECT_DIR$/Controller/Controller.iml" />
+      <module fileurl="file://$PROJECT_DIR$/ServletTest/ServletTest.iml" filepath="$PROJECT_DIR$/ServletTest/ServletTest.iml" />
+      <module fileurl="file://$PROJECT_DIR$/SpringMVC.iml" filepath="$PROJECT_DIR$/SpringMVC.iml" />
+      <module fileurl="file://$PROJECT_DIR$/SpringMVCDemo1/SpringMVCDemo1.iml" filepath="$PROJECT_DIR$/SpringMVCDemo1/SpringMVCDemo1.iml" />
+      <module fileurl="file://$PROJECT_DIR$/AJAX/src/main/main.iml" filepath="$PROJECT_DIR$/AJAX/src/main/main.iml" />
+      <module fileurl="file://$PROJECT_DIR$/AJAX/src/test/test.iml" filepath="$PROJECT_DIR$/AJAX/src/test/test.iml" />
+    </modules>
+  </component>
+</project>

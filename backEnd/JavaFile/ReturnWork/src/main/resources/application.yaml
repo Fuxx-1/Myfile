@@ -1,0 +1,27 @@
+spring:
+  main:
+    allow-bean-definition-overriding: true
+  mail:
+    host: mail.qoop.top
+    username: verify@qoop.top
+    from: UnionLab<${spring.mail.username}> # UnionLab作为发信昵称
+    password: verify123421
+    protocol: smtp
+    test-connection: true
+    default-encoding: utf-8
+    port: 25
+  freemarker:
+    cache: false
+    settings:
+      classic_compatible: true
+    suffix: .html
+    charset: UTF-8
+    template-loader-path: classpath:/templates/
+  redis:
+    host: localhost
+    port: 6379
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://${MYSQL_ADDRESS:localhost:3307}/returnwork?serverTimezone=Asia/Shanghai&useUnicode=true&characterEncoding=utf-8&allowMultiQueries=true
+    username: ${MYSQL_USERNAME:root}
+    password: ${MYSQL_PASSWORD:12345}

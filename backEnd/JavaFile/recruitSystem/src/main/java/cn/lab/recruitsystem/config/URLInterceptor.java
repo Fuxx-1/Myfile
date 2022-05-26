@@ -1,0 +1,92 @@
+package cn.lab.recruitsystem.config;
+
+import cn.lab.recruitsystem.Util.HttpRequestUtil;
+import cn.lab.recruitsystem.Util.JWTUtil;
+import cn.lab.recruitsystem.Util.ReturnUtil;
+import com.alibaba.fastjson.JSON;
+import org.springframework.stereotype.Component;
+import org.springframework.web.servlet.HandlerInterceptor;
+
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+import java.util.logging.Logger;
+
+/**
+ * URL拦截，做对应处理
+ */
+@Component
+public class URLInterceptor implements HandlerInterceptor {
+
+
+    /**
+     * 请求前置处理（后置处理同理）
+     *
+     * @param request
+     * @param response
+     * @param handler
+     * @return boolean
+     */
+    @Override
+    public boolean preHandle(HttpServletRequest request, HttpServletResponse response, Object handler) throws Exception {
+        String path = request.getServletPath();
+        // 获取token
+        response.setContentType("text/html;charset=utf-8");
+        // 设置返回头
+        String token = request.getHeader("Auth");
+        if ((path.matches("/user/(sendVerifyEmail|signup|login|resetMainInf)") || path.equals("/"))) {
+            return true;
+        }
+        try {
+            //Token筛选
+            if (token != null && token.length() > 0 && JWTUtil.verifyToken(token) == 0) {
+                int Auth = (int) JWTUtil.parseToken(token).get("Auth");
+                // 获取Auth
+                // 二级权限筛选
+                if (path.matches("/[a-zA-Z0-9_]{1,}/delete")) {
+                    if (Auth >= 2) {
+                        return true;
+                    }
+                }
+                // 一级权限默认筛选
+                if (Auth >= 1) {
+                    return true;
+                }
+                response.getWriter().println(ReturnUtil.returnMsg("权限不足", 100, null));
+                return false;
+
+            }
+        } catch (Exception e) {
+            Logger.getLogger("c.l.r.c.URLInterceptor").warning(e.toString());
+            response.getWriter().println(ReturnUtil.returnMsg("请刷新网页，如问题仍存在请联系管理员", 1, null));
+            return false;
+        }
+        response.getWriter().println(ReturnUtil.returnMsg("请刷新网页，如问题仍存在请联系管理员", 1, null));
+        return false;
+    }
+
+    /**
+     * 请求后置处理（后置处理同理）
+     *
+     * @param request
+     * @param response
+     * @param handler
+     */
+    @Override
+    public void afterCompletion(HttpServletRequest request, HttpServletResponse response, Object handler, Exception ex) throws Exception {
+        if (response.getStatus() != 200) {
+            Logger.getLogger("c.l.r.c.URLInterceptor").warning(
+                    " StatusCode:" + response.getStatus() +
+                            " ServletPath:" + request.getServletPath() +
+                            " Param:" + JSON.toJSONString(request.getParameterMap())
+                            + " RequestBody:" + HttpRequestUtil.getBodyString(request)
+            );
+        } else {
+            Logger.getLogger("c.l.r.c.URLInterceptor").info(
+                    " StatusCode:" + response.getStatus() +
+                            " ServletPath:" + request.getServletPath() +
+                            " Param:" + JSON.toJSONString(request.getParameterMap())
+                            + " RequestBody:" + HttpRequestUtil.getBodyString(request)
+            );
+        }
+    }
+}
