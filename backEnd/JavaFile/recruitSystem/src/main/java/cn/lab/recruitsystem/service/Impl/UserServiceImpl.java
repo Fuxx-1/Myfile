@@ -288,10 +288,10 @@ public class UserServiceImpl implements UserService {
     public JSONObject sign(String userid, Boolean is_sign) {
         try {
             userMapper.sign(userid, is_sign);
-            return ReturnUtil.returnObj("签到成功", 0, userMapper.getUserInf(userid));
+            return ReturnUtil.returnObj("签到状态更改成功", 0, userMapper.getUserInf(userid));
         } catch (Exception e) {
             Logger.getLogger("c.l.r.s.I.UserServiceImpl.sign").warning(e.toString());
-            return ReturnUtil.returnObj("签到失败", -5, null);
+            return ReturnUtil.returnObj("签到状态更改失败", -5, null);
         }
     }
 

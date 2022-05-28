@@ -1,6 +1,7 @@
 package cn.lab.recruitsystem.mapper;
 
 import cn.lab.recruitsystem.Model.dto.InterviewInf;
+import cn.lab.recruitsystem.Model.vo.InterviewInfVo;
 import org.apache.ibatis.annotations.*;
 
 import java.util.List;
@@ -18,8 +19,8 @@ public interface InterviewInfMapper {
      * @param userid 需要初始化的userid
      * @return 是否初始化成功
      */
-    @Insert("insert into `interview` (userid, create_time) " +
-            "values (#{userid}, now());")
+    @Insert("insert into `interview` (userid, create_time, update_time) " +
+            "values (#{userid}, now(), now());")
     Boolean addInterview(String userid);
 
     /**
@@ -96,7 +97,7 @@ public interface InterviewInfMapper {
      * @return 返回查询结果
      */
     @Select("select " +
-            "interview.userid, namesheet.name " +
+            "interview.userid, namesheet.name, " +
             "interview.first_interview, interview.first_attitude, interview.first_ability, interview.first_remarks, " +
             "interview.first_ispass, interview.first_interviewer, " +
             "interview.second_interview, interview.second_attitude, interview.second_ability, interview.second_remarks, " +
@@ -106,6 +107,6 @@ public interface InterviewInfMapper {
             "interview.final_ispass, interview.is_send, interview.create_time, interview.update_time " +
             "from `interview` " +
             "left join (select userid, name from `user` group by userid) as namesheet on interview.userid = namesheet.userid " +
-            "namesheet.name like '%${similarName}%' order by `${field1}` `${field2}` ${isDesc} limit #{start}, #{limit}")
-    List<InterviewInf> queryUserInf(String similarName, String field1, String field2, String isDesc, Integer start, Integer limit);
+            "where namesheet.name like '%${similarName}%' order by ${ground} limit #{start}, #{limit}")
+    List<InterviewInfVo> queryUserInf(String similarName, String ground, int start, int limit);
 }

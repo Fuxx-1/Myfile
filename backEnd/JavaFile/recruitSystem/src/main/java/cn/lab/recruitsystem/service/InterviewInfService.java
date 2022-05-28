@@ -1,6 +1,9 @@
 package cn.lab.recruitsystem.service;
 
+import cn.lab.recruitsystem.Model.vo.FieldVo;
 import com.alibaba.fastjson.JSONObject;
+
+import java.util.List;
 
 /**
  * @author Eleun
@@ -57,12 +60,10 @@ public interface InterviewInfService {
     /**
      * 查询用户面试状态，用于管理员
      * @param similarName 相似搜素
-     * @param field1 排序项A-第一优先
-     * @param field2 排序项B-第二优先
-     * @param isDesc 是否降序
+     * @param fields      排序项
      * @param page 第几页
      * @param limit 结束
      * @return 返回查询结果
      */
-    JSONObject queryInterviewInf(String similarName, String field1, String field2, String isDesc, Integer page, Integer limit);
+    JSONObject queryInterviewInf(String similarName, List<FieldVo> fields, Integer page, Integer limit);
 }

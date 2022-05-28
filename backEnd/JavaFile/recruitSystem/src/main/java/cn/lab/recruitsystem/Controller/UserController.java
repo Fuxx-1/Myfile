@@ -6,7 +6,6 @@ import cn.lab.recruitsystem.Model.vo.Loginvo;
 import cn.lab.recruitsystem.Model.vo.Resetvo;
 import cn.lab.recruitsystem.Model.vo.Signupvo;
 import cn.lab.recruitsystem.Util.JWTUtil;
-import cn.lab.recruitsystem.Util.ReturnUtil;
 import cn.lab.recruitsystem.service.UserService;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -15,7 +14,6 @@ import org.springframework.web.bind.annotation.ResponseBody;
 
 import javax.annotation.Resource;
 import javax.servlet.http.HttpServletRequest;
-import java.util.Map;
 
 /**
  * @author Eleun
@@ -36,7 +34,7 @@ public class UserController {
      * @param emailInfvo 邮箱及行为
      * @return Json
      */
-    @RequestMapping("/sendVerifyEmail")
+    @RequestMapping("/user/sendVerifyEmail")
     String sendVerifyEmail(@RequestBody EmailInfvo emailInfvo) {
         return userService.sendVerifyEmail(emailInfvo.getEmail(), emailInfvo.getAction()).toJSONString();
     }
@@ -47,7 +45,7 @@ public class UserController {
      * @param signupvo 注册信息
      * @return Json
      */
-    @RequestMapping("/signup")
+    @RequestMapping("/user/signup")
     String signup(@RequestBody Signupvo signupvo) {
         return userService.signup(signupvo.getEmail(), signupvo.getUserid(), signupvo.getVerifyCode(), signupvo.getPassword()).toJSONString();
     }
@@ -58,7 +56,7 @@ public class UserController {
      * @param loginvo 登录信息
      * @return Token和登录状态
      */
-    @RequestMapping("/login")
+    @RequestMapping("/user/login")
     String login(@RequestBody Loginvo loginvo) {
         return userService.login(loginvo.getUserid(), loginvo.getPassword()).toJSONString();
     }
@@ -69,8 +67,9 @@ public class UserController {
      * @param user 用户id，及要更新的信息
      * @return 执行结果
      */
-    @RequestMapping("/updateInf")
-    String updataInf(@RequestBody User user) {
+    @RequestMapping("/user/updateInf")
+    String updataInf(HttpServletRequest request, @RequestBody User user) {
+        user.setUserid((String) JWTUtil.parseToken(request.getHeader("access_token")).get("userid"));
         return userService.updataInf(user).toJSONString();
     }
 
@@ -80,7 +79,7 @@ public class UserController {
      * @param resetvo 更新信息
      * @return 执行结果
      */
-    @RequestMapping("/resetMainInf")
+    @RequestMapping("/user/resetMainInf")
     String changePassword(@RequestBody Resetvo resetvo) {
         return userService.resetMainInf(resetvo.getUserid(), resetvo.getPassword(), resetvo.getVerifyCode(), resetvo.getNew_password(), resetvo.getNewEmail()).toJSONString();
     }
@@ -90,23 +89,18 @@ public class UserController {
      *
      * @return 结果
      */
-    @RequestMapping("/sign")
+    @RequestMapping("/user/sign")
     String sign(HttpServletRequest request) {
-        String auth = request.getHeader("Auth");
-        if (JWTUtil.verifyToken(auth) == 0) {
-            Map<String, Object> authMap = JWTUtil.parseToken(auth);
-            return userService.sign((String) authMap.get("userid"), true).toJSONString();
-        } else {
-            return ReturnUtil.returnMsg("签到失败", -5, null);
-        }
+        return userService.sign((String) JWTUtil.parseToken(request.getHeader("access_token")).get("userid"), true).toJSONString();
     }
 
     /**
      * 取消签到
+     *
      * @param userid 要取消签到的用户id
      * @return 结果
      */
-    @RequestMapping("/unsetsign")
+    @RequestMapping("/admin/unsetsign")
     String unsetsign(String userid) {
         return userService.sign(userid, false).toJSONString();
     }
@@ -117,7 +111,7 @@ public class UserController {
      * @param userid 用户id
      * @return 授权结果
      */
-    @RequestMapping("/changeAuth")
+    @RequestMapping("/super_admin/changeAuth")
     String changeAuth(String userid) {
         return userService.changeAuth(userid).toJSONString();
     }

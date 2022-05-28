@@ -1,5 +1,6 @@
 package cn.lab.recruitsystem.config;
 
+import cn.lab.recruitsystem.Model.dto.AuthDto;
 import cn.lab.recruitsystem.Util.HttpRequestUtil;
 import cn.lab.recruitsystem.Util.JWTUtil;
 import cn.lab.recruitsystem.Util.ReturnUtil;
@@ -9,6 +10,8 @@ import org.springframework.web.servlet.HandlerInterceptor;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import java.util.Arrays;
+import java.util.List;
 import java.util.logging.Logger;
 
 /**
@@ -16,6 +19,13 @@ import java.util.logging.Logger;
  */
 @Component
 public class URLInterceptor implements HandlerInterceptor {
+
+    public static final String pathNotNeedAuth = "(/user/user/(sendVerifyEmail|signup|login|resetMainInf)|/)";
+    public static final List<AuthDto> config = Arrays.asList(
+            new AuthDto("/[a-zA-Z0-9_]{1,}/user[a-zA-Z0-9_/]{0,}", 1),
+            new AuthDto("/[a-zA-Z0-9_]{1,}/admin[a-zA-Z0-9_/]{0,}", 2),
+            new AuthDto("/[a-zA-Z0-9_]{1,}/super_admin[a-zA-Z0-9_/]{0,}", 3)
+    );
 
 
     /**
@@ -32,28 +42,27 @@ public class URLInterceptor implements HandlerInterceptor {
         // 获取token
         response.setContentType("text/html;charset=utf-8");
         // 设置返回头
-        String token = request.getHeader("Auth");
-        if ((path.matches("/user/(sendVerifyEmail|signup|login|resetMainInf)") || path.equals("/"))) {
+        String token = request.getHeader("access_token");
+        // 无需权限的路径放行
+        if (path.matches(pathNotNeedAuth)) {
             return true;
         }
         try {
             //Token筛选
             if (token != null && token.length() > 0 && JWTUtil.verifyToken(token) == 0) {
-                int Auth = (int) JWTUtil.parseToken(token).get("Auth");
+                int auth = (int) JWTUtil.parseToken(token).get("Auth");
                 // 获取Auth
-                // 二级权限筛选
-                if (path.matches("/[a-zA-Z0-9_]{1,}/delete")) {
-                    if (Auth >= 2) {
-                        return true;
+                // 权限筛选
+                for (AuthDto authDto : config) {
+                    if (path.matches(authDto.getRegex())) {
+                        if (auth >= authDto.getAskedAuth()) {
+                            return true;
+                        } else {
+                            response.getWriter().println(ReturnUtil.returnMsg("权限不足", 100, null));
+                            return false;
+                        }
                     }
                 }
-                // 一级权限默认筛选
-                if (Auth >= 1) {
-                    return true;
-                }
-                response.getWriter().println(ReturnUtil.returnMsg("权限不足", 100, null));
-                return false;
-
             }
         } catch (Exception e) {
             Logger.getLogger("c.l.r.c.URLInterceptor").warning(e.toString());

@@ -34,7 +34,7 @@ public class User implements Serializable {
     // 权限
     private Integer wish;
     // 方向
-    private Integer is_sign;
+    private Boolean is_sign;
     // 是否签到
     private Date create_time;
     // 创建时间

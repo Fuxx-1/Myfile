@@ -3,6 +3,7 @@ package cn.lab.recruitsystem.service.Impl;
 import cn.lab.recruitsystem.Model.dto.InterviewInf;
 import cn.lab.recruitsystem.Model.dto.ResultEmail;
 import cn.lab.recruitsystem.Model.dto.User;
+import cn.lab.recruitsystem.Model.vo.FieldVo;
 import cn.lab.recruitsystem.Util.MailUtil;
 import cn.lab.recruitsystem.Util.ReturnUtil;
 import cn.lab.recruitsystem.mapper.InterviewInfMapper;
@@ -10,11 +11,13 @@ import cn.lab.recruitsystem.mapper.UserMapper;
 import cn.lab.recruitsystem.service.InterviewInfService;
 import com.alibaba.fastjson.JSONObject;
 import freemarker.template.Template;
+import org.springframework.stereotype.Service;
 import org.springframework.ui.freemarker.FreeMarkerTemplateUtils;
 import org.springframework.web.servlet.view.freemarker.FreeMarkerConfigurer;
 
 import javax.annotation.Resource;
 import java.util.HashMap;
+import java.util.List;
 import java.util.logging.Logger;
 
 /**
@@ -22,6 +25,7 @@ import java.util.logging.Logger;
  * @Description
  * @create 2022-05-04 23:07
  */
+@Service
 public class InterviewInfServiceImpl implements InterviewInfService {
 
     @Resource
@@ -46,9 +50,9 @@ public class InterviewInfServiceImpl implements InterviewInfService {
     @Override
     public JSONObject addInterview(String userid) {
         try {
-            if (userMapper.getUserInf(userid).getIs_sign().equals(true)) {
+            if (userMapper.getUserInf(userid).getIs_sign()) {
                 // 该用户已签到
-                if (interviewInfMapper.getUserInf(userid).getIs_send() == null) {
+                if (interviewInfMapper.getUserInf(userid) == null) {
                     // 该用户无面试
                     interviewInfMapper.addInterview(userid);
                     return ReturnUtil.returnObj("初始化完成", 0, null);
@@ -135,7 +139,7 @@ public class InterviewInfServiceImpl implements InterviewInfService {
             InterviewInf interviewInf = interviewInfMapper.getUserInf(userid);
             String chosenEmail = interviewInf.getFinal_ispass() ? "success.html" : "fail.html";
             // 获取面试结果
-            if (interviewInf.getIs_send()) {
+            if (interviewInf.getIs_send() != null) {
                 // 邮件已发送
                 return ReturnUtil.returnObj("该用户结果邮件已发送", 7, null);
             }
@@ -176,15 +180,23 @@ public class InterviewInfServiceImpl implements InterviewInfService {
      * 查询用户面试状态，用于管理员
      *
      * @param similarName 相似搜素
-     * @param field1      排序项A-第一优先
-     * @param field2      排序项B-第二优先
-     * @param isDesc      是否降序
+     * @param fields      排序项
      * @param page        第几页
      * @param limit       结束
      * @return 返回查询结果
      */
     @Override
-    public JSONObject queryInterviewInf(String similarName, String field1, String field2, String isDesc, Integer page, Integer limit) {
-        return null;
+    public JSONObject queryInterviewInf(String similarName, List<FieldVo> fields, Integer page, Integer limit) {
+        StringBuilder ground = new StringBuilder();
+        // 排序
+        for (FieldVo field : fields) {
+            ground.append("`").append(field.getField()).append("`").append(field.getIsDesc() ? "DESC" : "");
+        }
+        try {
+            return ReturnUtil.returnObj("查询成功", 0, interviewInfMapper.queryUserInf(similarName, ground.toString(), limit * (page - 1), limit * page));
+        } catch (Exception e) {
+            Logger.getLogger("c.l.r.s.I.InterviewInfServiceImpl.queryInterviewInf").warning(e.toString());
+            return ReturnUtil.returnObj("查询失败", -6, null);
+        }
     }
 }
