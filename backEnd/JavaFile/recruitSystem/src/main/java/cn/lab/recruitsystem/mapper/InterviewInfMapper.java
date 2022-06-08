@@ -97,7 +97,7 @@ public interface InterviewInfMapper {
      * @return 返回查询结果
      */
     @Select("select " +
-            "interview.userid, namesheet.name, " +
+            "interview.userid, namesheet.name, namesheet.wish, " +
             "interview.first_interview, interview.first_attitude, interview.first_ability, interview.first_remarks, " +
             "interview.first_ispass, interview.first_interviewer, " +
             "interview.second_interview, interview.second_attitude, interview.second_ability, interview.second_remarks, " +
@@ -106,7 +106,7 @@ public interface InterviewInfMapper {
             "interview.third_ispass, interview.third_interviewer, " +
             "interview.final_ispass, interview.is_send, interview.create_time, interview.update_time " +
             "from `interview` " +
-            "left join (select userid, name from `user` group by userid) as namesheet on interview.userid = namesheet.userid " +
-            "where namesheet.name like '%${similarName}%' order by ${ground} limit #{start}, #{limit}")
-    List<InterviewInfVo> queryUserInf(String similarName, String ground, int start, int limit);
+            "left join (select userid, name, wish from `user` group by userid) as namesheet on interview.userid = namesheet.userid " +
+            "where namesheet.name like '%${similarName}%' and (#{wish} is null or wish = #{wish}) order by ${ground} limit #{start}, #{limit}")
+    List<InterviewInfVo> queryUserInf(String similarName, String ground, Integer wish, Integer start, Integer limit);
 }

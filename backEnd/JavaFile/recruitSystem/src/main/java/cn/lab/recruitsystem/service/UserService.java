@@ -76,4 +76,11 @@ public interface UserService {
      * @return 结果
      */
     JSONObject changeAuth(String userid);
+
+    /**
+     * 获取用户信息
+     * @param userid 用户id
+     * @return 用户信息
+     */
+    JSONObject getInf(String userid);
 }

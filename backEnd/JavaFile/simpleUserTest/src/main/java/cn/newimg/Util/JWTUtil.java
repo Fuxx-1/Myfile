@@ -1,4 +1,4 @@
-package cn.lab.recruitsystem.Util;
+package cn.newimg.Util;
 
 import io.jsonwebtoken.Jwts;
 import io.jsonwebtoken.SignatureAlgorithm;

@@ -58,7 +58,8 @@ public class InterviewInfController {
      * @return 是否修改成功
      */
     @RequestMapping("/admin/update")
-    String updateInterview(@RequestBody InterviewUpdateVo interviewUpdateVo) {
+    String updateInterview(HttpServletRequest request, @RequestBody InterviewUpdateVo interviewUpdateVo) {
+        interviewUpdateVo.setInterviewer((String) JWTUtil.parseToken(request.getHeader("access_token")).get("userid"));
         return interviewInfService.updateInterview(interviewUpdateVo.getUserid(), interviewUpdateVo.getTimes(),
                 interviewUpdateVo.getInterview(), interviewUpdateVo.getAttitude(), interviewUpdateVo.getAbility(),
                 interviewUpdateVo.getRemarks(), interviewUpdateVo.getIspass(), interviewUpdateVo.getInterviewer(),
@@ -79,7 +80,6 @@ public class InterviewInfController {
     /**
      * 获取面试信息
      *
-     * @param userid 用户id
      * @return 用户面试信息（部分）
      */
     @RequestMapping("/user/get")
@@ -101,7 +101,7 @@ public class InterviewInfController {
      */
     @RequestMapping("/admin/query")
     String queryInterviewInf(@RequestBody InterviewQueryVo interviewQueryVo) {
-        return interviewInfService.queryInterviewInf(interviewQueryVo.getSimilarName(), interviewQueryVo.getFields(), interviewQueryVo.getPage(),
+        return interviewInfService.queryInterviewInf(interviewQueryVo.getSimilarName(), interviewQueryVo.getFields(), interviewQueryVo.getWish(), interviewQueryVo.getPage(),
                 interviewQueryVo.getLimit()).toJSONString();
     }
 

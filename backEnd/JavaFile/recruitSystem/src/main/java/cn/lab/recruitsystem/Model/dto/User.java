@@ -5,7 +5,6 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 import java.io.Serializable;
-import java.util.Date;
 
 /**
  * @author Eleun
@@ -36,9 +35,9 @@ public class User implements Serializable {
     // 方向
     private Boolean is_sign;
     // 是否签到
-    private Date create_time;
+    private String create_time;
     // 创建时间
-    private Date update_time;
+    private String update_time;
     // 更新时间
 
     /**

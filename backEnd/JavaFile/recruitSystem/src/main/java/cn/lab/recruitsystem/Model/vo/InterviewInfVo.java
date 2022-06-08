@@ -4,8 +4,6 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
-import java.sql.Date;
-
 /**
  * @author Fuxx-1@Github
  * @Description
@@ -20,6 +18,8 @@ public class InterviewInfVo {
 
     private String name;
     // 用户姓名
+    private Integer wish;
+    // 选择
 
     private String first_interview;
     // 一面评价
@@ -64,8 +64,8 @@ public class InterviewInfVo {
     // 是否通过
     private Boolean is_send;
     // 邮件是否发送
-    private Date create_time;
+    private String create_time;
     // 创建时间
-    private Date update_time;
+    private String update_time;
     // 更新时间
 }

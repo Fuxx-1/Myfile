@@ -120,6 +120,7 @@ public class InterviewInfServiceImpl implements InterviewInfService {
         // Integer型 times 转 String型
         try {
             interviewInfMapper.updateinterview(userid, timeValue, interview, attitude, ability, remarks, ispass, interviewer, final_ispass);
+            interviewInfMapper.updateTime(userid);
             return ReturnUtil.returnObj("更新成功", 0, null);
         } catch (Exception e) {
             Logger.getLogger("c.l.r.s.I.InterviewInfServiceImpl.updateInterview").warning(e.toString());
@@ -153,6 +154,7 @@ public class InterviewInfServiceImpl implements InterviewInfService {
             }});
             mailUtil.sendHtmlMail(user.getEmail(), "Union Lab纳新结果通知", templateHtml);
             interviewInfMapper.updateEmail(userid, true);
+            interviewInfMapper.updateTime(userid);
             return ReturnUtil.returnObj("发送成功", 0, null);
         } catch (Exception e) {
             Logger.getLogger("c.l.r.s.I.InterviewInfServiceImpl.sendEmail").warning(e.toString());
@@ -186,14 +188,14 @@ public class InterviewInfServiceImpl implements InterviewInfService {
      * @return 返回查询结果
      */
     @Override
-    public JSONObject queryInterviewInf(String similarName, List<FieldVo> fields, Integer page, Integer limit) {
+    public JSONObject queryInterviewInf(String similarName, List<FieldVo> fields, Integer wish, Integer page, Integer limit) {
         StringBuilder ground = new StringBuilder();
         // 排序
         for (FieldVo field : fields) {
             ground.append("`").append(field.getField()).append("`").append(field.getIsDesc() ? "DESC" : "");
         }
         try {
-            return ReturnUtil.returnObj("查询成功", 0, interviewInfMapper.queryUserInf(similarName, ground.toString(), limit * (page - 1), limit * page));
+            return ReturnUtil.returnObj("查询成功", 0, interviewInfMapper.queryUserInf(similarName, ground.toString(), wish, limit * (page - 1), limit * page));
         } catch (Exception e) {
             Logger.getLogger("c.l.r.s.I.InterviewInfServiceImpl.queryInterviewInf").warning(e.toString());
             return ReturnUtil.returnObj("查询失败", -6, null);

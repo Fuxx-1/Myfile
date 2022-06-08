@@ -184,13 +184,17 @@ public class UserServiceImpl implements UserService {
                         put("userid", userid);
                         put("Auth", userMapper.getAuth(userid));
                     }});
-                    return ReturnUtil.returnObj("创建成功", 0, Token);
+                    return ReturnUtil.returnObj("创建成功", 0, new HashMap<String, Object>() {{
+                        put("isComplete", userMapper.getUserInf(userid).isComplete());
+                        put("Token", Token);
+                    }});
                 }
             } else {
                 // 密码登录
                 if (truePwd.equals(password)) {
                     // 密码正确
                     Boolean isComplete = userMapper.getUserInf(userid).isComplete();
+                    userMapper.updateTime(userid);
                     // 信息是否补充完整
                     String Token = JWTUtil.createToken(new HashMap<String, Object>() {{
                         put("userid", userid);
@@ -223,6 +227,7 @@ public class UserServiceImpl implements UserService {
         try {
             user.completeInf(userMapper.getUserInf(user.getUserid()));
             userMapper.updateInf(user.getUserid(), user.getName(), user.getGender(), user.getMajor(), user.getPhone(), user.getWish());
+            userMapper.updateTime(user.getUserid());
             return ReturnUtil.returnObj("更新成功", 0, userMapper.getUserInf(user.getUserid()));
         } catch (Exception e) {
             Logger.getLogger("c.l.r.s.I.UserServiceImpl.updataInf").warning(e.toString());
@@ -256,12 +261,14 @@ public class UserServiceImpl implements UserService {
             if (userMapper.queryPwd(userid).equals(password)) {
                 // 第一顺位，密码验证成功
                 userMapper.updateMainInf(userid, new_password, newEmail);
+                userMapper.updateTime(userid);
                 return ReturnUtil.returnObj("更新成功", 0, userMapper.getUserInf(userid));
             } else {
                 JSONObject verifyResult = verifyCode(userInf.getEmail(), verifyCode);
                 if (verifyResult.get("code").equals(0) && verifyCode != null && verifyCode.length() != 0) {
                     // 第二顺位，邮箱验证成功
                     userMapper.updateMainInf(userid, new_password, newEmail);
+                    userMapper.updateTime(userid);
                     return ReturnUtil.returnObj("更新成功", 0, userMapper.getUserInf(userid));
                 } else if (verifyCode != null && verifyCode.length() != 0) {
                     // 验证失败
@@ -288,6 +295,7 @@ public class UserServiceImpl implements UserService {
     public JSONObject sign(String userid, Boolean is_sign) {
         try {
             userMapper.sign(userid, is_sign);
+            userMapper.updateTime(userid);
             return ReturnUtil.returnObj("签到状态更改成功", 0, userMapper.getUserInf(userid));
         } catch (Exception e) {
             Logger.getLogger("c.l.r.s.I.UserServiceImpl.sign").warning(e.toString());
@@ -306,10 +314,27 @@ public class UserServiceImpl implements UserService {
     public JSONObject changeAuth(String userid) {
         try {
             userMapper.updateAuth(userid, 2);
+            userMapper.updateTime(userid);
             return ReturnUtil.returnObj("更新成功", 0, null);
         } catch (Exception e) {
             Logger.getLogger("c.l.r.s.I.UserServiceImpl.changeAuth").warning(e.toString());
             return ReturnUtil.returnObj("更新失败", -4, null);
+        }
+    }
+
+    /**
+     * 获取用户信息
+     *
+     * @param userid 用户id
+     * @return 用户信息
+     */
+    @Override
+    public JSONObject getInf(String userid) {
+        try {
+            return ReturnUtil.returnObj("查询成功", 0, userMapper.getUserInf(userid));
+        } catch (Exception e) {
+            Logger.getLogger("c.l.r.s.I.UserServiceImpl.getInf").warning(e.toString());
+            return ReturnUtil.returnObj("查询失败", -5, null);
         }
     }
 }

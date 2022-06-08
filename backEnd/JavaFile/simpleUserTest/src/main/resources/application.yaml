@@ -1,0 +1,8 @@
+spring:
+  main:
+    allow-bean-definition-overriding: true
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://${MYSQL_ADDRESS:localhost:3306}/usertest?serverTimezone=Asia/Shanghai&useUnicode=true&characterEncoding=utf-8&allowMultiQueries=true
+    username: ${MYSQL_USERNAME:root}
+    password: ${MYSQL_PASSWORD:12345}

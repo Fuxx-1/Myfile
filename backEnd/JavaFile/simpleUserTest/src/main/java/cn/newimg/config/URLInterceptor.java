@@ -1,9 +1,9 @@
-package cn.lab.recruitsystem.config;
+package cn.newimg.config;
 
-import cn.lab.recruitsystem.Model.dto.AuthDto;
-import cn.lab.recruitsystem.Util.HttpRequestUtil;
-import cn.lab.recruitsystem.Util.JWTUtil;
-import cn.lab.recruitsystem.Util.ReturnUtil;
+import cn.newimg.Model.dto.AuthDto;
+import cn.newimg.Util.HttpRequestUtil;
+import cn.newimg.Util.JWTUtil;
+import cn.newimg.Util.ReturnUtil;
 import com.alibaba.fastjson.JSON;
 import org.springframework.stereotype.Component;
 import org.springframework.web.servlet.HandlerInterceptor;
@@ -20,7 +20,7 @@ import java.util.logging.Logger;
 @Component
 public class URLInterceptor implements HandlerInterceptor {
 
-    public static final String pathNotNeedAuth = "(/user/user/(sendVerifyEmail|signup|login|resetMainInf)|/|/testToken)";
+    public static final String pathNotNeedAuth = "(/user/[a-zA-Z0-9_/]{0,})";
     public static final List<AuthDto> config = Arrays.asList(
             new AuthDto("/[a-zA-Z0-9_]{1,}/user[a-zA-Z0-9_/]{0,}", 1),
             new AuthDto("/[a-zA-Z0-9_]{1,}/admin[a-zA-Z0-9_/]{0,}", 2),

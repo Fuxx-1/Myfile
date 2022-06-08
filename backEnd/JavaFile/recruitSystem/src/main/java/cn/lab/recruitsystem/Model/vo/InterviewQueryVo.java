@@ -18,6 +18,7 @@ import java.util.List;
 public class InterviewQueryVo implements Serializable {
     private String similarName;
     private List<FieldVo> fields;
+    private Integer wish;
     private Integer page;
     private Integer limit;
 }

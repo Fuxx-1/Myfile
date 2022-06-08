@@ -65,5 +65,5 @@ public interface InterviewInfService {
      * @param limit 结束
      * @return 返回查询结果
      */
-    JSONObject queryInterviewInf(String similarName, List<FieldVo> fields, Integer page, Integer limit);
+    JSONObject queryInterviewInf(String similarName, List<FieldVo> fields, Integer wish, Integer page, Integer limit);
 }

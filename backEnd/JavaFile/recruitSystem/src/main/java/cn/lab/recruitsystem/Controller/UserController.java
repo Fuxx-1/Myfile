@@ -105,6 +105,25 @@ public class UserController {
         return userService.sign(userid, false).toJSONString();
     }
 
+
+    /**
+     * 获取信息
+     * @return 结果
+     */
+    @RequestMapping("/user/getInf")
+    String getInf(HttpServletRequest request) {
+        return userService.getInf((String) JWTUtil.parseToken(request.getHeader("access_token")).get("userid")).toJSONString();
+    }
+
+    /**
+     * 获取信息(他人)
+     * @return 结果
+     */
+    @RequestMapping("/admin/getInf")
+    String getUserInf(String userid) {
+        return userService.getInf(userid).toJSONString();
+    }
+
     /**
      * 授权
      *
