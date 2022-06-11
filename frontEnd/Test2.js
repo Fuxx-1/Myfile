@@ -1,27 +1,21 @@
 /**
  * 本脚本完全免费，仅供学习参考，请勿在真实环境使用，不得用于任何商业或任何非法用途，您必须在下载后24个小时内，彻底删除该脚本，否则，一切后果由用户自行承担。
  */
-const {
-    isQuarantine,
-    tamperature,
-    pwd,
-    needFix,
-    agreement
-} = hamibot.env;
-
-const deviceWidth = device.width,
-    deviceHeight = device.height;
+const isQuarantine = "否";
+const pwd = "123421";
+const needFix = "否";
+const tamperature = "36.6";
 
 /**
  * 初始化终端
  */
 function initConsole() {
     console.show();
-    console.setSize(deviceWidth / 2, deviceHeight / 2);
-    console.setPosition(200, 50);
+    console.setSize(device.width / 2, device.height / 2);
+    console.setPosition(50, 50);
     console.log("是否居家隔离: " + isQuarantine +
         "\n是否填体温: " + needFix +
-        " | " + tamperature);
+        "\n体温: " + tamperature);
 }
 
 function main() {
@@ -79,7 +73,7 @@ function My_SLEEP(n) {
  **/
 function ClickUntilAppear(t, i) {
     var tNoEnter = t.replace(/\n/g, '');
-    console.log("=>等待" + tNoEnter + "...", end = "");
+    print("---\n等待" + tNoEnter + "->", end = "");
     sleep(200);
     if (i == 0 || i == null) {
         text(t).waitFor();
@@ -142,33 +136,26 @@ function unlock() {
 function openWechat() {
     // 确保启动微信
     sleep(100);
-    launch('com.tencent.mm');
+    launchApp("微信");
 
     // 确保微信启动中不被打断
     while (true) {
-        var activityRegex = /com.tencent.mm.(splash|app.WeChatSplashActivity)[a-zA-Z.]{0,}/;
-        if (!activityRegex.test(currentActivity())) { break; }
-        press(deviceWidth / 2, deviceHeight / 2, 10);
-        sleep(500);
-    }
-    sleep(500);
-    // 确保在微信主页面
-    while (text("我").find().length < 1) {
-        back();
+        var activityRegex = /com.tencent.mm.ui[a-zA-Z.]{3,}/;
+        if (activityRegex.test(currentActivity())) { break; }
         sleep(200);
     }
-    console.log("==微信主页==");
+
+    // 确保在微信主页面
+    while (text("通讯录").find().empty()) {
+        back();
+        sleep(300);
+    }
 }
 
 /**
  * 检查环境并返回主页
  */
 function init() {
-    //用户协议是否同意
-    if (agreement === "No") {
-        toast("请在编辑中同意协议！否则脚本拒绝执行");
-        exit();
-    }
     // 无障碍及回主页
     auto.waitFor();
     home();
@@ -179,36 +166,23 @@ function init() {
  * 要求现在正在微信主页
  */
 function enterDailyPage() {
-    for (let i = 0; i < 50; i++) {
-        swipe(50, 500, 50, deviceHeight - 400, 10);
-    }
-    swipe(50, deviceHeight - 400, 50, 500, 500);
-    while (!click('我在校园')) {
-        swipe(50, deviceHeight - 200, 50, 500, 300);
-    }
-    for (let i = 0; i < 3; i++) {
-        click('学生端');
-        if (id("fc").find().length > 0) {
-            break;
-        }
-        sleep(1000);
-    }
-    console.log("==我在校园主页==");
+    ClickUntilAppear('我在校园', 0);
+    sleep(200);
+    click('学生端');
     while (1) {
         My_SLEEP(1);
         while (className("android.widget.ProgressBar").find().length > 0) {
             sleep(20);
         }
-        My_SLEEP(1.5);
+        My_SLEEP(1);
         if (text("健康打卡").find().length > 0) {
             break;
         }
-        while (!id("fc").findOne().click());
+        id("fc").findOne().click();
         ClickUntilAppear('重新进入\n小程序', 0);
     }
     ClickUntilAppear('健康打卡', 0);
     text("每日健康情况登记").waitFor();
-    console.log("==健康打卡主页==");
 }
 
 /**
@@ -236,12 +210,12 @@ function fixForm() {
     if (needFix === "是") {
         swipe(500, 1000, 500, 50, 400);
         var obj = text("3 . 您今日的体温是多少？(填空)").findOnce().parent().child(17).child(0);
-        click(obj.parent().bounds().centerX(), obj.parent().bounds().centerY());
+        click(obj.parent().bounds().centerX(), 5);
         setClip("914857062894570234895703123459872345823940534759" +
             "823475923485792384748957234905872034857234089574590823457023485734589237692347856 ");
         obj.paste();
         sleep(200);
-        longClick(30, obj.parent().bounds().centerY());
+        longClick(75, obj.parent().bounds().centerY());
         sleep(200);
         setClip(tamperature);
         obj.paste();

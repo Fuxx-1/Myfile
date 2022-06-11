@@ -2,28 +2,3 @@
 2 1 0 
 0 0 0 
 0 0 3 
-
-
-const { isQuarantine, tamperature } = hamibot.env;
-
-
-    console.show();
-    toast("Test函数");
-    var obj = text("* 4.紧急联系人").findOnce().parent().child(7).child(0);
-    console.log(obj.text());
-		console.log(click(obj.parent().bounds().centerX(), obj.parent().bounds().centerY()));
-    setClip("12345678900987654321");
-    obj.paste();
-		sleep(750);
-		back();
-    console.log(longClick(75, obj.parent().bounds().centerY()));
-		sleep(750);
-		back();
-//     obj.setSelection(0,1);
-//     obj.cut();
-    setClip("123");
-    obj.paste();
-
-//     console.hide();
-    exit();
-
