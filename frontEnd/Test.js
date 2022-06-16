@@ -6,7 +6,9 @@ const {
     tamperature,
     pwd,
     needFix,
-    agreement
+    agreement,
+    autoSubmit,
+    healthyState
 } = hamibot.env;
 
 const deviceWidth = device.width,
@@ -21,10 +23,14 @@ function initConsole() {
     console.setPosition(200, 50);
     console.log("是否居家隔离: " + isQuarantine +
         "\n是否填体温: " + needFix +
-        " | " + tamperature);
+        " | " + tamperature +
+        "\n自动提交：" + autoSubmit
+    );
 }
 
 function main() {
+    sleep(500);
+    prePending();
     init();
     initConsole();
     // 打开console并输出用户变量
@@ -37,7 +43,8 @@ function main() {
     /* 排除已打卡情况 */
     if (text("已打卡").find().length > 0) {
         toast("今日已打卡");
-        execOver();
+        sleep(1500);
+        execOver(true);
     }
     fixForm();
     // 填表单
@@ -46,17 +53,23 @@ function main() {
     /* 等待并点击确认 */
     while (true) {
         if (textMatches("/[^市]{1,}[市][^市]{1,}/").find().length > 0) {
-            ClickUntilAppear('提交', 1);
-            ClickUntilAppear('确定', 1);
+            if (autoSubmit === "Yes") {
+                ClickUntilAppear('提交', 1);
+                ClickUntilAppear('确定', 1);
+            }
             break;
         }
         sleep(200);
     }
-    sleep(300);
-    toast("打卡完毕");
-    sleep(500);
+    sleep(1000);
+    if (text("已打卡").find().length > 0) {
+        toast("打卡成功");
+    } else {
+        toast("打卡失败");
+    }
+    sleep(1500);
     // 输出打卡完毕提示
-    execOver();
+    execOver(autoSubmit === "Yes");
     //结束运行
 }
 
@@ -101,18 +114,6 @@ function ClickUntilAppear(t, i) {
 }
 
 /**
- * 睡眠点击函数
- * @param t 点击的文本
- * @param i sleep时间 
- * @return void
- **/
-function ClickWithSleep(t, i) {
-    sleep(i * 1000);
-    click(t);
-    text(t).findOnce().click();
-}
-
-/**
  * 输入密码
  */
 function password_input() {
@@ -131,7 +132,7 @@ function unlock() {
     if (!device.isScreenOn()) {
         device.wakeUp();
         sleep(500);
-        swipe(500, 1000, 500, 50, 400);
+        swipe(200, 1800, 200, 400, 500);
         password_input();
     }
 }
@@ -151,7 +152,7 @@ function openWechat() {
         press(deviceWidth / 2, deviceHeight / 2, 10);
         sleep(500);
     }
-    sleep(500);
+    sleep(1000);
     // 确保在微信主页面
     while (text("我").find().length < 1) {
         back();
@@ -164,11 +165,6 @@ function openWechat() {
  * 检查环境并返回主页
  */
 function init() {
-    //用户协议是否同意
-    if (agreement === "No") {
-        toast("请在编辑中同意协议！否则脚本拒绝执行");
-        exit();
-    }
     // 无障碍及回主页
     auto.waitFor();
     home();
@@ -182,16 +178,9 @@ function enterDailyPage() {
     for (let i = 0; i < 50; i++) {
         swipe(50, 500, 50, deviceHeight - 400, 10);
     }
-    swipe(50, deviceHeight - 400, 50, 500, 500);
+    swipe(50, 500, 50, deviceHeight - 400, 1000);
     while (!click('我在校园')) {
-        swipe(50, deviceHeight - 200, 50, 500, 300);
-    }
-    for (let i = 0; i < 3; i++) {
-        click('学生端');
-        if (id("fc").find().length > 0) {
-            break;
-        }
-        sleep(1000);
+        toast('请将我在校园添加到我的小程序并放置在前八个！');
     }
     console.log("==我在校园主页==");
     while (1) {
@@ -199,7 +188,7 @@ function enterDailyPage() {
         while (className("android.widget.ProgressBar").find().length > 0) {
             sleep(20);
         }
-        My_SLEEP(1.5);
+        My_SLEEP(3);
         if (text("健康打卡").find().length > 0) {
             break;
         }
@@ -213,14 +202,32 @@ function enterDailyPage() {
 
 /**
  * 结束执行
+ * @param backHome 是否返回主页
  */
-function execOver() {
-    home();
-    // 回主页
+function execOver(backHome) {
+    if (backHome) {
+        home();
+        // 回主页
+    }
     console.hide();
     // 隐藏对话框
     exit();
     // 退出
+}
+
+/**
+ * 前置判断
+ */
+function prePending() {
+    //用户协议是否同意
+    if (agreement === "No") {
+        toast("请在编辑中同意协议！否则脚本拒绝执行");
+        exit();
+    }
+    if (healthyState === "No") {
+        toast("打卡因您关于新冠的状况暂停");
+        exit();
+    }
 }
 
 /**
@@ -237,11 +244,8 @@ function fixForm() {
         swipe(500, 1000, 500, 50, 400);
         var obj = text("3 . 您今日的体温是多少？(填空)").findOnce().parent().child(17).child(0);
         click(obj.parent().bounds().centerX(), obj.parent().bounds().centerY());
-        setClip("914857062894570234895703123459872345823940534759" +
-            "823475923485792384748957234905872034857234089574590823457023485734589237692347856 ");
-        obj.paste();
-        sleep(200);
-        longClick(30, obj.parent().bounds().centerY());
+        sleep(1500);
+        longClick(obj.parent().bounds().left + 15, obj.parent().bounds().top + 15);
         sleep(200);
         setClip(tamperature);
         obj.paste();

@@ -1,0 +1,155 @@
+<body>
+    <ScrollView>
+        <vertical padding="25">
+            <text textSize="30sp" textStyle="bold" gravity="center" padding="5">设置</text>
+            <text textSize="20sp" textStyle="bold" gravity="left" padding="5">一、用户条款</text>
+            <text textSize="15sp" gravity="left" padding="5">
+                本脚本完全免费，仅供学习参考，请勿在真实环境使用，不得用于任何商业或任何非法用途，您必须在下载后24个小时内，彻底删除该脚本，否则，一切后果由用户自行承担。
+            </text>
+            <text textSize="20sp" textStyle="bold" gravity="left" padding="5">二、脚本设置</text>
+            <text textSize="15sp" gravity="left" padding="5 5 5 0">1、关于用户条款【必填】</text>
+            <horizontal>
+                <radiogroup orientation="horizontal">
+                    <radio id="agreement" marginRight="20" text="我同意" />
+                    <radio text="我不同意" checked="true" />
+                </radiogroup>
+            </horizontal>
+            <text textSize="15sp" gravity="left" padding="5 10 5 0">2、手机密码（目前不支持手势密码）【选填】</text>
+            <input id="pwd" textSize="15sp" password="true" hint="密码保存在本地，仅用于解锁屏幕" />
+            <text textSize="15sp" gravity="left" padding="5 10 5 0">3、脚本每天执行时间（误差不超过10min）【选填】</text>
+            <timepicker id="signTime" textSize="15sp" timePickerMode="spinner" />
+            <text textSize="20sp" textStyle="bold" gravity="left" padding="5">三、打卡设置</text>
+            <text textSize="15sp" gravity="left" padding="5 10 5 0">1、关于新冠，我的状况【必填】</text>
+            <horizontal>
+                <radiogroup orientation="horizontal">
+                    <radio id="healthyState" marginRight="20" text="无相关情况,身体健康" />
+                    <radio text="其他，并暂停打卡" checked="true" />
+                </radiogroup>
+            </horizontal>
+            <text textSize="15sp" gravity="left" padding="5 10 5 0">2、是否处于居家隔离【必填】</text>
+            <horizontal>
+                <radiogroup orientation="horizontal">
+                    <radio id="isQuarantine" marginRight="20" text="是" />
+                    <radio text="否" checked="true" />
+                </radiogroup>
+            </horizontal>
+            <text textSize="15sp" gravity="left" padding="5 10 5 0">3、是否需要填写体温（可能不兼容）【必填】</text>
+            <horizontal>
+                <radiogroup orientation="horizontal">
+                    <radio id="needFix" marginRight="5" text="是" />
+                    <text textSize="15sp" digits="1234567890.">，且体温为：</text>
+                    <input id="tamperature" textSize="15sp" hint="体温" text="36.5" />
+                    <radio marginLeft="20" text="否" checked="true" />
+                </radiogroup>
+            </horizontal>
+            <text textSize="15sp" gravity="left" padding="5 10 5 0">4、关于打卡提交（建议先手动几次，再自动）【必填】</text>
+            <horizontal>
+                <radiogroup orientation="horizontal">
+                    <radio id="autoSubmit" marginRight="20" text="自动提交" />
+                    <radio text="手动提交" checked="true" />
+                </radiogroup>
+            </horizontal>
+            <horizontal gravity="center" padding="5 20 5 5">
+                <button id="confirm" text="确认" layout_gravity="center" w="auto" marginRight="50"
+                    style="Widget.AppCompat.Button.Colored"></button>
+                <button id="cancel" text="取消" layout_gravity="center" w="auto"></button>
+            </horizontal>
+        </vertical>
+    </ScrollView>
+</body>
+
+
+<body>
+    <drawer id="drawer">
+        <vertical>
+            <appbar bg="#7ABD9A">
+                <toolbar id="toolbar" title="打卡" />
+                <tabs id="tabs" />
+            </appbar>
+            <viewpager id="viewpager">
+                <frame>
+                    <ScrollView>
+                        <vertical padding="20">
+                            <text textSize="15sp" gravity="left" padding="5">
+                                本脚本完全免费，仅供学习参考，请勿在真实环境使用，不得用于任何商业或任何非法用途，您必须在下载后24个小时内，彻底删除该脚本，否则，一切后果由用户自行承担。
+                            </text>
+                        </vertical>
+                    </ScrollView>
+                </frame>
+                <frame>
+                    <ScrollView>
+                        <vertical padding="25">
+                            <text textSize="15sp" gravity="left" padding="5 5 5 0">1、关于用户条款【必填】</text>
+                            <horizontal>
+                                <radiogroup orientation="horizontal">
+                                    <radio id="agreement" marginRight="20" text="我同意" />
+                                    <radio text="我不同意" checked="true" />
+                                </radiogroup>
+                            </horizontal>
+                            <text textSize="15sp" gravity="left" padding="5 10 5 0">2、手机密码（目前不支持手势密码）【选填】</text>
+                            <input id="pwd" textSize="15sp" password="true" hint="密码保存在本地，仅用于解锁屏幕" />
+                            <text textSize="15sp" gravity="left" padding="5 10 5 0">3、脚本每天执行时间（误差不超过10min）【选填】</text>
+                            <timepicker id="signTime" textSize="15sp" timePickerMode="spinner" />
+                            <horizontal gravity="center" padding="5 20 5 5">
+                                <button id="confirm" text="确认" layout_gravity="center" w="auto" marginRight="50"
+                                    style="Widget.AppCompat.Button.Colored"></button>
+                                <button id="reset" text="重置" layout_gravity="center" w="auto"></button>
+                            </horizontal>
+                        </vertical>
+                    </ScrollView>
+                </frame>
+                <frame>
+                    <ScrollView>
+                        <vertical padding="25">
+                            <text textSize="15sp" gravity="left" padding="5 10 5 0">1、关于新冠，我的状况【必填】</text>
+                            <horizontal>
+                                <radiogroup orientation="horizontal">
+                                    <radio id="healthyState" marginRight="20" text="无相关情况,身体健康" />
+                                    <radio text="其他，并暂停打卡" checked="true" />
+                                </radiogroup>
+                            </horizontal>
+                            <text textSize="15sp" gravity="left" padding="5 10 5 0">2、是否处于居家隔离【必填】</text>
+                            <horizontal>
+                                <radiogroup orientation="horizontal">
+                                    <radio id="isQuarantine" marginRight="20" text="是" />
+                                    <radio text="否" checked="true" />
+                                </radiogroup>
+                            </horizontal>
+                            <text textSize="15sp" gravity="left" padding="5 10 5 0">3、是否需要填写体温（可能不兼容）【必填】</text>
+                            <horizontal>
+                                <radiogroup orientation="horizontal">
+                                    <radio id="needFix" marginRight="5" text="是" />
+                                    <text textSize="15sp" digits="1234567890.">，且体温为：</text>
+                                    <input id="tamperature" textSize="15sp" hint="体温" text="36.5" />
+                                    <radio marginLeft="20" text="否" checked="true" />
+                                </radiogroup>
+                            </horizontal>
+                            <text textSize="15sp" gravity="left" padding="5 10 5 0">4、关于打卡提交（建议先手动几次，再自动）【必填】</text>
+                            <horizontal>
+                                <radiogroup orientation="horizontal">
+                                    <radio id="autoSubmit" marginRight="20" text="自动提交" />
+                                    <radio text="手动提交" checked="true" />
+                                </radiogroup>
+                            </horizontal>
+                            <horizontal gravity="center" padding="5 20 5 5">
+                                <button id="confirm" text="确认" layout_gravity="center" w="auto" marginRight="50"
+                                    style="Widget.AppCompat.Button.Colored"></button>
+                                <button id="reset" text="重置" layout_gravity="center" w="auto"></button>
+                            </horizontal>
+                        </vertical>
+                    </ScrollView>
+                </frame>
+            </viewpager>
+        </vertical>
+        <vertical layout_gravity="left" bg="#ffffff" w="280">
+            <img w="280" h="200" scaleType="fitXY"
+                src="http://images.shejidaren.com/wp-content/uploads/2014/10/023746fki.jpg" />
+            <list id="menu">
+                <horizontal bg="?selectableItemBackground" w="*">
+                    <img w="50" h="50" padding="16" src="{{this.icon}}" tint="{{color}}" />
+                    <text textColor="black" textSize="15sp" text="{{this.title}}" layout_gravity="center" />
+                </horizontal>
+            </list>
+        </vertical>
+    </drawer>
+</body>
