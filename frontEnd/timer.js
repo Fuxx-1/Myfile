@@ -22,7 +22,7 @@ function main() {
             });
             sign.join();
             storage.put("signDate", new Date().getDay());
-        } else if (new Date().getHours() == Number(myVariable.signTime.split(":")[0]) && new Date().getMinutes() <= Number(myVariable.signTime.split(":")[1])) {
+        } else if (new Date().getHours() == Number(myVariable.signTime.split(":")[0]) && new Date().getMinutes() < Number(myVariable.signTime.split(":")[1])) {
             var sleepTime = Number(myVariable.signTime.split(":")[1]) * 60000 - new Date().getTime() % 3600000;
             sleepTime = sleepTime > 0 ? sleepTime : 0; // 负数置零
             console.log("[Sleep]" + sleepTime / 60000);

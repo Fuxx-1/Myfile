@@ -132,6 +132,9 @@ function openWechat() {
             break;
         }
     }
+    sleep(1000);
+    var weMe = id("kdk").findOnce();
+    while (!click(weMe.bounds().centerX(), weMe.bounds().centerY()));
     console.log("==微信主页==");
 }
 
@@ -157,6 +160,7 @@ function enterDailyPage() {
         toastLog('请将我在校园添加到我的小程序并放置在前八个！');
     }
     console.log("==我在校园主页==");
+    My_SLEEP(5);
     while (1) {
         sleep(1500);
         while (!id("fc").findOne().click());

@@ -1,4 +1,4 @@
-package cn.lab.recruitsystem.config;
+package ltd.newimg.config;
 
 
 import org.springframework.stereotype.Component;
