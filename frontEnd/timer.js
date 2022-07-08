@@ -12,6 +12,7 @@ const deviceWidth = device.width,
 function main() {
     // 定时执行脚本
     while (true) {
+        threads.shutDownAll();
         if (!(new Date().getDay() === storage.get("signDate")) && new Date().getHours() == Number(myVariable.signTime.split(":")[0]) && new Date().getMinutes() >= Number(myVariable.signTime.split(":")[1])) {
             console.clear();
             console.log("========== 时间到，开始打卡 ========== ");
@@ -22,13 +23,16 @@ function main() {
             });
             sign.join();
             storage.put("signDate", new Date().getDay());
+            var sleepTime = 3600000 * 20;
+            console.log("[Sleep*20]" + sleepTime / 60000);
+            sleep(sleepTime);
         } else if (new Date().getHours() == Number(myVariable.signTime.split(":")[0]) && new Date().getMinutes() < Number(myVariable.signTime.split(":")[1])) {
             var sleepTime = Number(myVariable.signTime.split(":")[1]) * 60000 - new Date().getTime() % 3600000;
-            sleepTime = sleepTime > 0 ? sleepTime : 0; // 负数置零
+            sleepTime = sleepTime > 60000 ? sleepTime : 60000; // 负数置60000
             console.log("[Sleep]" + sleepTime / 60000);
             sleep(sleepTime);
         } else {
-            var sleepTime = 3600000 - new Date().getTime() % 3600000;
+            var sleepTime = 3660000 - new Date().getTime() % 3600000;
             console.log("[Sleep]" + sleepTime / 60000);
             sleep(sleepTime);
         }

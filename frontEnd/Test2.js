@@ -133,8 +133,8 @@ function openWechat() {
         }
     }
     sleep(1000);
-    var weMe = id("kdk").findOnce();
-    while (!click(weMe.bounds().centerX(), weMe.bounds().centerY()));
+    var weMain = text("微信").findOnce();
+    while (!click(weMain.bounds().centerX(), weMain.bounds().centerY()));
     console.log("==微信主页==");
 }
 
@@ -152,7 +152,7 @@ function init() {
  * 要求现在正在微信主页
  */
 function enterDailyPage() {
-    for (let i = 0; i < 50; i++) {
+    for (let i = 0; i < 75; i++) {
         swipe(50, 500, 50, deviceHeight - 400, 10);
     }
     swipe(50, 500, 50, deviceHeight - 400, 1000);
@@ -163,7 +163,7 @@ function enterDailyPage() {
     My_SLEEP(5);
     while (1) {
         sleep(1500);
-        while (!id("fc").findOne().click());
+        while (!desc("更多").findOnce().click());
         sleep(1500);
         ClickOvertime('重新进入\n小程序', 3);
         My_SLEEP(1);
