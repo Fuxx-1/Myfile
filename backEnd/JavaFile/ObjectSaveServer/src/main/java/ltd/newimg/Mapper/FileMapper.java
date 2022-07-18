@@ -18,6 +18,11 @@ import java.util.logging.Logger;
 @Component
 public class FileMapper {
 
+    /**
+     * 保存文件
+     * @param fileSaveDto 按要求传入FileSave对象
+     * @return JSONObject格式的上传结果
+     */
     public JSONObject saveFile(FileSaveDto fileSaveDto) {
         OutputStream fileStream = null;
         // 1k的数据缓冲
@@ -51,6 +56,11 @@ public class FileMapper {
         }
     }
 
+    /**
+     * 保存文件
+     * @param fileSaveDto 按要求传入FileSave对象
+     * @return File形式的文件
+     */
     public File accessFile(FileSaveDto fileSaveDto) {
         return new File(fileSaveDto.getSaveDir(), fileSaveDto.getFileName());
     }

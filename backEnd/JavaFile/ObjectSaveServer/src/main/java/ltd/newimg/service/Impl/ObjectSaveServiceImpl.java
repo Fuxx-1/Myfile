@@ -2,6 +2,7 @@ package ltd.newimg.service.Impl;
 
 import ltd.newimg.Mapper.FileMapper;
 import ltd.newimg.Model.dto.FileSaveDto;
+import ltd.newimg.Util.TimeUtil;
 import ltd.newimg.service.ObjectSaveService;
 import org.springframework.core.io.FileSystemResource;
 import org.springframework.http.HttpHeaders;
@@ -48,10 +49,9 @@ public class ObjectSaveServiceImpl implements ObjectSaveService {
             HttpHeaders headers = new HttpHeaders();
             headers.add("Cache-Control", "public");
             headers.add("Content-Disposition", "attachment; filename=" + file.getName());
-            headers.add("Pragma", "no-cache");
-            headers.add("Expires", "0");
+            headers.add("Expires", TimeUtil.getTimeAfter(null, 0, 1, 0, 0, 0, 0));
             headers.add("Last-Modified", new Date().toString());
-            headers.add("ETag", String.valueOf(System.currentTimeMillis()));
+            headers.add("ETag", String.valueOf(file.length()));
             return ResponseEntity.ok().headers(headers).contentLength(file.length()).contentType(MediaType.parseMediaType("application/octet-stream")).body(new FileSystemResource(file));
         } else {
             return ResponseEntity.notFound().build();
