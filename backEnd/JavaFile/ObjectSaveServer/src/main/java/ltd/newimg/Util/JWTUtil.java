@@ -1,4 +1,4 @@
-package ltd.newimg.Util;
+package ltd.newimg.util;
 
 import io.jsonwebtoken.Jwts;
 import io.jsonwebtoken.SignatureAlgorithm;
@@ -11,6 +11,12 @@ import java.util.Map;
 import java.util.UUID;
 import java.util.logging.Logger;
 
+/**
+ * 
+ * @author Fuxx-1@Github
+ * @Description
+ * @date 2022/07/21 13:56
+ */
 @Component
 public class JWTUtil {
 

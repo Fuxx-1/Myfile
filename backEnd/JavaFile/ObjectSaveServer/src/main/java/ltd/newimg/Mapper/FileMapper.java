@@ -1,8 +1,10 @@
-package ltd.newimg.Mapper;
+package ltd.newimg.mapper;
 
 import com.alibaba.fastjson.JSONObject;
-import ltd.newimg.Model.dto.FileSaveDto;
-import ltd.newimg.Util.ReturnUtil;
+
+import ltd.newimg.model.dto.FileSaveDTO;
+import ltd.newimg.util.ReturnUtil;
+
 import org.springframework.stereotype.Component;
 
 import java.io.File;
@@ -23,7 +25,7 @@ public class FileMapper {
      * @param fileSaveDto 按要求传入FileSave对象
      * @return JSONObject格式的上传结果
      */
-    public JSONObject saveFile(FileSaveDto fileSaveDto) {
+    public JSONObject saveFile(FileSaveDTO fileSaveDto) {
         OutputStream fileStream = null;
         // 1k的数据缓冲
         byte[] bs = new byte[1024];
@@ -61,7 +63,17 @@ public class FileMapper {
      * @param fileSaveDto 按要求传入FileSave对象
      * @return File形式的文件
      */
-    public File accessFile(FileSaveDto fileSaveDto) {
+    public File accessFile(FileSaveDTO fileSaveDto) {
         return new File(fileSaveDto.getSaveDir(), fileSaveDto.getFileName());
+    }
+
+    public long getSpaceRemaining() {
+        File[] roots = File.listRoots();
+        long totalSpace = roots[0].getTotalSpace();
+        long freeSpace = roots[0].getFreeSpace();
+        if ((totalSpace - freeSpace) / (float) totalSpace > 0.85) {
+            // TODO：磁盘占用高后的提示
+        }
+        return freeSpace;
     }
 }

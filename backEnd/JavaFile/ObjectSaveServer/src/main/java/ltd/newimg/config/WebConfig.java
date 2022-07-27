@@ -14,7 +14,9 @@ import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
 
 /**
  * 拦截器注入
- *
+ * @author Fuxx-1@Github
+ * @Description
+ * @date 2022/07/21 13:58
  */
 @Configuration
 public class WebConfig implements WebMvcConfigurer {

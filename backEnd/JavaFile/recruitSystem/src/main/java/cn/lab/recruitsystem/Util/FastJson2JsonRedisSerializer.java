@@ -1,4 +1,4 @@
-package com.main.util;
+package cn.lab.recruitsystem.Util;
 import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.parser.ParserConfig;
 import com.alibaba.fastjson.serializer.SerializerFeature;

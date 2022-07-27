@@ -1,10 +1,12 @@
 package ltd.newimg.config;
 
 import com.alibaba.fastjson.JSON;
-import ltd.newimg.Model.dto.AuthDto;
-import ltd.newimg.Util.HttpRequestUtil;
-import ltd.newimg.Util.JWTUtil;
-import ltd.newimg.Util.ReturnUtil;
+
+import ltd.newimg.model.dto.AuthDTO;
+import ltd.newimg.util.HttpRequestUtil;
+import ltd.newimg.util.JWTUtil;
+import ltd.newimg.util.ReturnUtil;
+
 import org.springframework.stereotype.Component;
 import org.springframework.web.servlet.HandlerInterceptor;
 
@@ -16,17 +18,21 @@ import java.util.logging.Logger;
 
 /**
  * URL拦截，做对应处理
+ *
+ * @author Fuxx-1@Github
+ * @Description
+ * @date 2022/07/21 13:53
  */
 @Component
 public class URLInterceptor implements HandlerInterceptor {
 
-    public static final String pathNotNeedAuth = "(/user/user/(sendVerifyEmail|signup|login|resetMainInf)|/|/testToken)";
-    public static final List<AuthDto> config = Arrays.asList(
-            new AuthDto("/[a-zA-Z0-9_]{1,}/user[a-zA-Z0-9_/]{0,}", 1),
-            new AuthDto("/[a-zA-Z0-9_]{1,}/admin[a-zA-Z0-9_/]{0,}", 2),
-            new AuthDto("/[a-zA-Z0-9_]{1,}/super_admin[a-zA-Z0-9_/]{0,}", 3)
-    );
+    private static final Integer NORMAL_STATUS = 200;
 
+    public static final String PATH_NOT_NEED_AUTH = "";
+    public static final List<AuthDTO> PATH_WITH_AUTH = Arrays.asList(
+            new AuthDTO("/[a-zA-Z0-9_]{1,}/[a-zA-Z0-9_/]{0,}", 1)
+//            , new AuthDTO("/[a-zA-Z0-9_]{1,}/admin[a-zA-Z0-9_/]{0,}", 2)
+    );
 
     /**
      * 请求前置处理（后置处理同理）
@@ -37,23 +43,24 @@ public class URLInterceptor implements HandlerInterceptor {
      * @return boolean
      */
     @Override
-    public boolean preHandle(HttpServletRequest request, HttpServletResponse response, Object handler) throws Exception {
+    public boolean preHandle(HttpServletRequest request, HttpServletResponse response, Object handler)
+            throws Exception {
         String path = request.getServletPath();
-        // 获取token
-        response.setContentType("text/html;charset=utf-8");
         // 设置返回头
-        String token = request.getHeader("access_token");
+        response.setContentType("text/html;charset=utf-8");
         // 无需权限的路径放行
-        if (path.matches(pathNotNeedAuth)) {
+        if (path.matches(PATH_NOT_NEED_AUTH)) {
             return true;
         }
+        // 获取token
+        String token = request.getHeader("access_token");
         try {
-            //Token筛选
+            // Token筛选
             if (token != null && token.length() > 0 && JWTUtil.verifyToken(token) == 0) {
                 int auth = (int) JWTUtil.parseToken(token).get("Auth");
                 // 获取Auth
                 // 权限筛选
-                for (AuthDto authDto : config) {
+                for (AuthDTO authDto : PATH_WITH_AUTH) {
                     if (path.matches(authDto.getRegex())) {
                         if (auth >= authDto.getAskedAuth()) {
                             return true;
@@ -81,21 +88,20 @@ public class URLInterceptor implements HandlerInterceptor {
      * @param handler
      */
     @Override
-    public void afterCompletion(HttpServletRequest request, HttpServletResponse response, Object handler, Exception ex) throws Exception {
-        if (response.getStatus() != 200) {
+    public void afterCompletion(HttpServletRequest request, HttpServletResponse response, Object handler, Exception ex)
+            throws Exception {
+        if (response.getStatus() != NORMAL_STATUS) {
             Logger.getLogger("c.l.r.c.URLInterceptor").warning(
                     " StatusCode:" + response.getStatus() +
                             " ServletPath:" + request.getServletPath() +
                             " Param:" + JSON.toJSONString(request.getParameterMap())
-                            + " RequestBody:" + HttpRequestUtil.getBodyString(request)
-            );
+                            + " RequestBody:" + HttpRequestUtil.getBodyString(request));
         } else {
             Logger.getLogger("c.l.r.c.URLInterceptor").info(
                     " StatusCode:" + response.getStatus() +
                             " ServletPath:" + request.getServletPath() +
                             " Param:" + JSON.toJSONString(request.getParameterMap())
-                            + " RequestBody:" + HttpRequestUtil.getBodyString(request)
-            );
+                            + " RequestBody:" + HttpRequestUtil.getBodyString(request));
         }
     }
 }

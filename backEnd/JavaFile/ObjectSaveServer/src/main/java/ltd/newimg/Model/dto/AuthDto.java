@@ -1,4 +1,4 @@
-package ltd.newimg.Model.dto;
+package ltd.newimg.model.dto;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -12,7 +12,7 @@ import lombok.NoArgsConstructor;
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
-public class AuthDto {
+public class AuthDTO {
     private String regex;
     private int askedAuth;
 }

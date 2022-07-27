@@ -1,4 +1,4 @@
-package ltd.newimg.Util;
+package ltd.newimg.util;
 
 import javax.servlet.ServletInputStream;
 import javax.servlet.http.HttpServletRequest;

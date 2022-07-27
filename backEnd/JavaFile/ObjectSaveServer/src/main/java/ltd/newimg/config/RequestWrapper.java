@@ -26,7 +26,10 @@ public class RequestWrapper extends HttpServletRequestWrapper {
         body = StreamUtils.copyToByteArray(request.getInputStream());
     }
 
-    //转换成String
+    /**
+     * 获取请求体
+     * @return String 请求体数据
+     */
     public String getBodyString(){
         return new String(body, StandardCharsets.UTF_8);
     }
@@ -36,9 +39,9 @@ public class RequestWrapper extends HttpServletRequestWrapper {
         return new BufferedReader(new InputStreamReader(getInputStream()));
     }
 
-    //把保存好的InputStream，传下去
     @Override
     public ServletInputStream getInputStream() throws IOException {
+        //把保存好的InputStream，传下去
 
         final ByteArrayInputStream bais = new ByteArrayInputStream(body);
 

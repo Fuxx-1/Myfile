@@ -108,5 +108,5 @@ public interface InterviewInfMapper {
             "from `interview` " +
             "left join (select userid, name, wish from `user` group by userid) as namesheet on interview.userid = namesheet.userid " +
             "where namesheet.name like '%${similarName}%' and (#{wish} is null or wish = #{wish}) order by ${ground} limit #{start}, #{limit}")
-    List<InterviewInfVo> queryUserInf(String similarName, String ground, Integer wish, Integer start, Integer limit);
+    List<InterviewInf> queryUserInf(String similarName, String ground, Integer wish, Integer start, Integer limit);
 }

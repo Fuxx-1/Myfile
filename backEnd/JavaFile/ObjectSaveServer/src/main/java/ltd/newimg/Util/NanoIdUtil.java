@@ -1,4 +1,4 @@
-package ltd.newimg.Util;
+package ltd.newimg.util;
 
 import java.security.SecureRandom;
 import java.util.Random;
@@ -10,6 +10,7 @@ import java.util.Random;
  */
 public class NanoIdUtil {
 
+    public static final Integer MAX_TINYINT = 256;
     public static final SecureRandom DEFAULT_NUMBER_GENERATOR = new SecureRandom();
     public static final char[] DEFAULT_ALPHABET = "_-0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ".toCharArray();
     public static final int DEFAULT_SIZE = 21;
@@ -23,7 +24,7 @@ public class NanoIdUtil {
             throw new IllegalArgumentException("random cannot be null.");
         } else if (alphabet == null) {
             throw new IllegalArgumentException("alphabet cannot be null.");
-        } else if (alphabet.length != 0 && alphabet.length < 256) {
+        } else if (alphabet.length != 0 && alphabet.length < MAX_TINYINT) {
             if (size <= 0) {
                 throw new IllegalArgumentException("size must be greater than zero.");
             } else {

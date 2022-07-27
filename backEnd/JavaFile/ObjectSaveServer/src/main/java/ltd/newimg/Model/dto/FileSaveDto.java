@@ -1,4 +1,4 @@
-package ltd.newimg.Model.dto;
+package ltd.newimg.model.dto;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -14,7 +14,7 @@ import java.io.InputStream;
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
-public class FileSaveDto {
+public class FileSaveDTO {
     private String saveDir;
     private String fileName;
     private InputStream file;

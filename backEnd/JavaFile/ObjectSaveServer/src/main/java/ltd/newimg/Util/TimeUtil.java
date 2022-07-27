@@ -1,4 +1,4 @@
-package ltd.newimg.Util;
+package ltd.newimg.util;
 
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
@@ -28,9 +28,9 @@ public class TimeUtil {
         DateFormat ft = new SimpleDateFormat(format);
         // date判空及返回格式化后字符串
         if (date == null) {
-            Exception DateNullException = new Exception();
-            DateNullException.setStackTrace(new StackTraceElement[]{new StackTraceElement("TimeUtil", "transWithFormat", null, 32)});
-            throw DateNullException;
+            Exception dateNullException = new Exception();
+            dateNullException.setStackTrace(new StackTraceElement[]{new StackTraceElement("TimeUtil", "transWithFormat", null, 32)});
+            throw dateNullException;
         }
         return ft.format(date);
     }

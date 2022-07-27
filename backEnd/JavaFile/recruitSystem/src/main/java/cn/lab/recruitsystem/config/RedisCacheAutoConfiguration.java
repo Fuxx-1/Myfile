@@ -1,6 +1,6 @@
 package cn.lab.recruitsystem.config;
 
-import com.main.util.FastJson2JsonRedisSerializer;
+import cn.lab.recruitsystem.Util.FastJson2JsonRedisSerializer;
 import org.springframework.boot.autoconfigure.AutoConfigureAfter;
 import org.springframework.boot.autoconfigure.data.redis.RedisAutoConfiguration;
 import org.springframework.context.annotation.Bean;

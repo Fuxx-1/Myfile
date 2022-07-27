@@ -189,9 +189,10 @@ public class InterviewInfServiceImpl implements InterviewInfService {
      */
     @Override
     public JSONObject queryInterviewInf(String similarName, List<FieldVo> fields, Integer wish, Integer page, Integer limit) {
-        StringBuilder ground = new StringBuilder();
+        StringBuffer ground = new StringBuffer();
         // 排序
         for (FieldVo field : fields) {
+            field.setField(field.getField().replaceAll("[^a-zA-Z]", ""));
             ground.append("`").append(field.getField()).append("`").append(field.getIsDesc() ? "DESC" : "");
         }
         try {

@@ -1,8 +1,9 @@
 package ltd.newimg;
 
-import ltd.newimg.Mapper.FileMapper;
-import ltd.newimg.Model.dto.FileSaveDto;
-import ltd.newimg.Util.NanoIdUtil;
+import ltd.newimg.mapper.FileMapper;
+import ltd.newimg.model.dto.FileSaveDTO;
+import ltd.newimg.util.NanoIdUtil;
+
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 
@@ -25,7 +26,7 @@ public class FileMapperTests {
     @Test
     public void saveFileTest() {
         try {
-            fileMapper.saveFile(new FileSaveDto("./", NanoIdUtil.randomNanoId(), new FileInputStream(new File("D:\\Eleun\\下载\\1655530765232sxt.png"))));
+            fileMapper.saveFile(new FileSaveDTO("./", NanoIdUtil.randomNanoId(), new FileInputStream(new File("D:\\Eleun\\下载\\1655530765232sxt.png"))));
         } catch (FileNotFoundException e) {
             e.printStackTrace();
         }
@@ -33,6 +34,6 @@ public class FileMapperTests {
 
     @Test
     public void accessFileTest() {
-        System.out.println(fileMapper.accessFile(new FileSaveDto("./", ".;adfadsf", null)));
+        System.out.println(fileMapper.accessFile(new FileSaveDTO("./", ".;adfadsf", null)));
     }
 }

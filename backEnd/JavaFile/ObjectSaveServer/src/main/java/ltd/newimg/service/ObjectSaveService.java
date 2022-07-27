@@ -1,5 +1,6 @@
 package ltd.newimg.service;
 
+import com.alibaba.fastjson.JSONObject;
 import org.springframework.core.io.FileSystemResource;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.multipart.MultipartFile;
@@ -13,10 +14,12 @@ public interface ObjectSaveService {
 
     /**
      * 保存文件
+     * @param saveDir 保存地址
+     * @param fileName 文件名
      * @param file 文件
      * @return 是否成功
      */
-    String saveFile(MultipartFile file);
+    JSONObject saveFile(String saveDir, String fileName, MultipartFile file);
 
     /**
      * 获取文件

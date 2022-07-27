@@ -1,7 +1,13 @@
-package ltd.newimg.Util;
+package ltd.newimg.util;
 
 import com.alibaba.fastjson.JSONObject;
 
+/**
+ * 
+ * @author Fuxx-1@Github
+ * @Description
+ * @date 2022/07/21 13:56
+ */
 public class ReturnUtil {
 
     public static String returnMsg(String msg, int code, Object data) {
