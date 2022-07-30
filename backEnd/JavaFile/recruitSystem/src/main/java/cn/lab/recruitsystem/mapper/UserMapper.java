@@ -72,7 +72,7 @@ public interface UserMapper {
      * @return 用户信息
      */
     @Select("select " +
-            "name, gender, major, email, phone, auth, wish, is_sign, create_time, update_time " +
+            "userid, name, gender, major, email, phone, auth, wish, is_sign, auth, create_time, update_time " +
             "from `user` " +
             "where userid = #{userid}")
     User getUserInf(String userid);

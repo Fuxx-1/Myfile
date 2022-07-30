@@ -1,17 +1,18 @@
 package ltd.newimg;
 
+import ltd.newimg.model.dto.PartFileDTO;
 import ltd.newimg.model.dto.PartFileInfoDTO;
 import ltd.newimg.service.PartFileService;
 import org.apache.commons.codec.digest.DigestUtils;
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
+import org.springframework.mock.web.MockMultipartFile;
+import org.springframework.web.multipart.MultipartFile;
 
 import javax.annotation.Resource;
-import java.io.File;
-import java.io.FileInputStream;
-import java.io.FileOutputStream;
-import java.io.IOException;
+import java.io.*;
 import java.nio.channels.FileChannel;
+import java.nio.file.Files;
 
 /**
  * @author Eleun
@@ -41,18 +42,19 @@ public class PartFileTest {
         }
     }
 
-    PartFileInfoDTO partFileInfoDTO = new PartFileInfoDTO(MD5, SHA1, ".txt", (int) Math.ceil(fileSize / (float) chunkSize), fileSize);
+    PartFileInfoDTO partFileInfoDTO = new PartFileInfoDTO(MD5, SHA1, "." + staticFile.getName().split("\\.")[staticFile.getName().split("\\.").length - 1], (int) Math.ceil(fileSize / (float) chunkSize), fileSize);
 
     @Test
     public void testInfo() {
+        System.out.println(partFileInfoDTO);
         System.out.println(partFileService.initPartFileUpload(partFileInfoDTO).toJSONString());
     }
 
     @Test
     public void partFileUpload() {
         long size = staticFile.length();
-        int count = (int) size / (float) chunkSize;
-        for (int i = 0; i < count; i++) {
+        int count = (int) (size / (float) chunkSize);
+        for (int i = 0; i <= count; i++) {
             String filePath = "./" + i + ".file_temp";
             try {
                 FileInputStream in = new FileInputStream(staticFile);
@@ -70,9 +72,16 @@ public class PartFileTest {
 
             }
         }
-        for (int i = 0; i < count; i++) {
-            
+        try {
+            for (int i = 0; i <= count; i++) {
+                File file = new File("./" + i + ".file_temp");
+                MultipartFile multipartFile = new MockMultipartFile(file.getName(), Files.newInputStream(file.toPath()));
+                System.out.println(partFileService.partFileUpload(new PartFileDTO(i, count + 1, multipartFile, DigestUtils.md5Hex(Files.newInputStream(file.toPath())), MD5, SHA1)).toJSONString());
+            }
+        } catch (IOException e) {
+            throw new RuntimeException(e);
         }
+
     }
 
     @Test
@@ -82,11 +91,11 @@ public class PartFileTest {
 
     @Test
     public void mergeFile() {
-
+        System.out.println(partFileService.mergeFile(partFileInfoDTO).toJSONString());
     }
 
     @Test
     public void cancelFile() {
-
+        System.out.println(partFileService.cancelFile(partFileInfoDTO).toJSONString());
     }
 }

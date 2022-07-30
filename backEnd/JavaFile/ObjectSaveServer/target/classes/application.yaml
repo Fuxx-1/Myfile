@@ -8,6 +8,6 @@ server:
   port: 8080
 
 fileSave:
-  imgDir: ./
-  bigFileDir: ./bigFile/
-  videoDir: ./video/
+  imgDir: .\
+  bigFileDir: .\bigFile
+  videoDir: .\video

@@ -184,8 +184,10 @@ public class UserServiceImpl implements UserService {
                         put("userid", userid);
                         put("Auth", userMapper.getAuth(userid));
                     }});
+                    User userInf = userMapper.getUserInf(userid);
                     return ReturnUtil.returnObj("创建成功", 0, new HashMap<String, Object>() {{
-                        put("isComplete", userMapper.getUserInf(userid).isComplete());
+                        put("userInfo", userInf);
+                        put("isComplete", userInf.isComplete());
                         put("Token", Token);
                     }});
                 }
@@ -193,7 +195,8 @@ public class UserServiceImpl implements UserService {
                 // 密码登录
                 if (truePwd.equals(password)) {
                     // 密码正确
-                    Boolean isComplete = userMapper.getUserInf(userid).isComplete();
+                    User userInf = userMapper.getUserInf(userid);
+                    Boolean isComplete = userInf.isComplete();
                     userMapper.updateTime(userid);
                     // 信息是否补充完整
                     String Token = JWTUtil.createToken(new HashMap<String, Object>() {{
@@ -201,6 +204,7 @@ public class UserServiceImpl implements UserService {
                         put("Auth", userMapper.getAuth(userid));
                     }});
                     return ReturnUtil.returnObj("登录成功", 0, new HashMap<String, Object>() {{
+                        put("userInfo", userInf);
                         put("isComplete", isComplete);
                         put("Token", Token);
                     }});
@@ -236,38 +240,34 @@ public class UserServiceImpl implements UserService {
     }
 
     /**
-     * 更新密码和新邮箱
+     * 更新密码
      * Code By Fuxx-1@Github
      *
      * @param userid       用户id
      * @param password     密码，第一顺位
      * @param verifyCode   验证码，第二顺位
      * @param new_password 新密码
-     * @param newEmail     新邮箱
      * @return 执行结果
      */
     @Override
-    public JSONObject resetMainInf(String userid, String password, String verifyCode, String new_password, String newEmail) {
+    public JSONObject resetPassword(String userid, String password, String verifyCode, String new_password) {
         try {
             User userInf = userMapper.getUserInf(userid);
             // 查询信息
-            if (newEmail == null || newEmail.length() == 0) {
-                newEmail = userInf.getEmail();
-            }
             if (new_password == null || new_password.length() == 0) {
-                new_password = userInf.getPassword();
+                new_password = userMapper.queryPwd(userid);
             }
             // 补充信息
             if (userMapper.queryPwd(userid).equals(password)) {
                 // 第一顺位，密码验证成功
-                userMapper.updateMainInf(userid, new_password, newEmail);
+                userMapper.updateMainInf(userid, new_password, userInf.getEmail());
                 userMapper.updateTime(userid);
                 return ReturnUtil.returnObj("更新成功", 0, userMapper.getUserInf(userid));
             } else {
                 JSONObject verifyResult = verifyCode(userInf.getEmail(), verifyCode);
                 if (verifyResult.get("code").equals(0) && verifyCode != null && verifyCode.length() != 0) {
                     // 第二顺位，邮箱验证成功
-                    userMapper.updateMainInf(userid, new_password, newEmail);
+                    userMapper.updateMainInf(userid, new_password, userInf.getEmail());
                     userMapper.updateTime(userid);
                     return ReturnUtil.returnObj("更新成功", 0, userMapper.getUserInf(userid));
                 } else if (verifyCode != null && verifyCode.length() != 0) {
@@ -278,7 +278,41 @@ public class UserServiceImpl implements UserService {
                 }
             }
         } catch (Exception e) {
-            Logger.getLogger("c.l.r.s.I.UserServiceImpl.changePassword").warning(e.toString());
+            Logger.getLogger("c.l.r.s.I.UserServiceImpl.resetPassword").warning(e.toString());
+            return ReturnUtil.returnObj("更新失败", -4, null);
+        }
+    }
+
+    /**
+     * 更新新邮箱
+     * Code By Fuxx-1@Github
+     *
+     * @param userid     用户id
+     * @param password   密码
+     * @param verifyCode 新邮箱验证码
+     * @param newEmail   新邮箱
+     * @return 执行结果
+     */
+    @Override
+    public JSONObject resetEmail(String userid, String password, String verifyCode, String newEmail) {
+        try {
+            User userInf = userMapper.getUserInf(userid);
+            // 查询信息
+            if (newEmail == null || newEmail.length() == 0) {
+                newEmail = userInf.getEmail();
+            }
+            // 补充信息
+            JSONObject verifyResult = verifyCode(newEmail, verifyCode);
+            if (userMapper.queryPwd(userid).equals(password) && verifyResult.get("code").equals(0) && verifyCode != null && verifyCode.length() != 0) {
+                // 验证成功
+                userMapper.updateMainInf(userid, userMapper.queryPwd(userid), userInf.getEmail());
+                userMapper.updateTime(userid);
+                return ReturnUtil.returnObj("更新成功", 0, userMapper.getUserInf(userid));
+            } else {
+                return ReturnUtil.returnObj("用户名或密码错误", 4, null);
+            }
+        } catch (Exception e) {
+            Logger.getLogger("c.l.r.s.I.UserServiceImpl.resetEmail").warning(e.toString());
             return ReturnUtil.returnObj("更新失败", -4, null);
         }
     }
@@ -296,6 +330,7 @@ public class UserServiceImpl implements UserService {
         try {
             userMapper.sign(userid, is_sign);
             userMapper.updateTime(userid);
+
             return ReturnUtil.returnObj("签到状态更改成功", 0, userMapper.getUserInf(userid));
         } catch (Exception e) {
             Logger.getLogger("c.l.r.s.I.UserServiceImpl.sign").warning(e.toString());

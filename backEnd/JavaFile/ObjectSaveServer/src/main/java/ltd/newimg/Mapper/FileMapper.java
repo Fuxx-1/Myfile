@@ -1,15 +1,14 @@
 package ltd.newimg.mapper;
 
 import com.alibaba.fastjson.JSONObject;
-
 import ltd.newimg.model.dto.FileSaveDTO;
 import ltd.newimg.util.ReturnUtil;
-
 import org.springframework.stereotype.Component;
 
 import java.io.File;
-import java.io.FileOutputStream;
 import java.io.OutputStream;
+import java.nio.file.Files;
+import java.nio.file.Paths;
 import java.util.logging.Logger;
 
 /**
@@ -38,7 +37,7 @@ public class FileMapper {
             tempFile.mkdirs();
         }
         try {
-            fileStream = new FileOutputStream(tempFile.getPath() + File.pathSeparator + fileSaveDto.getFileName());
+            fileStream = Files.newOutputStream(Paths.get(tempFile.getPath() + File.separator + fileSaveDto.getFileName()));
             // 读取并保存文件
             while ((len = fileSaveDto.getFile().read(bs)) != -1) {
                 fileStream.write(bs, 0, len);

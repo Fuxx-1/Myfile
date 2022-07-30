@@ -52,15 +52,28 @@ public interface UserService {
     JSONObject updataInf(User user);
 
     /**
-     * 更新密码和新邮箱
-     * @param userid 用户id
-     * @param password 密码，第一顺位
-     * @param verifyCode 验证码，第二顺位
+     * 更新密码
+     * Code By Fuxx-1@Github
+     *
+     * @param userid       用户id
+     * @param password     密码，第一顺位
+     * @param verifyCode   验证码，第二顺位
      * @param new_password 新密码
-     * @param newEmail 新邮箱
      * @return 执行结果
      */
-    JSONObject resetMainInf(String userid, String password, String verifyCode, String new_password, String newEmail);
+    public JSONObject resetPassword(String userid, String password, String verifyCode, String new_password);
+
+    /**
+     * 更新新邮箱
+     * Code By Fuxx-1@Github
+     *
+     * @param userid     用户id
+     * @param password   密码
+     * @param verifyCode 新邮箱验证码
+     * @param newEmail   新邮箱
+     * @return 执行结果
+     */
+    public JSONObject resetEmail(String userid, String password, String verifyCode, String newEmail);
 
     /**
      * 签到

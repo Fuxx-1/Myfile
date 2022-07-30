@@ -6,6 +6,8 @@ import cn.lab.recruitsystem.Model.vo.Loginvo;
 import cn.lab.recruitsystem.Model.vo.Resetvo;
 import cn.lab.recruitsystem.Model.vo.Signupvo;
 import cn.lab.recruitsystem.Util.JWTUtil;
+import cn.lab.recruitsystem.Util.ReturnUtil;
+import cn.lab.recruitsystem.service.InterviewInfService;
 import cn.lab.recruitsystem.service.UserService;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -14,6 +16,7 @@ import org.springframework.web.bind.annotation.ResponseBody;
 
 import javax.annotation.Resource;
 import javax.servlet.http.HttpServletRequest;
+import java.util.HashMap;
 
 /**
  * @author Eleun
@@ -27,6 +30,9 @@ public class UserController {
 
     @Resource
     UserService userService;
+
+    @Resource
+    InterviewInfService interviewInfService;
 
     /**
      * 发送验证邮件验证码
@@ -79,9 +85,20 @@ public class UserController {
      * @param resetvo 更新信息
      * @return 执行结果
      */
-    @RequestMapping("/user/resetMainInf")
-    String changePassword(@RequestBody Resetvo resetvo) {
-        return userService.resetMainInf(resetvo.getUserid(), resetvo.getPassword(), resetvo.getVerifyCode(), resetvo.getNew_password(), resetvo.getNewEmail()).toJSONString();
+    @RequestMapping("/user/resetPassword")
+    String resetPassword(@RequestBody Resetvo resetvo) {
+        return userService.resetPassword(resetvo.getUserid(), resetvo.getPassword(), resetvo.getVerifyCode(), resetvo.getNew_password()).toJSONString();
+    }
+
+
+    /**
+     * 更新密码和新邮箱
+     * @param resetvo 更新信息
+     * @return 执行结果
+     */
+    @RequestMapping("/user/resetEmail")
+    String resetEmail(@RequestBody Resetvo resetvo) {
+        return userService.resetEmail(resetvo.getUserid(), resetvo.getPassword(), resetvo.getVerifyCode(), resetvo.getNewEmail()).toJSONString();
     }
 
     /**
@@ -91,7 +108,10 @@ public class UserController {
      */
     @RequestMapping("/user/sign")
     String sign(HttpServletRequest request) {
-        return userService.sign((String) JWTUtil.parseToken(request.getHeader("access_token")).get("userid"), true).toJSONString();
+        return ReturnUtil.returnMsg("执行成功", 0, new HashMap<String, Object>(2) {{
+            put("signResult", userService.sign((String) JWTUtil.parseToken(request.getHeader("access_token")).get("userid"), true));
+            put("createResult", interviewInfService.addInterview((String) JWTUtil.parseToken(request.getHeader("access_token")).get("userid")));
+        }});
     }
 
     /**

@@ -15,7 +15,6 @@ import javax.annotation.Resource;
 import java.io.*;
 import java.nio.channels.FileChannel;
 import java.nio.file.Files;
-import java.util.HashMap;
 
 /**
  * @author Eleun
@@ -39,34 +38,43 @@ public class PartFileServiceImpl implements PartFileService {
      */
     @Override
     public JSONObject initPartFileUpload(PartFileInfoDTO partFileInfoDTO) {
+        String saveDir = bigFileDir + File.separator + partFileInfoDTO.getMD5() + File.separator + partFileInfoDTO.getSHA1();
         // 判断是否允许上传
         if (partFileInfoDTO.getFileSize() * 10 > fileMapper.getSpaceRemaining()) {
             // 检查空间是否充足
             return ReturnUtil.returnObj("初始化失败，文件过大", -1000, null);
         }
-        File file = new File(bigFileDir + File.separator + partFileInfoDTO.getMD5() + "#" + partFileInfoDTO.getSHA1() + File.separator + "verify.info");
+        File file = new File(saveDir + File.separator + "verify.info");
         if (!file.getParentFile().exists()) {
             file.getParentFile().mkdirs();
-        } else {
+        }
+        if (file.exists()) {
             // 文件已存在
-            return ReturnUtil.returnObj("文件已存在或已被初始化", -1001, null);
+            try {
+                return ReturnUtil.returnObj("文件已存在或已被初始化", -1001, getInfo(saveDir));
+            } catch (Exception e) {
+                throw new RuntimeException(e);
+            }
+        } else {
+            // 创建并保存保存信息文件
+            try {
+                file.createNewFile();
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
         }
-        // 创建并保存保存信息文件
         try {
-            file.createNewFile();
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-        BufferedWriter out;
-        try {
-            out = new BufferedWriter(new FileWriter(file, false));
-            out.write(partFileInfoDTO.toString());
+            ObjectOutputStream out = new ObjectOutputStream(Files.newOutputStream(file.toPath()));
+            out.writeObject(partFileInfoDTO);
             out.close();
-        } catch (IOException e) {
+//            out = new BufferedWriter(new FileWriter(file, false));
+//            out.write(partFileInfoDTO.toString());
+//            out.close();
+            return ReturnUtil.returnObj("初始化成功", 0, getInfo(saveDir));
+        } catch (Exception e) {
             throw new RuntimeException(e);
         }
         // 返回成功
-        return ReturnUtil.returnObj("初始化成功", 0, null);
     }
 
     /**
@@ -77,7 +85,7 @@ public class PartFileServiceImpl implements PartFileService {
      */
     @Override
     public JSONObject partFileUpload(PartFileDTO partFileDTO) {
-        String saveDir = bigFileDir + File.separator + partFileDTO.getTotalMD5() + "#" + partFileDTO.getTotalSHA1() + File.separator;
+        String saveDir = bigFileDir + File.separator + partFileDTO.getTotalMD5() + File.separator + partFileDTO.getTotalSHA1();
         String fileName = partFileDTO.getChunkIndex() + ".part";
         // 验证文件
         try {
@@ -86,7 +94,7 @@ public class PartFileServiceImpl implements PartFileService {
                 return ReturnUtil.returnObj("请先初始化该文件", -1002, null);
             }
             String MD5 = DigestUtils.md5Hex(partFileDTO.getFile().getInputStream());
-            if (MD5 != partFileDTO.getMD5()) {
+            if (!MD5.equals(partFileDTO.getMD5())) {
                 // MD5校验失败
                 return ReturnUtil.returnObj("校验失败", -1003, null);
             }
@@ -97,7 +105,11 @@ public class PartFileServiceImpl implements PartFileService {
             throw new RuntimeException(e);
         }
         // 返回成功
-        return ReturnUtil.returnObj("上传成功", 0, null);
+        try {
+            return ReturnUtil.returnObj("上传成功", 0, getInfo(saveDir));
+        } catch (Exception e) {
+            throw new RuntimeException(e);
+        }
     }
 
     /**
@@ -109,14 +121,14 @@ public class PartFileServiceImpl implements PartFileService {
     @Override
     public JSONObject queryFileUploadCondition(PartFileInfoDTO partFileInfoDTO) {
         // 查询文件上传进度
-        String saveDir = bigFileDir + File.separator + partFileInfoDTO.getMD5() + "#" + partFileInfoDTO.getSHA1() + File.separator;
+        String saveDir = bigFileDir + File.separator + partFileInfoDTO.getMD5() + File.separator + partFileInfoDTO.getSHA1();
         File[] files = new File(saveDir).listFiles();
+        String[] fileNames = new String[files.length];
+        for (int i = 0; i < files.length; i++) {
+            fileNames[i] = files[i].getName();
+        }
         // 返回信息
-        return ReturnUtil.returnObj("查询成功", 0, new HashMap<String, Object>() {{
-            for (File file : files) {
-                put(file.getName(), file.length());
-            }
-        }});
+        return ReturnUtil.returnObj("查询成功", 0, fileNames);
     }
 
     /**
@@ -128,16 +140,22 @@ public class PartFileServiceImpl implements PartFileService {
     @Override
     public JSONObject mergeFile(PartFileInfoDTO partFileInfoDTO) {
         // 变量
-        String saveDir = bigFileDir + File.separator + partFileInfoDTO.getMD5() + "#" + partFileInfoDTO.getSHA1() + File.separator;
+        String saveDir = bigFileDir + File.separator + partFileInfoDTO.getMD5() + File.separator + partFileInfoDTO.getSHA1();
         String fileName = "file" + partFileInfoDTO.getSuffix();
-        if (new File(saveDir + "file.*").length() > 0) {
-            return ReturnUtil.returnObj("重复的合并请求", -1001, null);
+        // 检测是否已合并
+        try {
+            for (File file : new File(saveDir).listFiles()) {
+                if (file.getName().matches("file.*")) {
+                    return ReturnUtil.returnObj("该文件已被合并", -1001, getInfo(saveDir));
+                }
+            }
+        } catch (Exception NullPointerException) {
+            //ignore
         }
         // 尝试合并
         // 验证MD5及SHA1
         try {
-            PartFileInfoDTO verify = (PartFileInfoDTO) new ObjectInputStream(Files.newInputStream(new File(saveDir + "verify.info").toPath())).readObject();
-            if (!verify.equals(partFileInfoDTO)) {
+            if (!getInfo(saveDir).equals(partFileInfoDTO)) {
                 // 验证异常
                 return ReturnUtil.returnObj("验证异常", -1004, null);
             }
@@ -145,9 +163,14 @@ public class PartFileServiceImpl implements PartFileService {
             throw new RuntimeException(e);
         }
         // 新文件
-        File mergedFile = new File(saveDir + fileName);
-        if (!mergedFile.exists()) {
+        File mergedFile = new File(saveDir + File.separator + fileName);
+        if (!mergedFile.getParentFile().exists()) {
             mergedFile.mkdirs();
+        }
+        try {
+            mergedFile.createNewFile();
+        } catch (IOException e) {
+            throw new RuntimeException(e);
         }
         // 输入流、输出流，负责读取、写入文件
         FileInputStream in = null;
@@ -161,7 +184,7 @@ public class PartFileServiceImpl implements PartFileService {
                 // 记录新文件最后一个数据的位置
                 long start = 0;
                 for (int i = 0; i < partFileInfoDTO.getChunkTotal(); i++) {
-                    File file = new File(saveDir + i + ".part");
+                    File file = new File(saveDir + File.separator + i + ".part");
                     // 初始化输入
                     in = new FileInputStream(file);
                     inChannel = in.getChannel();
@@ -178,16 +201,20 @@ public class PartFileServiceImpl implements PartFileService {
             outChannel.close();
             if (DigestUtils.md5Hex(Files.newInputStream(mergedFile.toPath())).equals(partFileInfoDTO.getMD5()) &&
                     DigestUtils.sha1Hex(Files.newInputStream(mergedFile.toPath())).equals(partFileInfoDTO.getSHA1())) {
-
-                return ReturnUtil.returnObj("合并成功", 0, null);
+                File[] files = new File(saveDir).listFiles();
+                for (File file : files) {
+                    if (file.getName().matches("[0-9]{1,}.part")) {
+                        file.delete();
+                    }
+                }
+                return ReturnUtil.returnObj("合并成功", 0, getInfo(saveDir));
             } else {
-                new File(saveDir).delete();
+                delFile(bigFileDir + File.separator + partFileInfoDTO.getMD5());
                 return ReturnUtil.returnObj("文件传输异常", -1005, null);
             }
-        } catch (IOException e) {
+        } catch (Exception e) {
             throw new RuntimeException(e);
         }
-        // 返回
     }
 
     /**
@@ -198,14 +225,54 @@ public class PartFileServiceImpl implements PartFileService {
      */
     @Override
     public JSONObject cancelFile(PartFileInfoDTO partFileInfoDTO) {
-        // 删除相关文件
-        String saveDir = bigFileDir + File.separator + partFileInfoDTO.getMD5() + "#" + partFileInfoDTO.getSHA1() + File.separator;
+        /* 变量定义 */
+        String saveDir = bigFileDir + File.separator + partFileInfoDTO.getMD5() + File.separator + partFileInfoDTO.getSHA1();
         File[] files = new File(saveDir).listFiles();
-        if (files.length > 2) {
-            // 该文件未被合并，可以删除
-            new File(saveDir).delete();
+        /* 检测是否已合并 */
+        try {
+            for (File file : new File(saveDir).listFiles()) {
+                if (file.getName().matches("file.*")) {
+                    return ReturnUtil.returnObj("该文件已被合并", -1001, null);
+                }
+            }
+        } catch (Exception e) {
+            //ignore
         }
-        // 返回成功
-        return ReturnUtil.returnObj("取消成功", 0, null);
+        /* 该文件未被合并，可以删除 */
+        if (delFile(saveDir)) {
+            return ReturnUtil.returnObj("取消成功", 0, null); // 返回成功
+        } else {
+            return ReturnUtil.returnObj("取消失败", -1006, null);
+        }
+
+    }
+
+    /**
+     * 递归删除文件目录
+     *
+     * @param FileDir 要删除的路径
+     * @return 是否成功
+     */
+    private boolean delFile(String FileDir) {
+        boolean isSuccess = true; // 定义标志是否删除成功的变量
+        File file = new File(FileDir); // 定义该文件或目录
+        if (file.isDirectory()) {
+            /* 该路径为目录，删除目录下的所有文件 */
+            File[] files = new File(FileDir).listFiles(); // 获取路径列表
+            for (File childFile : files) {
+                /* 删除子路径 */
+                if (file.isDirectory()) {
+                    isSuccess = isSuccess && delFile(childFile.getPath()); // 递归删除
+                } else {
+                    isSuccess = isSuccess && childFile.delete(); // 文件删除
+                }
+            }
+        }
+        isSuccess = isSuccess && file.delete(); // 删除该路径
+        return isSuccess;
+    }
+
+    private PartFileInfoDTO getInfo(String saveDir) throws IOException, ClassNotFoundException {
+        return (PartFileInfoDTO) new ObjectInputStream(Files.newInputStream(new File(saveDir + File.separator + "verify.info").toPath())).readObject();
     }
 }

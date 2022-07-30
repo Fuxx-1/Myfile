@@ -192,11 +192,14 @@ public class InterviewInfServiceImpl implements InterviewInfService {
         StringBuffer ground = new StringBuffer();
         // 排序
         for (FieldVo field : fields) {
-            field.setField(field.getField().replaceAll("[^a-zA-Z]", ""));
+            field.setField(field.getField().replaceAll("[^a-zA-Z_]", ""));
             ground.append("`").append(field.getField()).append("`").append(field.getIsDesc() ? "DESC" : "");
         }
         try {
-            return ReturnUtil.returnObj("查询成功", 0, interviewInfMapper.queryUserInf(similarName, ground.toString(), wish, limit * (page - 1), limit * page));
+            return ReturnUtil.returnObj("查询成功", 0, new HashMap<String, Object>(2) {{
+                put("info", interviewInfMapper.queryUserInf(similarName, ground.toString(), wish, limit * (page - 1), limit * page));
+                put("listSize", interviewInfMapper.queryUserInfTotal(similarName, wish));
+            }});
         } catch (Exception e) {
             Logger.getLogger("c.l.r.s.I.InterviewInfServiceImpl.queryInterviewInf").warning(e.toString());
             return ReturnUtil.returnObj("查询失败", -6, null);

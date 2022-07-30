@@ -107,6 +107,23 @@ public interface InterviewInfMapper {
             "interview.final_ispass, interview.is_send, interview.create_time, interview.update_time " +
             "from `interview` " +
             "left join (select userid, name, wish from `user` group by userid) as namesheet on interview.userid = namesheet.userid " +
-            "where namesheet.name like '%${similarName}%' and (#{wish} is null or wish = #{wish}) order by ${ground} limit #{start}, #{limit}")
-    List<InterviewInf> queryUserInf(String similarName, String ground, Integer wish, Integer start, Integer limit);
+            "where namesheet.name like '%${similarName}%' and (#{wish} is null or namesheet.wish = #{wish}) order by ${ground} limit #{start}, #{limit}")
+    List<InterviewInfVo> queryUserInf(String similarName, String ground, Integer wish, Integer start, Integer limit);
+
+    /**
+     * 查询用户面试状态，用于管理员
+     * @param similarName 相似搜素
+     * @param field1 排序项A-第一优先
+     * @param field2 排序项B-第二优先
+     * @param isDesc 是否降序
+     * @param start 开始
+     * @param limit 结束
+     * @return 返回查询结果
+     */
+    @Select("select " +
+            "count(*) " +
+            "from `interview` " +
+            "left join (select userid, name, wish from `user` group by userid) as namesheet on interview.userid = namesheet.userid " +
+            "where namesheet.name like '%${similarName}%' and (#{wish} is null or namesheet.wish = #{wish})")
+    Integer queryUserInfTotal(String similarName, Integer wish);
 }
