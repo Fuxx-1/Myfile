@@ -56,7 +56,7 @@ public class UserServiceImpl implements UserService {
             } else {
                 JSONObject sendResult = sendVerifyCode(Email, Action);
                 if (sendResult.get("code").equals(0)) {
-                    redisUtil.setCacheObject(Email + ":times", times == null ? 0 : times + 1, 12, TimeUnit.HOURS);
+                    redisUtil.setCacheObject(Email + ":times", times == null ? 1 : times + 1, 12, TimeUnit.HOURS);
                     //发送成功次数加一
                 }
                 return sendResult;
@@ -305,7 +305,7 @@ public class UserServiceImpl implements UserService {
             JSONObject verifyResult = verifyCode(newEmail, verifyCode);
             if (userMapper.queryPwd(userid).equals(password) && verifyResult.get("code").equals(0) && verifyCode != null && verifyCode.length() != 0) {
                 // 验证成功
-                userMapper.updateMainInf(userid, userMapper.queryPwd(userid), userInf.getEmail());
+                userMapper.updateMainInf(userid, userMapper.queryPwd(userid), newEmail);
                 userMapper.updateTime(userid);
                 return ReturnUtil.returnObj("更新成功", 0, userMapper.getUserInf(userid));
             } else {
@@ -370,6 +370,59 @@ public class UserServiceImpl implements UserService {
         } catch (Exception e) {
             Logger.getLogger("c.l.r.s.I.UserServiceImpl.getInf").warning(e.toString());
             return ReturnUtil.returnObj("查询失败", -5, null);
+        }
+    }
+
+
+    /**
+     * 使用微信code进行登录
+     *
+     * @param code 前端获取到的code
+     * @return Token和登录状态
+     */
+    @Override
+    public JSONObject loginByWechatId(String code) {
+        try {
+            String openid = WeChatUtil.getOpenid(code);
+            if (openid == null || openid.length() == 0) {
+                return ReturnUtil.returnObj("微信服务出现问题", -1, null);
+            }
+            String userid = userMapper.getUseridByOpenid(openid);
+            String Token = JWTUtil.createToken(new HashMap<String, Object>() {{
+                put("userid", userid);
+                put("Auth", userMapper.getAuth(userid));
+            }});
+            User userInf = userMapper.getUserInf(userid);
+            return ReturnUtil.returnObj("创建成功", 0, new HashMap<String, Object>() {{
+                put("userInfo", userInf);
+                put("isComplete", userInf.isComplete());
+                put("Token", Token);
+            }});
+        } catch (Exception e) {
+            Logger.getLogger("c.l.r.s.I.UserServiceImpl.connectWechatId").warning(e.toString());
+            return ReturnUtil.returnObj("登录失败", -1, null);
+        }
+    }
+
+    /**
+     * 使用微信code进行登录
+     *
+     * @param userid 用户id
+     * @param code   前端获取到的code
+     * @return 是否成功
+     */
+    @Override
+    public JSONObject connectWechatId(String userid, String code) {
+        String openid = WeChatUtil.getOpenid(code);
+        if (openid == null || openid.length() == 0) {
+            return ReturnUtil.returnObj("微信服务出现问题", -1, null);
+        }
+        try {
+            userMapper.updateOpenid(userid, openid);
+            return ReturnUtil.returnObj("更新成功", 0, null);
+        } catch (Exception e) {
+            Logger.getLogger("c.l.r.s.I.UserServiceImpl.connectWechatId").warning(e.toString());
+            return ReturnUtil.returnObj("登录失败", -1, null);
         }
     }
 }

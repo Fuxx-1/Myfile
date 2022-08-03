@@ -96,4 +96,19 @@ public interface UserService {
      * @return 用户信息
      */
     JSONObject getInf(String userid);
+
+    /**
+     * 使用微信code进行登录
+     * @param code 前端获取到的code
+     * @return Token和登录状态
+     */
+    JSONObject loginByWechatId(String code);
+
+    /**
+     * 使用微信code进行登录
+     * @param userid 用户id
+     * @param code 前端获取到的code
+     * @return 是否成功
+     */
+    JSONObject connectWechatId(String userid, String code);
 }

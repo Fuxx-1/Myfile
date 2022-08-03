@@ -1,13 +1,13 @@
 package com.study.C_ProductCustom;
 
 /**
- * @author Eleun
- * @Description
- * @create 2022-04-22 9:27
  * 线程间的通信问题，生产者和消费者问题！ 等待唤醒和通知唤醒
  * 线程交替执行 A B 操作同一个变量 num = 0
  * A num + 1
  * B num - 1
+ * @author Eleun
+ * @Description
+ * @create 2022-04-22 9:27
  */
 public class synchronizedKeyword {
     public static void main(String[] args) {

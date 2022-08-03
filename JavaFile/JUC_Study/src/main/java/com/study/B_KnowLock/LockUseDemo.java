@@ -4,13 +4,13 @@ import java.util.concurrent.locks.Lock;
 import java.util.concurrent.locks.ReentrantLock;
 
 /**
- * @author Eleun
- * @Description
- * @create 2022-04-21 22:29
  * 真正的多线程开发，公司中的方法，降低耦合性
  * 线程就是一个单独的资源类，没有任何附属的操作
  * 1、属性
  * 2、方法
+ * @author Eleun
+ * @Description
+ * @create 2022-04-21 22:29
  */
 public class LockUseDemo {
     public static void main(String[] args) {

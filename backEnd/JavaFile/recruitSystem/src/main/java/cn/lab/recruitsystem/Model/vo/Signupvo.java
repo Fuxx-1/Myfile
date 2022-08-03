@@ -19,4 +19,5 @@ public class Signupvo implements Serializable {
     private String userid;
     private String VerifyCode;
     private String password;
+    private String code;
 }

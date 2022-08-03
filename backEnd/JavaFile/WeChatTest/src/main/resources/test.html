@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="https://unpkg.com/qrcodejs2@0.0.2/qrcode.min.js"></script>
+</head>
+<body>
+<div id="qrcodeDiv" style="margin: 100px auto; text-align: center; width: 250px"></div>
+<script>
+    new QRCode(document.getElementById("qrcodeDiv"), "https://open.weixin.qq.com/connect/oauth2/authorize?" +
+        "appid=wx233b9458ac8ead40&" +
+        "redirect_uri=https://ali.newimg.ltd/getInfo&" +
+        "response_type=code&" +
+        "scope=snsapi_userinfo" +
+        "#wechat_redirect");
+</script>
+</body>
+</html>

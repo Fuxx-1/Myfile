@@ -1,6 +1,6 @@
 package cn.lab.recruitsystem.mapper;
 
-import cn.lab.recruitsystem.Model.dto.InterviewInf;
+import cn.lab.recruitsystem.Model.dto.InterviewResult;
 import cn.lab.recruitsystem.Model.vo.InterviewInfVo;
 import org.apache.ibatis.annotations.*;
 
@@ -48,6 +48,7 @@ public interface InterviewInfMapper {
     @Update("update `interview` set " +
             "`${times}_interview` = #{interview}, `${times}_attitude` = #{attitude}, `${times}_ability` = #{ability}, " +
             "`${times}_remarks` = #{remarks}, `${times}_ispass` = #{ispass}, `${times}_interviewer` = #{interviewer}, " +
+            "`${times}_interview_time` = now(), " +
             "final_ispass = #{final_ispass} " +
             "where userid = #{userid};")
     Boolean updateinterview(String userid, String times, String interview, Integer attitude, Integer ability,
@@ -80,11 +81,14 @@ public interface InterviewInfMapper {
      * @return 面试信息
      */
     @Select("select " +
-            "first_ispass, first_interviewer, second_ispass, second_interviewer, third_ispass, third_interviewer, " +
+            "userid, " +
+            "first_ispass, first_interviewer, first_interview_time, isnull(first_interview) as first_isCommit,  " +
+            "second_ispass, second_interviewer, second_interview_time, isnull(second_interview) as second_isCommit, " +
+            "third_ispass, third_interviewer, third_interview_time, isnull(third_interview) as third_isCommit, " +
             "final_ispass, is_send, create_time, update_time " +
             "from `interview` " +
             "where userid = #{userid}")
-    InterviewInf getUserInf(String userid);
+    InterviewResult getUserInf(String userid);
 
     /**
      * 查询用户面试状态，用于管理员
@@ -99,11 +103,11 @@ public interface InterviewInfMapper {
     @Select("select " +
             "interview.userid, namesheet.name, namesheet.wish, " +
             "interview.first_interview, interview.first_attitude, interview.first_ability, interview.first_remarks, " +
-            "interview.first_ispass, interview.first_interviewer, " +
+            "interview.first_ispass, interview.first_interviewer, interview.first_interview_time, " +
             "interview.second_interview, interview.second_attitude, interview.second_ability, interview.second_remarks, " +
-            "interview.second_ispass, interview.second_interviewer, " +
+            "interview.second_ispass, interview.second_interviewer, interview.second_interview_time, " +
             "interview.third_interview, interview.third_attitude, interview.third_ability, interview.third_remarks, " +
-            "interview.third_ispass, interview.third_interviewer, " +
+            "interview.third_ispass, interview.third_interviewer, interview.third_interview_time, " +
             "interview.final_ispass, interview.is_send, interview.create_time, interview.update_time " +
             "from `interview` " +
             "left join (select userid, name, wish from `user` group by userid) as namesheet on interview.userid = namesheet.userid " +
@@ -126,4 +130,7 @@ public interface InterviewInfMapper {
             "left join (select userid, name, wish from `user` group by userid) as namesheet on interview.userid = namesheet.userid " +
             "where namesheet.name like '%${similarName}%' and (#{wish} is null or namesheet.wish = #{wish})")
     Integer queryUserInfTotal(String similarName, Integer wish);
+
+
+    
 }

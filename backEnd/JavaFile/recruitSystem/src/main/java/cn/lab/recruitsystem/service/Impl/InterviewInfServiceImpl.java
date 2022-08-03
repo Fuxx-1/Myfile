@@ -1,6 +1,7 @@
 package cn.lab.recruitsystem.service.Impl;
 
 import cn.lab.recruitsystem.Model.dto.InterviewInf;
+import cn.lab.recruitsystem.Model.dto.InterviewResult;
 import cn.lab.recruitsystem.Model.dto.ResultEmail;
 import cn.lab.recruitsystem.Model.dto.User;
 import cn.lab.recruitsystem.Model.vo.FieldVo;
@@ -119,7 +120,7 @@ public class InterviewInfServiceImpl implements InterviewInfService {
         }
         // Integer型 times 转 String型
         try {
-            interviewInfMapper.updateinterview(userid, timeValue, interview, attitude, ability, remarks, ispass, interviewer, final_ispass);
+            interviewInfMapper.updateinterview(userid, timeValue, interview, attitude, ability, remarks, ispass, userMapper.getUserInf(userid).getName(), final_ispass);
             interviewInfMapper.updateTime(userid);
             return ReturnUtil.returnObj("更新成功", 0, null);
         } catch (Exception e) {
@@ -171,7 +172,7 @@ public class InterviewInfServiceImpl implements InterviewInfService {
     @Override
     public JSONObject getInterviewInf(String userid) {
         try {
-            return ReturnUtil.returnObj("查询成功", 0, interviewInfMapper.getUserInf(userid));
+            return ReturnUtil.returnObj("查询成功", 0, interviewInfMapper.getUserInf(userid).hideInterviewer());
         } catch (Exception e) {
             Logger.getLogger("c.l.r.s.I.InterviewInfServiceImpl.getInterviewInf").warning(e.toString());
             return ReturnUtil.returnObj("查询失败", -6, null);

@@ -9,4 +9,11 @@ public class attrTest {
         a = a.replaceAll("[^a-zA-Z]", "");
         System.out.println(a);
     }
+
+    @Test
+    public void Test2() {
+        StringBuffer sb = new StringBuffer("第三方");
+        sb.setCharAt(1, '*');
+        System.out.println(sb.toString());
+    }
 }

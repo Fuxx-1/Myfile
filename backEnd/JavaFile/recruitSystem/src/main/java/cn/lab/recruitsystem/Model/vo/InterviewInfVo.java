@@ -33,6 +33,8 @@ public class InterviewInfVo {
     // 一面是否通过
     private String first_interviewer;
     // 一面面试官
+    private String first_interview_time;
+    // 一面面试官
 
     private String second_interview;
     // 二面评价
@@ -46,6 +48,8 @@ public class InterviewInfVo {
     // 二面是否通过
     private String second_interviewer;
     // 二面面试官
+    private String second_interview_time;
+    // 二面面试官
 
     private String third_interview;
     // 三面评价
@@ -58,6 +62,8 @@ public class InterviewInfVo {
     private Boolean third_ispass;
     // 三面是否通过
     private String third_interviewer;
+    // 三面面试官
+    private String third_interview_time;
     // 三面面试官
 
     private Boolean final_ispass;

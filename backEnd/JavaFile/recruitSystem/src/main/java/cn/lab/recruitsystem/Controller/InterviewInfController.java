@@ -59,7 +59,7 @@ public class InterviewInfController {
      */
     @RequestMapping("/admin/update")
     String updateInterview(HttpServletRequest request, @RequestBody InterviewUpdateVo interviewUpdateVo) {
-        interviewUpdateVo.setInterviewer((String) JWTUtil.parseToken(request.getHeader("access_token")).get("userid"));
+        interviewUpdateVo.setUserid((String) JWTUtil.parseToken(request.getHeader("access_token")).get("userid"));
         return interviewInfService.updateInterview(interviewUpdateVo.getUserid(), interviewUpdateVo.getTimes(),
                 interviewUpdateVo.getInterview(), interviewUpdateVo.getAttitude(), interviewUpdateVo.getAbility(),
                 interviewUpdateVo.getRemarks(), interviewUpdateVo.getIspass(), interviewUpdateVo.getInterviewer(),

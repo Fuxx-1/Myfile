@@ -9,6 +9,7 @@ import cn.lab.recruitsystem.Util.JWTUtil;
 import cn.lab.recruitsystem.Util.ReturnUtil;
 import cn.lab.recruitsystem.service.InterviewInfService;
 import cn.lab.recruitsystem.service.UserService;
+import com.alibaba.fastjson.JSONObject;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -53,7 +54,14 @@ public class UserController {
      */
     @RequestMapping("/user/signup")
     String signup(@RequestBody Signupvo signupvo) {
-        return userService.signup(signupvo.getEmail(), signupvo.getUserid(), signupvo.getVerifyCode(), signupvo.getPassword()).toJSONString();
+        JSONObject object = new JSONObject();
+        String password = signupvo.getPassword();
+        if (password == null || password.length() == 0) {
+            signupvo.setPassword(signupvo.getUserid().substring(1, 7));
+        }
+        object.put("signResult", userService.signup(signupvo.getEmail(), signupvo.getUserid(), signupvo.getVerifyCode(), signupvo.getPassword()).toJSONString());
+        object.put("connectResult", userService.connectWechatId(signupvo.getUserid(), signupvo.getCode()).toJSONString());
+        return object.toJSONString();
     }
 
     /**
@@ -155,4 +163,25 @@ public class UserController {
         return userService.changeAuth(userid).toJSONString();
     }
 
+    /**
+     * 使用微信code进行登录
+     * @param code 前端获取到的code
+     * @return Token和登录状态
+     */
+    @RequestMapping("/user/loginByWechatId")
+    String loginByWechatId(@RequestBody String code) {
+        return userService.loginByWechatId(code).toJSONString();
+    }
+
+    /**
+     * 使用微信code进行登录
+     * @param request 拿取用户id
+     * @param code 前端获取到的code
+     * @return 是否成功
+     */
+    @RequestMapping("/user/connectWechatId")
+    String connectWechatId(HttpServletRequest request, @RequestBody String code) {
+        String userid = (String) JWTUtil.parseToken(request.getHeader("access_token")).get("userid");
+        return userService.connectWechatId(userid, code).toJSONString();
+    }
 }

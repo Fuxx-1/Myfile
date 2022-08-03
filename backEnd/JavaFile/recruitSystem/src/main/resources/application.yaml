@@ -25,3 +25,6 @@ spring:
     url: jdbc:mysql://${MYSQL_ADDRESS:localhost:3307}/recruitsystem?serverTimezone=Asia/Shanghai&useUnicode=true&characterEncoding=utf-8&allowMultiQueries=true
     username: ${MYSQL_USERNAME:root}
     password: ${MYSQL_PASSWORD:12345}
+wechat:
+  appid: ${WECHAT_APP_ID}
+  secret: ${WECHAT_APP_SECRET}

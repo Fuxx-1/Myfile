@@ -120,4 +120,25 @@ public interface UserMapper {
             "update_time = now() " +
             "where userid = #{userid};")
     Boolean updateTime(String userid);
+
+    /**
+     * 更新openid
+     * @param userid 用户id
+     * @param openid 微信openid
+     * @return 是否成功
+     */
+    @Update("update `user` set " +
+            "wechat_id = #{openid} " +
+            "where userid = #{userid};")
+    Boolean updateOpenid(String userid, String openid);
+
+    /**
+     * 通过openid获取userid
+     * @param userid 用户id
+     * @return 是否成功
+     */
+    @Update("select userid " +
+            "from `user` " +
+            "where wechat_id = #{openid};")
+    String getUseridByOpenid(String userid);
 }

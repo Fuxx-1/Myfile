@@ -4,8 +4,6 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
-import java.sql.Date;
-
 /**
  * @author Eleun
  * @Description
@@ -61,8 +59,8 @@ public class InterviewInf {
     // 是否通过
     private Boolean is_send;
     // 邮件是否发送
-    private Date create_time;
+    private String create_time;
     // 创建时间
-    private Date update_time;
+    private String update_time;
     // 更新时间
 }
