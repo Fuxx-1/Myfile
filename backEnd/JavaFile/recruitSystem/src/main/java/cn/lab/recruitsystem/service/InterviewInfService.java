@@ -66,4 +66,10 @@ public interface InterviewInfService {
      * @return 返回查询结果
      */
     JSONObject queryInterviewInf(String similarName, List<FieldVo> fields, Integer wish, Integer page, Integer limit);
+
+    /**
+     * 获取评价的相关信息
+     * @return 评价的相关信息
+     */
+    JSONObject getEvaluate();
 }

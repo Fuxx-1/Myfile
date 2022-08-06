@@ -1,6 +1,7 @@
 package cn.lab.recruitsystem.mapper;
 
 import cn.lab.recruitsystem.Model.dto.InterviewResult;
+import cn.lab.recruitsystem.Model.dto.NotEvaluate;
 import cn.lab.recruitsystem.Model.vo.InterviewInfVo;
 import org.apache.ibatis.annotations.*;
 
@@ -82,9 +83,9 @@ public interface InterviewInfMapper {
      */
     @Select("select " +
             "userid, " +
-            "first_ispass, first_interviewer, first_interview_time, isnull(first_interview) as first_isCommit,  " +
-            "second_ispass, second_interviewer, second_interview_time, isnull(second_interview) as second_isCommit, " +
-            "third_ispass, third_interviewer, third_interview_time, isnull(third_interview) as third_isCommit, " +
+            "first_ispass, first_interviewer, first_interview_time, not isnull(first_interview) as first_isCommit,  " +
+            "second_ispass, second_interviewer, second_interview_time, not isnull(second_interview) as second_isCommit, " +
+            "third_ispass, third_interviewer, third_interview_time, not isnull(third_interview) as third_isCommit, " +
             "final_ispass, is_send, create_time, update_time " +
             "from `interview` " +
             "where userid = #{userid}")
@@ -93,15 +94,13 @@ public interface InterviewInfMapper {
     /**
      * 查询用户面试状态，用于管理员
      * @param similarName 相似搜素
-     * @param field1 排序项A-第一优先
-     * @param field2 排序项B-第二优先
-     * @param isDesc 是否降序
+     * @param ground 排序项
      * @param start 开始
      * @param limit 结束
      * @return 返回查询结果
      */
     @Select("select " +
-            "interview.userid, namesheet.name, namesheet.wish, " +
+            "interview.userid, nameSheet.name, nameSheet.wish, " +
             "interview.first_interview, interview.first_attitude, interview.first_ability, interview.first_remarks, " +
             "interview.first_ispass, interview.first_interviewer, interview.first_interview_time, " +
             "interview.second_interview, interview.second_attitude, interview.second_ability, interview.second_remarks, " +
@@ -110,27 +109,33 @@ public interface InterviewInfMapper {
             "interview.third_ispass, interview.third_interviewer, interview.third_interview_time, " +
             "interview.final_ispass, interview.is_send, interview.create_time, interview.update_time " +
             "from `interview` " +
-            "left join (select userid, name, wish from `user` group by userid) as namesheet on interview.userid = namesheet.userid " +
-            "where namesheet.name like '%${similarName}%' and (#{wish} is null or namesheet.wish = #{wish}) order by ${ground} limit #{start}, #{limit}")
+            "left join (select userid, name, wish from `user` group by userid) as nameSheet on interview.userid = nameSheet.userid " +
+            "where isnull(nameSheet.`name`) or nameSheet.name like '%${similarName}%' " +
+            "and (isnull(#{wish}) is null or nameSheet.wish = #{wish}) " +
+            "order by ${ground} limit #{start}, #{limit}")
     List<InterviewInfVo> queryUserInf(String similarName, String ground, Integer wish, Integer start, Integer limit);
 
     /**
      * 查询用户面试状态，用于管理员
      * @param similarName 相似搜素
-     * @param field1 排序项A-第一优先
-     * @param field2 排序项B-第二优先
-     * @param isDesc 是否降序
-     * @param start 开始
-     * @param limit 结束
      * @return 返回查询结果
      */
     @Select("select " +
             "count(*) " +
             "from `interview` " +
-            "left join (select userid, name, wish from `user` group by userid) as namesheet on interview.userid = namesheet.userid " +
-            "where namesheet.name like '%${similarName}%' and (#{wish} is null or namesheet.wish = #{wish})")
+            "left join (select userid, name, wish from `user` group by userid) as nameSheet on interview.userid = nameSheet.userid " +
+            "where nameSheet.name like '%${similarName}%' and (#{wish} is null or nameSheet.wish = #{wish})")
     Integer queryUserInfTotal(String similarName, Integer wish);
 
-
-    
+    /**
+     * 获取评价的相关信息
+     * @return 评价的相关信息
+     */
+    @Select("select " +
+            "count(*) as notEvaluateNums, nameSheet.wish as wish " +
+            "from interview " +
+            "left join (select userid, name, wish from `user` group by userid) as nameSheet on interview.userid = nameSheet.userid " +
+            "where interview.`${interviewNum}_interview` is null " +
+            "group by nameSheet.wish;")
+    List<NotEvaluate> getEvaluate(String interviewNum);
 }

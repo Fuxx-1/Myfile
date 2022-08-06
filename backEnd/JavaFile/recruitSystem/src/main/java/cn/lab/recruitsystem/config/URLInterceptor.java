@@ -20,7 +20,7 @@ import java.util.logging.Logger;
 @Component
 public class URLInterceptor implements HandlerInterceptor {
 
-    public static final String pathNotNeedAuth = "(/user/user/(sendVerifyEmail|signup|login|resetMainInf)|/|/testToken)";
+    public static final String pathNotNeedAuth = "(/user/user/(sendVerifyEmail|signup|login|resetPassword|loginByWechatId)|/|/testToken)";
     public static final List<AuthDto> config = Arrays.asList(
             new AuthDto("/[a-zA-Z0-9_]{1,}/user[a-zA-Z0-9_/]{0,}", 1),
             new AuthDto("/[a-zA-Z0-9_]{1,}/admin[a-zA-Z0-9_/]{0,}", 2),

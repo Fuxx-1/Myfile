@@ -1,10 +1,17 @@
 package cn.lab.recruitsystem.Model.dto;
 
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.NoArgsConstructor;
+
 /**
  * @author Eleun
  * @Description
  * @create 2022-08-03 16:51
  */
+@Data
+@AllArgsConstructor
+@NoArgsConstructor
 public class InterviewResult {
     private String userid;
     // 用户id
@@ -41,15 +48,23 @@ public class InterviewResult {
 
     public InterviewResult hideInterviewer() {
         StringBuffer sb = null;
-        sb = new StringBuffer(first_interviewer);
-        sb.setCharAt(1, '*');
-        first_interviewer = sb.toString();
-        sb = new StringBuffer(second_interviewer);
-        sb.setCharAt(1, '*');
-        second_interviewer = sb.toString();
-        sb = new StringBuffer(third_interviewer);
-        sb.setCharAt(1, '*');
-        third_interviewer = sb.toString();
+        if (first_interviewer != null && first_interviewer.length() > 0) {
+            sb = new StringBuffer(first_interviewer);
+            sb.setCharAt(1, '*');
+            first_interviewer = sb.toString();
+        }
+        if (second_interviewer != null && second_interviewer.length() > 0) {
+
+            sb = new StringBuffer(second_interviewer);
+            sb.setCharAt(1, '*');
+            second_interviewer = sb.toString();
+        }
+        if (third_interviewer != null && third_interviewer.length() > 0) {
+
+            sb = new StringBuffer(third_interviewer);
+            sb.setCharAt(1, '*');
+            third_interviewer = sb.toString();
+        }
         return this;
     }
 }

@@ -1,5 +1,6 @@
 package ltd.newimg;
 
+import ltd.newimg.util.NanoIdUtil;
 import org.junit.jupiter.api.Test;
 
 import java.io.File;
@@ -27,5 +28,9 @@ public class attrTest {
             System.out.println(e.toString());
         }
         System.out.println("test");
+    }
+    @Test
+    public void test3() {
+        System.out.println(NanoIdUtil.randomNanoId());
     }
 }

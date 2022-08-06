@@ -1,7 +1,7 @@
 package cn.lab.recruitsystem.service.Impl;
 
-import cn.lab.recruitsystem.Model.dto.InterviewInf;
 import cn.lab.recruitsystem.Model.dto.InterviewResult;
+import cn.lab.recruitsystem.Model.dto.NotEvaluate;
 import cn.lab.recruitsystem.Model.dto.ResultEmail;
 import cn.lab.recruitsystem.Model.dto.User;
 import cn.lab.recruitsystem.Model.vo.FieldVo;
@@ -20,6 +20,7 @@ import javax.annotation.Resource;
 import java.util.HashMap;
 import java.util.List;
 import java.util.logging.Logger;
+import java.util.stream.Collectors;
 
 /**
  * @author Eleun
@@ -120,7 +121,7 @@ public class InterviewInfServiceImpl implements InterviewInfService {
         }
         // Integer型 times 转 String型
         try {
-            interviewInfMapper.updateinterview(userid, timeValue, interview, attitude, ability, remarks, ispass, userMapper.getUserInf(userid).getName(), final_ispass);
+            interviewInfMapper.updateinterview(userid, timeValue, interview, attitude, ability, remarks, ispass, userMapper.getUserInf(interviewer).getName(), final_ispass);
             interviewInfMapper.updateTime(userid);
             return ReturnUtil.returnObj("更新成功", 0, null);
         } catch (Exception e) {
@@ -138,7 +139,7 @@ public class InterviewInfServiceImpl implements InterviewInfService {
     @Override
     public JSONObject sendEmail(String userid, String contact) {
         try {
-            InterviewInf interviewInf = interviewInfMapper.getUserInf(userid);
+            InterviewResult interviewInf = interviewInfMapper.getUserInf(userid);
             String chosenEmail = interviewInf.getFinal_ispass() ? "success.html" : "fail.html";
             // 获取面试结果
             if (interviewInf.getIs_send() != null) {
@@ -172,6 +173,8 @@ public class InterviewInfServiceImpl implements InterviewInfService {
     @Override
     public JSONObject getInterviewInf(String userid) {
         try {
+            System.out.println(userid);
+            System.out.println(interviewInfMapper.getUserInf(userid).hideInterviewer());
             return ReturnUtil.returnObj("查询成功", 0, interviewInfMapper.getUserInf(userid).hideInterviewer());
         } catch (Exception e) {
             Logger.getLogger("c.l.r.s.I.InterviewInfServiceImpl.getInterviewInf").warning(e.toString());
@@ -194,7 +197,7 @@ public class InterviewInfServiceImpl implements InterviewInfService {
         // 排序
         for (FieldVo field : fields) {
             field.setField(field.getField().replaceAll("[^a-zA-Z_]", ""));
-            ground.append("`").append(field.getField()).append("`").append(field.getIsDesc() ? "DESC" : "");
+            ground.append("`").append(field.getField()).append("`").append(field.getIsDesc() ? " DESC" : " ");
         }
         try {
             return ReturnUtil.returnObj("查询成功", 0, new HashMap<String, Object>(2) {{
@@ -203,6 +206,24 @@ public class InterviewInfServiceImpl implements InterviewInfService {
             }});
         } catch (Exception e) {
             Logger.getLogger("c.l.r.s.I.InterviewInfServiceImpl.queryInterviewInf").warning(e.toString());
+            return ReturnUtil.returnObj("查询失败", -6, null);
+        }
+    }
+
+    /**
+     * 获取评价的相关信息
+     * @return 评价的相关信息
+     */
+    @Override
+    public JSONObject getEvaluate() {
+        try {
+            return ReturnUtil.returnObj("查询成功", 0, new HashMap<String, Object>() {{
+                put("firstStatus", interviewInfMapper.getEvaluate("first").stream().collect(Collectors.toMap(NotEvaluate::getWished, NotEvaluate::getNotEvaluateNums)));
+                put("secondStatus", interviewInfMapper.getEvaluate("second").stream().collect(Collectors.toMap(NotEvaluate::getWished, NotEvaluate::getNotEvaluateNums)));
+                put("thirdStatus", interviewInfMapper.getEvaluate("third").stream().collect(Collectors.toMap(NotEvaluate::getWished, NotEvaluate::getNotEvaluateNums)));
+            }});
+        } catch (Exception e) {
+            Logger.getLogger("c.l.r.s.I.InterviewInfServiceImpl.getEvaluate").warning(e.toString());
             return ReturnUtil.returnObj("查询失败", -6, null);
         }
     }

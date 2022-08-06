@@ -13,7 +13,11 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 @NoArgsConstructor
 public class NotEvaluate {
-    private Integer notEvaluate; // 未评价人数
-    private Integer group; // 组别
+    private Integer notEvaluateNums; // 未评价人数
+    private Integer wish; // 组别
     private Integer interviewNum; // 第几面
+
+    public String getWished() {
+        return this.wish.toString();
+    }
 }

@@ -12,8 +12,13 @@ public class attrTest {
 
     @Test
     public void Test2() {
-        StringBuffer sb = new StringBuffer("第三方");
-        sb.setCharAt(1, '*');
-        System.out.println(sb.toString());
+        System.out.println("12345678".substring(2, 8));
     }
+
+    @Test
+    public void test3(){
+        System.out.println(System.getenv("WECHAT_APP_SECRET"));
+    }
+
+
 }

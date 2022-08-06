@@ -418,6 +418,9 @@ public class UserServiceImpl implements UserService {
             return ReturnUtil.returnObj("微信服务出现问题", -1, null);
         }
         try {
+            if (userMapper.getUseridByOpenid(openid) != null) {
+                return ReturnUtil.returnObj("该微信已被绑定", -1, null);
+            }
             userMapper.updateOpenid(userid, openid);
             return ReturnUtil.returnObj("更新成功", 0, null);
         } catch (Exception e) {

@@ -14,7 +14,6 @@ public interface UserMapper {
     /**
      * 创建用户
      * @param userid 用户id
-     * @param name 用户姓名
      * @return 是否添加成功
      */
     @Insert("insert into `user` (userid, create_time) " +
@@ -137,7 +136,7 @@ public interface UserMapper {
      * @param userid 用户id
      * @return 是否成功
      */
-    @Update("select userid " +
+    @Select("select userid " +
             "from `user` " +
             "where wechat_id = #{openid};")
     String getUseridByOpenid(String userid);

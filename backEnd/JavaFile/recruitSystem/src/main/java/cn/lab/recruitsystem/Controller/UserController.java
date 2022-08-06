@@ -1,10 +1,7 @@
 package cn.lab.recruitsystem.Controller;
 
 import cn.lab.recruitsystem.Model.dto.User;
-import cn.lab.recruitsystem.Model.vo.EmailInfvo;
-import cn.lab.recruitsystem.Model.vo.Loginvo;
-import cn.lab.recruitsystem.Model.vo.Resetvo;
-import cn.lab.recruitsystem.Model.vo.Signupvo;
+import cn.lab.recruitsystem.Model.vo.*;
 import cn.lab.recruitsystem.Util.JWTUtil;
 import cn.lab.recruitsystem.Util.ReturnUtil;
 import cn.lab.recruitsystem.service.InterviewInfService;
@@ -53,14 +50,16 @@ public class UserController {
      * @return Json
      */
     @RequestMapping("/user/signup")
-    String signup(@RequestBody Signupvo signupvo) {
+    String signup(@RequestBody(required = false) Signupvo signupvo) {
         JSONObject object = new JSONObject();
         String password = signupvo.getPassword();
         if (password == null || password.length() == 0) {
-            signupvo.setPassword(signupvo.getUserid().substring(1, 7));
+            signupvo.setPassword(signupvo.getUserid().substring(2, 8));
         }
-        object.put("signResult", userService.signup(signupvo.getEmail(), signupvo.getUserid(), signupvo.getVerifyCode(), signupvo.getPassword()).toJSONString());
-        object.put("connectResult", userService.connectWechatId(signupvo.getUserid(), signupvo.getCode()).toJSONString());
+        object.put("signResult", userService.signup(signupvo.getEmail(), signupvo.getUserid(), signupvo.getVerifyCode(), signupvo.getPassword()));
+        if (signupvo.getCode() != null && signupvo.getCode().length() > 0) {
+            object.put("connectResult", userService.connectWechatId(signupvo.getUserid(), signupvo.getCode()));
+        }
         return object.toJSONString();
     }
 
@@ -169,8 +168,8 @@ public class UserController {
      * @return Token和登录状态
      */
     @RequestMapping("/user/loginByWechatId")
-    String loginByWechatId(@RequestBody String code) {
-        return userService.loginByWechatId(code).toJSONString();
+    String loginByWechatId(@RequestBody CodeVo code) {
+        return userService.loginByWechatId(code.getCode()).toJSONString();
     }
 
     /**
