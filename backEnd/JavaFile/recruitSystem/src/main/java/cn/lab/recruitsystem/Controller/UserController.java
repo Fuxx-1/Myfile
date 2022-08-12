@@ -179,8 +179,8 @@ public class UserController {
      * @return 是否成功
      */
     @RequestMapping("/user/connectWechatId")
-    String connectWechatId(HttpServletRequest request, @RequestBody String code) {
+    String connectWechatId(HttpServletRequest request, @RequestBody CodeVo code) {
         String userid = (String) JWTUtil.parseToken(request.getHeader("access_token")).get("userid");
-        return userService.connectWechatId(userid, code).toJSONString();
+        return userService.connectWechatId(userid, code.getCode()).toJSONString();
     }
 }

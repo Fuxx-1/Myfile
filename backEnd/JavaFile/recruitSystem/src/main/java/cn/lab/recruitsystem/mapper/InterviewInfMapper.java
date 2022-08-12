@@ -111,7 +111,7 @@ public interface InterviewInfMapper {
             "from `interview` " +
             "left join (select userid, name, wish from `user` group by userid) as nameSheet on interview.userid = nameSheet.userid " +
             "where isnull(nameSheet.`name`) or nameSheet.name like '%${similarName}%' " +
-            "and (isnull(#{wish}) is null or nameSheet.wish = #{wish}) " +
+            "and (isnull(#{wish}) or nameSheet.wish = #{wish}) " +
             "order by ${ground} limit #{start}, #{limit}")
     List<InterviewInfVo> queryUserInf(String similarName, String ground, Integer wish, Integer start, Integer limit);
 
@@ -124,7 +124,8 @@ public interface InterviewInfMapper {
             "count(*) " +
             "from `interview` " +
             "left join (select userid, name, wish from `user` group by userid) as nameSheet on interview.userid = nameSheet.userid " +
-            "where nameSheet.name like '%${similarName}%' and (#{wish} is null or nameSheet.wish = #{wish})")
+            "where isnull(nameSheet.`name`) or nameSheet.name like '%${similarName}%' " +
+            "and (isnull(#{wish}) or nameSheet.wish = #{wish});")
     Integer queryUserInfTotal(String similarName, Integer wish);
 
     /**
