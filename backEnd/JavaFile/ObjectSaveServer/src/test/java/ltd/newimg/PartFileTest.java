@@ -1,7 +1,7 @@
 package ltd.newimg;
 
-import ltd.newimg.model.dto.PartFileDTO;
-import ltd.newimg.model.dto.PartFileInfoDTO;
+import ltd.newimg.model.DTO.PartFileDTO;
+import ltd.newimg.model.DTO.PartFileInfoDTO;
 import ltd.newimg.service.PartFileService;
 import org.apache.commons.codec.digest.DigestUtils;
 import org.junit.jupiter.api.Test;

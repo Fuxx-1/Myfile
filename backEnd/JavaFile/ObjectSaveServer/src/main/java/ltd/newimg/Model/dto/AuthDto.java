@@ -1,4 +1,4 @@
-package ltd.newimg.model.dto;
+package ltd.newimg.model.DTO;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;

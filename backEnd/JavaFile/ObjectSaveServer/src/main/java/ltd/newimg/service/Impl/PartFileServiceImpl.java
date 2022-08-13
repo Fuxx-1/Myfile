@@ -2,9 +2,9 @@ package ltd.newimg.service.impl;
 
 import com.alibaba.fastjson.JSONObject;
 import ltd.newimg.mapper.FileMapper;
-import ltd.newimg.model.dto.FileSaveDTO;
-import ltd.newimg.model.dto.PartFileDTO;
-import ltd.newimg.model.dto.PartFileInfoDTO;
+import ltd.newimg.model.DTO.FileSaveDTO;
+import ltd.newimg.model.DTO.PartFileDTO;
+import ltd.newimg.model.DTO.PartFileInfoDTO;
 import ltd.newimg.service.PartFileService;
 import ltd.newimg.util.ReturnUtil;
 import org.apache.commons.codec.digest.DigestUtils;

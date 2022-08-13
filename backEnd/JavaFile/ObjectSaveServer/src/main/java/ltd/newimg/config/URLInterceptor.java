@@ -2,7 +2,7 @@ package ltd.newimg.config;
 
 import com.alibaba.fastjson.JSON;
 
-import ltd.newimg.model.dto.AuthDTO;
+import ltd.newimg.model.DTO.AuthDTO;
 import ltd.newimg.util.HttpRequestUtil;
 import ltd.newimg.util.JWTUtil;
 import ltd.newimg.util.ReturnUtil;

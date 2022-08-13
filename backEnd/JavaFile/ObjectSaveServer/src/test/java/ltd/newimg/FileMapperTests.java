@@ -1,7 +1,7 @@
 package ltd.newimg;
 
 import ltd.newimg.mapper.FileMapper;
-import ltd.newimg.model.dto.FileSaveDTO;
+import ltd.newimg.model.DTO.FileSaveDTO;
 import ltd.newimg.util.NanoIdUtil;
 
 import org.junit.jupiter.api.Test;

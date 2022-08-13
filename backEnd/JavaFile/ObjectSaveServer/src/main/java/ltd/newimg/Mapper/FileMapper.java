@@ -1,7 +1,7 @@
 package ltd.newimg.mapper;
 
 import com.alibaba.fastjson.JSONObject;
-import ltd.newimg.model.dto.FileSaveDTO;
+import ltd.newimg.model.DTO.FileSaveDTO;
 import ltd.newimg.util.ReturnUtil;
 import org.springframework.stereotype.Component;
 

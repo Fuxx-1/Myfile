@@ -2,7 +2,7 @@ package ltd.newimg.service.impl;
 
 import com.alibaba.fastjson.JSONObject;
 import ltd.newimg.mapper.FileMapper;
-import ltd.newimg.model.dto.FileSaveDTO;
+import ltd.newimg.model.DTO.FileSaveDTO;
 import ltd.newimg.service.ObjectSaveService;
 import ltd.newimg.util.ReturnUtil;
 import ltd.newimg.util.TimeUtil;
