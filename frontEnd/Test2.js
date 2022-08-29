@@ -170,7 +170,8 @@ function enterDailyPage() {
         while (className("android.widget.ProgressBar").find().length > 0) {
             sleep(200);
         }
-        My_SLEEP(5);
+        My_SLEEP(7);
+        click('允许');
         if (text("健康打卡").find().length > 0) {
             break;
         }
@@ -278,7 +279,7 @@ function signIn() {
         }
         sleep(1500);
         // 输出打卡完毕提示
-        execOver(myVariable.autoSubmit === "是");
+        execOver(false);
         //结束运行
     }
 }

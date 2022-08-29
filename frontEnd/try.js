@@ -1,1 +1,1 @@
-desc("更多").findOnce().click();
+click('允许');

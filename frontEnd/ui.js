@@ -157,28 +157,25 @@ ui.layout(
                             <text textSize="15sp" textStyle="bold" gravity="left" padding="10">
                                 2、任何单位或个人认为通过本产品提供的软件可能涉嫌侵犯其合法权益，应该及时向作者发邮件反馈，并提供身份证明、权属证明及详细侵权情况证明，作者在收到文件后，将会尽快移除被控侵权软件。
                             </text>
-                            <text textSize="15sp" textStyle="bold" gravity="left" padding="5">
+                            <text textSize="15sp" textStyle="bold" gravity="left" padding="10">
                                 3、在您阅读本声明后若不同意此声明中的任何条款，或对本声明存在质疑，请立刻停止使用并卸载本软件。若您已经开始或正在使用本软件，则表示您已阅读并同意本声明的所有条款。
                             </text>
                             <text textSize="19sp" textStyle="bold" margin="0 10 10 10" gravity="left" padding="5">
                                 免责声明
                             </text>
-                            <text textSize="15sp" gravity="left" padding="5">
+                            <text textSize="15sp" gravity="left" padding="10">
                                 1、使用软件造成的任何后果均由用户自行承担。
                             </text>
-                            <text textSize="15sp" gravity="left" padding="5">
+                            <text textSize="15sp" gravity="left" padding="10">
                                 2、本软件完全免费，仅供学习参考，请勿在任何环境使用，不得用于任何商业或任何非法用途。
                             </text>
-                            <text textSize="15sp" gravity="left" padding="5">
-                                3、您必须在下载后24个小时内，停止使用并彻底卸载本软件，否则，一切后果由用户自行承担。
-                            </text>
-                            <text textSize="15sp" gravity="left" padding="5">
-                                4、使用软件造成的任何后果均由用户自行承担。
+                            <text textSize="15sp" gravity="left" padding="10">
+                                3、您必须在下载后24个小时内，停止使用并彻底卸载本软件，否则，一切后果将由用户自行承担。
                             </text>
                             <text textSize="19sp" textStyle="bold" margin="0 10 10 10" gravity="left" padding="5">
                                 隐私保护声明
                             </text>
-                            <text textSize="15sp" gravity="left" padding="5">
+                            <text textSize="15sp" gravity="left" padding="10">
                                 1、您所填写的所有信息均在本地保存，仅在本地使用，不会以任何形式上传云端。
                             </text>
                         </vertical>
@@ -237,7 +234,7 @@ ui.layout(
                                 </radiogroup>
                                 <horizontal>
                                     <text textSize="15sp" digits="1234567890.">，且体温为：</text>
-                                    <input id="tamperature" textSize="15sp" hint="体温" text="36.5" />
+                                    <input id="tamperature" width="100sp" gravity="center" textSize="15sp" hint="体温" text="36.5" />
                                 </horizontal>
                             </horizontal>
                             <text textSize="15sp" gravity="left" padding="5 10 5 5">4、关于打卡提交（建议先手动几次，再自动）【必填】</text>
@@ -271,6 +268,7 @@ ui.layout(
 
 //创建选项菜单(右上角)
 ui.emitter.on("create_options_menu", menu=>{
+    menu.add("开始等待");
     menu.add("日志");
     menu.add("设置");
     menu.add("退出");
@@ -278,6 +276,9 @@ ui.emitter.on("create_options_menu", menu=>{
 //监听选项菜单点击
 ui.emitter.on("options_item_selected", (e, item)=>{
     switch(item.getTitle()){
+        case "开始等待":
+            openSignThread();
+            break;
         case "日志":
             app.startActivity("console");
             break;
@@ -398,7 +399,7 @@ ui.emitter.on("resume", function() {
 });
 
 ui.teach.on("click", function() {
-    app.openUrl("http://fuxx-1.github.io/2022/06/15/%E6%88%91%E5%9C%A8%E6%A0%A1%E5%9B%AD%E6%AF%8F%E6%97%A5%E6%89%93%E5%8D%A1/");
+    app.openUrl("https://ali.newimg.ltd/Uadgb_J5m9g30JDMbcJqLJ");
 });
 
 ui.autoSwitch.on("check", function(checked) {
