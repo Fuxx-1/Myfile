@@ -11,6 +11,38 @@ if (!storage.contains("agreement")) {
 // ============================== 功能函数 ==============================
 
 /**
+ * 发送通知
+ * @param {Integer} notifyId 通知id
+ * @param {String} title 标题
+ * @param {String} text 通知文本
+ * @param {boolean} onGoing 是否能侧滑取消
+ */
+ function notify(notifyId, title, text, onGoing) {
+    // var intent = Intent(this, MaterialButtonActivity::class.java);
+    // var pendingIntent = PendingIntent.getActivity(this, 0, intent, PendingIntent.FLAG_IMMUTABLE)
+    var manager = context.getSystemService(android.app.Service.NOTIFICATION_SERVICE);
+    var notification;
+    var channel = new android.app.NotificationChannel("CaptureForegroundService.foreground", "cn.xupt.sign", android.app.NotificationManager.IMPORTANCE_HIGH);
+    channel.enableLights(true);
+    channel.setLightColor(0xff0000);
+    channel.setShowBadge(true);
+    manager.createNotificationChannel(channel);
+    notification = new android.app.Notification.Builder(context, "CaptureForegroundService.foreground")
+        .setContentTitle(title)
+        .setContentText(text)
+        .setWhen(new Date().getTime())
+        .setSmallIcon(android.R.drawable.ic_delete)
+        .setTicker("这是状态栏显示的内容")
+        .setOngoing(!onGoing)
+        .setPriority(android.app.NotificationManager.IMPORTANCE_HIGH)
+        // .setPriority(NotificationCompat.PRIORITY_DEFAULT)
+        .setAutoCancel(true)
+        // .setContentIntent(pendingIntent)
+        .build();
+    manager.notify(notifyId % 2000000000, notification);
+}
+
+/**
  * 确定
  */
  function confirm() {
@@ -28,7 +60,6 @@ if (!storage.contains("agreement")) {
     toastLog("[Setting]Save Over!");
     console.log("现设置：\n" + JSON.stringify(getVariable(storage)));
     openSignThread();
-    toastLog("[Setting]Restart Over!");
     setView(getVariable(storage));
 }
 
@@ -74,10 +105,28 @@ function getVariable(storage) {
 }
 
 /**
+ * 停止除当前线程外的所有线程，并启动签到线程
+ */
+function openSignThread() {
+    // 停止除自己外的所有线程
+    engines.all().map((ScriptEngine) => {
+        if (engines.myEngine().toString() != ScriptEngine.toString()) {
+            ScriptEngine.forceStop();
+        }
+    });
+    // 启动签到线程
+    var sign = threads.start(function () {
+        //在新线程执行的代码
+        engines.execScriptFile("./timer.js");
+    });
+    toastLog("[Setting]Restart Over!");
+}
+
+/**
  * 在视图中设置变量现在的状态
  * @param {Object} Variable 变量
  */
-function setView(Variable) {
+ function setView(Variable) {
     if (Variable.agreement === "是") {
         ui.agreement.checked = true;
     } else {
@@ -107,23 +156,7 @@ function setView(Variable) {
     } else {
         ui.not_autoSubmit.checked = true;
     }
-}
-
-/**
- * 停止除当前线程外的所有线程，并启动签到线程
- */
-function openSignThread() {
-    // 停止除自己外的所有线程
-    engines.all().map((ScriptEngine) => {
-        if (engines.myEngine().toString() != ScriptEngine.toString()) {
-            ScriptEngine.forceStop();
-        }
-    });
-    // 启动签到线程
-    var sign = threads.start(function () {
-        //在新线程执行的代码
-        engines.execScriptFile("./timer.js");
-    });
+    openSignThread();
 }
 
 // ============================== 主函数 ==============================
@@ -331,8 +364,7 @@ ui.menu.on("item_click", item => {
             break;        
         case "尝试打卡一次（不计入）":
             var sign = threads.start(function () {
-                // 在新线程执行的代码
-                // 启动签到线程
+                // 在新线程执行的代码，并启动签到线程
                 engines.execScriptFile("./sign.js");
             });
             break;
@@ -374,7 +406,6 @@ ui.reset_fir.on("click", function() {
     toastLog("[Setting]Reset Over!");
     console.log("现设置：\n" + JSON.stringify(getVariable(storage)));
     openSignThread();
-    toastLog("[Setting]Restart Over!");
     setView(getVariable(storage));
 });
 
@@ -388,7 +419,6 @@ ui.reset_sec.on("click", function() {
     toastLog("[Setting]Reset Over!");
     console.log("现设置：\n" + JSON.stringify(getVariable(storage)));
     openSignThread();
-    toastLog("[Setting]Restart Over!");
     setView(getVariable(storage));
 });
 

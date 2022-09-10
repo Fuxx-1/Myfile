@@ -13,6 +13,7 @@ const deviceWidth = device.width,
 
 function main() {
     try {
+        storage.put("signState", "F");
         unlock(); // 解锁屏幕,自动判断是否需要
         signIn(); // 签到
     } catch (error) {
@@ -29,6 +30,37 @@ function main() {
 function My_SLEEP(n) {
     toastLog("等待" + n + "秒");
     sleep(n * 1000);
+}
+/**
+ * 发送通知
+ * @param {Integer} notifyId 通知id
+ * @param {String} title 标题
+ * @param {String} text 通知文本
+ * @param {boolean} onGoing 是否能侧滑取消
+ */
+function notify(notifyId, title, text, onGoing) {
+    // var intent = Intent(this, MaterialButtonActivity::class.java);
+    // var pendingIntent = PendingIntent.getActivity(this, 0, intent, PendingIntent.FLAG_IMMUTABLE)
+    var manager = context.getSystemService(android.app.Service.NOTIFICATION_SERVICE);
+    var notification;
+    var channel = new android.app.NotificationChannel("CaptureForegroundService.foreground", "cn.xupt.sign", android.app.NotificationManager.IMPORTANCE_HIGH);
+    channel.enableLights(true);
+    channel.setLightColor(0xff0000);
+    channel.setShowBadge(true);
+    manager.createNotificationChannel(channel);
+    notification = new android.app.Notification.Builder(context, "CaptureForegroundService.foreground")
+        .setContentTitle(title)
+        .setContentText(text)
+        .setWhen(new Date().getTime())
+        .setSmallIcon(android.R.drawable.ic_delete)
+        .setTicker("这是状态栏显示的内容")
+        .setOngoing(!onGoing)
+        .setPriority(android.app.NotificationManager.IMPORTANCE_HIGH)
+        // .setPriority(NotificationCompat.PRIORITY_DEFAULT)
+        .setAutoCancel(true)
+        // .setContentIntent(pendingIntent)
+        .build();
+    manager.notify(notifyId % 2000000000, notification);
 }
 
 /**
@@ -254,6 +286,8 @@ function signIn() {
     if (text("已打卡").find().length > 0) {
         toastLog("今日已打卡");
         sleep(1500);
+        storage.put("signState", "T");
+        notify(1, "打卡结果", "状态待更新 · 今日打卡成功", true);
         execOver(true);
     } else {
         fixForm();
@@ -266,6 +300,11 @@ function signIn() {
                 if (myVariable.autoSubmit === "是") {
                     ClickOvertime('提交', 3);
                     ClickOvertime('确定', 3);
+                    storage.put("signState", "T");
+                    notify(1, "打卡结果", "状态待更新 · 今日打卡成功", true);
+                } else {
+                    storage.put("signState", "F");
+                    notify(1, "打卡结果", "状态待更新 · 今日打卡失败", true);
                 }
                 break;
             }
@@ -273,7 +312,10 @@ function signIn() {
         }
         sleep(1000);
         if (text("已打卡").find().length > 0) {
+            storage.put("signState", "T");
+            notify(1, "打卡结果", "状态待更新 · 今日打卡成功", true);
             toastLog("打卡成功");
+            execOver(true);
         } else {
             toastLog("打卡失败");
         }

@@ -10,6 +10,7 @@ const deviceWidth = device.width,
 
 // ============================== 主函数 ==============================
 function main() {
+    notify(1, "打卡结果", storage.get("signState") === "T" ? "等待中 · 今日打卡成功" : "等待中 · 今日打卡失败", true);
     // 定时执行脚本
     while (true) {
         threads.shutDownAll();
@@ -23,6 +24,7 @@ function main() {
             });
             sign.join();
             storage.put("signDate", new Date().getDay());
+            notify(1, "打卡结果", storage.get("signState") === "T" ? "等待中 · 今日打卡成功" : "等待中 · 今日打卡失败", true);
             var sleepTime = 3600000 * 20;
             console.log("[Sleep*20]" + sleepTime / 60000);
             sleep(sleepTime);
@@ -41,6 +43,38 @@ function main() {
 }
 
 // ============================== 功能函数 ==============================
+
+/**
+ * 发送通知
+ * @param {Integer} notifyId 通知id
+ * @param {String} title 标题
+ * @param {String} text 通知文本
+ * @param {boolean} onGoing 是否能侧滑取消
+ */
+ function notify(notifyId, title, text, onGoing) {
+    // var intent = Intent(this, MaterialButtonActivity::class.java);
+    // var pendingIntent = PendingIntent.getActivity(this, 0, intent, PendingIntent.FLAG_IMMUTABLE)
+    var manager = context.getSystemService(android.app.Service.NOTIFICATION_SERVICE);
+    var notification;
+    var channel = new android.app.NotificationChannel("CaptureForegroundService.foreground", "cn.xupt.sign", android.app.NotificationManager.IMPORTANCE_HIGH);
+    channel.enableLights(true);
+    channel.setLightColor(0xff0000);
+    channel.setShowBadge(true);
+    manager.createNotificationChannel(channel);
+    notification = new android.app.Notification.Builder(context, "CaptureForegroundService.foreground")
+        .setContentTitle(title)
+        .setContentText(text)
+        .setWhen(new Date().getTime())
+        .setSmallIcon(android.R.drawable.ic_delete)
+        .setTicker("这是状态栏显示的内容")
+        .setOngoing(!onGoing)
+        .setPriority(android.app.NotificationManager.IMPORTANCE_HIGH)
+        // .setPriority(NotificationCompat.PRIORITY_DEFAULT)
+        .setAutoCancel(true)
+        // .setContentIntent(pendingIntent)
+        .build();
+    manager.notify(notifyId % 2000000000, notification);
+}
 
 /**
  * 设置变量
