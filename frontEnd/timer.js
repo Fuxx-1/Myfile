@@ -10,7 +10,11 @@ const deviceWidth = device.width,
 
 // ============================== 主函数 ==============================
 function main() {
-    notify(1, "打卡结果", storage.get("signState") === "T" ? "等待中 · 今日打卡成功" : "等待中 · 今日打卡失败", true);
+    if (!(storage.get("signDate") == new Date().getDay())) {
+        notify(1, "打卡结果", "等待中 · 今日未执行，请手动执行", true);
+    } else {
+        notify(1, "打卡结果", storage.get("signState") === "T" ? "等待中 · 今日打卡成功" : "等待中 · 今日打卡失败", true);
+    }
     // 定时执行脚本
     while (true) {
         threads.shutDownAll();
@@ -51,7 +55,7 @@ function main() {
  * @param {String} text 通知文本
  * @param {boolean} onGoing 是否能侧滑取消
  */
- function notify(notifyId, title, text, onGoing) {
+function notify(notifyId, title, text, onGoing) {
     // var intent = Intent(this, MaterialButtonActivity::class.java);
     // var pendingIntent = PendingIntent.getActivity(this, 0, intent, PendingIntent.FLAG_IMMUTABLE)
     var manager = context.getSystemService(android.app.Service.NOTIFICATION_SERVICE);
@@ -88,7 +92,7 @@ function main() {
  * @param {String} tamperature 体温
  * @param {String} autoSubmit 自动提交
  */
- function setVariable(storage, agreement, pwd, signTime, healthyState, isQuarantine, needFix, tamperature, autoSubmit) {
+function setVariable(storage, agreement, pwd, signTime, healthyState, isQuarantine, needFix, tamperature, autoSubmit) {
     storage.put("agreement", agreement);
     storage.put("pwd", pwd);
     storage.put("signTime", signTime);
