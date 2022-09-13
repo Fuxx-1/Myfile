@@ -7,8 +7,30 @@ var storage = storages.create("cn.xupt.sign.mine.variable");
 if (!storage.contains("agreement")) {
     setVariable(storage, "否", "", "1:00", "否", "否", "否", "36.5", "否");
 }
+var version = app.versionName;
 
 // ============================== 功能函数 ==============================
+
+/**
+ * 检查软件更新
+ */
+ function checkUpdate() {
+    http.get("https://cdn.newimg.ltd/app/%E6%89%93%E5%8D%A1/version.json", {}, function (res, err) {
+        if (err) {
+            console.error(err);
+            return;
+        }
+        log("[HttpRequest]:version.json");
+        log("[thisVersion]:" + version);
+        JSON.parse(res.body.string())['version'].forEach(element => {
+            if (element['version'] > version) {
+                log("[newVersion]:" + element['version']);
+                log("发现新版本：v" + element['version']);
+                notify(2, "发现新版本：v" + element['version'], "版本描述：" + element['describe'], true);
+            }
+        });
+    });
+}
 
 /**
  * 发送通知
@@ -384,6 +406,7 @@ ui.signTime.setIs24HourView(true);//设置当前时间控件为24小时制
 
 // 设置视图
 setView(getVariable(storage));
+checkUpdate();
 
 // 点击确定
 ui.confirm_fir.on("click", function() {
