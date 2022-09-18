@@ -61,11 +61,12 @@ public interface InterviewInfService {
      * 查询用户面试状态，用于管理员
      * @param similarName 相似搜素
      * @param fields      排序项
+     * @param acceptRound 接受轮次
      * @param page 第几页
      * @param limit 结束
      * @return 返回查询结果
      */
-    JSONObject queryInterviewInf(String similarName, List<FieldVo> fields, Integer wish, Integer page, Integer limit);
+    JSONObject queryInterviewInf(String similarName, List<FieldVo> fields, Integer wish, Integer acceptRound, Integer page, Integer limit);
 
     /**
      * 获取评价的相关信息

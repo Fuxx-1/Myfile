@@ -105,25 +105,34 @@ public class InterviewInfServiceImpl implements InterviewInfService {
      */
     @Override
     public JSONObject updateInterview(String userid, Integer times, String interview, Integer attitude, Integer ability, String remarks, Boolean ispass, String interviewer, Boolean final_ispass) {
-        String timeValue = "";
-        switch (times) {
-            case 1:
-                timeValue = "first";
-                break;
-            case 2:
-                timeValue = "second";
-                break;
-            case 3:
-                timeValue = "third";
-                break;
-            default:
-                break;
-        }
-        // Integer型 times 转 String型
         try {
-            interviewInfMapper.updateinterview(userid, timeValue, interview, attitude, ability, remarks, ispass, userMapper.getUserInf(interviewer).getName(), final_ispass);
-            interviewInfMapper.updateTime(userid);
-            return ReturnUtil.returnObj("更新成功", 0, null);
+            InterviewResult interviewResult = interviewInfMapper.getUserInf(userid);
+            Boolean canChange = false; // 是否可以修改，防止一面未开始时进行二面
+            String timeValue = "";
+            switch (times) {
+                case 1:
+                    canChange = true;
+                    timeValue = "first";
+                    break;
+                case 2:
+                    canChange = interviewResult.isComplete(1);
+                    timeValue = "second";
+                    break;
+                case 3:
+                    canChange = interviewResult.isComplete(2);
+                    timeValue = "third";
+                    break;
+                default:
+                    break;
+            }
+            // Integer型 times 转 String型
+            if (canChange) {
+                interviewInfMapper.updateinterview(userid, timeValue, interview, attitude, ability, remarks, ispass, userMapper.getUserInf(interviewer).getName(), times == 3 ? final_ispass : ispass);
+                interviewInfMapper.updateTime(userid);
+                return ReturnUtil.returnObj("更新成功", 0, null);
+            } else {
+                return ReturnUtil.returnObj("请完成前一轮面试", 7, null);
+            }
         } catch (Exception e) {
             Logger.getLogger("c.l.r.s.I.InterviewInfServiceImpl.updateInterview").warning(e.toString());
             return ReturnUtil.returnObj("更新失败", -4, null);
@@ -187,12 +196,13 @@ public class InterviewInfServiceImpl implements InterviewInfService {
      *
      * @param similarName 相似搜素
      * @param fields      排序项
+     * @param acceptRound 接受轮次
      * @param page        第几页
      * @param limit       结束
      * @return 返回查询结果
      */
     @Override
-    public JSONObject queryInterviewInf(String similarName, List<FieldVo> fields, Integer wish, Integer page, Integer limit) {
+    public JSONObject queryInterviewInf(String similarName, List<FieldVo> fields, Integer wish, Integer acceptRound, Integer page, Integer limit) {
         StringBuffer ground = new StringBuffer();
         // 排序
         for (FieldVo field : fields) {
@@ -201,8 +211,30 @@ public class InterviewInfServiceImpl implements InterviewInfService {
         }
         try {
             return ReturnUtil.returnObj("查询成功", 0, new HashMap<String, Object>(2) {{
-                put("info", interviewInfMapper.queryUserInf(similarName, ground.toString(), wish, limit * (page - 1), limit * page));
-                put("listSize", interviewInfMapper.queryUserInfTotal(similarName, wish));
+                String acceptRoundString = null;
+                if (acceptRound != null) {
+                    switch (acceptRound) {
+                        case 0:
+                            acceptRoundString = "and final_ispass != 1";
+                            break;
+                        case 1:
+                            acceptRoundString = "and isnull(first_ispass)";
+                            break;
+                        case 2:
+                            acceptRoundString = "and first_ispass = 1 and isnull(second_ispass)";
+                            break;
+                        case 3:
+                            acceptRoundString = "and second_ispass = 1 and isnull(third_ispass)";
+                            break;
+                        case 4:
+                            acceptRoundString = "and final_ispass = 1";
+                            break;
+                        default:
+                            break;
+                    }
+                }
+                put("info", interviewInfMapper.queryUserInf(similarName, ground.toString(), wish, acceptRoundString, limit * (page - 1), limit * page));
+                put("listSize", interviewInfMapper.queryUserInfTotal(similarName, wish, acceptRoundString));
             }});
         } catch (Exception e) {
             Logger.getLogger("c.l.r.s.I.InterviewInfServiceImpl.queryInterviewInf").warning(e.toString());

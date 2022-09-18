@@ -32,7 +32,7 @@ public class ImgController {
         return objectSaveService.saveFile(imgSaveDir, fileName, file).toJSONString();
     }
 
-    @RequestMapping("download")
+    @RequestMapping("/download")
     public ResponseEntity<FileSystemResource> accessFile(String fileName, String access_token) {
         return objectSaveService.accessFile(fileName);
     }

@@ -112,8 +112,9 @@ public interface InterviewInfMapper {
             "left join (select userid, name, wish from `user` group by userid) as nameSheet on interview.userid = nameSheet.userid " +
             "where isnull(nameSheet.`name`) or nameSheet.name like '%${similarName}%' " +
             "and (isnull(#{wish}) or nameSheet.wish = #{wish}) " +
+            "${acceptRound} " +
             "order by ${ground} limit #{start}, #{limit}")
-    List<InterviewInfVo> queryUserInf(String similarName, String ground, Integer wish, Integer start, Integer limit);
+    List<InterviewInfVo> queryUserInf(String similarName, String ground, Integer wish, String acceptRound, Integer start, Integer limit);
 
     /**
      * 查询用户面试状态，用于管理员
@@ -125,8 +126,9 @@ public interface InterviewInfMapper {
             "from `interview` " +
             "left join (select userid, name, wish from `user` group by userid) as nameSheet on interview.userid = nameSheet.userid " +
             "where isnull(nameSheet.`name`) or nameSheet.name like '%${similarName}%' " +
-            "and (isnull(#{wish}) or nameSheet.wish = #{wish});")
-    Integer queryUserInfTotal(String similarName, Integer wish);
+            "and (isnull(#{wish}) or nameSheet.wish = #{wish}) " +
+            "and (isnull(#{acceptRound}) or #{acceptRound} = 1);")
+    Integer queryUserInfTotal(String similarName, Integer wish, String acceptRound);
 
     /**
      * 获取评价的相关信息

@@ -67,4 +67,17 @@ public class InterviewResult {
         }
         return this;
     }
+
+    public Boolean isComplete(Integer round) {
+        switch (round) {
+            case 1:
+                return first_interviewer != null && first_ispass != null && first_isCommit != null;
+            case 2:
+                return second_interviewer != null && second_ispass != null && second_isCommit != null;
+            case 3:
+                return third_interviewer != null && third_ispass != null && third_isCommit != null;
+            default:
+                return false;
+        }
+    }
 }

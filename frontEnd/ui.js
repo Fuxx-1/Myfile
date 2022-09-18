@@ -14,7 +14,7 @@ var version = app.versionName;
 /**
  * 检查软件更新
  */
- function checkUpdate() {
+function checkUpdate() {
     http.get("https://cdn.newimg.ltd/app/%E6%89%93%E5%8D%A1/version.json", {}, function (res, err) {
         if (err) {
             console.error(err);

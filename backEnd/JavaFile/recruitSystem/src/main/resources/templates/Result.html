@@ -1,13 +1,3 @@
-<!DOCTYPE html>
-<html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta content="IE=edge" http-equiv="X-UA-Compatible">
-    <meta content="width=device-width, initial-scale=1.0" name="viewport">
-    <title>Document</title>
-</head>
-
 <body>
 <div>
     <div align="center" style="height: 100vh;margin-top: 20vh;">
@@ -20,7 +10,8 @@
 
                     <p class="cTMail-content"
                        style="font-size: 14px; color: rgb(51, 51, 51); line-height: 24px; margin: 6px 0px 0px; word-wrap: break-word; word-break: break-all;">
-                        <a href="" id="cTMail-btn" style="font-size: 16px; line-height: 45px; display: block; background-color: rgb(0, 164, 255); color: rgb(255, 255, 255); text-align: center; text-decoration: none; margin-top: 20px; border-radius: 3px;"
+                        <a href="" id="cTMail-btn"
+                           style="font-size: 16px; line-height: 45px; display: block; background-color: rgb(0, 164, 255); color: rgb(255, 255, 255); text-align: center; text-decoration: none; margin-top: 20px; border-radius: 3px;"
                            title="">
                             通知
                         </a>
@@ -44,21 +35,29 @@
 
                                     <p id="cTMail-userName"
                                        style="font-size:14px;color:#333; line-height:24px; margin:0;">
-                                        亲爱的XX同学，你好
+                                        亲爱的${resultEmail.name}同学，你好
                                     </p>
 
                                     <p class="cTMail-content"
                                        style="line-height: 24px; margin: 6px 0px 0px; overflow-wrap: break-word; word-break: break-all;">
-                                                    <span style="color: rgb(51, 51, 51); font-size: 14px;">
-                                                        恭喜你通过
-                                                    </span>
+                                        <span style="color: rgb(51, 51, 51); font-size: 14px;">
+                                            &emsp;&emsp;非常感谢您参与本实验室面试！
+                                            您的现场面试给我们留下了深刻的印象，但很遗憾地通知您，
+                                            因为您现能力与本实验室预期不符，故未能通过实验室面试。<br>
+                                            &emsp;&emsp;欢迎您参加实验室之后组织的面试，同时祝您前程似锦。
+                                        </span>
                                     </p>
                                     <dl style="font-size: 14px; color: rgb(51, 51, 51); line-height: 18px;">
                                         <dd
                                                 style="margin: 0px 0px 6px; padding: 0px; font-size: 12px; line-height: 22px;">
                                             <p id="cTMail-sender"
-                                               style="font-size: 14px; line-height: 26px; word-wrap: break-word; word-break: break-all; margin-top: 32px;">
-                                                <strong>移动应用开发实验室</strong>
+                                               style="font-size: 14px; line-height: 26px; word-wrap: break-word; word-break: break-all; margin-top: 32px; text-align: right; padding-right: 10px;">
+                                                <strong>
+                                                    <img src="data:image/webp;base64,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"
+                                                         alt="acat的logo" width="28"
+                                                         style="vertical-align:middle;">
+                                                    ACAT计算机技术应用协会
+                                                </strong>
                                             </p>
                                         </dd>
                                     </dl>

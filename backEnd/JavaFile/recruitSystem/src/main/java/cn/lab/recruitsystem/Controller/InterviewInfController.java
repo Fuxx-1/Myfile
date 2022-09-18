@@ -101,8 +101,8 @@ public class InterviewInfController {
      */
     @RequestMapping("/admin/query")
     String queryInterviewInf(@RequestBody InterviewQueryVo interviewQueryVo) {
-        return interviewInfService.queryInterviewInf(interviewQueryVo.getSimilarName(), interviewQueryVo.getFields(), interviewQueryVo.getWish(), interviewQueryVo.getPage(),
-                interviewQueryVo.getLimit()).toJSONString();
+        return interviewInfService.queryInterviewInf(interviewQueryVo.getSimilarName(), interviewQueryVo.getFields(), interviewQueryVo.getWish(),
+                interviewQueryVo.getRound(), interviewQueryVo.getPage(), interviewQueryVo.getLimit()).toJSONString();
     }
 
     /**

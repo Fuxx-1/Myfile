@@ -10,7 +10,7 @@
     </parent>
     <groupId>cn.lab</groupId>
     <artifactId>recruitSystem</artifactId>
-    <version>v0.0.1.bate.14</version>
+    <version>v0.0.1.bate.15</version>
     <name>recruitSystem</name>
     <description>Demo project for Spring Boot</description>
     <properties>

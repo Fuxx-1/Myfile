@@ -21,6 +21,7 @@ public class InterviewQueryVo implements Serializable {
     private Integer wish;
     private Integer page;
     private Integer limit;
+    private Integer round;
 }
 
 
