@@ -14,6 +14,7 @@ import org.springframework.web.servlet.view.freemarker.FreeMarkerConfigurer;
 import javax.annotation.Resource;
 import java.util.HashMap;
 import java.util.Map;
+import java.util.concurrent.ConcurrentHashMap;
 import java.util.concurrent.TimeUnit;
 import java.util.logging.Logger;
 
@@ -36,6 +37,8 @@ public class UserServiceImpl implements UserService {
 
     @Resource
     UserMapper userMapper;
+
+    private ConcurrentHashMap keyMap = new ConcurrentHashMap(5);
 
     /**
      * 发送验证邮件验证码
@@ -330,7 +333,6 @@ public class UserServiceImpl implements UserService {
         try {
             userMapper.sign(userid, is_sign);
             userMapper.updateTime(userid);
-
             return ReturnUtil.returnObj("签到状态更改成功", 0, userMapper.getUserInf(userid));
         } catch (Exception e) {
             Logger.getLogger("c.l.r.s.I.UserServiceImpl.sign").warning(e.toString());
@@ -428,4 +430,5 @@ public class UserServiceImpl implements UserService {
             return ReturnUtil.returnObj("登录失败", -1, null);
         }
     }
+
 }

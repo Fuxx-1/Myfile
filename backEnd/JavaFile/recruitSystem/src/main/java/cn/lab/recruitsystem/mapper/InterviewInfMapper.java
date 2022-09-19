@@ -127,7 +127,7 @@ public interface InterviewInfMapper {
             "left join (select userid, name, wish from `user` group by userid) as nameSheet on interview.userid = nameSheet.userid " +
             "where isnull(nameSheet.`name`) or nameSheet.name like '%${similarName}%' " +
             "and (isnull(#{wish}) or nameSheet.wish = #{wish}) " +
-            "and (isnull(#{acceptRound}) or #{acceptRound} = 1);")
+            "${acceptRound};")
     Integer queryUserInfTotal(String similarName, Integer wish, String acceptRound);
 
     /**

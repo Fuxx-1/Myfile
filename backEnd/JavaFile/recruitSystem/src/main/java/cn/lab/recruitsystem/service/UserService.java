@@ -111,4 +111,5 @@ public interface UserService {
      * @return 是否成功
      */
     JSONObject connectWechatId(String userid, String code);
+
 }
