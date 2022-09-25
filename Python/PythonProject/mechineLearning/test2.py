@@ -35,11 +35,10 @@ def knn(k,predictpoint,x_train,y_train):
     sortindex=np.argsort(dist)
     sortlabel=y_train[sortindex]
     return co.Counter(sortlabel[0:k]).most_common(1)[0][0]
-if __name__ == '__main__':
+def Iris(k):
     iris = load_iris()
     iris_feature = iris.data
     iris_label = iris.target
-    k=10
     x_train, x_test, y_train, y_test = train_test_split(iris_feature, iris_label, test_size=0.3, random_state=30)
     count=0
     predict=[]
@@ -47,6 +46,11 @@ if __name__ == '__main__':
         result=knn(k,predictpoint,x_train,y_train)
         predict.append(result)
     predict=np.array(predict)
+    print("===============k = {k}===============".format(k = k))
     print(predict)
     print(y_test)
     print(np.sum((predict==y_test)/y_test.size))
+    print("===============End===============")
+if __name__ == '__main__':
+    for i in range(3,13,3) :
+        Iris(i)
