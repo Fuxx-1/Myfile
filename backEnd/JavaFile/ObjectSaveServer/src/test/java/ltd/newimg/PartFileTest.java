@@ -76,6 +76,7 @@ public class PartFileTest {
             for (int i = 0; i <= count; i++) {
                 File file = new File("./" + i + ".file_temp");
                 MultipartFile multipartFile = new MockMultipartFile(file.getName(), Files.newInputStream(file.toPath()));
+                System.out.println(i + ":" +  DigestUtils.md5Hex(Files.newInputStream(file.toPath())));
                 System.out.println(partFileService.partFileUpload(new PartFileDTO(i, count + 1, multipartFile, DigestUtils.md5Hex(Files.newInputStream(file.toPath())), MD5, SHA1)).toJSONString());
             }
         } catch (IOException e) {

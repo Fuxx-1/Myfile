@@ -6,6 +6,7 @@ import ltd.newimg.model.DTO.FileSaveDTO;
 import ltd.newimg.model.DTO.PartFileDTO;
 import ltd.newimg.model.DTO.PartFileInfoDTO;
 import ltd.newimg.service.PartFileService;
+import ltd.newimg.util.ReturnCodeEnum;
 import ltd.newimg.util.ReturnUtil;
 import org.apache.commons.codec.digest.DigestUtils;
 import org.springframework.beans.factory.annotation.Value;
@@ -42,7 +43,7 @@ public class PartFileServiceImpl implements PartFileService {
         // 判断是否允许上传
         if (partFileInfoDTO.getFileSize() * 10 > fileMapper.getSpaceRemaining()) {
             // 检查空间是否充足
-            return ReturnUtil.returnObj("初始化失败，文件过大", -1000, null);
+            return ReturnUtil.returnObj(ReturnCodeEnum.OUT_OF_MEMORY, null);
         }
         File file = new File(saveDir + File.separator + "verify.info");
         if (!file.getParentFile().exists()) {
@@ -51,7 +52,7 @@ public class PartFileServiceImpl implements PartFileService {
         if (file.exists()) {
             // 文件已存在
             try {
-                return ReturnUtil.returnObj("文件已存在或已被初始化", -1001, getInfo(saveDir));
+                return ReturnUtil.returnObj(ReturnCodeEnum.REPEAT, getInfo(saveDir));
             } catch (Exception e) {
                 throw new RuntimeException(e);
             }
@@ -70,7 +71,7 @@ public class PartFileServiceImpl implements PartFileService {
 //            out = new BufferedWriter(new FileWriter(file, false));
 //            out.write(partFileInfoDTO.toString());
 //            out.close();
-            return ReturnUtil.returnObj("初始化成功", 0, getInfo(saveDir));
+            return ReturnUtil.returnObj(ReturnCodeEnum.SUCCESS, getInfo(saveDir));
         } catch (Exception e) {
             throw new RuntimeException(e);
         }
@@ -91,12 +92,12 @@ public class PartFileServiceImpl implements PartFileService {
         try {
             if (!new File(saveDir).exists()) {
                 // 文件夹不存在
-                return ReturnUtil.returnObj("请先初始化该文件", -1002, null);
+                return ReturnUtil.returnObj(ReturnCodeEnum.NEED_INIT, null);
             }
             String MD5 = DigestUtils.md5Hex(partFileDTO.getFile().getInputStream());
             if (!MD5.equals(partFileDTO.getMD5())) {
                 // MD5校验失败
-                return ReturnUtil.returnObj("校验失败", -1003, null);
+                return ReturnUtil.returnObj(ReturnCodeEnum.CHECK_FAIL, null);
             }
             // 文件验证无误
             // 保存文件
@@ -106,7 +107,7 @@ public class PartFileServiceImpl implements PartFileService {
         }
         // 返回成功
         try {
-            return ReturnUtil.returnObj("上传成功", 0, getInfo(saveDir));
+            return ReturnUtil.returnObj(ReturnCodeEnum.SUCCESS, getInfo(saveDir));
         } catch (Exception e) {
             throw new RuntimeException(e);
         }
@@ -128,7 +129,7 @@ public class PartFileServiceImpl implements PartFileService {
             fileNames[i] = files[i].getName();
         }
         // 返回信息
-        return ReturnUtil.returnObj("查询成功", 0, fileNames);
+        return ReturnUtil.returnObj(ReturnCodeEnum.SUCCESS, fileNames);
     }
 
     /**
@@ -146,7 +147,7 @@ public class PartFileServiceImpl implements PartFileService {
         try {
             for (File file : new File(saveDir).listFiles()) {
                 if (file.getName().matches("file.*")) {
-                    return ReturnUtil.returnObj("该文件已被合并", -1001, getInfo(saveDir));
+                    return ReturnUtil.returnObj(ReturnCodeEnum.HAS_MERGED, getInfo(saveDir));
                 }
             }
         } catch (Exception NullPointerException) {
@@ -157,7 +158,7 @@ public class PartFileServiceImpl implements PartFileService {
         try {
             if (!getInfo(saveDir).equals(partFileInfoDTO)) {
                 // 验证异常
-                return ReturnUtil.returnObj("验证异常", -1004, null);
+                return ReturnUtil.returnObj(ReturnCodeEnum.CHECK_FAIL, null);
             }
         } catch (Exception e) {
             throw new RuntimeException(e);
@@ -207,10 +208,10 @@ public class PartFileServiceImpl implements PartFileService {
                         file.delete();
                     }
                 }
-                return ReturnUtil.returnObj("合并成功", 0, getInfo(saveDir));
+                return ReturnUtil.returnObj(ReturnCodeEnum.SUCCESS, getInfo(saveDir));
             } else {
                 delFile(bigFileDir + File.separator + partFileInfoDTO.getMD5());
-                return ReturnUtil.returnObj("文件传输异常", -1005, null);
+                return ReturnUtil.returnObj(ReturnCodeEnum.TRANSPORT_FAIL, null);
             }
         } catch (Exception e) {
             throw new RuntimeException(e);
@@ -232,7 +233,7 @@ public class PartFileServiceImpl implements PartFileService {
         try {
             for (File file : new File(saveDir).listFiles()) {
                 if (file.getName().matches("file.*")) {
-                    return ReturnUtil.returnObj("该文件已被合并", -1001, null);
+                    return ReturnUtil.returnObj(ReturnCodeEnum.HAS_MERGED, null);
                 }
             }
         } catch (Exception e) {
@@ -240,9 +241,9 @@ public class PartFileServiceImpl implements PartFileService {
         }
         /* 该文件未被合并，可以删除 */
         if (delFile(saveDir)) {
-            return ReturnUtil.returnObj("取消成功", 0, null); // 返回成功
+            return ReturnUtil.returnObj(ReturnCodeEnum.SUCCESS, null); // 返回成功
         } else {
-            return ReturnUtil.returnObj("取消失败", -1006, null);
+            return ReturnUtil.returnObj(ReturnCodeEnum.FAIL, null);
         }
 
     }

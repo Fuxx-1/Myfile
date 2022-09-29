@@ -81,11 +81,11 @@ public class UserServiceImpl implements UserService {
     public JSONObject sendVerifyCode(String Email, String Action) {
         String Code = mailUtil.generateCode();
         try {
-            String subject = "Union Lab纳新网站验证码";
+            String subject = "ACAT纳新网站验证码";
             // 邮件标题
             redisUtil.setCacheObject(Email, Code, 10, TimeUnit.MINUTES);
             // 缓存验证码
-            VerifyCodeEmail verifyCodeEmail = new VerifyCodeEmail(Action, Code, "Union Lab");
+            VerifyCodeEmail verifyCodeEmail = new VerifyCodeEmail(Action, Code, "ACAT计算机技术应用协会");
             // 拿取Email模板
             Template template = freeMarkerConfigurer.getConfiguration().getTemplate("verifyCodeEmail.html");
             String templateHtml = FreeMarkerTemplateUtils.processTemplateIntoString(template, new HashMap<String, Object>() {{
@@ -232,10 +232,20 @@ public class UserServiceImpl implements UserService {
     @Override
     public JSONObject updataInf(User user) {
         try {
-            user.completeInf(userMapper.getUserInf(user.getUserid()));
-            userMapper.updateInf(user.getUserid(), user.getName(), user.getGender(), user.getMajor(), user.getPhone(), user.getWish());
-            userMapper.updateTime(user.getUserid());
-            return ReturnUtil.returnObj("更新成功", 0, userMapper.getUserInf(user.getUserid()));
+            // 补全信息
+            User userInf = userMapper.getUserInf(user.getUserid());
+            user.completeInf(userInf);
+            if (!userMapper.getUserInf(user.getUserid()).getIs_sign()) {
+                // 未签到，可以更改
+                userMapper.updateInf(user.getUserid(), user.getName(), user.getGender(), user.getMajor(), user.getPhone(), user.getWish());
+                userMapper.updateTime(user.getUserid());
+                return ReturnUtil.returnObj("更新成功", 0, userMapper.getUserInf(user.getUserid()));
+            } else {
+                // 已签到，不允许更改
+                userMapper.updateInf(user.getUserid(), user.getName(), user.getGender(), user.getMajor(), user.getPhone(), userInf.getWish());
+                userMapper.updateTime(user.getUserid());
+                return ReturnUtil.returnObj("更新成功", 0, userMapper.getUserInf(user.getUserid()));
+            }
         } catch (Exception e) {
             Logger.getLogger("c.l.r.s.I.UserServiceImpl.updataInf").warning(e.toString());
             return ReturnUtil.returnObj("更新失败", -4, null);

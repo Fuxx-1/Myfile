@@ -3,6 +3,7 @@ package cn.newimg.config;
 import cn.newimg.Model.dto.AuthDto;
 import cn.newimg.Util.HttpRequestUtil;
 import cn.newimg.Util.JWTUtil;
+import cn.newimg.Util.ReturnCodeEnum;
 import cn.newimg.Util.ReturnUtil;
 import com.alibaba.fastjson.JSON;
 import org.springframework.stereotype.Component;
@@ -58,7 +59,7 @@ public class URLInterceptor implements HandlerInterceptor {
                         if (auth >= authDto.getAskedAuth()) {
                             return true;
                         } else {
-                            response.getWriter().println(ReturnUtil.returnMsg("权限不足", 100, null));
+                            response.getWriter().println(ReturnUtil.returnMsg(ReturnCodeEnum.ACCESS_DENIED, null));
                             return false;
                         }
                     }
@@ -66,10 +67,10 @@ public class URLInterceptor implements HandlerInterceptor {
             }
         } catch (Exception e) {
             Logger.getLogger("c.l.r.c.URLInterceptor").warning(e.toString());
-            response.getWriter().println(ReturnUtil.returnMsg("请刷新网页，如问题仍存在请联系管理员", 1, null));
+            response.getWriter().println(ReturnUtil.returnMsg(ReturnCodeEnum.ACCESS_DENIED, null));
             return false;
         }
-        response.getWriter().println(ReturnUtil.returnMsg("请刷新网页，如问题仍存在请联系管理员", 1, null));
+        response.getWriter().println(ReturnUtil.returnMsg(ReturnCodeEnum.ACCESS_DENIED, null));
         return false;
     }
 

@@ -2,6 +2,7 @@ package ltd.newimg.mapper;
 
 import com.alibaba.fastjson.JSONObject;
 import ltd.newimg.model.DTO.FileSaveDTO;
+import ltd.newimg.util.ReturnCodeEnum;
 import ltd.newimg.util.ReturnUtil;
 import org.springframework.stereotype.Component;
 
@@ -42,10 +43,10 @@ public class FileMapper {
             while ((len = fileSaveDto.getFile().read(bs)) != -1) {
                 fileStream.write(bs, 0, len);
             }
-            return ReturnUtil.returnObj("上传成功", 0, null);
+            return ReturnUtil.returnObj(ReturnCodeEnum.SUCCESS, null);
         } catch (Exception e) {
             Logger.getLogger("l.n.M.FileMapper.saveFile").warning(e.toString());
-            return ReturnUtil.returnObj("上传失败", -1, null);
+            return ReturnUtil.returnObj(ReturnCodeEnum.FAIL, null);
         } finally {
             try {
                 if (fileStream != null) {

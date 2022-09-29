@@ -4,8 +4,10 @@ import com.alibaba.fastjson.JSONObject;
 import ltd.newimg.mapper.FileMapper;
 import ltd.newimg.model.DTO.FileSaveDTO;
 import ltd.newimg.service.ObjectSaveService;
+import ltd.newimg.util.ReturnCodeEnum;
 import ltd.newimg.util.ReturnUtil;
 import ltd.newimg.util.TimeUtil;
+import org.apache.commons.codec.digest.DigestUtils;
 import org.springframework.core.io.FileSystemResource;
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.MediaType;
@@ -21,7 +23,7 @@ import java.util.logging.Logger;
 
 /**
  * 文件服务实现层
- * 
+ *
  * @author Fuxx-1@Github
  * @Description
  * @create 2022-06-18 23:25
@@ -44,16 +46,22 @@ public class ObjectSaveServiceImpl implements ObjectSaveService {
     @Override
     public JSONObject saveFile(String saveDir, String fileName, MultipartFile file) {
         try {
-            FileSaveDTO fDto = new FileSaveDTO(saveDir, fileName, file.getInputStream());
+            String suffix = fileName.split("//.")[fileName.split("//.").length - 1];
+            if (suffix == null || suffix.length() == 0) {
+                return ReturnUtil.returnObj(ReturnCodeEnum.NO_FILENAME, null);
+            }
+            String finalFileName = DigestUtils.md5Hex(file.getInputStream())
+                    + "_" + DigestUtils.sha1Hex(file.getInputStream()) + suffix;
+            FileSaveDTO fDto = new FileSaveDTO(saveDir, finalFileName, file.getInputStream());
             fileMapper.saveFile(fDto);
-            return ReturnUtil.returnObj("保存成功", 0, new HashMap<String, Object>(1) {
+            return ReturnUtil.returnObj(ReturnCodeEnum.SUCCESS, new HashMap<String, Object>(1) {
                 {
-                    put("fileName", fileName);
+                    put("fileName", finalFileName);
                 }
             });
         } catch (Exception e) {
             Logger.getLogger("l.n.s.I.ObjectSaveServiceImpl.saveFile").warning(e.toString());
-            return ReturnUtil.returnObj("保存失败", -1, null);
+            return ReturnUtil.returnObj(ReturnCodeEnum.SYSTEM_FAILED, null);
         }
     }
 

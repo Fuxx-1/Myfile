@@ -5,6 +5,7 @@ import com.alibaba.fastjson.JSON;
 import ltd.newimg.model.DTO.AuthDTO;
 import ltd.newimg.util.HttpRequestUtil;
 import ltd.newimg.util.JWTUtil;
+import ltd.newimg.util.ReturnCodeEnum;
 import ltd.newimg.util.ReturnUtil;
 
 import org.springframework.stereotype.Component;
@@ -28,7 +29,7 @@ public class URLInterceptor implements HandlerInterceptor {
 
     private static final Integer NORMAL_STATUS = 200;
 
-    public static final String PATH_NOT_NEED_AUTH = "";
+    public static final String PATH_NOT_NEED_AUTH = "/[a-zA-Z0-9_]{1,}/[a-zA-Z0-9_/]{0,}";
     public static final List<AuthDTO> PATH_WITH_AUTH = Arrays.asList(
             new AuthDTO("/[a-zA-Z0-9_]{1,}/[a-zA-Z0-9_/]{0,}", 1)
 //            , new AuthDTO("/[a-zA-Z0-9_]{1,}/admin[a-zA-Z0-9_/]{0,}", 2)
@@ -65,7 +66,7 @@ public class URLInterceptor implements HandlerInterceptor {
                         if (auth >= authDto.getAskedAuth()) {
                             return true;
                         } else {
-                            response.getWriter().println(ReturnUtil.returnMsg("权限不足", 100, null));
+                            response.getWriter().println(ReturnUtil.returnMsg(ReturnCodeEnum.ACCESS_DENIED, null));
                             return false;
                         }
                     }
@@ -73,10 +74,10 @@ public class URLInterceptor implements HandlerInterceptor {
             }
         } catch (Exception e) {
             Logger.getLogger("c.l.r.c.URLInterceptor").warning(e.toString());
-            response.getWriter().println(ReturnUtil.returnMsg("请刷新网页，如问题仍存在请联系管理员", 1, null));
+            response.getWriter().println(ReturnUtil.returnMsg(ReturnCodeEnum.ACCESS_DENIED, null));
             return false;
         }
-        response.getWriter().println(ReturnUtil.returnMsg("请刷新网页，如问题仍存在请联系管理员", 1, null));
+        response.getWriter().println(ReturnUtil.returnMsg(ReturnCodeEnum.ACCESS_DENIED, null));
         return false;
     }
 

@@ -4,7 +4,7 @@ spring:
   mail:
     host: mail.qoop.top
     username: verify@qoop.top
-    from: UnionLab<${spring.mail.username}> # UnionLab作为发信昵称
+    from: ACAT<${spring.mail.username}> # UnionLab作为发信昵称
     password: verify123421
     protocol: smtp
     test-connection: true

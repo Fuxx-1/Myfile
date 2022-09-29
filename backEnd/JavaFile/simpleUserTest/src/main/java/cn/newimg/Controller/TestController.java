@@ -1,5 +1,6 @@
 package cn.newimg.Controller;
 
+import cn.newimg.Util.ReturnCodeEnum;
 import cn.newimg.Util.ReturnUtil;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -16,7 +17,7 @@ public class TestController {
 
     @RequestMapping("/")
     public String index() {
-        return ReturnUtil.returnMsg("Welcome to simpleUserTamplate", 0, null);
+        return ReturnUtil.returnMsg(ReturnCodeEnum.TEST, null);
     }
 
 }
