@@ -12,7 +12,7 @@ import lombok.NoArgsConstructor;
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
-public class groupMessage {
+public class GroupMessage {
     /*
     群组信息
      */
@@ -20,6 +20,8 @@ public class groupMessage {
     private String message; // 信息
     private String sender; // 发送者用户名
     private Integer groupId; // 群组id
+    private Integer sharedMessageId; // 被分享信息id
+    private Integer sharedType; // 被分享信息类型
     private String createTime; // 创建时间
     private String updateTime; // 更新时间
 }
