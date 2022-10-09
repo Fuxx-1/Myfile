@@ -1,6 +1,7 @@
 package ltd.newimg.util;
 
 import lombok.AllArgsConstructor;
+import lombok.Getter;
 import lombok.NoArgsConstructor;
 
 /**
@@ -8,6 +9,7 @@ import lombok.NoArgsConstructor;
  * @Description
  * @create 2022-09-27 17:52
  */
+@Getter
 @AllArgsConstructor
 @NoArgsConstructor
 public enum ReturnCodeEnum {
@@ -26,12 +28,4 @@ public enum ReturnCodeEnum {
 
     private Integer code;
     private String msg;
-
-    public Integer getCode() {
-        return code;
-    }
-
-    public String getMsg() {
-        return msg;
-    }
 }

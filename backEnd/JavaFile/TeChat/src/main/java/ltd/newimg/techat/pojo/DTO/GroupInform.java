@@ -1,10 +1,17 @@
 package ltd.newimg.techat.pojo.DTO;
 
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.NoArgsConstructor;
+
 /**
  * @author Eleun
  * @Description
  * @create 2022-10-08 23:29
  */
+@Data
+@AllArgsConstructor
+@NoArgsConstructor
 public class GroupInform {
     /*
     群组主信息
@@ -15,5 +22,5 @@ public class GroupInform {
     private String bio; // 简介
     private Integer historySetting; // 信息历史设置
     private String emojiRecord; // 表情回复
-    private String memberPermiss; //
+    private String memberPermission; // 成员权限
 }
