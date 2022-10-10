@@ -176,3 +176,18 @@
 //         printf("%c", root->data);
 //     }
 // }
+#include <stdio.h>
+char* t;
+char* acat()
+{
+    char aaa[] = "Welcome";
+    t = aaa;
+    return t;
+}
+
+int main(int argc, char const* argv[])
+{
+    char* a = acat();
+    printf("%s", a);
+    return 0;
+}

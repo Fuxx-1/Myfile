@@ -1,8 +1,34 @@
+// {
+// 	"version": "2.0.0",
+// 	"tasks": [
+// 		{
+// 			"type": "cppbuild",
+// 			"label": "C/C++: gcc.exe 生成活动文件",
+// 			"command": "C:/MySoftware/Environment/C/MinGW64_C/bin/gcc.exe",
+// 			"args": [
+// 				"-fdiagnostics-color=always",
+// 				"-g",
+// 				"${file}",
+// 				"-o",
+// 				"${fileDirname}\\${fileBasenameNoExtension}.exe"
+// 			],
+// 			"options": {
+// 				"cwd": "C:/MySoftware/Environment/C/MinGW64_C/bin"
+// 			},
+// 			"problemMatcher": [
+// 				"$gcc"
+// 			],
+// 			"group": "build",
+// 			"detail": "编译器: C:/MySoftware/Environment/C/MinGW64_C/bin/gcc.exe"
+// 		}
+// 	]
+// }
+
+
 {
-    // 有关 tasks.json 格式的文档，请参见
-    // https://go.microsoft.com/fwlink/?LinkId=733558
     "version": "2.0.0",
-    "tasks": [{
+    "tasks": [
+        {
             "type": "shell",
             "label": "gcc.exe build active file",
             "command": "gcc",
@@ -15,20 +41,34 @@
             ],
             "options": {
                 "cwd": "C:\\MySoftware\\Environment\\C\\MinGW64_C\\bin"
-                // "cwd": "D:\\mingw64\\bin"
             },
             "problemMatcher": [
                 "$gcc"
             ],
             "group": "build"
         },
-        // {
-        //     "type": "shell",
-        //     "label": "clear exes", // 清空工作区内所有的exe文件
-        //     "command": "rm ${workspaceRoot}n/exes/*.exe",
-        //     "problemMatcher": [
-        //         "$gcc"
-        //     ]
-        // }
+        {
+            "type": "cppbuild",
+            "label": "C/C++: gcc.exe 生成活动文件",
+            "command": "C:\\MySoftware\\Environment\\C\\MinGW64_C\\bin\\gcc.exe",
+            "args": [
+                "-fdiagnostics-color=always",
+                "-g",
+                "${file}",
+                "-o",
+                "${fileDirname}\\${fileBasenameNoExtension}.exe"
+            ],
+            "options": {
+                "cwd": "${fileDirname}"
+            },
+            "problemMatcher": [
+                "$gcc"
+            ],
+            "group": {
+                "kind": "build",
+                "isDefault": true
+            },
+            "detail": "调试器生成的任务。"
+        }
     ]
 }

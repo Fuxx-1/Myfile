@@ -3,7 +3,13 @@
         "name": "Win32",
         "includePath": [
             "${workspaceFolder}/**",
-            "C:\\MySoftware\\Environment\\C\\MinGW64_C\\include"
+            "C:/MySoftware/Environment/C/MinGW64_C/include/**",
+            "C:/MySoftware/Environment/C/MinGW64_C/bin/../lib/gcc/x86_64-w64-mingw32/8.1.0/include/c++",
+            "C:/MySoftware/Environment/C/MinGW64_C/bin/../lib/gcc/x86_64-w64-mingw32/8.1.0/include/c++/x86_64-w64-mingw32",
+            "C:/MySoftware/Environment/C/MinGW64_C/bin/../lib/gcc/x86_64-w64-mingw32/8.1.0/include/c++/backward",
+            "C:/MySoftware/Environment/C/MinGW64_C/bin/../lib/gcc/x86_64-w64-mingw32/8.1.0/include",
+            "C:/MySoftware/Environment/C/MinGW64_C/bin/../lib/gcc/x86_64-w64-mingw32/8.1.0/include-fixed"
+
         ],
         "defines": [
             "_DEBUG",
@@ -11,10 +17,10 @@
             "_UNICODE"
         ],
         "windowsSdkVersion": "10.0.18362.0",
-        "compilerPath": "C:/Program Files (x86)/Microsoft Visual Studio/2019/Enterprise/VC/Tools/MSVC/14.27.29110/bin/Hostx64/x64/cl.exe",
-        "cStandard": "c99",
+        "compilerPath": "C:/MySoftware/Environment/C/MinGW64_C/bin/gcc.exe",
+        "cStandard": "c11",
         "cppStandard": "c++17",
-        "intelliSenseMode": "msvc-x64"
+        "intelliSenseMode": "windows-gcc-x86"
     }],
     "version": 4
 }

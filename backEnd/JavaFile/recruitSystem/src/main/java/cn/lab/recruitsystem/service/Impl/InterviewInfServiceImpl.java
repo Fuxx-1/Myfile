@@ -13,6 +13,7 @@ import cn.lab.recruitsystem.service.InterviewInfService;
 import com.alibaba.fastjson.JSONObject;
 import freemarker.template.Template;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 import org.springframework.ui.freemarker.FreeMarkerTemplateUtils;
 import org.springframework.web.servlet.view.freemarker.FreeMarkerConfigurer;
 
