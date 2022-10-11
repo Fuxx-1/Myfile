@@ -25,6 +25,18 @@ spring:
     url: jdbc:mysql://${MYSQL_ADDRESS:localhost:3307}/recruitsystem?serverTimezone=Asia/Shanghai&useUnicode=true&characterEncoding=utf-8&allowMultiQueries=true
     username: ${MYSQL_USERNAME:root}
     password: ${MYSQL_PASSWORD:12345}
+#  mvc:
+#    async:
+#      request-timeout: 20000
 wechat:
   appid: ${WECHAT_APP_ID}
   secret: ${WECHAT_APP_SECRET}
+server:
+#  tomcat:
+#    connection-timeout: 20000
+#    max-connections: 10000
+#    accept-count: 3000
+#    threads:
+#      max: 400
+#      min-spare: 10
+  port: 8080
