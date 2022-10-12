@@ -14,5 +14,5 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 public class AuthDTO {
     private String regex;
-    private int askedAuth;
+    private Integer askedAuth;
 }

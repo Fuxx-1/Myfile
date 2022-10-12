@@ -31,6 +31,8 @@ public class attrTest {
     }
     @Test
     public void test3() {
+        String fileName = "test1.test2.test3";
+        System.out.println(fileName.split("\\.")[fileName.split("\\.").length - 1]);
         System.out.println(NanoIdUtil.randomNanoId());
     }
 }

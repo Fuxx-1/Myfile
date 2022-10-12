@@ -34,6 +34,6 @@ public class ImgController {
 
     @RequestMapping("/download")
     public ResponseEntity<FileSystemResource> accessFile(String fileName, String access_token) {
-        return objectSaveService.accessFile(fileName);
+        return objectSaveService.accessFile(imgSaveDir, fileName);
     }
 }

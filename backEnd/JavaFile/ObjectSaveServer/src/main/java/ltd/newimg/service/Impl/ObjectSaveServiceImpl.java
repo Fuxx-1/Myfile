@@ -8,6 +8,7 @@ import ltd.newimg.util.ReturnCodeEnum;
 import ltd.newimg.util.ReturnUtil;
 import ltd.newimg.util.TimeUtil;
 import org.apache.commons.codec.digest.DigestUtils;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.core.io.FileSystemResource;
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.MediaType;
@@ -46,12 +47,12 @@ public class ObjectSaveServiceImpl implements ObjectSaveService {
     @Override
     public JSONObject saveFile(String saveDir, String fileName, MultipartFile file) {
         try {
-            String suffix = fileName.split("//.")[fileName.split("//.").length - 1];
+            String suffix = fileName.split("\\.")[fileName.split("\\.").length - 1];
             if (suffix == null || suffix.length() == 0) {
                 return ReturnUtil.returnObj(ReturnCodeEnum.NO_FILENAME, null);
             }
             String finalFileName = DigestUtils.md5Hex(file.getInputStream())
-                    + "_" + DigestUtils.sha1Hex(file.getInputStream()) + suffix;
+                    + "_" + DigestUtils.sha1Hex(file.getInputStream()) + "." + suffix;
             FileSaveDTO fDto = new FileSaveDTO(saveDir, finalFileName, file.getInputStream());
             fileMapper.saveFile(fDto);
             return ReturnUtil.returnObj(ReturnCodeEnum.SUCCESS, new HashMap<String, Object>(1) {
@@ -72,8 +73,8 @@ public class ObjectSaveServiceImpl implements ObjectSaveService {
      * @return ResponseEntity<FileSystemResource> 文件 默认缓存
      */
     @Override
-    public ResponseEntity<FileSystemResource> accessFile(String fileName) {
-        File file = fileMapper.accessFile(new FileSaveDTO("./", fileName, null));
+    public ResponseEntity<FileSystemResource> accessFile(String saveDir,String fileName) {
+        File file = fileMapper.accessFile(new FileSaveDTO(saveDir, fileName, null));
         if (file.exists()) {
             HttpHeaders headers = new HttpHeaders();
             headers.add("Cache-Control", "public");

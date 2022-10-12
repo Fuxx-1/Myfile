@@ -26,5 +26,5 @@ public interface ObjectSaveService {
      * @param fileName 文件名
      * @return ResponseEntity<FileSystemResource> 文件 默认缓存
      */
-    ResponseEntity<FileSystemResource> accessFile(String fileName);
+    ResponseEntity<FileSystemResource> accessFile(String saveDir,String fileName);
 }

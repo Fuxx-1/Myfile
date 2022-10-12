@@ -50,17 +50,36 @@ public class UserServiceImpl implements UserService {
      */
     @Override
     public JSONObject sendVerifyEmail(String Email, String Action) {
+        Integer times = (Integer) redisUtil.getCacheObject(Email + ":times");
         try {
-            Integer times = (Integer) redisUtil.getCacheObject(Email + ":times");
-            //获取发送次数
-            if (times != null && times > 10) {
+            for (int i = 0; i <= 3; i++) {
+                /* 循环等待资源，负值为资源锁定状态 */
+                if ((Integer) redisUtil.getCacheObject(Email + ":times") == null || (Integer) redisUtil.getCacheObject(Email + ":times") > 0) {
+                    /* 获得资源并加锁 */
+                    times = (Integer) redisUtil.getCacheObject(Email + ":times");
+                    redisUtil.setCacheObject(Email + ":times", times == null ? 0 : -Math.abs(times), 12, TimeUnit.HOURS);
+                    break;
+                } else {
+                    // 等待资源
+                    Thread.sleep(150);
+                }
+                times = (Integer) redisUtil.getCacheObject(Email + ":times");
+                if (i == 3) {
+                    redisUtil.setCacheObject(Email + ":times", Math.abs(times), 12, TimeUnit.HOURS);
+                    return ReturnUtil.returnObj("尝试超时", -1, null);
+                }
+            }
+            times = (Integer) redisUtil.getCacheObject(Email + ":times");
+            System.out.println(times);
+            if (times < -5) {
+                redisUtil.setCacheObject(Email + ":times", Math.abs(times), 12, TimeUnit.HOURS);
                 return ReturnUtil.returnObj("发送次数过多", 1, null);
-                //发送失败，原因如上
+                //发送失败（原因如上）
             } else {
                 JSONObject sendResult = sendVerifyCode(Email, Action);
                 if (sendResult.get("code").equals(0)) {
-                    redisUtil.setCacheObject(Email + ":times", times == null ? 1 : times + 1, 12, TimeUnit.HOURS);
-                    //发送成功次数加一
+                    times--;
+                    redisUtil.setCacheObject(Email + ":times", Math.abs(times), 12, TimeUnit.HOURS);
                 }
                 return sendResult;
             }
