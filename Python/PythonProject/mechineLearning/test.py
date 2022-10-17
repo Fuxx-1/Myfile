@@ -1,8 +1,8 @@
 # use mnist to test environment
 # -*- coding: utf-8 -*-
 # 使用卷积神经网络训练mnist数据集
-import gzip
 
+import gzip
 from tensorflow.keras.datasets import mnist
 from tensorflow.keras.utils import to_categorical
 import tensorflow as tf

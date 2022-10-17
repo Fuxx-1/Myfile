@@ -35,4 +35,5 @@ public class attrTest {
         System.out.println(fileName.split("\\.")[fileName.split("\\.").length - 1]);
         System.out.println(NanoIdUtil.randomNanoId());
     }
+
 }

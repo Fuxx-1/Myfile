@@ -1,0 +1,13 @@
+{
+    "configurations": [
+        {
+            "type": "gradle",
+            "debugJvm": "true",
+            "name": "gradle_run",
+            "tasks": [
+                "run"
+            ],
+        },
+
+    ]
+}

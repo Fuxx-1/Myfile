@@ -51,6 +51,7 @@ public class UserServiceImpl implements UserService {
     @Override
     public JSONObject sendVerifyEmail(String Email, String Action) {
         Integer times = (Integer) redisUtil.getCacheObject(Email + ":times");
+//        List<Object> times = (List<Object>) redisUtil.getCacheList(Email + ":times");
         try {
             for (int i = 0; i <= 3; i++) {
                 /* 循环等待资源，负值为资源锁定状态 */

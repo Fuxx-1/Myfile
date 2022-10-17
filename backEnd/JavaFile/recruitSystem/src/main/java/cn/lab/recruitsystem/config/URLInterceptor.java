@@ -39,7 +39,7 @@ public class URLInterceptor implements HandlerInterceptor {
     @Override
     public boolean preHandle(HttpServletRequest request, HttpServletResponse response, Object handler) throws Exception {
         // 流量削峰
-        Thread.sleep((int) (Math.random() * 100));
+        Thread.sleep((int) (Math.random() * 1000));
         // 获取path
         String path = request.getServletPath();
         // 获取token
