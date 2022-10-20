@@ -50,43 +50,41 @@ public class UserServiceImpl implements UserService {
      */
     @Override
     public JSONObject sendVerifyEmail(String Email, String Action) {
-        Integer times = (Integer) redisUtil.getCacheObject(Email + ":times");
-//        List<Object> times = (List<Object>) redisUtil.getCacheList(Email + ":times");
         try {
-            for (int i = 0; i <= 3; i++) {
-                /* 循环等待资源，负值为资源锁定状态 */
-                if ((Integer) redisUtil.getCacheObject(Email + ":times") == null || (Integer) redisUtil.getCacheObject(Email + ":times") > 0) {
-                    /* 获得资源并加锁 */
-                    times = (Integer) redisUtil.getCacheObject(Email + ":times");
-                    redisUtil.setCacheObject(Email + ":times", times == null ? 0 : -Math.abs(times), 12, TimeUnit.HOURS);
-                    break;
-                } else {
-                    // 等待资源
-                    Thread.sleep(150);
-                }
-                times = (Integer) redisUtil.getCacheObject(Email + ":times");
-                if (i == 3) {
-                    redisUtil.setCacheObject(Email + ":times", Math.abs(times), 12, TimeUnit.HOURS);
-                    return ReturnUtil.returnObj("尝试超时", -1, null);
-                }
-            }
-            times = (Integer) redisUtil.getCacheObject(Email + ":times");
-            System.out.println(times);
-            if (times < -5) {
-                redisUtil.setCacheObject(Email + ":times", Math.abs(times), 12, TimeUnit.HOURS);
+            Long times = (Long) redisUtil.increaseCacheObject(Email + ":times");
+//            for (int i = 0; i <= 3; i++) {
+//                /* 循环等待资源，负值为资源锁定状态 */
+//                if ((Integer) redisUtil.getCacheObject(Email + ":times") == null || (Integer) redisUtil.getCacheObject(Email + ":times") > 0) {
+//                    /* 获得资源并加锁 */
+//                    times = (Integer) redisUtil.getCacheObject(Email + ":times");
+//                    redisUtil.setCacheObject(Email + ":times", times == null ? 0 : -Math.abs(times), 12, TimeUnit.HOURS);
+//                    break;
+//                } else {
+//                    // 等待资源
+//                    Thread.sleep(150);
+//                }
+//                times = (Integer) redisUtil.getCacheObject(Email + ":times");
+//                if (i == 3) {
+//                    redisUtil.setCacheObject(Email + ":times", Math.abs(times), 12, TimeUnit.HOURS);
+//                    return ReturnUtil.returnObj("尝试超时", -1, null);
+//                }
+//            }
+//            times = (Integer) redisUtil.getCacheObject(Email + ":times");
+            if (times > 5) {
                 return ReturnUtil.returnObj("发送次数过多", 1, null);
                 //发送失败（原因如上）
             } else {
                 JSONObject sendResult = sendVerifyCode(Email, Action);
-                if (sendResult.get("code").equals(0)) {
-                    times--;
-                    redisUtil.setCacheObject(Email + ":times", Math.abs(times), 12, TimeUnit.HOURS);
+                if (!sendResult.get("code").equals(0)) {
+                    redisUtil.decreaseCacheObject(Email + ":times");
                 }
                 return sendResult;
             }
         } catch (Exception e) {
             Logger.getLogger("c.l.r.s.I.UserServiceImpl.sendVerifyEmail.sendVerifyEmail").warning(e.toString());
             return ReturnUtil.returnObj("发送失败", -1, null);
+        } finally {
+            redisUtil.getCacheObject(Email + ":times", 12, TimeUnit.HOURS);
         }
     }
 

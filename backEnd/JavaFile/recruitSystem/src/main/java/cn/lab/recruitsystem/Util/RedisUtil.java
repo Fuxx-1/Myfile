@@ -48,7 +48,21 @@ public class RedisUtil {
      * 获得缓存的基本对象。
      *
      * @param key 缓存键值
+     * @param timeout  时间
+     * @param timeUnit 时间颗粒度
      * @return 缓存键值对应的数据
+     */
+    public Object getCacheObject(Object key, Integer timeout, TimeUnit timeUnit) {
+        ValueOperations<Object, Object> operation = redisTemplate.opsForValue();
+        return operation.getAndExpire(key, timeout, timeUnit);
+    }
+
+    /**
+     * 获得缓存的基本对象。
+     *
+     * @param key 缓存键值
+     * @return 缓存键值对应的数据
+     * @
      */
     public Object getCacheObject(Object key) {
         ValueOperations<Object, Object> operation = redisTemplate.opsForValue();
@@ -181,5 +195,25 @@ public class RedisUtil {
      */
     public Collection<Object> keys(String pattern) {
         return redisTemplate.keys(pattern);
+    }
+
+    /**
+     * 缓存对象自增
+     *
+     * @param key
+     * @return
+     */
+    public Long increaseCacheObject(String key) {
+        return redisTemplate.opsForValue().increment(key);
+    }
+
+    /**
+     * 缓存对象自减
+     *
+     * @param key
+     * @return
+     */
+    public Long decreaseCacheObject(String key) {
+        return redisTemplate.opsForValue().decrement(key);
     }
 }

@@ -37,24 +37,25 @@ public class RSA {
         while(i >= 0 && n > 0) {
             int c = s.codePointAt(i--);
             if(c < 128) { // encode using utf-8
-                ba[--n] = new Byte(String.valueOf(c));
+                ba[--n] = Byte.parseByte(String.valueOf(c));
             } else {
                 if((c > 127) && (c < 2048)) {
-                    ba[--n] = new Byte(String.valueOf((c & 63) | 128));
-                    ba[--n] = new Byte(String.valueOf((c >> 6) | 192));
+                    
+                    ba[--n] = Byte.parseByte(String.valueOf((c & 63) | 128));
+                    ba[--n] = Byte.parseByte(String.valueOf((c >> 6) | 192));
                 } else {
-                    ba[--n] = new Byte(String.valueOf((c & 63) | 128));
-                    ba[--n] = new Byte(String.valueOf(((c >> 6) & 63) | 128));
-                    ba[--n] = new Byte(String.valueOf((c >> 12) | 224));
+                    ba[--n] = Byte.parseByte(String.valueOf((c & 63) | 128));
+                    ba[--n] = Byte.parseByte(String.valueOf(((c >> 6) & 63) | 128));
+                    ba[--n] = Byte.parseByte(String.valueOf((c >> 12) | 224));
                 }
             }
         }
-        ba[--n] = new Byte("0");
+        ba[--n] = Byte.parseByte("0");
         byte[] temp = new byte[1];
         Random rdm = new Random(47L);
 
         while(n > 2) { // random non-zero pad
-            temp[0] = new Byte("0");
+            temp[0] = Byte.parseByte("0");
             while(temp[0] == 0) {
                 rdm.nextBytes(temp);
             }
