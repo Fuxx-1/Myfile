@@ -9,7 +9,7 @@ package com.study.B_KnowLock;
  * 1、属性
  * 2、方法
  */
-public class synchronizedKeyword {
+public class SynchronizedKeyword {
     public static void main(String[] args) {
 //        new Thread(new MyThread()).start();
         // 传统方法

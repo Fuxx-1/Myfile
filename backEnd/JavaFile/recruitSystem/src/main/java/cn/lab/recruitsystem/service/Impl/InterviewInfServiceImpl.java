@@ -183,8 +183,6 @@ public class InterviewInfServiceImpl implements InterviewInfService {
     @Override
     public JSONObject getInterviewInf(String userid) {
         try {
-            System.out.println(userid);
-            System.out.println(interviewInfMapper.getUserInf(userid).hideInterviewer());
             return ReturnUtil.returnObj("查询成功", 0, interviewInfMapper.getUserInf(userid).hideInterviewer());
         } catch (Exception e) {
             Logger.getLogger("c.l.r.s.I.InterviewInfServiceImpl.getInterviewInf").warning(e.toString());

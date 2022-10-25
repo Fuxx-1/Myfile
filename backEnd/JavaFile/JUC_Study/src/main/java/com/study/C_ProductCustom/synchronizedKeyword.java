@@ -9,7 +9,7 @@ package com.study.C_ProductCustom;
  * @Description
  * @create 2022-04-22 9:27
  */
-public class synchronizedKeyword {
+public class SynchronizedKeyword {
     public static void main(String[] args) {
         Resource resource = new Resource();
 

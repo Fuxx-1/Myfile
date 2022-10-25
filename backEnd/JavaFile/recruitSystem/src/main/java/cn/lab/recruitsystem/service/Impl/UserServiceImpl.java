@@ -262,7 +262,7 @@ public class UserServiceImpl implements UserService {
                 // 已签到，不允许更改
                 userMapper.updateInf(user.getUserid(), user.getName(), user.getGender(), user.getMajor(), user.getPhone(), userInf.getWish());
                 userMapper.updateTime(user.getUserid());
-                return ReturnUtil.returnObj("更新成功", 0, userMapper.getUserInf(user.getUserid()));
+                return ReturnUtil.returnObj("除选组外均已更新", -1, userMapper.getUserInf(user.getUserid()));
             }
         } catch (Exception e) {
             Logger.getLogger("c.l.r.s.I.UserServiceImpl.updataInf").warning(e.toString());
