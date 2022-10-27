@@ -23,6 +23,7 @@ dependencies {
     implementation ('org.springframework.boot:spring-boot-starter-web') {
         exclude module: "spring-boot-starter-tomcat"
     }
+    implementation 'org.redisson:redisson-spring-boot-starter:3.17.7'
     implementation 'org.springframework.boot:spring-boot-starter-data-redis'
     implementation 'org.springframework.boot:spring-boot-starter-jdbc'
     implementation 'org.springframework.boot:spring-boot-starter-mail'

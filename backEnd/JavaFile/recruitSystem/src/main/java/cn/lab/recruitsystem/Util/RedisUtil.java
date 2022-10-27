@@ -1,9 +1,12 @@
 package cn.lab.recruitsystem.Util;
 
+import org.redisson.Redisson;
+import org.redisson.api.RBloomFilter;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.redis.core.*;
 import org.springframework.stereotype.Component;
 
+import javax.annotation.Resource;
 import java.util.*;
 import java.util.concurrent.TimeUnit;
 
@@ -216,4 +219,5 @@ public class RedisUtil {
     public Long decreaseCacheObject(String key) {
         return redisTemplate.opsForValue().decrement(key);
     }
+
 }
