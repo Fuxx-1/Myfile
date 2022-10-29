@@ -1,4 +1,4 @@
-//给你链表的头节点 head ，每 k 个节点一组进行翻转，请你返回修改后的链表。 
+package org.example.leetcode.editor.cn;//给你链表的头节点 head ，每 k 个节点一组进行翻转，请你返回修改后的链表。
 //
 // k 是一个正整数，它的值小于或等于链表的长度。如果节点总数不是 k 的整数倍，那么请将最后剩余的节点保持原有顺序。 
 //
@@ -44,6 +44,11 @@
 
 //leetcode submit region begin(Prohibit modification and deletion)
 
+import java.util.Hashtable;
+import java.util.List;
+import java.util.Vector;
+import java.util.concurrent.CopyOnWriteArrayList;
+
 /**
  * Definition for singly-linked list.
  * public class ListNode {
@@ -56,7 +61,28 @@
  */
 class Solution {
     public ListNode reverseKGroup(ListNode head, int k) {
-
+        ListNode hair = new ListNode(-1, head);
+        ListNode prev = hair;
+        while (true) {
+            ListNode last = prev;
+            // 检测节点是否充足
+            for (int i = 0; i < k; i++) {
+                last = last.next;
+                if (last == null) {
+                    return hair.next;
+                }
+            }
+            // 开始翻转
+            ListNode curr = prev.next.next, next = null;
+            curr.next = last.next;
+            for (int i = 0; i < k - 1; i++) {
+                next = curr.next;
+                curr.next = prev;
+                prev = curr;
+                curr = next;
+            }
+            prev = next;
+        }
     }
 }
 
@@ -77,5 +103,6 @@ class ListNode {
     ListNode(int val, ListNode next) {
         this.val = val;
         this.next = next;
+
     }
 }
