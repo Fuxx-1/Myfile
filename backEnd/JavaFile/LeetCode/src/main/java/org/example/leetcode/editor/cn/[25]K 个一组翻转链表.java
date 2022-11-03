@@ -60,29 +60,59 @@ import java.util.concurrent.CopyOnWriteArrayList;
  * }
  */
 class Solution {
+    //    public ListNode reverseKGroup(ListNode head, int k) {
+//        ListNode hair = new ListNode(-1, head);
+//        ListNode prev = hair;
+//        while (true) {
+//            ListNode last = prev;
+//            // 检测节点是否充足
+//            for (int i = 0; i < k; i++) {
+//                last = last.next;
+//                if (last == null) {
+//                    return hair.next;
+//                }
+//            }
+//            // 开始翻转
+//            ListNode curr = prev.next.next, next = null;
+//            curr.next = last.next;
+//            for (int i = 0; i < k - 1; i++) {
+//                next = curr.next;
+//                curr.next = prev;
+//                prev = curr;
+//                curr = next;
+//            }
+//            prev = next;
+//        }
+//    }
     public ListNode reverseKGroup(ListNode head, int k) {
-        ListNode hair = new ListNode(-1, head);
-        ListNode prev = hair;
-        while (true) {
-            ListNode last = prev;
-            // 检测节点是否充足
-            for (int i = 0; i < k; i++) {
-                last = last.next;
-                if (last == null) {
-                    return hair.next;
-                }
+        ListNode hair = new ListNode(-1, head), begin = hair, end = hair;
+        int numbers = 0;
+        while (end.next != null) {
+            end = end.next;
+            numbers++;
+            if (numbers == k) {
+                Reverse(begin.next, end);
+                begin.next = end;
+                
+                numbers = 0;
             }
-            // 开始翻转
-            ListNode curr = prev.next.next, next = null;
-            curr.next = last.next;
-            for (int i = 0; i < k - 1; i++) {
-                next = curr.next;
-                curr.next = prev;
-                prev = curr;
-                curr = next;
-            }
-            prev = next;
         }
+        return hair.next;
+    }
+
+    public void Reverse(ListNode begin, ListNode end) {
+        if (begin == end) {
+            return;
+        }
+        ListNode mid = begin.next, temp;
+        begin.next = end.next;
+        while (mid != end) {
+            temp = mid.next;
+            mid.next = begin;
+            begin = mid;
+            mid = temp;
+        }
+        end.next = begin;
     }
 }
 
@@ -103,6 +133,27 @@ class ListNode {
     ListNode(int val, ListNode next) {
         this.val = val;
         this.next = next;
+    }
+}
 
+class Test {
+    public static void main(String[] args) {
+        int[] a = {6, 5, 4, 3, 2, 1};
+        ListNode head = new ListNode(0, null);
+        for (int i : a) {
+            head.next = new ListNode(i, head.next);
+        }
+        Solution solution = new Solution();
+        print(head);
+        head = solution.reverseKGroup(head, 3);
+        print(head);
+    }
+
+    public static void print(ListNode head) {
+        System.out.print(head.val);
+        while (head.next != null) {
+            head = head.next;
+            System.out.print(head.val);
+        }
     }
 }

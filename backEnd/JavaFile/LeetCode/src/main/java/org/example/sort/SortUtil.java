@@ -1,8 +1,6 @@
 package org.example.sort;
 
-import java.util.Arrays;
-import java.util.LinkedList;
-import java.util.Queue;
+import java.util.*;
 import java.util.function.BiFunction;
 
 /**
@@ -12,13 +10,19 @@ import java.util.function.BiFunction;
  */
 public class SortUtil {
     public static void main(String[] args) {
-        Integer[] a = {5, 7, 6, 8, 3, 2, 1, 4, 0, 9};
+        Integer[] a = {669, 308, 609, 564, 376, 778, 335, 527, 643, 289, 557, 728, 410, 539, 719, 643, 460, 592, 97, 523, 532, 632, 360, 22, 766, 245, 314, 421, 12, 805, 156, 88, 819, 857, 904, 881}; // , 8, 3, 2, 1, 4, 0, 9
+//        Random random = new Random();
+//        Integer[] a = new Integer[random.nextInt(100)]; // , 8, 3, 2, 1, 4, 0, 9
+//        for (int i = 0; i < a.length; i++) {
+//            a[i] = random.nextInt(1000);
+//        }
         Integer[] b = a.clone();
-        bubbleSort(a, (a1, a2) -> {
-            return (Integer) a1 - (Integer) a2 > 0;
+        quickSort(a, (a1, a2) -> {
+            return (Integer) a1 - (Integer) a2 < 0;
         });
-        Arrays.sort(b);
         System.out.println(Arrays.toString(a));
+        Arrays.sort(b);
+        System.out.println(Arrays.toString(b));
         System.out.println(Arrays.equals(b, a));
     }
 
@@ -41,17 +45,27 @@ public class SortUtil {
         }
     }
 
-    public void quickSort(Object[] arr, BiFunction<Object, Object, Boolean> compareTo) {
-
+    public static void quickSort(Object[] arr, BiFunction<Object, Object, Boolean> compareTo) {
         Queue<InterVal> queue = new LinkedList<>();
         queue.offer(new InterVal(0, arr.length - 1));
         while (queue.size() > 0) {
             InterVal interVal = queue.poll();
-            int left = interVal.l, right = interVal.r;
-            int middle = (l + r) / 2, l = left, r = right;
+            int l = interVal.l, r = interVal.r;
+            if (l >= r) continue;
+            Object mid = arr[(l + r) / 2];
             while (l < r) {
-                // 将 middle 外的元素置到 middle 两侧
-                
+                if (arr[l].equals(arr[r])) {
+                    r--;
+                }
+                while (compareTo.apply(arr[l], mid)) l++;
+                while (compareTo.apply(mid, arr[r])) r--;
+                swap(arr, l, r);
+//                print(arr, mid);
+            }
+            System.out.println(Arrays.toString(arr));
+            if (interVal.l < interVal.r) {
+                queue.offer(new InterVal(interVal.l, Math.max(l - 1, 0)));
+                queue.offer(new InterVal(Math.min(l + 1, arr.length), interVal.r));
             }
         }
     }
@@ -80,5 +94,15 @@ public class SortUtil {
         Object temp = arr[i];
         arr[i] = arr[j];
         arr[j] = temp;
+    }
+
+
+    private static void print(Object[] arr, Object mid) {
+        System.out.print("[ ");
+        for (Object o : arr) {
+            if (!o.equals(mid)) System.out.print(o + ", ");
+            else System.out.print("{" + o + "}, ");
+        }
+        System.out.print("]\n");
     }
 }
