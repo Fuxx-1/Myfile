@@ -1,5 +1,8 @@
 package com.study.C_ProductCustom;
 
+import java.util.concurrent.CountDownLatch;
+import java.util.concurrent.CyclicBarrier;
+import java.util.concurrent.TimeUnit;
 import java.util.concurrent.locks.Condition;
 import java.util.concurrent.locks.Lock;
 import java.util.concurrent.locks.ReentrantLock;
@@ -13,6 +16,7 @@ public class JUC_3Threads {
 
     public static void main(String[] args) {
         Resource3 resource3 = new Resource3();
+        CyclicBarrier
 
         new Thread(() -> {
             for (int i = 0; i < 40; i++) {
@@ -33,7 +37,11 @@ public class JUC_3Threads {
                 }
             }
         }, "P2").start();
-
+        try {
+            TimeUnit.SECONDS.sleep(10);
+        } catch (InterruptedException e) {
+            throw new RuntimeException(e);
+        }
         new Thread(() -> {
             for (int i = 0; i < 40; i++) {
                 try {

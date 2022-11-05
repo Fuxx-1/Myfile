@@ -10,16 +10,18 @@ import java.util.function.BiFunction;
  */
 public class SortUtil {
     public static void main(String[] args) {
-        Integer[] a = {669, 308, 609, 564, 376, 778, 335, 527, 643, 289, 557, 728, 410, 539, 719, 643, 460, 592, 97, 523, 532, 632, 360, 22, 766, 245, 314, 421, 12, 805, 156, 88, 819, 857, 904, 881}; // , 8, 3, 2, 1, 4, 0, 9
+//        int[] a = {669, 308, 609, 564, 376, 778, 335, 527, 643, 289, 557, 728, 410, 539, 719, 643, 460, 592, 97, 523, 532, 632, 360, 22, 766, 245, 314, 421, 12, 805, 156, 88, 819, 857, 904, 881}; // , 8, 3, 2, 1, 4, 0, 9
+        int[] a = {5, 2, 4, 1, 3, 6, 0}; // , 8, 3, 2, 1, 4, 0, 9
 //        Random random = new Random();
 //        Integer[] a = new Integer[random.nextInt(100)]; // , 8, 3, 2, 1, 4, 0, 9
 //        for (int i = 0; i < a.length; i++) {
 //            a[i] = random.nextInt(1000);
 //        }
-        Integer[] b = a.clone();
-        quickSort(a, (a1, a2) -> {
-            return (Integer) a1 - (Integer) a2 < 0;
-        });
+        int[] b = a.clone();
+        sort(a, 0, a.length - 1);
+//        quickSort(a, (a1, a2) -> {
+//            return (Integer) a1 - (Integer) a2 < 0;
+//        });
         System.out.println(Arrays.toString(a));
         Arrays.sort(b);
         System.out.println(Arrays.toString(b));
@@ -104,5 +106,23 @@ public class SortUtil {
             else System.out.print("{" + o + "}, ");
         }
         System.out.print("]\n");
+    }
+
+    private static void sort(int[] nums, int left, int right) {
+        int l = left - 1, r = right + 1;
+        if (left >= right) return;
+        int mid = nums[(left + right) / 2 + 1];
+        while (l < r) {
+            while (nums[++l] < mid) ;
+            while (mid < nums[--r]) ;
+            if (l < r) {
+                int temp = nums[l];
+                nums[l] = nums[r];
+                nums[r] = temp;
+            }
+
+        }
+        sort(nums, left, l - 1);
+        sort(nums, l, right);
     }
 }
