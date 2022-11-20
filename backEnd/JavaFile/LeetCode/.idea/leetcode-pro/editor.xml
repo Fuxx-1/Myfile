@@ -171,6 +171,18 @@
             </LeetcodeEditor>
           </value>
         </entry>
+        <entry key="$PROJECT_DIR$/src/main/java/org/example/leetcode/editor/cn/[902]最大为 N 的数字组合.java">
+          <value>
+            <LeetcodeEditor>
+              <option name="contentPath" value="$PROJECT_DIR$/src/main/java/org/example/leetcode/editor/cn/doc/content/[902]最大为 N 的数字组合.md" />
+              <option name="frontendQuestionId" value="leetcode.cn902" />
+              <option name="host" value="leetcode.cn" />
+              <option name="langSlug" value="java" />
+              <option name="path" value="$PROJECT_DIR$/src/main/java/org/example/leetcode/editor/cn/[902]最大为 N 的数字组合.java" />
+              <option name="titleSlug" value="numbers-at-most-n-given-digit-set" />
+            </LeetcodeEditor>
+          </value>
+        </entry>
       </map>
     </option>
   </component>
