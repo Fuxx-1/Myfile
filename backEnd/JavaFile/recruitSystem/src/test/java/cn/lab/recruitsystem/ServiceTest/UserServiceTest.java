@@ -4,6 +4,7 @@ import cn.lab.recruitsystem.service.UserService;
 import com.alibaba.fastjson.JSONObject;
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
+import org.springframework.context.ApplicationContext;
 
 import javax.annotation.Resource;
 
@@ -19,6 +20,7 @@ public class UserServiceTest {
 
     @Test
     public void sendVerifyEmail() {
+        ApplicationContext applicationContext =
         System.out.println(userService.sendVerifyEmail("583742849@qq.com", "Test"));
     }
 
