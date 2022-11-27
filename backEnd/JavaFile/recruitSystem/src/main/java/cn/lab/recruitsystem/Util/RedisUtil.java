@@ -29,7 +29,7 @@ public class RedisUtil {
     public ValueOperations<Object, Object> setCacheObject(Object key, Object value) {
         ValueOperations<Object, Object> operation = redisTemplate.opsForValue();
         operation.set(key, value);
-        return operation;
+        return operation;	
     }
 
     /**
