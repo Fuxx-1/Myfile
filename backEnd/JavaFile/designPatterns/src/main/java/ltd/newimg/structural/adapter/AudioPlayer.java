@@ -1,5 +1,10 @@
 package ltd.newimg.structural.adapter;
 
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.LinkedList;
+import java.util.Queue;
+
 /**
  * @author Eleun
  * @Description

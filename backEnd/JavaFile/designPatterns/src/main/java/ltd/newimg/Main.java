@@ -22,7 +22,7 @@ class Solution {
     }
 
     public static void main(String[] args) {
-        numSquares(16);
-        AtomicBoolean
+//        numSquares(16);
+//        AtomicBoolean
     }
 }
