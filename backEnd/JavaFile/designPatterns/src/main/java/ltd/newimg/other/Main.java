@@ -1,5 +1,6 @@
-package ltd.newimg;
+package ltd.newimg.other;
 
+import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicBoolean;
 
 public class Main {

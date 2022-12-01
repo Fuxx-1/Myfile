@@ -1,4 +1,4 @@
-package ltd.newimg;
+package ltd.newimg.other;
 
 import java.io.IOException;
 import java.security.MessageDigest;
