@@ -5,9 +5,9 @@ package ltd.newimg.structural.bridge;
  * @Description
  * @create 2022-12-01 23:27
  */
-public class RedCircle implements DrawAPI {
+public class GreenCircle implements DrawAPI {
     @Override
     public void drawCircle(int radius) {
-        System.out.println("Drawing RedCircle[radius: " + radius + "]");
+        System.out.println("Drawing GreenCircle[radius: " + radius + "]");
     }
 }
