@@ -3,6 +3,7 @@ package ltd.newimg.structural.flyweight;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 
+import java.util.Arrays;
 import java.util.HashMap;
 
 /**
@@ -22,4 +23,20 @@ public class ShapeFactory {
         }
         return circle;
     }
+
+    public static void main(String[] args) {
+        int num = 25;
+        String numString = String.valueOf(num);
+        int arrLength = numString.length(), result = 0;
+        int[] dp = new int[arrLength];
+        dp[0] = 1;
+        for (int i = 1; i < arrLength; i++) {
+            int index = (numString.charAt(i - 1) - '0') * 10 + numString.charAt(i) - '0';
+            dp[i] = dp[i - 1] + (index < 26 ? 1 : 0);
+            result = Math.max(dp[i], result);
+        }
+        System.out.println(Arrays.toString(dp));
+        System.out.println(result);
+    }
+
 }
