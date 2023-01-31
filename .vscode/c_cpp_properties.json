@@ -9,7 +9,7 @@
             "C:/MySoftware/Environment/C/MinGW64_C/bin/../lib/gcc/x86_64-w64-mingw32/8.1.0/include/c++/backward",
             "C:/MySoftware/Environment/C/MinGW64_C/bin/../lib/gcc/x86_64-w64-mingw32/8.1.0/include",
             "C:/MySoftware/Environment/C/MinGW64_C/bin/../lib/gcc/x86_64-w64-mingw32/8.1.0/include-fixed"
-
+            // "C:/Users/Eleun/Desktop/RIP/Include/*"
         ],
         "defines": [
             "_DEBUG",
