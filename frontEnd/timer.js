@@ -2,7 +2,7 @@
 
 var storage = storages.create("cn.xupt.sign.mine.variable");
 if (!storage.contains("agreement")) {
-    setVariable(storage, "否", "", "1:00", "是", "否", "否", "36.5", "否");
+    setVariable(storage, "否", "", "1:00", "否", "36.5", "否");
 }
 var myVariable = getVariable(storage);
 const deviceWidth = device.width,
@@ -88,17 +88,14 @@ function notify(notifyId, title, text, onGoing) {
  * @param {String} signTime 执行时间
  * @param {String} healthyState 健康状态
  * @param {String} isQuarantine 是否隔离
- * @param {String} needFix 是否需要填体温
  * @param {String} tamperature 体温
  * @param {String} autoSubmit 自动提交
  */
-function setVariable(storage, agreement, pwd, signTime, healthyState, isQuarantine, needFix, tamperature, autoSubmit) {
+function setVariable(storage, agreement, pwd, signTime, healthyState, tamperature, autoSubmit) {
     storage.put("agreement", agreement);
     storage.put("pwd", pwd);
     storage.put("signTime", signTime);
     storage.put("healthyState", healthyState);
-    storage.put("isQuarantine", isQuarantine);
-    storage.put("needFix", needFix);
     storage.put("tamperature", tamperature);
     storage.put("autoSubmit", autoSubmit);
 }
@@ -114,8 +111,6 @@ function getVariable(storage) {
         "pwd": storage.get("pwd"),
         "signTime": storage.get("signTime"),
         "healthyState": storage.get("healthyState"),
-        "isQuarantine": storage.get("isQuarantine"),
-        "needFix": storage.get("needFix"),
         "tamperature": storage.get("tamperature"),
         "autoSubmit": storage.get("autoSubmit")
     };
