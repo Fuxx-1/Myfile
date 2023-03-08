@@ -3,6 +3,7 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/ObjectSaveServer.main.iml" filepath="$PROJECT_DIR$/.idea/modules/ObjectSaveServer.main.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/ltd.newimg.ObjectSaveServer.main.iml" filepath="$PROJECT_DIR$/.idea/modules/ltd.newimg.ObjectSaveServer.main.iml" />
     </modules>
   </component>
 </project>
