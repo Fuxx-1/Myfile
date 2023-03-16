@@ -4,12 +4,23 @@
 
 <web-app>
   <display-name>Archetype Created Web Application</display-name>
+
   <servlet>
-    <servlet-name>helloServlet</servlet-name>
-    <servlet-class>org.tomcat.servlet.helloServlet</servlet-class>
+    <servlet-name>randomServlet</servlet-name>
+    <servlet-class>org.tomcat.servlet.RandomServlet</servlet-class>
   </servlet>
   <servlet-mapping>
-    <servlet-name>helloServlet</servlet-name>
-    <url-pattern>/hello</url-pattern>
+    <servlet-name>randomServlet</servlet-name>
+    <url-pattern>/random</url-pattern>
   </servlet-mapping>
+
+  <servlet>
+    <servlet-name>randomSuccessServlet</servlet-name>
+    <jsp-file>/WEB-INF/random.jsp</jsp-file>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>randomSuccessServlet</servlet-name>
+    <url-pattern>/random_success</url-pattern>
+  </servlet-mapping>
+
 </web-app>

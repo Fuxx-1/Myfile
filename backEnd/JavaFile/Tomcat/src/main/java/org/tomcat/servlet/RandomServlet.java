@@ -4,26 +4,21 @@ import javax.servlet.ServletException;
 import javax.servlet.ServletRequest;
 import javax.servlet.ServletResponse;
 import javax.servlet.http.HttpServlet;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.util.Random;
 
 public class RandomServlet extends HttpServlet {
     @Override
-    public void service(ServletRequest req, ServletResponse res) throws ServletException, IOException {
+    public void service(HttpServletRequest req, HttpServletResponse res) throws ServletException, IOException {
         res.setContentType("text/html");
         res.setCharacterEncoding("utf-8");
         PrintWriter out = res.getWriter();
-        out.println(
-                "<html>" +
-                    "<head>" +
-                        "<title>随机数</title>" +
-                    "</head>" +
-                    "<body>" +
-                        "<h1>" + "随机数" + "</h1>" +
-                        "<h2>" + new Random().nextInt(10) + "</h2>" +
-                    "</body>" +
-                "</html>"
-        );
+        HttpSession session = req.getSession();
+        req.setAttribute("sessionid", session.getId());
+        req.getRequestDispatcher("random_success").forward(req, res);
     }
 }

@@ -14,5 +14,13 @@
     <url-pattern>/random</url-pattern>
   </servlet-mapping>
 
+  <servlet>
+    <servlet-name>randomSuccessServlet</servlet-name>
+    <jsp-file>/WEB-INF/random.jsp</jsp-file>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>randomSuccessServlet</servlet-name>
+    <url-pattern>/random_success</url-pattern>
+  </servlet-mapping>
 
 </web-app>
