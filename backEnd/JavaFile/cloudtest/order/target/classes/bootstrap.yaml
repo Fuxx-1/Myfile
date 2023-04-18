@@ -1,0 +1,19 @@
+spring:
+  application:
+    name: ltd.newimg.order
+  cloud:
+    nacos:
+      server-addr: 127.0.0.1:8858
+      password: nacos
+      username: nacos
+      config:
+        namespace: 0f0620a9-aa03-4abb-8019-9e9d746763e9
+        file-extension: yaml
+        extension-configs:
+          - data-id: extension.yaml
+            refresh: true
+          - data-id: extension2.yaml
+            refresh: true
+        shared-configs:
+          - data-id: share.yaml
+            refresh: true

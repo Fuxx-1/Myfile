@@ -2,11 +2,52 @@ server:
   port: 8121
 spring:
   application:
-    name: order-service
+    name: ltd.newimg.order
   cloud:
     nacos:
-      server-addr: 127.0.0.1:8847
+      server-addr: 127.0.0.1:8858
       discovery:
         username: nacos
         password: nacos
         namespace: 0f0620a9-aa03-4abb-8019-9e9d746763e9
+    sentinel:
+      transport:
+        dashboard: 127.0.0.1:8800
+      web-context-unify: false
+      datasource:
+        flow-rule:
+          nacos:
+            server-addr: 127.0.0.1:8858
+            username: nacos
+            password: nacos
+            dataId: order-sentinel-flow-rule.json
+            namespace: 0f0620a9-aa03-4abb-8019-9e9d746763e9
+            rule-type: flow
+  profiles:
+    active: dev
+#logging:
+#  level:
+#    ltd.newimg.feign: debug
+feign:
+  sentinel:
+    enabled: true
+  client:
+    config:
+      product-service:
+        logger-level: BASIC
+        contract: feign.Contract.Default
+        connect-timeout: 5000
+        read-timeout: 3000
+        request-interceptors:
+          - ltd.newimg.intercptor.feign.CustomFeignIntercptor
+#stock-service:
+#  ribbon:
+#    NFLoadBalancerRuleClassName: com.alibaba.cloud.nacos.ribbon.NacosRule
+#stock-service:
+#  ribbon:
+#    NFLoadBalancerRuleClassName: ltd.ribbon.rule.CustomRule
+#ribbon:
+#  eager-load:
+#    enabled: true
+#    clients:
+#      - stock-service

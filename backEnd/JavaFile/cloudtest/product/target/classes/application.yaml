@@ -1,8 +1,8 @@
 server:
-  port: 8111
+  port: 8131
 spring:
   application:
-    name: stock-service
+    name: product-service
   cloud:
     nacos:
       server-addr: 127.0.0.1:8858
