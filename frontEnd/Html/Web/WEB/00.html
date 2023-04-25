@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Homework</title>
+    <script>
+window.onload = function () {
+    document.getElementById('fromBtn').addEventListener('click', count, false)
+}
+function count() {
+    var checkItems = document.getElementsByClassName("myFrom")[0].getElementsByTagName('input')
+    var result = 0
+    for (let index = 0; index < checkItems.length; index++) {
+        if (checkItems[index].type == 'checkbox' && checkItems[index].checked == true) {
+            result++;
+        }
+    }
+    alert("你一共选中了" + result + "个多选框")
+}
+    </script>
+    <style>
+        table,
+        td {
+            border: 1px solid black;
+        }
+
+        td {
+            width: 100px;
+            height: 30px;
+        }
+    </style>
+</head>
+
+<body>
+    <p>段落1</p>
+    <p>段落2</p>
+    <table>
+        <tr>
+            <td>row1</td>
+            <td>row1</td>
+        </tr>
+        <tr>
+            <td>row2</td>
+            <td>row2</td>
+        </tr>
+        <tr>
+            <td>row3</td>
+            <td>row3</td>
+        </tr>
+        <tr>
+            <td>row4</td>
+            <td>row4</td>
+        </tr>
+        <tr>
+            <td>row5</td>
+            <td>row5</td>
+        </tr>
+    </table>
+<form class="myFrom">
+    <input type="checkbox">多选1<br>
+    <input type="checkbox">多选2<br>
+    <input type="checkbox">多选3<br>
+    <input type="checkbox">多选4<br>
+    <input type="checkbox">多选5<br>
+</form>
+<button id="fromBtn">你选中的个数</button>
+</body>
+
+</html>

@@ -63,6 +63,13 @@
         .tab.active {
             display: block;
         }
+
+        .status {
+            font-size: 2px;
+            border-radius: 2px;
+            border: 1px solid blue;
+            color: blue;
+        }
     </style>
 </head>
 
@@ -79,16 +86,20 @@
                 <h3 style="margin-bottom: 40px;">表单验证</h3>
                 <div>
                     <div class="row" style="padding: 5px;">
-                        <label for="email" class="form-label col-4">电子邮件：</label>
-                        <div class="col-8">
-                            <input type="email" class="form-control" id="email" placeholder="请输入电子邮件地址" name="email">
+                        <label for="email" class="form-label col-3">电子邮件：</label>
+                        <div class="col-6">
+                            <input onchange="test()" type="email" class="form-control" id="email"
+                                placeholder="请输入电子邮件地址" name="email">
                         </div>
+                        <div class="emailStatus status col-2">请输入电子邮件</div>
                     </div>
                     <div class="row" style="padding: 5px;">
-                        <label for="pwd" class="form-label col-4">密码：</label>
-                        <div class="col-8">
-                            <input type="password" class="form-control" id="pwd" placeholder="请输入密码" name="pswd">
+                        <label for="pwd" class="form-label col-3">密码：</label>
+                        <div class="col-6">
+                            <input onchange="test()" type="password" class="form-control" id="pwd" placeholder="请输入密码"
+                                name="pswd">
                         </div>
+                        <div class="pwdStatus status col-2">请输入密码</div>
                     </div>
                     <div class="form-check mb-3">
                         <label class="form-check-label">
@@ -98,11 +109,11 @@
                     <button type="submit" class="btn btn-primary" onclick="testForm()">提交</button>
                 </div>
             </div>
-            
+
             <div id="tab2" class="tab" style="text-align: left; padding: 40px;">
                 <h3 style="margin-bottom: 40px;">下拉表单</h3>
             </div>
-            
+
             <div id="tab3" class="tab" style="text-align: left; padding: 40px;">
                 <h3 style="margin-bottom: 40px;">屏幕选项</h3>
             </div>
@@ -127,32 +138,44 @@
             console.log(window.screen.width, window.screen.height)
             if (window.screen.width > 700) {
                 document.getElementsByClassName("main")[0].style.width = "90vw"
-                p2.innerText += "[Setting] width: 90%"
             } else {
                 document.getElementsByClassName("main")[0].style.width = "98vw"
-                p2.innerText += "[Setting]width: 98%"
             }
             if (window.screen.height > 100) {
                 document.getElementsByClassName("main")[0].style.height = "90vh"
-                p2.innerText += " height: 90%"
             } else {
                 document.getElementsByClassName("main")[0].style.height = "98vh"
-                p2.innerText += " height: 98%"
             }
             document.getElementsByClassName("tabButton")[0].click();
         }
         function testForm() {
+            if (test() == true) {
+                alert("信息通过校验")
+            } else {
+                alert("信息未通过校验")
+            }
+        }
+        function test() {
             var pswd = document.getElementsByName("pswd")[0].value
             var email = document.getElementsByName("email")[0].value
             var pswdRegExp = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)[^]{8,16}$/
             var emailExp = /^[a-zA-Z0-9_-]+@[a-zA-Z0-9_-]+(\.[a-zA-Z0-9_-]+)+$/
-            if (!emailExp.test(email)) {
-                alert("email校验失败")
-            } else if (!pswdRegExp.test(pswd)) {
-                alert("password校验失败")
-            } else {
-                alert("信息通过校验")
+            var result = true
+            if (email.length == 0) {
+                document.getElementsByClassName("emailStatus")[0].innerText = "请填写电子邮件"
+                result = false
+            } else if (!emailExp.test(email)) {
+                document.getElementsByClassName("emailStatus")[0].innerText = "电子邮件格式错误"
+                result = false
             }
+            if (pswd.length == 0) {
+                document.getElementsByClassName("pwdStatus")[0].innerText = "请填写密码"
+                result = false
+            } else if (!pswdRegExp.test(pswd)) {
+                document.getElementsByClassName("pwdStatus")[0].innerText = "密码格式错误"
+                result = false
+            }
+            return result;
         }
     </script>
 </body>
