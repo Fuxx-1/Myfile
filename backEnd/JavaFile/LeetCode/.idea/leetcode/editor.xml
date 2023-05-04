@@ -47,6 +47,17 @@
             </LeetcodeEditor>
           </value>
         </entry>
+        <entry key="$PROJECT_DIR$/src/main/java/leetcode/editor/cn/[剑指 Offer 20]表示数值的字符串.java">
+          <value>
+            <LeetcodeEditor>
+              <option name="contentPath" value="$PROJECT_DIR$/src/main/java/leetcode/editor/cn/doc/content/[剑指 Offer 20]表示数值的字符串.md" />
+              <option name="frontendQuestionId" value="leetcode.cn剑指 Offer 20" />
+              <option name="host" value="leetcode.cn" />
+              <option name="path" value="$PROJECT_DIR$/src/main/java/leetcode/editor/cn/[剑指 Offer 20]表示数值的字符串.java" />
+              <option name="titleSlug" value="biao-shi-shu-zhi-de-zi-fu-chuan-lcof" />
+            </LeetcodeEditor>
+          </value>
+        </entry>
         <entry key="$PROJECT_DIR$/src/main/java/leetcode/editor/cn/[剑指 Offer 53 - I]在排序数组中查找数字 I.java">
           <value>
             <LeetcodeEditor>
@@ -77,6 +88,17 @@
               <option name="host" value="leetcode.cn" />
               <option name="path" value="$PROJECT_DIR$/src/main/java/leetcode/editor/cn/[剑指 Offer 58 - I]翻转单词顺序.java" />
               <option name="titleSlug" value="fan-zhuan-dan-ci-shun-xu-lcof" />
+            </LeetcodeEditor>
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/src/main/java/leetcode/editor/cn/[剑指 Offer 67]把字符串转换成整数.java">
+          <value>
+            <LeetcodeEditor>
+              <option name="contentPath" value="$PROJECT_DIR$/src/main/java/leetcode/editor/cn/doc/content/[剑指 Offer 67]把字符串转换成整数.md" />
+              <option name="frontendQuestionId" value="leetcode.cn剑指 Offer 67" />
+              <option name="host" value="leetcode.cn" />
+              <option name="path" value="$PROJECT_DIR$/src/main/java/leetcode/editor/cn/[剑指 Offer 67]把字符串转换成整数.java" />
+              <option name="titleSlug" value="ba-zi-fu-chuan-zhuan-huan-cheng-zheng-shu-lcof" />
             </LeetcodeEditor>
           </value>
         </entry>

@@ -65,10 +65,30 @@
         }
 
         .status {
+            height: 20px;
+            width: 175px;
+            align-self: center;
             font-size: 2px;
             border-radius: 2px;
             border: 1px solid blue;
             color: blue;
+        }
+
+        .row {
+            display: flex;
+            justify-content: center;
+        }
+
+        table {
+            text-align: center;
+            border: 1px solid black;
+        }
+
+        td,
+        th {
+            border: 1px solid black;
+            width: 200px;
+            height: 20px;
         }
     </style>
 </head>
@@ -79,7 +99,7 @@
             <div class="tabButtons">
                 <button class="tabButton" onclick="openTab(event, 'tab1')">表单验证</button>
                 <button class="tabButton" onclick="openTab(event, 'tab2')">下拉表单</button>
-                <button class="tabButton" onclick="openTab(event, 'tab3')">屏幕选项</button>
+                <button class="tabButton" onclick="openTab(event, 'tab3')">房屋</button>
             </div>
 
             <div id="tab1" class="tab">
@@ -106,21 +126,87 @@
                             <input class="form-check-input" type="checkbox" name="remember"> 记住我
                         </label>
                     </div>
+                    <div style="padding: 5px;" class="row">
+                        <div class="testLog status">待验证</div>
+                    </div>
+                    <br>
                     <button type="submit" class="btn btn-primary" onclick="testForm()">提交</button>
                 </div>
             </div>
 
             <div id="tab2" class="tab" style="text-align: left; padding: 40px;">
                 <h3 style="margin-bottom: 40px;">下拉表单</h3>
+                <label for="province">省份：</label>
+                <select id="province" onchange="updateCities()">
+                    <option value="">请选择省份</option>
+                </select>
+                <br><br>
+                <label for="city">城市：</label>
+                <select id="city">
+                    <option value="">请选择城市</option>
+                </select>
             </div>
 
             <div id="tab3" class="tab" style="text-align: left; padding: 40px;">
-                <h3 style="margin-bottom: 40px;">屏幕选项</h3>
+                <h3 style="margin-bottom: 40px;">房屋</h3>
+                <label for="province">省份：</label>
+                <select id="roomSelect" onchange="updateRooms()">
+                    <option value="">请选择省份</option>
+                </select>
+                &nbsp;&nbsp;&nbsp;&nbsp;
+                <button class="room" style="height: 40px;width: 100px; font-size: 10px;" onclick="updateRooms()">开始查询</button>
+                <br><br>
+                <div style="display: flex; justify-content: center;">
+                    <table class="roomTable">
+                        <tr>
+                            <th>房屋名称</th>
+                            <th>所在地</th>
+                            <th>房型</th>
+                            <th>楼层</th>
+                            <th>面积/平方米</th>
+                            <th>价格/万</th>
+                        </tr>
+                    </table>
+                </div>
             </div>
 
         </div>
     </div>
+
     <script>
+        const citiesByProvince = {
+            '河北省': ['石家庄市', '唐山市', '邯郸市', '秦皇岛市', '保定市', '张家口市', '承德市', '廊坊市', '衡水市', '沧州市'],
+            '山西省': ['太原市', '大同市', '阳泉市', '长治市', '晋城市', '朔州市', '晋中市', '运城市', '忻州市', '临汾市', '吕梁市'],
+            '内蒙古自治区': ['呼和浩特市', '包头市', '乌海市', '赤峰市', '通辽市', '鄂尔多斯市', '呼伦贝尔市', '巴彦淖尔市', '乌兰察布市', '兴安盟', '锡林郭勒盟', '阿拉善盟'],
+        };
+        const provinceSelect = document.getElementById('province');
+        const citySelect = document.getElementById('city');
+        function updateCities() {
+            selectedProvince = provinceSelect.value;
+            const cities = citiesByProvince[selectedProvince] || [];
+            citySelect.innerHTML = '<option value="">请选择城市</option>' + cities.map(city => `<option value="${city}">${city}</option>`).join('');
+        }
+        const rooms = {
+            '河北省': [
+                { "房屋名称": "房屋名A", "所在地": "河北省", "房型": "房型A", "楼层": "2", "面积/平方米": "A12", "价格/万": "A12" },
+                { "房屋名称": "房屋名B", "所在地": "河北省", "房型": "房型B", "楼层": "3", "面积/平方米": "B12", "价格/万": "B12" }
+            ],
+            '山西省': [
+                { "房屋名称": "房屋名C", "所在地": "山西省", "房型": "房型C", "楼层": "3", "面积/平方米": "C12", "价格/万": "C12" },
+                { "房屋名称": "房屋名D", "所在地": "山西省", "房型": "房型D", "楼层": "3", "面积/平方米": "D12", "价格/万": "D12" }
+            ]
+        };
+        const roomSelect = document.getElementById('roomSelect');
+        const roomTable = document.getElementsByClassName('roomTable')[0];
+        function updateRooms() {
+            selectedProvince = roomSelect.value;
+            var roomText = '<tr><th>房屋名称</th><th>所在地</th><th>房型</th><th>楼层</th><th>面积/平方米</th><th>价格/万</th></tr>';
+            for (index in rooms[selectedProvince]) {
+                var room = rooms[selectedProvince][index];
+                roomText += '<tr><td>'+room["房屋名称"]+'</td><td>'+room["所在地"]+'</td><td>'+room["房型"]+'</td><td>'+room["楼层"]+'</td><td>'+room["面积/平方米"]+'</td><td>'+room["价格/万"]+'</td></tr>';
+            }
+            roomTable.innerHTML = roomText;
+        }
         function openTab(evt, tabName) {
             var i, tab, tabButton;
             tab = document.getElementsByClassName("tab");
@@ -146,13 +232,23 @@
             } else {
                 document.getElementsByClassName("main")[0].style.height = "98vh"
             }
-            document.getElementsByClassName("tabButton")[0].click();
+            document.getElementsByClassName("tabButton")[2].click();
+            var provinceText = '<option value="">请选择省份</option>';
+            for (province in citiesByProvince) {
+                provinceText += '<option value="' + province + '">' + province + '</option>';
+            }
+            provinceSelect.innerHTML = provinceText;
+            var provinceText = '<option value="">请选择省份</option>';
+            for (province in rooms) {
+                provinceText += '<option value="' + province + '">' + province + '</option>';
+            }
+            roomSelect.innerHTML = provinceText;
         }
         function testForm() {
             if (test() == true) {
-                alert("信息通过校验")
+                document.getElementsByClassName("testLog")[0].innerText = "信息通过校验";
             } else {
-                alert("信息未通过校验")
+                document.getElementsByClassName("testLog")[0].innerText = "信息未通过校验";
             }
         }
         function test() {
@@ -167,6 +263,8 @@
             } else if (!emailExp.test(email)) {
                 document.getElementsByClassName("emailStatus")[0].innerText = "电子邮件格式错误"
                 result = false
+            } else {
+                document.getElementsByClassName("emailStatus")[0].innerText = "电子邮件验证通过"
             }
             if (pswd.length == 0) {
                 document.getElementsByClassName("pwdStatus")[0].innerText = "请填写密码"
@@ -174,6 +272,8 @@
             } else if (!pswdRegExp.test(pswd)) {
                 document.getElementsByClassName("pwdStatus")[0].innerText = "密码格式错误"
                 result = false
+            } else {
+                document.getElementsByClassName("pwdStatus")[0].innerText = "密码验证通过"
             }
             return result;
         }
