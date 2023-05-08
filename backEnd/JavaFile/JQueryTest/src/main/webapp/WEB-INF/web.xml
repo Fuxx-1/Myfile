@@ -4,23 +4,12 @@
          xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_4_0.xsd"
          version="4.0">
 
-    <display-name>Archetype Created Web Application</display-name>
-
     <servlet>
-        <servlet-name>indexJsp</servlet-name>
-        <jsp-file>/JQueryRegister.jsp</jsp-file>
+        <servlet-name>JqueryTestJsp</servlet-name>
+        <jsp-file>/JQueryTest.jsp</jsp-file>
     </servlet>
     <servlet-mapping>
-        <servlet-name>indexJsp</servlet-name>
-        <url-pattern>/test</url-pattern>
-    </servlet-mapping>
-
-    <servlet>
-        <servlet-name>HelloServlet</servlet-name>
-        <servlet-class>ltd.newimg.HelloServlet</servlet-class>
-    </servlet>
-    <servlet-mapping>
-        <servlet-name>HelloServlet</servlet-name>
-        <url-pattern>/</url-pattern>
+        <servlet-name>JqueryTestJsp</servlet-name>
+        <url-pattern>/jq</url-pattern>
     </servlet-mapping>
 </web-app>
