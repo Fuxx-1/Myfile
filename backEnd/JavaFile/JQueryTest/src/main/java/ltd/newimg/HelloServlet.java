@@ -1,4 +1,4 @@
-package ltd.newimg.jquerytest;
+package ltd.newimg;
 
 import java.io.*;
 import javax.servlet.http.*;

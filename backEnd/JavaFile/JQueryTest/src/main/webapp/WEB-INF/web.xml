@@ -12,4 +12,13 @@
         <servlet-name>JqueryTestJsp</servlet-name>
         <url-pattern>/jq</url-pattern>
     </servlet-mapping>
+    
+    <servlet>
+        <servlet-name>Register</servlet-name>
+        <servlet-class>ltd.newimg.Register</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>Register</servlet-name>
+        <url-pattern>/Register</url-pattern>
+    </servlet-mapping>
 </web-app>

@@ -10,8 +10,8 @@
 <head>
     <title>JQueryTest</title>
     <script src="https://cdn.bootcdn.net/ajax/libs/jquery/3.6.4/jquery.js"></script>
-    <link rel="stylesheet" type="text/css" href="./jq.css"/>
-    <script type="text/javascript" src="./jq.js"></script>
+    <link rel="stylesheet" type="text/css" href="resource/jq.css"/>
+    <script type="text/javascript" src="resource/jq.js"></script>
 </head>
 <div class="main">
     <p>XX班级同学信息注册系统</p>
@@ -80,6 +80,8 @@
             </td>
         </tr>
     </table>
+    <hr hidden/>
+    <div id="resp"></div>
 </div>
 </body>
 </html>
