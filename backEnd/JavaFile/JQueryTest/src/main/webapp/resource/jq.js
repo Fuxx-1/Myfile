@@ -9,13 +9,7 @@ $(document).ready(function () {
     const moreBtn = $("#moreBtn");
     const submitBtn = $("#submitBtn");
     const form = {
-        name: $("#name"),
-        pwd: $("#pwd"),
-        pwd2: $("#pwd2"),
-        gender: $("#gender"),
-        email: $("#email"),
-        room: $("#room1"),
-        roomDetail: $("#room2")
+        name: $("#name"), pwd: $("#pwd"), pwd2: $("#pwd2"), gender: $("#gender"), email: $("#email"), room: $("#room1"), roomDetail: $("#room2")
     };
     for (let formKey in form) {
         form[formKey].on('input', testForm);
@@ -32,29 +26,13 @@ $(document).ready(function () {
     });
     lessBtn.click();
     submitBtn.click(function () {
-        if (testForm() !== true) {
-            alert("表单存在问题");
-            return;
-        } else if ($("#agree")[0].checked !== true) {
-            alert("请同意用户协议"); //协议验证
-            return;
-        }
-        const formData = {
-            name: $("#name").val(),
-            pwd: $("#pwd").val(),
-            gender: $("#gender").val(),
-            hasDetail: hasMore,
-            email: $("#email").val(),
-            room: $("#room1").val(),
-            roomDetail: $("#room2").val()
-        };
+        if (testForm() !== true) { alert("表单存在问题"); return; }
+        else if ($("#agree")[0].checked !== true) { alert("请同意用户协议"); return; }//协议验证
+        const formData = { name: $("#name").val(), pwd: $("#pwd").val(), gender: $("#gender").val(), hasDetail: hasMore, email: $("#email").val(), room: $("#room1").val(), roomDetail: $("#room2").val() };
         $("hr").show();
         $("#resp").load("./Register", formData, function (responseTxt, statusTxt, xhr) {
-            if (statusTxt === "success") {
-                console.log("外部内容加载成功!");
-            } else {
-                console.log("Error: " + xhr.status + ": " + xhr.statusText);
-            }
+            if (statusTxt === "success") { console.log("外部内容加载成功!"); }
+            else { console.log("Error: " + xhr.status + ": " + xhr.statusText); }
         });
     });
 });
@@ -68,13 +46,7 @@ function updateRoom2() {
 function testForm() {
     let result = true;
     const form = {
-        name: $("#name"),
-        pwd: $("#pwd"),
-        pwd2: $("#pwd2"),
-        gender: $("#gender"),
-        email: $("#email"),
-        room: $("#room1"),
-        roomDetail: $("#room2")
+        name: $("#name"), pwd: $("#pwd"), pwd2: $("#pwd2"), gender: $("#gender"), email: $("#email"), room: $("#room1"), roomDetail: $("#room2")
     };
     /* 用户名验证 */
     const name = form.name.val(), nameStatus = $("#nameStatus");
@@ -135,3 +107,4 @@ function testForm() {
     console.log(result);
     return result;
 }
+

@@ -12,7 +12,7 @@ import java.util.Map;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
-public class Register extends HttpServlet{
+public class Register extends HttpServlet {
     @Override
     public void service(ServletRequest req, ServletResponse resp) throws ServletException, IOException {
         Reg reg = new Reg(req.getParameterMap());
@@ -21,7 +21,8 @@ public class Register extends HttpServlet{
         resp.setContentType("text/html;charset=UTF-8");
         PrintWriter out = resp.getWriter();
         if (reg.hasDetail) {
-            out.println(reg.name + "，您好，现在时间是：" + new SimpleDateFormat("yyyy-MM-dd hh:mm:ss").format(new Date()) + "<br/>" +
+            out.println(reg.name + "，您好，现在时间是：" +
+                    new SimpleDateFormat("yyyy-MM-dd hh:mm:ss").format(new Date()) + "<br/>" +
                     "您的注册信息如下：<br/>" +
                     "姓名：" + reg.name + "<br/>" +
                     "性别：" + reg.gender + "<br/>" +
@@ -30,7 +31,8 @@ public class Register extends HttpServlet{
                     "宿舍号：" + reg.roomDetail + "<br/>"
             );
         } else {
-            out.println(reg.name + "，您好，现在时间是：" + new SimpleDateFormat("yyyy-MM-dd hh:mm:ss").format(new Date()) + "<br/>" +
+            out.println(reg.name + "，您好，现在时间是：" +
+                    new SimpleDateFormat("yyyy-MM-dd hh:mm:ss").format(new Date()) + "<br/>" +
                     "您的注册信息如下：<br/>" +
                     "姓名：" + reg.name + "<br/>" +
                     "性别：" + reg.gender
