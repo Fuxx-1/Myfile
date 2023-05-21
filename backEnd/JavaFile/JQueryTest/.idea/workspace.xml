@@ -9,15 +9,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="dc769bba-b19d-4ab9-bd0e-d4d949ecf2fd" name="更改" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/.gitignore" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ltd/newimg/Register.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ltd/newimg/Register.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/JQueryTest.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/JQueryTest.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/web.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/web.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/resource/jq.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/resource/jq.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/resource/jq.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/resource/jq.js" afterDir="false" />
-    </list>
+    <list default="true" id="dc769bba-b19d-4ab9-bd0e-d4d949ecf2fd" name="更改" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -183,6 +175,7 @@
       <workItem from="1683626891127" duration="846000" />
       <workItem from="1683646248522" duration="120000" />
       <workItem from="1684053014252" duration="4276000" />
+      <workItem from="1684659051396" duration="26000" />
     </task>
     <servers />
   </component>
