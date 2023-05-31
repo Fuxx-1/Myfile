@@ -3,7 +3,6 @@
          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_4_0.xsd"
          version="4.0">
-
     <servlet>
         <servlet-name>configDemoServlet</servlet-name>
         <servlet-class>ltd.newimg.bookstore.servlet.ConfigDemoServlet</servlet-class>
@@ -17,7 +16,6 @@
         </init-param>
         <load-on-startup>1</load-on-startup>
     </servlet>
-
     <servlet-mapping>
         <servlet-name>configDemoServlet</servlet-name>
         <url-pattern>/configDemo.do</url-pattern>
@@ -32,3 +30,4 @@
         <param-value>8899123_context</param-value>
     </context-param>
 </web-app>
+

@@ -18,3 +18,4 @@ public class FirstServlet extends HttpServlet {
         getServletContext().getRequestDispatcher("/second").forward(req, res);
     }
 }
+
