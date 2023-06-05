@@ -1,0 +1,16 @@
+{
+    "configurations": [
+        {
+            "type": "python",
+            "name": "Python configuration",
+            "file": "$FILE$",
+        },
+        {
+            "type": "python-tests",
+            "name": "Python-tests configuration",
+            "testFramework": "",
+            "target": "",
+            "arguments": [],
+        },        
+    ]
+}
