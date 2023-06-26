@@ -24,3 +24,4 @@ public class GetCookie extends HttpServlet {
         res.getWriter().println("<a href=\"./addCookie\">addCookie</a>");
     }
 }
+

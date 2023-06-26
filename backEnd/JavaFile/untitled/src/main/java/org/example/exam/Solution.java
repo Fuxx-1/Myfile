@@ -1,8 +1,8 @@
-//package org.example.exam;
-//
-//
-//public class Solution {
-//    public static void main(String[] args) {
-//
-//    }
-//}
+package org.example.exam;
+
+
+public class Solution {
+    public static void main(String[] args) {
+
+    }
+}

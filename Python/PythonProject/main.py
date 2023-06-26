@@ -49,8 +49,8 @@
 #     fee *= 0.85
 # print(int(fee))
 
-s = input().split()
-a = int(s[0])
-b = int(s[1])
-for i in range(1, a + 1):
-    if i % b == 0
+# s = input().split()
+# a = int(s[0])
+# b = int(s[1])
+# for i in range(1, a + 1):
+#     if i % b == 0
