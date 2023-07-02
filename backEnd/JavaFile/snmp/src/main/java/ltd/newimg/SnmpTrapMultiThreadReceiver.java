@@ -26,7 +26,6 @@ public class SnmpTrapMultiThreadReceiver implements CommandResponder {
 
     public SnmpTrapMultiThreadReceiver() {
     }
-
     private void init() throws UnknownHostException, IOException {
         threadPool = ThreadPool.create("TrapPool", 2);
         dispatcher = new MultiThreadedMessageDispatcher(threadPool,
@@ -34,11 +33,6 @@ public class SnmpTrapMultiThreadReceiver implements CommandResponder {
         listenAddress = GenericAddress.parse(System.getProperty(
                 "snmp4j.listenAddress", "udp:127.0.0.1/162"));
         TransportMapping transport = new DefaultUdpTransportMapping((UdpAddress) listenAddress);
-//        if (listenAddress instanceof UdpAddress) {
-//            transport = new DefaultUdpTransportMapping((UdpAddress) listenAddress);
-//        } else {
-//            transport = new DefaultTcpTransportMapping((TcpAddress) listenAddress);
-//        }
         snmp = new Snmp(dispatcher, transport);
         snmp.getMessageDispatcher().addMessageProcessingModel(new MPv1());
         snmp.getMessageDispatcher().addMessageProcessingModel(new MPv2c());
@@ -48,7 +42,6 @@ public class SnmpTrapMultiThreadReceiver implements CommandResponder {
         SecurityModels.getInstance().addSecurityModel(usm);
         snmp.listen();
     }
-
     public void run() {
         try {
             init();
@@ -59,7 +52,6 @@ public class SnmpTrapMultiThreadReceiver implements CommandResponder {
         }
     }
 
-    @SuppressWarnings("unchecked")
     public void processPdu(CommandResponderEvent event) {
         System.out.println("Start parsing......");
         if (event == null || event.getPDU() == null) {

@@ -1,0 +1,15 @@
+<component name="ArtifactManager">
+  <artifact type="jar" name="snmp:jar">
+    <output-path>$PROJECT_DIR$/out/artifacts/snmp_jar</output-path>
+    <root id="archive" name="snmp.jar">
+      <element id="directory" name="META-INF">
+        <element id="file-copy" path="$PROJECT_DIR$/src/main/resource/META-INF/MANIFEST.MF" />
+      </element>
+      <element id="module-output" name="snmp" />
+      <element id="extracted-dir" path="D:/MySoftware/Environment/apache-maven/maven-repository/org/snmp4j/snmp4j/3.7.7/snmp4j-3.7.7.jar" path-in-jar="/" />
+      <element id="directory" name="lib">
+        <element id="library" level="project" name="Maven: org.snmp4j:snmp4j:3.7.7" />
+      </element>
+    </root>
+  </artifact>
+</component>
