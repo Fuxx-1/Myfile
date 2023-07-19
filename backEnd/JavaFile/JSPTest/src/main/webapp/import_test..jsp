@@ -7,7 +7,7 @@
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@ page import="java.util.Date,java.text.DateFormat" %>
-<%@ page contentType="text/html;charset=gb2312" %>
+<%--<%@ page contentType="text/html;charset=gb2312" %>--%>
 <%@ page import="java.text.DateFormat" %>
 <html>
 <head><title>page指令示例</title></head>

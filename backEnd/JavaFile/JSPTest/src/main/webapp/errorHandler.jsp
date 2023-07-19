@@ -5,12 +5,12 @@
   Time: 21:51
   To change this template use File | Settings | File Templates.
 --%>
-<%@ page contentType="text/html;charset=UTF-8" language="java" %>
-<%@ page contentType="text/html; charset=gb2312" %>
+<%@ page contentType="text/html;charset=gb2312" language="java" %>
+<%--<%@ page contentType="text/html; charset=gb2312" %>--%>
 <%@ page isErrorPage="true" %>
 <html>
 <body>
-  璇锋眰涓嶈兘琚鐞嗭細<%=exception.getMessage()%><br>
-  璇烽噸璇曪紒
+  请求不能被处理：<%=exception.getMessage()%><br>
+  请重试！
 </body>
 </html>

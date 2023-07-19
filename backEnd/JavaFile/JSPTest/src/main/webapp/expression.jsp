@@ -28,12 +28,14 @@
     <%= !false %>
     <%= getChar() %>
     <%= Math.random() %>
-    <%= aVector %>
+    <%--    <%= aVector %>--%>
     <%= aFloatObj %>
     <%= aFloatObj.floatValue() %>
     <%= aFloatObj.toString() %>
-    <%= aBool; %>
-    <%= int i=20 %>
-    <%= sBuff.setLength(12); %>
+    <%= aBool %>
+    <% int i = 20; %>
+    <%= i %>
+    <%--    <%= sBuff.setLength(12) %>--%>
 </body>
 </html>
+
