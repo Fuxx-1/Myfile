@@ -11,13 +11,11 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 import ltd.newimg.domain.Result;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import org.springframework.beans.factory.annotation.Value;
 import org.springframework.http.MediaType;
 import org.springframework.stereotype.Component;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import java.awt.*;
 
 @Component
 public class MyBlockExceptionHandler implements BlockExceptionHandler {
@@ -27,7 +25,7 @@ public class MyBlockExceptionHandler implements BlockExceptionHandler {
     @Override
     public void handle(HttpServletRequest req, HttpServletResponse resp, BlockException e) throws Exception {
         log.info("MyBlockExceptionHandler BlockException==========" + e.getRule());
-
+        
         Result r = null;
 
         if (e instanceof FlowException) {
