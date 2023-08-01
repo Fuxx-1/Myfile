@@ -20,11 +20,21 @@ package leetcode.editor.cn;
 class Solution {
     public TreeNode pruneTree(TreeNode root) {
         if (root == null) return root;
-
+        dfs(root);
+        if (root.left == null && root.right == null && root.val == 0) return null;
+        return root;
     }
 
-    public boolean dfs(TreeNode treeNode) {
-
+    public boolean dfs(TreeNode root) {
+        if (root == null) return false;
+        if (root.left != null && !dfs(root.left)) {
+            root.left = null;
+        }
+        if (root.right != null && !dfs(root.right)) {
+            root.right = null;
+        }
+        System.out.println(root.val == 1 || root.left != null && dfs(root.left) || root.right != null && dfs(root.right));
+        return root.val == 1 || root.left != null && dfs(root.left) || root.right != null && dfs(root.right);
     }
 }
 
