@@ -18,14 +18,15 @@ package leetcode.editor.cn;
  * }
  */
 class Solution {
-    public TreeNode pruneTree(TreeNode root) {
-        if (root == null) return null;
-        if (root.left != null) root.left = pruneTree(root.left);
-        if (root.right != null) root.right = pruneTree(root.right);
-        if (root.right == null && root.left == null && root.val == 0) return null;
-        return root;
+    public int sumNumbers(TreeNode root) {
+        return sumNumbers0(root, 0);
     }
 
+    public int sumNumbers0(TreeNode root, int nums) {
+        int val = nums * 10 + root.val;
+        if (root.left == null && root.right == null) return val;
+        return (root.left == null ? 0 : sumNumbers0(root.left, val)) + (root.right == null ? 0 : sumNumbers0(root.right, val));
+    }
 }
 
 //leetcode submit region end(Prohibit modification and deletion)
