@@ -5,6 +5,7 @@ import org.jsoup.Connection;
 import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;
 import org.jsoup.nodes.Element;
+import org.springframework.util.ObjectUtils;
 import org.springframework.util.StringUtils;
 
 import java.io.IOException;
@@ -55,7 +56,7 @@ public class XUPTVerify {
         //如果有id为tips的标签，说明登录失败，并将失败信息返回
         Element result = document.getElementById("tips");
 
-        if (!StringUtils.isEmpty(result)) {
+        if (!ObjectUtils.isEmpty(result)) {
             return null;
         }
         return tokenAndCookie;

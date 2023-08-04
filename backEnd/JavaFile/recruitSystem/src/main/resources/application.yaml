@@ -6,9 +6,12 @@ spring:
     username: verify@qoop.top
     from: ACAT<${spring.mail.username}> # UnionLab作为发信昵称
     password: verify123421
+    port: 465
     protocol: smtp
     default-encoding: utf-8
-    port: 465
+    properties:
+      mail:
+        smtp.ssl.enable: true
   freemarker:
     cache: false
     settings:
@@ -21,15 +24,15 @@ spring:
     port: ${REDIS_PORT:6379}
   datasource:
     driver-class-name: com.mysql.cj.jdbc.Driver
-    url: jdbc:mysql://${MYSQL_ADDRESS:localhost:3307}/recruitsystem?serverTimezone=Asia/Shanghai&useUnicode=true&characterEncoding=utf-8&allowMultiQueries=true
+    url: jdbc:mysql://${MYSQL_ADDRESS:localhost:3306}/recruitsystem?serverTimezone=Asia/Shanghai&useUnicode=true&characterEncoding=utf-8&allowMultiQueries=true
     username: ${MYSQL_USERNAME:root}
-    password: ${MYSQL_PASSWORD:12345}
+    password: ${MYSQL_PASSWORD:e3h2qh4uhroefuhsgdbiol9u897}
 #  mvc:
 #    async:
 #      request-timeout: 20000
 wechat:
-  appid: ${WECHAT_APP_ID}
-  secret: ${WECHAT_APP_SECRET}
+  appid: ${WECHAT_APP_ID:test}
+  secret: ${WECHAT_APP_SECRET:test}
 server:
 #  tomcat:
 #    connection-timeout: 20000

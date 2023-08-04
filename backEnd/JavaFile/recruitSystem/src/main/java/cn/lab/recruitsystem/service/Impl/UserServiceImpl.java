@@ -7,6 +7,7 @@ import cn.lab.recruitsystem.mapper.UserMapper;
 import cn.lab.recruitsystem.service.UserService;
 import com.alibaba.fastjson.JSONObject;
 import freemarker.template.Template;
+import org.springframework.data.redis.core.ValueOperations;
 import org.springframework.stereotype.Service;
 import org.springframework.ui.freemarker.FreeMarkerTemplateUtils;
 import org.springframework.web.servlet.view.freemarker.FreeMarkerConfigurer;
@@ -52,27 +53,10 @@ public class UserServiceImpl implements UserService {
     public JSONObject sendVerifyEmail(String Email, String Action) {
         try {
             Long times = (Long) redisUtil.increaseCacheObject(Email + ":times");
-//            for (int i = 0; i <= 3; i++) {
-//                /* 循环等待资源，负值为资源锁定状态 */
-//                if ((Integer) redisUtil.getCacheObject(Email + ":times") == null || (Integer) redisUtil.getCacheObject(Email + ":times") > 0) {
-//                    /* 获得资源并加锁 */
-//                    times = (Integer) redisUtil.getCacheObject(Email + ":times");
-//                    redisUtil.setCacheObject(Email + ":times", times == null ? 0 : -Math.abs(times), 12, TimeUnit.HOURS);
-//                    break;
-//                } else {
-//                    // 等待资源
-//                    Thread.sleep(150);
-//                }
-//                times = (Integer) redisUtil.getCacheObject(Email + ":times");
-//                if (i == 3) {
-//                    redisUtil.setCacheObject(Email + ":times", Math.abs(times), 12, TimeUnit.HOURS);
-//                    return ReturnUtil.returnObj("尝试超时", -1, null);
-//                }
-//            }
-//            times = (Integer) redisUtil.getCacheObject(Email + ":times");
-            if (times > 5) {
-                return ReturnUtil.returnObj("发送次数过多", 1, null);
-                //发送失败（原因如上）
+            Long latestTime = (Long) redisUtil.getCacheObject(Email + ":timestamp");
+            Long time = (System.currentTimeMillis() - (latestTime == null ? 0 : latestTime)) / 1000;
+            if (times > 1 || time < 60) {
+                return ReturnUtil.returnObj("发送次数过多，请等待" + (60 - time) + "s", 1, null);
             } else {
                 JSONObject sendResult = sendVerifyCode(Email, Action);
                 if (!sendResult.get("code").equals(0)) {
@@ -84,7 +68,8 @@ public class UserServiceImpl implements UserService {
             Logger.getLogger("c.l.r.s.I.UserServiceImpl.sendVerifyEmail.sendVerifyEmail").warning(e.toString());
             return ReturnUtil.returnObj("发送失败", -1, null);
         } finally {
-            redisUtil.getCacheObject(Email + ":times", 12, TimeUnit.HOURS);
+            redisUtil.decreaseCacheObject(Email + ":times");
+            redisUtil.setCacheObject(Email + ":timestamp", System.currentTimeMillis());
         }
     }
 
