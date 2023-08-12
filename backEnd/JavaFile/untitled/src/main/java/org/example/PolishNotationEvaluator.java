@@ -83,33 +83,88 @@ package org.example;
 //        }
 //    }
 //}
-public class Main {
+//public class Main {
+//
+//    public static void main(String[] args) {
+//        System.out.println(findMin(new int[] {4, 5, 0, 1, 2, 3}));
+//    }
+//
+//    public static int findMin(int[] nums) {
+//        int left = 0;
+//        int right = nums.length - 1;
+//
+//        while (left < right) {
+//            if (nums[left] < nums[right]) {
+//                // 如果[left, right]区间是升序的，直接返回left指向的元素
+//                return nums[left];
+//            }
+//
+//            int mid = (left + right) / 2;
+//            if (nums[left] <= nums[mid]) {
+//                // 如果[left, mid]区间是升序的，最小值在[mid+1, right]区间内
+//                left = mid + 1;
+//            } else {
+//                // 如果[mid+1, right]区间是升序的，最小值在[left, mid]区间内
+//                right = mid;
+//            }
+//        }
+//
+//        // 最终left指向的元素就是最小值
+//        return nums[left];
+//    }
+//}
 
-    public static void main(String[] args) {
-        System.out.println(findMin(new int[] {4, 5, 0, 1, 2, 3}));
-    }
+import java.util.Stack;
 
-    public static int findMin(int[] nums) {
-        int left = 0;
-        int right = nums.length - 1;
+public class PolishNotationEvaluator {
+    public static int evaluate(String expression) {
+        Stack<Integer> stack = new Stack<>();
+        String[] tokens = expression.split(" ");
 
-        while (left < right) {
-            if (nums[left] < nums[right]) {
-                // 如果[left, right]区间是升序的，直接返回left指向的元素
-                return nums[left];
-            }
+        for (int i = tokens.length - 1; i >= 0; i--) {
+            String token = tokens[i];
 
-            int mid = (left + right) / 2;
-            if (nums[left] <= nums[mid]) {
-                // 如果[left, mid]区间是升序的，最小值在[mid+1, right]区间内
-                left = mid + 1;
+            if (isNumeric(token)) {
+                stack.push(Integer.parseInt(token));
             } else {
-                // 如果[mid+1, right]区间是升序的，最小值在[left, mid]区间内
-                right = mid;
+                int operand1 = stack.pop();
+                int operand2 = stack.pop();
+
+                int result = performOperation(token, operand1, operand2);
+                stack.push(result);
             }
         }
 
-        // 最终left指向的元素就是最小值
-        return nums[left];
+        return stack.pop();
+    }
+
+    private static boolean isNumeric(String token) {
+        try {
+            Integer.parseInt(token);
+            return true;
+        } catch (NumberFormatException e) {
+            return false;
+        }
+    }
+
+    private static int performOperation(String operator, int operand1, int operand2) {
+        switch (operator) {
+            case "+":
+                return operand1 + operand2;
+            case "-":
+                return operand1 - operand2;
+            case "*":
+                return operand1 * operand2;
+            case "/":
+                return operand1 / operand2;
+            default:
+                throw new IllegalArgumentException("Invalid operator: " + operator);
+        }
+    }
+
+    public static void main(String[] args) {
+        String expression = "* + 2 3 4";
+        int result = evaluate(expression);
+        System.out.println("Result: " + result);
     }
 }
