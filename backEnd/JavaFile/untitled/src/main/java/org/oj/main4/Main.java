@@ -1,63 +1,50 @@
 package org.oj.main4;
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Scanner;
 
 public class Main {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
 
-        // 输入字符串的长度
         int n = scanner.nextInt();
-        scanner.nextLine(); // 读取换行符
+        int k = scanner.nextInt();
 
-        // 输入字符串
-        String string = scanner.nextLine();
+        List<List<Integer>> tree = new ArrayList<>();
+        for (int i = 0; i <= n; i++) {
+            tree.add(new ArrayList<>());
+        }
 
-        int minWeight = calculateMinWeight(string);
-        System.out.println(minWeight);
+        for (int i = 0; i < n - 1; i++) {
+            int u = scanner.nextInt();
+            int v = scanner.nextInt();
+            tree.get(u).add(v);
+            tree.get(v).add(u);
+        }
+
+        int maxHeight = dfs(tree, 1, 0);
+        int answer;
+
+        if (k >= maxHeight) {
+            answer = n;
+        } else {
+            answer = 1 + Math.min(k + 1, maxHeight - k);
+        }
+
+        System.out.println(answer);
     }
 
-    public static int calculateMinWeight(String string) {
-        int n = string.length();
+    private static int dfs(List<List<Integer>> tree, int node, int parent) {
+        int maxHeight = 0;
 
-        int minWeight = Integer.MAX_VALUE; // 最小连通块数量
-
-        // 尝试不同的x和y取值
-        for (int x = 1; x <= n; x++) {
-            if (n % x == 0) {
-                int y = n / x;
-                int[][] matrix = new int[x][y]; // 矩阵，用于标记字符是否已访问
-
-                int blocks = 0; // 连通块数量
-
-                for (int i = 0; i < x; i++) {
-                    for (int j = 0; j < y; j++) {
-                        int index = i * y + j;
-                        if (matrix[i][j] == 0) {
-                            char c = string.charAt(index);
-                            dfs(matrix, string, x, y, i, j, c);
-                            blocks++;
-                        }
-                    }
-                }
-
-                minWeight = Math.min(minWeight, blocks);
+        for (int child : tree.get(node)) {
+            if (child != parent) {
+                int height = dfs(tree, child, node);
+                maxHeight = Math.max(maxHeight, height);
             }
         }
 
-        return minWeight;
-    }
-
-    public static void dfs(int[][] matrix, String string, int x, int y, int i, int j, char c) {
-        if (i < 0 || i >= x || j < 0 || j >= y || matrix[i][j] != 0 || string.charAt(i * y + j) != c) {
-            return;
-        }
-
-        matrix[i][j] = 1; // 标记字符已访问
-
-        dfs(matrix, string, x, y, i - 1, j, c); // 上方
-        dfs(matrix, string, x, y, i + 1, j, c); // 下方
-        dfs(matrix, string, x, y, i, j - 1, c); // 左边
-        dfs(matrix, string, x, y, i, j + 1, c); // 右边
+        return maxHeight + 1;
     }
 }
