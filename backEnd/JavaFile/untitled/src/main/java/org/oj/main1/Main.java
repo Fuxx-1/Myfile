@@ -1,18 +1,30 @@
 package org.oj.main1;
 
-import java.util.Scanner;
+import java.util.*;
 
 public class Main {
-    static double p = 0;
     public static void main(String[] args) {
-        Scanner sc = new Scanner(System.in);
-        p = sc.nextDouble();
-        System.out.println(recursion(1, 1) * 1.5);
-    }
-
-    public static double recursion(int time, double np) {
-        if (time == 90) return np * 90;
-        double newNp = np * (1 - p);
-        return recursion(time + 1, newNp) + time * p * np;
+        Scanner scanner = new Scanner(System.in);
+        String s = scanner.nextLine(); // 输入字符串s
+        int[] arr = new int[26];
+        for (char ch : s.toCharArray()) {
+            arr[ch - 'a']++;
+        }
+        int n = 0;
+        for (int i : arr) {
+            if (i != 0) n++;
+        }
+        if (n <= 1) {
+            System.out.println(-1);
+            System.exit(0);
+        }
+        StringBuilder sb = new StringBuilder();
+        for (int i = 0; i < s.length(); i++) {
+            int c = s.charAt(i) - 'a';
+            while (arr[++c % 26] == 0) ;
+            sb.append((char)('a' + c % 26));
+        }
+        System.out.println(sb.toString());
     }
 }
+
