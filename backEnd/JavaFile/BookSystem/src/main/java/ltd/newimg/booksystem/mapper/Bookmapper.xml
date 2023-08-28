@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+
+<mapper namespace="ltd.newimg.booksystem.mapper.BookMapper">
+
+    <resultMap id="BookDetail" type="ltd.newimg.booksystem.model.dto.BookDetailDTO">
+        <result property="id" column="id"/>
+        <result property="detail" column="detail"/>
+        <result property="picture" column="picture"/>
+        <result property="author" column="author"/>
+        <result property="create_time" column="create_time"/>
+        <result property="update_time" column="update_time"/>
+    </resultMap>
+
+    <insert id="addBook">
+        INSERT INTO book_info (name, price, margin, create_id, create_time, update_time)
+        VALUES (#{name}, #{price}, #{margin}, #{create_id}, #{create_time}, #{update_time});
+    </insert>
+
+    <delete id="delBookById">
+        DELETE FROM book_info
+        WHERE id = #{id};
+    </delete>
+
+    <update id="updateBookInfo">
+        UPDATE book_info
+        SET name        = #{name},
+            price       = #{price},
+            margin      = #{margin},
+            create_id   = #{create_id},
+            create_time = #{create_time},
+            update_time = #{update_time}
+        WHERE id = #{id};
+    </update>
+
+    <select id="queryByName" resultMap="BookDetail">
+        SELECT id, name, price, margin, create_id, create_time, update_time
+        FROM book_info
+        WHERE name like '%#{name}%';
+    </select>
+
+    <select id="queryById" resultMap="BookDetail">
+        SELECT id, name, price, margin, create_id, create_time, update_time
+        FROM book_info
+        WHERE name LIKE '%' + #{name} + '%';
+    </select>
+</mapper>
