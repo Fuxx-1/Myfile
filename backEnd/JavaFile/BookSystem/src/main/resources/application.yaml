@@ -18,7 +18,7 @@ spring:
     resources:
       static-locations: classpath:/static/
 
-  # THYMELEAF (ThymeleafAutoConfiguration)
+      # THYMELEAF (ThymeleafAutoConfiguration)
   # 开启模板缓存（默认值： true ）
   thymeleaf:
     cache: true
@@ -51,3 +51,5 @@ mybatis:
 
 server:
   port: 8080
+
+save_path:

@@ -3,22 +3,48 @@
 
 <mapper namespace="ltd.newimg.booksystem.mapper.BookMapper">
 
+    <resultMap id="BookInfo" type="ltd.newimg.booksystem.model.dto.BookInfoDTO">
+        <result property="id" column="id"/>
+        <result property="name" column="name"/>
+        <result property="price" column="price"/>
+        <result property="margin" column="margin"/>
+        <result property="create_id" column="create_id"/>
+        <result property="createTime" column="create_time"/>
+        <result property="updateTime" column="update_time"/>
+    </resultMap>
+
     <resultMap id="BookDetail" type="ltd.newimg.booksystem.model.dto.BookDetailDTO">
         <result property="id" column="id"/>
         <result property="detail" column="detail"/>
         <result property="picture" column="picture"/>
         <result property="author" column="author"/>
-        <result property="create_time" column="create_time"/>
-        <result property="update_time" column="update_time"/>
+        <result property="createTime" column="create_time"/>
+        <result property="updateTime" column="update_time"/>
+    </resultMap>
+
+    <resultMap id="BookEntirety" type="ltd.newimg.booksystem.model.dto.BookEntiretyDTO">
+        <result property="id" column="id"/>
+        <result property="name" column="name"/>
+        <result property="price" column="price"/>
+        <result property="margin" column="margin"/>
+        <result property="create_id" column="create_id"/>
+        <result property="detail" column="detail"/>
+        <result property="picture" column="picture"/>
+        <result property="author" column="author"/>
+        <result property="bookInfCreateTime" column="book_inf_create_time"/>
+        <result property="bookInfUpdateTime" column="book_inf_update_time"/>
+        <result property="bookDetailCreateTime" column="book_detail_create_time"/>
+        <result property="bookDetailUpdateTime" column="book_detail_update_time"/>
     </resultMap>
 
     <insert id="addBook">
         INSERT INTO book_info (name, price, margin, create_id, create_time, update_time)
-        VALUES (#{name}, #{price}, #{margin}, #{create_id}, #{create_time}, #{update_time});
+        VALUES (#{name}, #{price}, #{margin}, #{create_id}, now(), now());
     </insert>
 
     <delete id="delBookById">
-        DELETE FROM book_info
+        DELETE
+        FROM book_info
         WHERE id = #{id};
     </delete>
 
@@ -28,20 +54,39 @@
             price       = #{price},
             margin      = #{margin},
             create_id   = #{create_id},
-            create_time = #{create_time},
-            update_time = #{update_time}
+            update_time = NOW()
         WHERE id = #{id};
     </update>
 
-    <select id="queryByName" resultMap="BookDetail">
+    <update id="updateBookDetail">
+        UPDATE book_detail
+        SET detail      = #{detail},
+            picture     = #{picture},
+            author      = #{author},
+            update_time = NOW()
+        WHERE id = #{id};
+    </update>
+
+    <select id="queryByName" resultMap="BookInfo">
         SELECT id, name, price, margin, create_id, create_time, update_time
         FROM book_info
         WHERE name like '%#{name}%';
     </select>
 
-    <select id="queryById" resultMap="BookDetail">
-        SELECT id, name, price, margin, create_id, create_time, update_time
-        FROM book_info
-        WHERE name LIKE '%' + #{name} + '%';
+    <select id="queryById" resultMap="BookEntirety">
+        SELECT bi.id,
+               bi.name,
+               bi.price,
+               bi.margin,
+               bi.create_id,
+               bi.create_time AS book_inf_create_time,
+               bi.update_time AS book_inf_update_time,
+               bd.detail,
+               bd.picture,
+               bd.author,
+               bd.create_time AS book_detail_create_time,
+               bd.update_time AS book_detail_update_time
+        FROM (SELECT * FROM book_info WHERE id = #{id}) AS bi
+                 LEFT JOIN booksystem.book_detail bd ON bi.id = bd.id;
     </select>
 </mapper>

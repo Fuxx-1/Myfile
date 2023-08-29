@@ -1,4 +1,4 @@
-package ltd.newimg.booksystem.model.dto;
+package ltd.newimg.booksystem.model.vo;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -9,13 +9,9 @@ import java.sql.Timestamp;
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
-public class UserDTO {
+public class ChangePasswordVO {
 
     private Integer id;
-    private String name;
     private String password;
-    private Boolean isAdmin;
-    private String moreInfo;
-    private Timestamp createTime;
-    private Timestamp updateTime;
+    private String newPassword;
 }

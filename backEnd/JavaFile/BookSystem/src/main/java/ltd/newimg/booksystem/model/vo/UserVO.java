@@ -1,4 +1,4 @@
-package ltd.newimg.booksystem.model.dto;
+package ltd.newimg.booksystem.model.vo;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -9,7 +9,7 @@ import java.sql.Timestamp;
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
-public class UserDTO {
+public class UserVO {
 
     private Integer id;
     private String name;
