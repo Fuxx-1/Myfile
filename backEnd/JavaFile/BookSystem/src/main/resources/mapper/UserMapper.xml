@@ -13,34 +13,44 @@
         <result property="updateTime" column="update_time"/>
     </resultMap>
 
-    <insert id="addUser" keyProperty="id">
+    <resultMap id="UserVO" type="ltd.newimg.booksystem.model.vo.UserVO">
+        <result property="id" column="id"/>
+        <result property="name" column="name"/>
+        <result property="password" column="password"/>
+        <result property="isAdmin" column="is_admin"/>
+        <result property="moreInfo" column="more_inf"/>
+        <result property="createTime" column="create_time"/>
+        <result property="updateTime" column="update_time"/>
+    </resultMap>
+
+    <insert id="addUser" keyProperty="id" parameterType="ltd.newimg.booksystem.model.vo.UserVO">
         INSERT INTO user (name, password, is_admin, more_inf, create_time, update_time)
-        VALUES (#{name}, #{password}, #{is_admin}, #{more_inf}, NOW(), NOW());
+        VALUES (#{name}, #{password}, #{isAdmin}, #{moreInfo}, NOW(), NOW());
     </insert>
 
 
-    <delete id="deleteById">
+    <delete id="deleteById" parameterType="Integer">
         DELETE FROM user
         WHERE id = #{id};
     </delete>
 
-    <update id="update" >
+    <update id="update" parameterType="ltd.newimg.booksystem.model.dto.UserDTO">
         UPDATE user
         SET name = #{name},
             password = #{password},
-            is_admin = #{is_admin},
-            more_inf = #{more_inf},
+            is_admin = #{isAdmin},
+            more_inf = #{moreInfo},
             update_time = NOW()
         WHERE id = #{id};
     </update>
 
-    <select id="queryByName" resultMap="User">
+    <select id="queryByName" resultMap="User" parameterType="String">
         SELECT id, name, password, is_admin, more_inf, create_time, update_time
         FROM user
         WHERE name = #{name};
     </select>
 
-    <select id="queryById" resultMap="User">
+    <select id="queryById" resultMap="User" parameterType="Integer">
         SELECT id, name, password, is_admin, more_inf, create_time, update_time
         FROM user
         WHERE id = #{id};

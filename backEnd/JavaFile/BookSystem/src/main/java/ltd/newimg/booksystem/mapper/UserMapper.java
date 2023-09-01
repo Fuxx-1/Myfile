@@ -3,6 +3,7 @@ package ltd.newimg.booksystem.mapper;
 import ltd.newimg.booksystem.model.dto.UserDTO;
 import ltd.newimg.booksystem.model.vo.UserVO;
 import org.apache.ibatis.annotations.Mapper;
+import org.apache.ibatis.annotations.Param;
 
 @Mapper
 public interface UserMapper {
@@ -19,7 +20,7 @@ public interface UserMapper {
      * @param id 关键字
      * @return 是否成功
      */
-    Boolean deleteById(Integer id);
+    Boolean deleteById(@Param("id") Integer id);
 
     /**
      * 更新用户信息
@@ -33,13 +34,13 @@ public interface UserMapper {
      * @param name 查询关键字
      * @return 用户信息
      */
-    UserDTO queryByName(String name);
+    UserDTO queryByName(@Param("name") String name);
 
     /**
      * 查询用户信息
      * @param id 查询关键字
      * @return 用户信息
      */
-    UserDTO queryById(Integer id);
+    UserDTO queryById(@Param("id") Integer id);
 
 }

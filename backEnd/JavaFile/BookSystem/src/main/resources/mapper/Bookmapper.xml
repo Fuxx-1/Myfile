@@ -8,7 +8,7 @@
         <result property="name" column="name"/>
         <result property="price" column="price"/>
         <result property="margin" column="margin"/>
-        <result property="create_id" column="create_id"/>
+        <result property="createId" column="create_id"/>
         <result property="createTime" column="create_time"/>
         <result property="updateTime" column="update_time"/>
     </resultMap>
@@ -27,7 +27,7 @@
         <result property="name" column="name"/>
         <result property="price" column="price"/>
         <result property="margin" column="margin"/>
-        <result property="create_id" column="create_id"/>
+        <result property="createId" column="create_id"/>
         <result property="detail" column="detail"/>
         <result property="picture" column="picture"/>
         <result property="author" column="author"/>
@@ -37,9 +37,14 @@
         <result property="bookDetailUpdateTime" column="book_detail_update_time"/>
     </resultMap>
 
-    <insert id="addBook">
+    <insert id="addBookInf" keyProperty="id" parameterType="ltd.newimg.booksystem.model.dto.BookInfoDTO">
         INSERT INTO book_info (name, price, margin, create_id, create_time, update_time)
-        VALUES (#{name}, #{price}, #{margin}, #{create_id}, now(), now());
+        VALUES (#{name}, #{price}, #{margin}, #{createId}, now(), now());
+    </insert>
+
+    <insert id="addBookDetail" keyProperty="id" parameterType="ltd.newimg.booksystem.model.dto.BookDetailDTO">
+        INSERT INTO book_detail (id, detail, picture, author, create_time, update_time)
+        VALUES (#{id}, #{detail}, #{picture}, #{author}, now(), now());
     </insert>
 
     <delete id="delBookById">
@@ -53,7 +58,7 @@
         SET name        = #{name},
             price       = #{price},
             margin      = #{margin},
-            create_id   = #{create_id},
+            create_id   = #{createId},
             update_time = NOW()
         WHERE id = #{id};
     </update>

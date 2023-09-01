@@ -14,7 +14,7 @@ public class BookInfoDTO {
     private String name;
     private String price;
     private Integer margin;
-    private Integer create_id;
+    private Integer createId;
     private Timestamp createTime;
     private Timestamp updateTime;
 }

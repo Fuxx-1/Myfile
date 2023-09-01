@@ -4,6 +4,7 @@ import com.alibaba.fastjson.JSONObject;
 import ltd.newimg.booksystem.Util.NanoIdUtil;
 import ltd.newimg.booksystem.Util.RedisUtil;
 import ltd.newimg.booksystem.Util.ReturnUtil;
+import ltd.newimg.booksystem.config.UserHolder;
 import ltd.newimg.booksystem.mapper.UserMapper;
 import ltd.newimg.booksystem.model.dto.UserDTO;
 import ltd.newimg.booksystem.model.vo.AccreditVO;
@@ -11,6 +12,7 @@ import ltd.newimg.booksystem.model.vo.ChangePasswordVO;
 import ltd.newimg.booksystem.model.vo.UserVO;
 import ltd.newimg.booksystem.service.UserService;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 import javax.annotation.Resource;
 import java.util.HashMap;
@@ -33,18 +35,19 @@ public class UserServiceImpl implements UserService {
      */
     @Override
     public JSONObject signup(UserVO user) {
-        // 检测重复
+        // 检测重复并初始化权限信息
         if (userMapper.queryByName(user.getName()) != null) {
             return ReturnUtil.returnObj("name重复", -1, null);
         }
+        user.setIsAdmin(false);
         // 添加用户
         Boolean addResult = userMapper.addUser(user);
         // 授权
         String id = NanoIdUtil.randomNanoId();
-        redisUtil.setCacheObject(id, user, 1, TimeUnit.HOURS);
+        redisUtil.setCacheObject(id, user.toUserDTO().serializable(), 1, TimeUnit.HOURS);
         // 判断结果
         if (addResult) {
-            if (redisUtil.getCacheObject(id).equals(user)) {
+            if (JSONObject.parseObject((String) redisUtil.getCacheObject(id), UserDTO.class).equals(user)) {
                 // 生成成功
                 return ReturnUtil.returnObj("ok", 0, new HashMap<String, Object>() {{
                     put("id", id);
@@ -72,8 +75,8 @@ public class UserServiceImpl implements UserService {
         if (userData.getPassword().equals(user.getPassword())) {
             // 授权
             String id = NanoIdUtil.randomNanoId();
-            redisUtil.setCacheObject(id, user, 1, TimeUnit.HOURS);
-            if (redisUtil.getCacheObject(id).equals(user)) {
+            redisUtil.setCacheObject(id, userData.serializable(), 1, TimeUnit.HOURS);
+            if (JSONObject.parseObject((String) redisUtil.getCacheObject(id), UserDTO.class).equals(userData)) {
                 // 生成成功
                 return ReturnUtil.returnObj("ok", 0, new HashMap<String, Object>() {{
                     put("id", id);
@@ -89,6 +92,30 @@ public class UserServiceImpl implements UserService {
     }
 
     /**
+     * 更新用户信息
+     *
+     * @param user 要更新的用户信息
+     * @return 更新结果
+     */
+    @Override
+    public JSONObject updateUser(UserVO user) {
+        UserDTO actuallyUser = UserHolder.getUser();
+        if (actuallyUser == null) {
+            return ReturnUtil.returnObj("请先登录", -1, null);
+        }
+        UserDTO userDTO = userMapper.queryById(actuallyUser.getId());
+        userDTO.updateWith(user);
+        Boolean update = userMapper.update(userDTO);
+        if (update) {
+            // 更新成功
+            return ReturnUtil.returnObj("更新成功", 0, null);
+        } else {
+            // 更新失败
+            return ReturnUtil.returnObj("更新失败", -1, null);
+        }
+    }
+
+    /**
      * 更改密码
      *
      * @param changePassword 要更改的密码信息
@@ -97,7 +124,7 @@ public class UserServiceImpl implements UserService {
     @Override
     public JSONObject changePassword(ChangePasswordVO changePassword) {
         // 获取数据库信息
-        UserDTO userData = userMapper.queryById(changePassword.getId());
+        UserDTO userData = userMapper.queryById(UserHolder.getUser().getId());
         // 密码验证
         if (userData.getPassword().equals(changePassword.getPassword())) {
             // 密码正确
@@ -119,19 +146,28 @@ public class UserServiceImpl implements UserService {
     /**
      * 用户授权
      *
-     * @param username 要授权的用户名
+     * @param accredit 要授权的用户名
      * @return 授权结果
      */
     @Override
-    public JSONObject accredit(AccreditVO username) {
+    public JSONObject accredit(AccreditVO accredit) {
         ThreadLocal<UserVO> threadLocal = new ThreadLocal<>();
         UserVO user = threadLocal.get();
         if (user.getIsAdmin()) {
             // 有权限增加管理员
+            UserDTO userDTO = userMapper.queryByName(accredit.getAccreditName());
+            userDTO.setIsAdmin(true);
+            Boolean update = userMapper.update(userDTO);
+            if (update) {
+                // 权限增加成功
+                return ReturnUtil.returnObj("ok", 0, null);
+            } else {
+                // 权限增加失败
+                return ReturnUtil.returnObj("授权失败", -1, null);
+            }
         } else {
             // 无权限增加管理员
             return ReturnUtil.returnObj("密码错误", -1, null);
         }
-        return null;
     }
 }

@@ -11,12 +11,20 @@ import java.util.List;
 public interface BookMapper {
 
     /**
-     * 增加一本书
+     * 增加一本书的信息
      * 自增后的 id 会被填充在传入的对象中
      * @param bookInfo 要添加的书籍信息，id 字段为空
      * @return 操作是否成功
      */
-    Boolean addBook(BookInfoDTO bookInfo);
+    Boolean addBookInf(BookInfoDTO bookInfo);
+
+    /**
+     * 增加一本书的详情
+     * 自增后的 id 会被填充在传入的对象中
+     * @param bookInfo 要添加的书籍信息，id 字段为空
+     * @return 操作是否成功
+     */
+    Boolean addBookDetail(BookDetailDTO bookInfo);
 
     /**
      * 使用 id 删除书籍
@@ -44,7 +52,7 @@ public interface BookMapper {
      * @param name 关键字
      * @return 书籍信息列表
      */
-    List<BookInfoDTO> queryByName(String name);
+    List<BookInfoDTO> queryByName(String name, Integer offset, Integer size);
 
     /**
      * 使用 id 获取书籍信息及详情
