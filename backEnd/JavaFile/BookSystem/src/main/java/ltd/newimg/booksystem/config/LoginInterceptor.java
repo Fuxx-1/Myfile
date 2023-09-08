@@ -23,9 +23,11 @@ public class LoginInterceptor implements HandlerInterceptor {
         // 请求开始时获取用户信息，并存在 ThreadLocal
         Cookie[] cookies = request.getCookies();
         UserDTO user = null;
-        for (Cookie cookie : cookies) {
-            if (cookie.getName().equals("id")) {
-                user = JSONObject.parseObject((String) redisUtil.getCacheObject(cookie.getValue()), UserDTO.class);
+        if (cookies != null) {
+            for (Cookie cookie : cookies) {
+                if (cookie.getName().equals("id")) {
+                    user = JSONObject.parseObject((String) redisUtil.getCacheObject(cookie.getValue()), UserDTO.class);
+                }
             }
         }
         UserHolder.setUser(user);

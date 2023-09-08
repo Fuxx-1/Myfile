@@ -5,6 +5,8 @@ import com.alibaba.fastjson.JSONObject;
 import ltd.newimg.booksystem.model.vo.ChangePasswordVO;
 import ltd.newimg.booksystem.model.vo.UserVO;
 import ltd.newimg.booksystem.service.UserService;
+import org.springframework.http.HttpHeaders;
+import org.springframework.http.ResponseCookie;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 
@@ -28,10 +30,16 @@ public class UserController {
         if (dataMap != null) {
             String id = (String) dataMap.get("id");
             if (id != null && !id.isEmpty()) {
-                System.out.println(id);
-                Cookie cookie = new Cookie("id", id);
-                cookie.setHttpOnly(true);
-                httpServletResponse.addCookie(cookie);
+                final ResponseCookie responseCookie = ResponseCookie
+                        .from("id", id)
+                        .secure(true)
+                        .httpOnly(true)
+                        .path("/")
+                        .maxAge(3600)
+                        .sameSite("None")
+                        .domain("localhost")
+                        .build();
+                httpServletResponse.addHeader(HttpHeaders.SET_COOKIE, responseCookie.toString());
             }
         }
         return jsonObject.toJSONString();
@@ -44,10 +52,16 @@ public class UserController {
         if (dataMap != null) {
             String id = (String) dataMap.get("id");
             if (id != null && !id.isEmpty()) {
-                System.out.println(id);
-                Cookie cookie = new Cookie("id", id);
-                cookie.setHttpOnly(true);
-                httpServletResponse.addCookie(cookie);
+                final ResponseCookie responseCookie = ResponseCookie
+                        .from("id", id)
+                        .secure(true)
+                        .httpOnly(true)
+                        .path("/")
+                        .maxAge(3600)
+                        .sameSite("None")
+                        .domain("localhost")
+                        .build();
+                httpServletResponse.addHeader(HttpHeaders.SET_COOKIE, responseCookie.toString());
             }
         }
         return jsonObject.toJSONString();

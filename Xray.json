@@ -1,0 +1,183 @@
+{
+    "log": {
+        "access": "none",
+        "loglevel": "none"
+    },
+    "dns": {},
+    "routing": {
+        "domainStrategy": "AsIs",
+        "rules": [
+            {
+                "type": "field",
+                "ip": [
+                    "geoip:private"
+                ],
+                "outboundTag": "block"
+            }
+        ]
+    },
+    "policy": {},
+    "inbounds": [
+        {
+            "port": 443,
+            "protocol": "vless",
+            "settings": {
+                "clients": [
+                    {
+                        "id": "d2c1f10a-2b5c-4949-920e-8ef14409bc8e",
+                        "flow": "xtls-rprx-direct"
+                    }
+                ],
+                "decryption": "none",
+                "fallbacks": [
+                    {
+                        "dest": 1310,
+                        "xver": 1
+                    },
+                    {
+                        "dest": 1211,
+                        "path": "/33UH9JBB",
+                        "xver": 1
+                    }
+                ]
+            },
+            "streamSettings": {
+                "network": "tcp",
+                "security": "xtls",
+                "xtlsSettings": {
+                    "allowInsecure": false,
+                    "minVersion": "1.2",
+                    "alpn": [
+                        "http/1.1"
+                    ],
+                    "certificates": [
+                        {
+                            "certificateFile": "/usr/local/etc/xray/ssl/xray_ssl.crt",
+                            "keyFile": "/usr/local/etc/xray/ssl/xray_ssl.key"
+                        }
+                    ]
+                }
+            }
+        },
+        {
+            "port": 1211,
+            "listen": "127.0.0.1",
+            "protocol": "vmess",
+            "settings": {
+                "clients": [
+                    {
+                        "id": "d2c1f10a-2b5c-4949-920e-8ef14409bc8e"
+                    }
+                ]
+            },
+            "streamSettings": {
+                "network": "ws",
+                "security": "none",
+                "wsSettings": {
+                    "acceptProxyProtocol": true,
+                    "path": "/33UH9JBB"
+                }
+            }
+        },
+        {
+            "port": 1310,
+            "listen": "127.0.0.1",
+            "protocol": "trojan",
+            "settings": {
+                "clients": [
+                    {
+                        "password": "0d6db46d-ad38-40a9-9aee-a5035aeef8c3"
+                    }
+                ],
+                "fallbacks": [
+                    {
+                        "dest": 8080
+                    }
+                ]
+            },
+            "streamSettings": {
+                "network": "tcp",
+                "security": "none",
+                "tcpSettings": {
+                    "acceptProxyProtocol": true
+                }
+            }
+        },
+        {
+            "port": 3001,
+            "protocol": "vmess",
+            "settings": {
+                "clients": [
+                    {
+                        "id": "d2c1f10a-2b5c-4949-920e-8ef14409bc8e"
+                    }
+                ]
+            },
+            "streamSettings": {
+                "network": "mkcp",
+                "kcpSettings": {
+                    "uplinkCapacity": 100,
+                    "downlinkCapacity": 100,
+                    "congestion": true,
+                    "header": {
+                        "type": "wechat-video"
+                    },
+                    "seed": "0d6db46d-ad38-40a9-9aee-a5035aeef8c3"
+                }
+            }
+        },
+        {
+            "port": 3002,
+            "protocol": "vmess",
+            "settings": {
+                "clients": [
+                    {
+                        "id": "d2c1f10a-2b5c-4949-920e-8ef14409bc8e"
+                    }
+                ],
+                "decryption": "none"
+            },
+            "streamSettings": {
+                "network": "quic",
+                "quicSettings": {
+                    "security": "aes-128-gcm",
+                    "key": "d2c1f10a-2b5c-4949-920e-8ef14409bc8e",
+                    "header": {
+                        "type": "wechat-video"
+                    }
+                },
+                "security": "tls",
+                "tlsSettings": {
+                    "certificates": [
+                        {
+                            "certificateFile": "/usr/local/etc/xray/ssl/xray_ssl.crt",
+                            "keyFile": "/usr/local/etc/xray/ssl/xray_ssl.key"
+                        }
+                    ]
+                }
+            }
+        },
+        {
+            "port": 4001,
+            "protocol": "shadowsocks",
+            "settings": {
+                "password": "0d6db46d-ad38-40a9-9aee-a5035aeef8c3",
+                "method": "aes-256-gcm",
+                "network": "tcp,udp"
+            }
+        }
+    ],
+    "outbounds": [
+        {
+            "protocol": "freedom",
+            "tag": "direct"
+        },
+        {
+            "protocol": "blackhole",
+            "tag": "block"
+        }
+    ],
+    "transport": {},
+    "stats": {},
+    "reverse": {}
+}

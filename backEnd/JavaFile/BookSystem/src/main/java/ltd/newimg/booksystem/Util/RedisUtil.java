@@ -7,9 +7,6 @@ import org.springframework.stereotype.Component;
 import java.util.*;
 import java.util.concurrent.TimeUnit;
 
-/**
- * spring redis 工具类
- **/
 @Component
 public class RedisUtil {
 

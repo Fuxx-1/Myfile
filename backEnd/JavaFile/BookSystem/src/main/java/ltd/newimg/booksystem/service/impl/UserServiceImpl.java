@@ -4,6 +4,7 @@ import com.alibaba.fastjson.JSONObject;
 import ltd.newimg.booksystem.Util.NanoIdUtil;
 import ltd.newimg.booksystem.Util.RedisUtil;
 import ltd.newimg.booksystem.Util.ReturnUtil;
+import ltd.newimg.booksystem.Util.en.ReturnCodeEnum;
 import ltd.newimg.booksystem.config.UserHolder;
 import ltd.newimg.booksystem.mapper.UserMapper;
 import ltd.newimg.booksystem.model.dto.UserDTO;
@@ -12,7 +13,6 @@ import ltd.newimg.booksystem.model.vo.ChangePasswordVO;
 import ltd.newimg.booksystem.model.vo.UserVO;
 import ltd.newimg.booksystem.service.UserService;
 import org.springframework.stereotype.Service;
-import org.springframework.transaction.annotation.Transactional;
 
 import javax.annotation.Resource;
 import java.util.HashMap;
@@ -37,28 +37,29 @@ public class UserServiceImpl implements UserService {
     public JSONObject signup(UserVO user) {
         // 检测重复并初始化权限信息
         if (userMapper.queryByName(user.getName()) != null) {
-            return ReturnUtil.returnObj("name重复", -1, null);
+            return ReturnUtil.returnObj(ReturnCodeEnum.NAME_REPEAT, null);
         }
         user.setIsAdmin(false);
         // 添加用户
         Boolean addResult = userMapper.addUser(user);
+        UserDTO userDTO = userMapper.queryById(user.getId());
         // 授权
         String id = NanoIdUtil.randomNanoId();
-        redisUtil.setCacheObject(id, user.toUserDTO().serializable(), 1, TimeUnit.HOURS);
+        redisUtil.setCacheObject(id, userDTO.serializable(), 1, TimeUnit.HOURS);
         // 判断结果
         if (addResult) {
-            if (JSONObject.parseObject((String) redisUtil.getCacheObject(id), UserDTO.class).equals(user)) {
+            if (JSONObject.parseObject((String) redisUtil.getCacheObject(id), UserDTO.class).equals(userDTO)) {
                 // 生成成功
-                return ReturnUtil.returnObj("ok", 0, new HashMap<String, Object>() {{
+                return ReturnUtil.returnObj(ReturnCodeEnum.SUCCESS, new HashMap<String, Object>() {{
                     put("id", id);
                 }});
             } else {
                 // 生成失败
-                return ReturnUtil.returnObj("生成失败", -1, null);
+                return ReturnUtil.returnObj(ReturnCodeEnum.SYSTEM_FAILED, null);
             }
         } else {
             // user 添加失败
-            return ReturnUtil.returnObj("添加失败", -1, null);
+            return ReturnUtil.returnObj(ReturnCodeEnum.DATA_ERROR, null);
         }
     }
 
@@ -78,16 +79,16 @@ public class UserServiceImpl implements UserService {
             redisUtil.setCacheObject(id, userData.serializable(), 1, TimeUnit.HOURS);
             if (JSONObject.parseObject((String) redisUtil.getCacheObject(id), UserDTO.class).equals(userData)) {
                 // 生成成功
-                return ReturnUtil.returnObj("ok", 0, new HashMap<String, Object>() {{
+                return ReturnUtil.returnObj(ReturnCodeEnum.SUCCESS, new HashMap<String, Object>() {{
                     put("id", id);
                 }});
             } else {
                 // 生成失败
-                return ReturnUtil.returnObj("生成失败", -1, null);
+                return ReturnUtil.returnObj(ReturnCodeEnum.SYSTEM_FAILED, null);
             }
         } else {
             // 密码错误
-            return ReturnUtil.returnObj("密码错误", -1, null);
+            return ReturnUtil.returnObj(ReturnCodeEnum.WRONG_PASSWORD, null);
         }
     }
 
@@ -101,17 +102,20 @@ public class UserServiceImpl implements UserService {
     public JSONObject updateUser(UserVO user) {
         UserDTO actuallyUser = UserHolder.getUser();
         if (actuallyUser == null) {
-            return ReturnUtil.returnObj("请先登录", -1, null);
+            return ReturnUtil.returnObj(ReturnCodeEnum.ACCESS_DENIED, null);
+        }
+        if (userMapper.queryByName(user.getName()) != null) {
+            return ReturnUtil.returnObj(ReturnCodeEnum.NAME_REPEAT, null);
         }
         UserDTO userDTO = userMapper.queryById(actuallyUser.getId());
         userDTO.updateWith(user);
         Boolean update = userMapper.update(userDTO);
         if (update) {
             // 更新成功
-            return ReturnUtil.returnObj("更新成功", 0, null);
+            return ReturnUtil.returnObj(ReturnCodeEnum.SUCCESS, null);
         } else {
             // 更新失败
-            return ReturnUtil.returnObj("更新失败", -1, null);
+            return ReturnUtil.returnObj(ReturnCodeEnum.DATA_ERROR, null);
         }
     }
 
@@ -132,14 +136,14 @@ public class UserServiceImpl implements UserService {
             Boolean update = userMapper.update(userData);
             if (update) {
                 // 更新成功
-                return ReturnUtil.returnObj("更新成功", 0, null);
+                return ReturnUtil.returnObj(ReturnCodeEnum.SUCCESS, null);
             } else {
                 // 更新失败
-                return ReturnUtil.returnObj("更新失败", -1, null);
+                return ReturnUtil.returnObj(ReturnCodeEnum.DATA_ERROR, null);
             }
         } else {
             // 密码错误
-            return ReturnUtil.returnObj("密码错误", -1, null);
+            return ReturnUtil.returnObj(ReturnCodeEnum.WRONG_PASSWORD, null);
         }
     }
 
@@ -160,14 +164,14 @@ public class UserServiceImpl implements UserService {
             Boolean update = userMapper.update(userDTO);
             if (update) {
                 // 权限增加成功
-                return ReturnUtil.returnObj("ok", 0, null);
+                return ReturnUtil.returnObj(ReturnCodeEnum.SUCCESS, null);
             } else {
                 // 权限增加失败
-                return ReturnUtil.returnObj("授权失败", -1, null);
+                return ReturnUtil.returnObj(ReturnCodeEnum.ACCESS_DENIED, null);
             }
         } else {
             // 无权限增加管理员
-            return ReturnUtil.returnObj("密码错误", -1, null);
+            return ReturnUtil.returnObj(ReturnCodeEnum.WRONG_PASSWORD, null);
         }
     }
 }

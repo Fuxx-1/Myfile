@@ -2,6 +2,7 @@ package ltd.newimg.booksystem.service.impl;
 
 import com.alibaba.fastjson.JSONObject;
 import ltd.newimg.booksystem.Util.ReturnUtil;
+import ltd.newimg.booksystem.Util.en.ReturnCodeEnum;
 import ltd.newimg.booksystem.config.UserHolder;
 import ltd.newimg.booksystem.mapper.BookMapper;
 import ltd.newimg.booksystem.model.dto.BookEntiretyDTO;
@@ -33,7 +34,7 @@ public class BookServiceImpl implements BookService {
     public JSONObject addBook(BookEntiretyVO bookEntirety) {
         // 设置创建用户
         Integer id = UserHolder.getUser().getId();
-        if (id == null) return ReturnUtil.returnObj("请先登录", -1, null);
+        if (id == null) return ReturnUtil.returnObj(ReturnCodeEnum.ACCESS_DENIED, null);
         bookEntirety.setCreateId(id);
         // 增加书籍信息
         BookInfoDTO bookInfDTO = bookEntirety.toBookInfDTO();
@@ -41,16 +42,15 @@ public class BookServiceImpl implements BookService {
         // 更新id
         bookEntirety.setId(bookInfDTO.getId());
         // 创建详情
-        bookEntirety.setId(bookInfDTO.getId());
         Boolean updateBookDetailResult = bookMapper.addBookDetail(bookEntirety.toBookDetailDTO());
         if (addBookResult && updateBookDetailResult) {
             // 增加成功
-            return ReturnUtil.returnObj("ok", 0, new HashMap<String, Object>() {{
+            return ReturnUtil.returnObj(ReturnCodeEnum.SUCCESS, new HashMap<String, Object>() {{
                 put("id", bookInfDTO.getId());
             }});
         } else {
             // 增加失败
-            return ReturnUtil.returnObj("增加失败", -1, null);
+            return ReturnUtil.returnObj(ReturnCodeEnum.SYSTEM_FAILED, null);
         }
     }
 
@@ -69,11 +69,11 @@ public class BookServiceImpl implements BookService {
         Boolean updateBookInfoResult = bookMapper.updateBookInfo(bookEntiretyDTO.toBookInfDTO());
         Boolean updateBookDetailResult = bookMapper.updateBookDetail(bookEntiretyDTO.toBookDetailDTO());
         if (updateBookInfoResult && updateBookDetailResult) {
-            return ReturnUtil.returnObj("ok", 0, null);
+            return ReturnUtil.returnObj(ReturnCodeEnum.SUCCESS, null);
         } else if (updateBookInfoResult || updateBookDetailResult) {
-            return ReturnUtil.returnObj("更新部分成功", 0, null);
+            return ReturnUtil.returnObj(ReturnCodeEnum.PART_SUCCESS, null);
         } else {
-            return ReturnUtil.returnObj("更新失败", -1, null);
+            return ReturnUtil.returnObj(ReturnCodeEnum.SYSTEM_FAILED, null);
         }
     }
 
@@ -87,9 +87,9 @@ public class BookServiceImpl implements BookService {
     public JSONObject deleteBook(Integer id) {
         Boolean delBookResult = bookMapper.delBookById(id);
         if (delBookResult) {
-            return ReturnUtil.returnObj("ok", 0, null);
+            return ReturnUtil.returnObj(ReturnCodeEnum.SUCCESS, null);
         } else {
-            return ReturnUtil.returnObj("删除失败", -1, null);
+            return ReturnUtil.returnObj(ReturnCodeEnum.SYSTEM_FAILED, null);
         }
     }
 
@@ -112,8 +112,9 @@ public class BookServiceImpl implements BookService {
      */
     @Override
     public JSONObject queryBook(BookQueryByNameVO bookQuery) {
-        List<BookInfoDTO> bookInfos = bookMapper.queryByName(bookQuery.getName(), bookQuery.getOffset(), bookQuery.getSize());
-        return ReturnUtil.returnObj("ok", 0, new HashMap<String, Object>() {{
+        bookQuery.setName('%' + bookQuery.getName() + '%');
+        List<BookInfoDTO> bookInfos = bookMapper.queryByName(bookQuery);
+        return ReturnUtil.returnObj(ReturnCodeEnum.SUCCESS, new HashMap<String, Object>() {{
             put("bookInfos", bookInfos);
         }});
     }
@@ -126,6 +127,7 @@ public class BookServiceImpl implements BookService {
      */
     @Override
     public JSONObject queryBook(Integer id) {
-        return null;
+        BookEntiretyDTO bookEntiretyDTO = bookMapper.queryById(id);
+        return ReturnUtil.returnObj(ReturnCodeEnum.SUCCESS, bookEntiretyDTO);
     }
 }

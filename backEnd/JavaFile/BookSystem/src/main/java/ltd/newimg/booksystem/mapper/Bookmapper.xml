@@ -37,12 +37,12 @@
         <result property="bookDetailUpdateTime" column="book_detail_update_time"/>
     </resultMap>
 
-    <insert id="addBookInf" keyProperty="id" parameterType="ltd.newimg.booksystem.model.dto.BookInfoDTO">
+    <insert id="addBookInf" useGeneratedKeys="true" keyProperty="id" parameterType="ltd.newimg.booksystem.model.dto.BookInfoDTO">
         INSERT INTO book_info (name, price, margin, create_id, create_time, update_time)
         VALUES (#{name}, #{price}, #{margin}, #{createId}, now(), now());
     </insert>
 
-    <insert id="addBookDetail" keyProperty="id" parameterType="ltd.newimg.booksystem.model.dto.BookDetailDTO">
+    <insert id="addBookDetail" useGeneratedKeys="true" keyProperty="id" parameterType="ltd.newimg.booksystem.model.dto.BookDetailDTO">
         INSERT INTO book_detail (id, detail, picture, author, create_time, update_time)
         VALUES (#{id}, #{detail}, #{picture}, #{author}, now(), now());
     </insert>
@@ -72,10 +72,11 @@
         WHERE id = #{id};
     </update>
 
-    <select id="queryByName" resultMap="BookInfo">
+    <select id="queryByName" resultMap="BookInfo" parameterType="ltd.newimg.booksystem.model.vo.BookQueryByNameVO">
         SELECT id, name, price, margin, create_id, create_time, update_time
         FROM book_info
-        WHERE name like '%#{name}%';
+        WHERE name like #{name}
+        LIMIT #{size} OFFSET ${offset};
     </select>
 
     <select id="queryById" resultMap="BookEntirety">

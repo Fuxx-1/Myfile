@@ -3,6 +3,7 @@ package ltd.newimg.booksystem.mapper;
 import ltd.newimg.booksystem.model.dto.BookDetailDTO;
 import ltd.newimg.booksystem.model.dto.BookEntiretyDTO;
 import ltd.newimg.booksystem.model.dto.BookInfoDTO;
+import ltd.newimg.booksystem.model.vo.BookQueryByNameVO;
 import org.apache.ibatis.annotations.Mapper;
 
 import java.util.List;
@@ -49,10 +50,10 @@ public interface BookMapper {
 
     /**
      * 使用 name 作为关键字搜索书籍
-     * @param name 关键字
+     * @param query 查询信息
      * @return 书籍信息列表
      */
-    List<BookInfoDTO> queryByName(String name, Integer offset, Integer size);
+    List<BookInfoDTO> queryByName(BookQueryByNameVO query);
 
     /**
      * 使用 id 获取书籍信息及详情

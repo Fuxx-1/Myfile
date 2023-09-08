@@ -23,7 +23,7 @@
         <result property="updateTime" column="update_time"/>
     </resultMap>
 
-    <insert id="addUser" keyProperty="id" parameterType="ltd.newimg.booksystem.model.vo.UserVO">
+    <insert id="addUser" useGeneratedKeys="true" keyProperty="id" parameterType="ltd.newimg.booksystem.model.vo.UserVO">
         INSERT INTO user (name, password, is_admin, more_inf, create_time, update_time)
         VALUES (#{name}, #{password}, #{isAdmin}, #{moreInfo}, NOW(), NOW());
     </insert>
