@@ -1,10 +1,16 @@
 package oj;
 
+import java.util.Scanner;
+
 public class Mainb3 {
+
     public static void main(String[] args) {
-        System.out.println("int f(double x,double x)".replaceAll(".+ .+\\(| .+,| .+\\)|\\)", "|"));
-        System.out.println("int f()".replaceAll(".+ .+\\(| .+,| .+\\)|\\)", "|"));
-        System.out.println("f(double,double)".replaceAll(".+\\(|,|\\)", "|"));
-        System.out.println("f()".replaceAll(".+\\(|,|\\)", "|"));
+        Scanner sc = new Scanner(System.in);
+        int n = sc.nextInt();
+        while (n-- != 0) {
+            int m = sc.nextInt();
+
+        }
+
     }
 }

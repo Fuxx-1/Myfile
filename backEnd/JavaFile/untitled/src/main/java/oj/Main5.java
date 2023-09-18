@@ -1,41 +1,34 @@
 package oj;
 
-import java.util.*;
+import java.util.HashMap;
+import java.util.Map;
+import java.util.Scanner;
 
 public class Main5 {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
-        int len = sc.nextInt(), res = 0;
-        int[] nums = new int[len];
-        Map<Integer, List<Integer>> map = new HashMap<>();
-        for (int i = 0; i < len; i++) {
-            nums[i] = sc.nextInt();
-            if (i == 0) {
-                map.put(nums[i], new ArrayList<Integer>() {{
-                    add(1);
-                }});
-            } else {
-                res = 0;
-                for (int j = 1; j <= nums[i]; j++) {
-                    if (nums[i] % j == 0) {
-                        List<Integer> integers = map.get(nums[i] / j);
-                        if (integers != null) {
-                            for (Integer integer : integers) {
-                                res += integer;
-                            }
-                        }
-                    }
-                }
-                if (map.containsKey(nums[i])) {
-                    map.get(nums[i]).add(res);
-                } else {
-                    int finalRes = res;
-                    map.put(nums[i], new ArrayList<Integer>() {{
-                        add(finalRes);
-                    }});
+        int n = sc.nextInt(), m = sc.nextInt();
+        sc.nextLine();
+        for (int i = 0; i < m; i++) {
+            Map<Character, Integer> map = new HashMap<>();
+            String s = sc.nextLine();
+            char temp = '0';
+            for (int j = 0; j < s.length(); j++) {
+                if (s.charAt(j) != temp) {
+                    temp = s.charAt(j);
+                    if (map.containsKey(s.charAt(j))) map.put(s.charAt(j), map.get(s.charAt(j)) + 1);
+                    else map.put(s.charAt(j), 1);
                 }
             }
+            int res = 0;
+            for (Map.Entry<Character, Integer> characterIntegerEntry : map.entrySet()) {
+                if (characterIntegerEntry.getValue() > n) {
+                    res++;
+                }
+            }
+            if (res == 0) System.out.println(1);
+            else System.out.println(res);
         }
-        System.out.println(res);
     }
 }
+

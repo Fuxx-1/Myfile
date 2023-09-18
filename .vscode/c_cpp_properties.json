@@ -1,26 +1,21 @@
 {
-    "configurations": [{
-        "name": "Win32",
-        "includePath": [
-            "${workspaceFolder}/**",
-            "C:/MySoftware/Environment/C/MinGW64_C/include/**",
-            "C:/MySoftware/Environment/C/MinGW64_C/bin/../lib/gcc/x86_64-w64-mingw32/8.1.0/include/c++",
-            "C:/MySoftware/Environment/C/MinGW64_C/bin/../lib/gcc/x86_64-w64-mingw32/8.1.0/include/c++/x86_64-w64-mingw32",
-            "C:/MySoftware/Environment/C/MinGW64_C/bin/../lib/gcc/x86_64-w64-mingw32/8.1.0/include/c++/backward",
-            "C:/MySoftware/Environment/C/MinGW64_C/bin/../lib/gcc/x86_64-w64-mingw32/8.1.0/include",
-            "C:/MySoftware/Environment/C/MinGW64_C/bin/../lib/gcc/x86_64-w64-mingw32/8.1.0/include-fixed"
-            // "C:/Users/Eleun/Desktop/RIP/Include/*"
-        ],
-        "defines": [
-            "_DEBUG",
-            "UNICODE",
-            "_UNICODE"
-        ],
-        "windowsSdkVersion": "10.0.18362.0",
-        "compilerPath": "C:/MySoftware/Environment/C/MinGW64_C/bin/gcc.exe",
-        "cStandard": "c11",
-        "cppStandard": "c++17",
-        "intelliSenseMode": "windows-gcc-x86"
-    }],
-    "version": 4
+  "configurations": [
+    {
+      "name": "windows-gcc-x64",
+      "includePath": [
+        "${workspaceFolder}/**"
+      ],
+      "defines": [
+        "_DEBUG",
+        "UNICODE",
+        "_UNICODE"
+      ],
+      "windowsSdkVersion": "10.0.18362.0",
+      "compilerPath": "D:/MySoftware/Environment/C/MinGW64_C/bin/gcc.exe",
+      "cStandard": "${default}",
+      "cppStandard": "${default}",
+      "intelliSenseMode": "windows-gcc-x64"
+    }
+  ],
+  "version": 4
 }
