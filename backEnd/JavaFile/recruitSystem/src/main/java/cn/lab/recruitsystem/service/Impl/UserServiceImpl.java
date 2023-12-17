@@ -9,6 +9,7 @@ import com.alibaba.fastjson.JSONObject;
 import freemarker.template.Template;
 import org.springframework.data.redis.core.ValueOperations;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 import org.springframework.ui.freemarker.FreeMarkerTemplateUtils;
 import org.springframework.web.servlet.view.freemarker.FreeMarkerConfigurer;
 
@@ -170,6 +171,7 @@ public class UserServiceImpl implements UserService {
      * @return Token和登录状态
      */
     @Override
+    @Transactional
     public JSONObject login(String userid, String password) {
         try {
             String truePwd = userMapper.queryPwd(userid);
@@ -184,7 +186,7 @@ public class UserServiceImpl implements UserService {
                 } else {
                     // 成功获取信息，开始注册
                     userMapper.addUser(userid);
-                    userMapper.updateMainInf(userid, password, null);
+                    userMapper.updateMainInf(userid, password, "ACAT");
                     userMapper.updateInf(userid, testInfo.get("name"), testInfo.get("gender").equals("M"), testInfo.get("group"), null, null);
                     String Token = JWTUtil.createToken(new HashMap<String, Object>() {{
                         put("userid", userid);

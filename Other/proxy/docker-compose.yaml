@@ -1,0 +1,10 @@
+version: "3.9"
+services:
+  xui:
+    image: enwaiax/x-ui:alpha-zh
+    container_name: xui
+    volumes:
+      - ./db/:/etc/x-ui/
+      - /MySoftware/ssl/:/root/cert/
+    restart: unless-stopped
+    network_mode: host

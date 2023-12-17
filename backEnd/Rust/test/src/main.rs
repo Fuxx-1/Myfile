@@ -1,18 +1,11 @@
-use std::io::stdin;
-mod lib;
-use crate::lib::mod_test::StructTest;
+use std::*;
 
 fn main() {
-    let mut a: String = String::new();
-    match stdin().read_line(&mut a) {
-        Ok(n) => println!("{}", n),
-        Err(error) => println!("error: {error}"),
+    let x = [1, 2, 3];
+    for ele in x.iter().enumerate() {
+        println!("{}->{}", ele.0, ele.1);
     }
-    a = a.trim().to_owned();
-    let test = StructTest::new(a);
-    println!("You input: \"{}\", The len is {}.", test.get_string(), test.get_len());
+    for (index, value) in x.iter().enumerate() {
+        println!("{}->{}", index, value);
+    }
 }
-
-// fn get_len(str: &str) -> usize {
-//     str.len()
-// }

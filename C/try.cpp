@@ -1,116 +1,83 @@
 #include <stdio.h>
-#include <stdlib.h>
 
-typedef struct ArcNode {
-    char data;
-    struct ArcNode* next;
-} ArcNode;
+int price[1000];
+int require[1000];
+int sale[10][1000];
+int contrast[1000];
+int dp[1000][1000];
 
-typedef struct VexNode {
-    char data;
-    ArcNode* head;
-} VexNode;
-
-typedef struct Graph {
-    VexNode Node[20];
-    int index[26];
-    int NodeNum;
-    int ArcNum;
-} Graph;
-
-Graph* CreateGraph()
+int count(int a[], int b[], int c[])
 {
-    Graph* graph = (Graph*)malloc(sizeof(Graph));
-    scanf("%d%d", &graph->NodeNum, &graph->ArcNum);
-    getchar();
-    for (int i = 0; i < graph->NodeNum; i++) {
-        graph->Node[i].data = getchar();
-        graph->Node[i].head = NULL;
-        graph->index[graph->Node[i].data - 'A'] = i;
+    for (int i = 1; i < 1000; i++) {
+        if (a[i] - b[i] < c[i]) {
+            return 0;   
+        }
     }
-    getchar();
-    for (int i = 0; i < graph->ArcNum; i++) {
-        char a = getchar();
-        if (!graph->Node[graph->index[a - 'A']].head) {
-            graph->Node[graph->index[a - 'A']].head = (ArcNode*)malloc(sizeof(ArcNode));
-            graph->Node[graph->index[a - 'A']].head->data = getchar();
-            graph->Node[graph->index[a - 'A']].head->next = NULL;
-        } else {
-            ArcNode* temp = graph->Node[graph->index[a - 'A']].head;
-            while (temp->next != NULL) {
-                temp = temp->next;
+    return 1;
+}
+
+int main()
+{
+    // 输入及预处理部分
+    int row = 0, total = 0, totalRequire = 0;
+    scanf("%d", &row);
+    for (int i = 0; i < row; i++) {
+        int id, tempRequire, tempPrice;
+        scanf("%d %d %d", &id, &tempRequire, &tempPrice);
+        require[id] = tempRequire;
+        price[id] = tempPrice;
+        totalRequire += tempRequire;
+        total += tempRequire * tempPrice;
+    }
+    scanf("%d", &row);
+    for (int i = 0; i < row; i++) {
+        int times = 0, temp2 = 0, temp = 0;
+        scanf("%d", &times);
+        for (int j = 0; j < times; j++) {
+            int id, tempRequire;
+            scanf("%d %d", &id, &tempRequire);
+            sale[i][id] = tempRequire;
+            temp += tempRequire * price[id];
+        }
+        scanf("%d", &temp2);
+        sale[i][0] = temp - temp2;
+    }
+    printf("%d\n", total);
+    // 计算最大优惠
+    for (int i = 0; i < totalRequire; i++) {
+        // 增加
+        for (int j = 1; j < 1000; j++) {
+            dp[i][j] = dp[i - 1][j];
+            if (dp[i][j] < require[j]) {
+                dp[i][j]++;
+                break;
             }
-            temp->next = (ArcNode*)malloc(sizeof(ArcNode));
-            temp->next->data = getchar();
-            temp->next->next = NULL;
         }
-
-        getchar();
-    }
-    return graph;
-}
-
-void Calculate(Graph* G)
-{
-    int a[25][2] = { 0 };
-    for (int i = 0; i < G->NodeNum; i++) {
-        ArcNode* temp = G->Node[i].head;
-        while (temp != NULL) {
-            a[temp->data - 'A'][1]++;
-            a[i][0]++;
-            temp = temp->next;
+        int max = 0;
+        // 计算最优方案
+        for (int j = 0; j < row; j++) {
+            // 遍历所有方案
+            int temp = 0;
+            if (count(dp[i], contrast, sale[j])) {
+                temp = sale[j][0];
+                int temp2 = i;
+                while (--temp2 >= 0) {
+                    if (count(dp[i], dp[temp2], sale[j])) {
+                        temp = dp[temp2][0] + sale[j][0];
+                        if (temp > max) {
+                            max = temp;
+                        }
+                    }
+                }
+                if (temp > max) {
+                    max = temp;
+                }
+            } else {
+                temp = 0;
+            }
         }
+        dp[i][0] = max;
     }
-    for (int i = 0; i < G->NodeNum; i++) {
-        printf("%c %d %d %d\n", i + 'A', a[i][0], a[i][1], a[i][0] + a[i][1]);
-    }
-}
-
-void DepTravel(Graph* G, int index, int* a)
-{
-    if (a[index]) {
-        return;
-    }
-    a[index] = 1;
-    printf("%c", G->Node[index].data);
-    ArcNode* temp = G->Node[index].head;
-    while (temp != NULL) {
-        DepTravel(G, temp->data - 'A', a);
-        temp = temp->next;
-    }
-}
-
-void WidTravel(Graph* G, char* b, int h, int t, int* a)
-{
-    if (a[b[h] - 'A']) {
-        h++;
-        if (h <= t) {
-            WidTravel(G, b, h, t, a);
-        }
-        return;
-    }
-    printf("%c", G->Node[b[h] - 'A'].data);
-    a[b[h] - 'A'] = 1;
-    ArcNode* temp = G->Node[b[h++] - 'A'].head;
-    while (temp != NULL) {
-        b[++t] = temp->data;
-        temp = temp->next;
-    }
-    if (h <= t) {
-        WidTravel(G, b, h, t, a);
-    }
-}
-
-int main(int argc, char const* argv[])
-{
-    Graph* Head = CreateGraph();
-    Calculate(Head);
-    int a[30] = { 0 };
-    DepTravel(Head, 0, a);
-    printf("\n");
-    int c[30] = { 0 };
-    char b[50] = { 0 };
-    b[0] = Head->Node[0].data;
-    WidTravel(Head, b, 0, 0, c);
+    printf("%d", total - dp[totalRequire - 1][0]);
     return 0;
 }

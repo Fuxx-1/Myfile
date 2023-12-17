@@ -12,6 +12,7 @@ import ltd.newimg.booksystem.model.vo.AccreditVO;
 import ltd.newimg.booksystem.model.vo.ChangePasswordVO;
 import ltd.newimg.booksystem.model.vo.UserVO;
 import ltd.newimg.booksystem.service.UserService;
+import org.springframework.stereotype.Component;
 import org.springframework.stereotype.Service;
 
 import javax.annotation.Resource;

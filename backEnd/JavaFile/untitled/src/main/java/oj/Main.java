@@ -1,0 +1,5 @@
+package oj;
+
+class Main {
+
+}
